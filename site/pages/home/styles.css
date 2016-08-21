@@ -1,0 +1,38 @@
+body {
+  background-color:  rgba(55,171,46,1);
+}
+
+.content {
+  background-color: white;
+  height: 100%;
+}
+
+.hero {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.logo {
+  text-align: center;
+  width: 18em;
+}
+
+.subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.footer {
+  bottom: -10px;
+  right: 14px;
+  position: fixed;
+}
+
+.laidback {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.small {
+  font-size: 0.8em;
+}
