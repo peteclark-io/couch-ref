@@ -1,9 +1,15 @@
+'use strict'
+
 import { connect } from 'react-redux'
-//import { toggleTodo } from '../actions'
 import Scores from './Scores'
 
-const getLiveMatch = (state) => {
-   return state;
+const getLiveMatch = (state = {home: 'loading', away: 'loading', home_score: 0, away_score: 0}) => {
+  return {
+    home: state.home,
+    away: state.away,
+    goalsHome: state.home_score,
+    goalsAway: state.away_score,
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -12,17 +18,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    /*onTodoClick: (id) => {
-      dispatch(toggleTodo(id))
-    }*/
-  }
-}
 
 const LiveScores = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Scores)
 
 export default LiveScores

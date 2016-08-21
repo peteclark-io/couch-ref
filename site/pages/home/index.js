@@ -10,17 +10,12 @@
 
 import React, { PropTypes } from 'react';
 import styles from './styles.css';
-
-import {init} from '../../core/firebase-setup';
-
 import LiveScores from '../../components/Scores/LiveScores'
 
 class HomePage extends React.Component {
 
   componentDidMount() {
-    init().then(function(val){
-      console.log(val);
-    });
+    
   }
 
   render() {

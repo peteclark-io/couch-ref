@@ -20,6 +20,8 @@ import store from './core/store';
 import router from './core/router';
 import history from './core/history';
 
+import firebase from './core/firebase-actions';
+
 let routes = require('./routes.json'); // Loaded with utils/routes-loader.js
 const container = document.getElementById('container');
 
@@ -39,6 +41,8 @@ function render(location) {
 // For more information visit https://github.com/ReactJSTraining/history/tree/master/docs#readme
 history.listen(render);
 render(history.getCurrentLocation());
+
+firebase(store).init();
 
 // Eliminates the 300ms delay between a physical tap
 // and the firing of a click event on mobile browsers
