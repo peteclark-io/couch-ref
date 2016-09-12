@@ -1,6 +1,19 @@
 'use strict'
 
 import firebase from 'firebase';
+import {updateMatch, addMatch} from './ducks/matches';
+
+function createMatch(value){
+  return {
+    id: value.id,
+    kickOff: value.kick_off,
+    home: value.home,
+    away: value.away,
+    goalsHome: value.home_score,
+    goalsAway: value.away_score,
+    fullTime: value.full_time
+  };
+}
 
 const data = (store) => {
   return {
@@ -13,6 +26,7 @@ const data = (store) => {
       };
 
       firebase.initializeApp(config);
+
       return firebase.auth().signInAnonymously().catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -21,15 +35,17 @@ const data = (store) => {
         var couchRef = database.ref('live-matches');
 
         couchRef.off();
-        var dispatch = function(data) {
-          store.dispatch({
-            type: 'MATCH_UPDATE',
-            update: data.val()
-          });
+        var dispatchAdd = function(data){
+          store.dispatch(addMatch(createMatch(data.val())));
         };
 
-        couchRef.on('child_added', dispatch);
-        couchRef.on('child_changed', dispatch);
+        var dispatchUpdate = function(data){
+          var value = data.val();
+          store.dispatch(updateMatch(createMatch(data.val())));
+        };
+
+        couchRef.on('child_added', dispatchAdd);
+        couchRef.on('child_changed', dispatchUpdate);
       });
     }
   };

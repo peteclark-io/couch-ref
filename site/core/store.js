@@ -9,9 +9,8 @@
  */
 
 import { createStore } from 'redux';
+import reducer from './ducks/reducers';
 
-const store = createStore((state, action) => {
-  return action.update;
-});
+const store = createStore(reducer);
 
 export default store;

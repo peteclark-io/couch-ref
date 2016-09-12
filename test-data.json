@@ -1,0 +1,18 @@
+{
+  "match1": {
+    "id": "match1",
+    "home": "Man Utd",
+    "away": "Man City",
+    "home_score": 1,
+    "away_score": 2,
+    "kick_off": "2016-09-10T11:30:00.000Z",
+    "full_time": false,
+    "referee": "Mark Clattenburg",
+    "home_lineup": [
+      {"number": 1, "moniker": "De Gea", "full_name": "Davide De Gea", "position": "GK"}
+    ],
+    "away_lineup": [
+      {"number": 1, "moniker": "Bravo", "full_name": "Claudio Bravo", "position": "GK"}
+    ]
+  }
+}

@@ -12,25 +12,27 @@ import React, { PropTypes } from 'react';
 import styles from './styles.css';
 import LiveScores from '../../components/Matches/LiveScores'
 
-class HomePage extends React.Component {
+class MatchPage extends React.Component {
 
-  componentDidMount() {
+  componentDidMount() {}
 
-  }
+  static propTypes = {
+    match: React.PropTypes.shape({
+      'id': React.PropTypes.string,
+      'kickOff': React.PropTypes.string,
+      'home': React.PropTypes.string,
+      'away': React.PropTypes.string,
+      'goalsHome': React.PropTypes.number,
+      'goalsAway': React.PropTypes.number
+    })
+  };
 
   render() {
     return (
-      <div className="row">
-        <div className="twelve columns">
-          <h2 className={styles.banner}>Live Scores</h2>
-          <div className={styles.hero}>
-            <LiveScores />
-          </div>
-        </div>
-      </div>
+      <LiveScores />
     );
   }
 
 }
 
-export default HomePage;
+export default MatchPage;
