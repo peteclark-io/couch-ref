@@ -1,0 +1,11 @@
+/**
+  Global Branding Variables
+*/
+
+:root {
+  --font-primary:     'Montserrat', sans-serif;
+  --font-secondary:   'Montserrat', sans-serif;
+
+  --brand-primary:    rgba(55,171,46,1);
+  --brand-secondary:  white;
+}
