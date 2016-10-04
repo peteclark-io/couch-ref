@@ -11,7 +11,10 @@ function createMatch(value){
     away: value.away,
     goalsHome: value.home_score,
     goalsAway: value.away_score,
-    fullTime: value.full_time
+    fullTime: value.full_time,
+    referee: value.referee,
+    homeLineup: value.home_lineup,
+    awayLineup: value.away_lineup
   };
 }
 

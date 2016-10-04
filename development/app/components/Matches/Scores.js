@@ -1,9 +1,10 @@
 'use strict'
 
 import React from 'react';
+import {Link} from 'react-router';
+
 import styles from './styles.css';
 import Score from './Score';
-import {Link} from 'react-router';
 
 const Scores = React.createClass({
 
