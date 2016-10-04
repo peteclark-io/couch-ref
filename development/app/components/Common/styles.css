@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+}
+
+.brand-header {
+  background-color: rgba(55,171,46,1);
+  padding: 4px;
+  margin-top: 0px;
+}
+
+.brand-header h1 {
+  color: white;
+  margin: 0px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+}

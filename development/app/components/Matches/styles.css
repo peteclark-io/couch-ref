@@ -1,0 +1,29 @@
+@import "../../css/branding.css";
+
+.match-header {
+  font-family: var(--font-primary);
+  font-size: 2.6em;
+  margin-bottom: 1.4em;
+}
+
+.team-sheet-header {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: var(--font-primary);
+  margin-bottom: 1.1em;
+}
+
+.chevron {
+  margin-left: 10px;
+  font-size: 0.7em;
+}
+
+.referee {
+  font-size: 0.8em;
+  font-family: var(--font-primary);
+}
+
+.player {
+  font-size: 0.9em;
+  font-family: var(--font-secondary);
+}

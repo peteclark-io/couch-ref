@@ -1,0 +1,46 @@
+@import "../../css/branding.css";
+
+.teams {
+  font-family: var(--font-secondary-bold);
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: black;
+}
+
+.goals {
+  font-family: var(--font-secondary-bold);
+  font-size: 1.1em;
+  color: black;
+  float: right;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.match-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.match-list li {
+  margin-bottom: 18px;
+}
+
+.kick-off {
+  line-height: normal;
+  font-family: var(--font-secondary);
+  font-size: 0.9em;
+}
+
+.full-time {
+  background: repeating-linear-gradient(
+    45deg,
+    white,
+    white 10px,
+    whitesmoke 10px,
+    whitesmoke 20px
+  );
+}
