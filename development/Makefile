@@ -10,4 +10,4 @@ prod:
 	webpack -p --config webpack.config.prod.js --progress --colors
 
 publish:
-	cd dist && surge
+	cd ../public && cp index.html 200.html && surge

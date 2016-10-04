@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 
 import CouchRef from './pages/CouchRef';
+import Match from './pages/Match';
 
 import store from './core/store';
 import firebase from './core/firebase';
@@ -21,7 +22,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={CouchRef}>
-        <Route path="/match/:matchId">
+        <Route path="/match/:matchId" component={Match}>
         </Route>
       </Route>
     </Router>
