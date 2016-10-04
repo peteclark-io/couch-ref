@@ -3,7 +3,7 @@ import matches from './matches';
 import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-    matches,
+    matches: matches,
     routing: routerReducer
 });
 

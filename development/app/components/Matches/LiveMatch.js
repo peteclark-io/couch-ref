@@ -7,15 +7,15 @@ import _ from 'lodash';
 var matches = [];
 
 const getLiveMatch = (state = {matches: []}, id) => {
-   console.log('hi');
-  return _.filter(state.matches, {id: id})[0];
+   var filtered = _.filter(state.matches, {id: id});
+   return filtered.length === 0 ? {} : filtered[0];
 };
 
 const mapStateToProps = (state, ownProps) => {
-   console.log(ownProps.location);
-  return {
-    match: getLiveMatch(state, 'match1')
-  }
+   console.log(ownProps);
+   return {
+     match: getLiveMatch(state, ownProps.id)
+   };
 };
 
 const LiveMatch = connect(

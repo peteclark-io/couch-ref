@@ -1,6 +1,6 @@
 {
-  "name": "Matches",
+  "name": "MatchScreen",
   "version": "0.0.0",
   "private": true,
-  "main": "./Matches.js"
+  "main": "./LiveMatch.js"
 }

@@ -9,26 +9,19 @@ function sort(arr){
   return _.sortBy(arr, ['fullTime', 'kickOff']);
 }
 
-export default function reducer(state = {matches: []}, action){
+export default function reducer(state = [], action){
   var match = action.match;
 
   switch(action.type){
     case MATCH_UPDATE:
       console.log('Handling update', match);
-      return Object.assign({}, state, {
-        matches: sort([
-          ..._.differenceWith(state.matches, [match], (val, compare) => {return val.id === compare.id}),
-          match
-        ])
-      });
+      return sort([
+        ..._.differenceWith(state, [match], (val, compare) => {return val.id === compare.id}),
+        match
+      ]);
 
     case ADD_MATCH:
-      return Object.assign({}, state, {
-        matches: sort([
-          ...state.matches,
-          match
-        ])
-      });
+      return sort([...state, match]);
     default:
       return state;
   }

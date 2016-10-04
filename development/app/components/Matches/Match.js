@@ -2,6 +2,9 @@
 
 import React from 'react';
 
+import styles from './styles.css';
+import TeamSheet from './TeamSheet';
+
 const Match = React.createClass({
 
    propTypes: {
@@ -31,7 +34,13 @@ const Match = React.createClass({
 
    render: function() {
       return (
-         <h2>{this.props.match.referee}</h2>
+         <div>
+           <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
+           <TeamSheet
+              referee={this.props.match.referee}
+              homeLineup={this.props.match.homeLineup}
+              awayLineup={this.props.match.awayLineup} />
+         </div>
       );
    }
 });
