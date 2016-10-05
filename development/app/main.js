@@ -19,7 +19,7 @@ FastClick.attach(document.body);
 const container = document.getElementById('container');
 const history = syncHistoryWithStore(browserHistory, store);
 
-firebase(store).init(history);
+firebase(store).init(history, window.location.pathname);
 history.push('/splash'); // move to splash screen - firebase will move to main screen once initialized.
 
 ReactDOM.render(

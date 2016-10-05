@@ -2,6 +2,7 @@
 
 import firebase from 'firebase';
 import {updateMatch, addMatch} from '../ducks/matches';
+import {ready} from '../ducks/ready';
 
 function createMatch(value){
   return {
@@ -20,7 +21,7 @@ function createMatch(value){
 
 const data = (store) => {
   return {
-    init: function(router){
+    init: function(router, path){
       var config = {
         apiKey: "AIzaSyAoRaeRoKYx6Q_tuOVeK753OWmtuJEyQX8",
         authDomain: "couchref-9962e.firebaseapp.com",
@@ -34,7 +35,6 @@ const data = (store) => {
         var errorCode = error.code;
         var errorMessage = error.message;
       }).then(() => {
-        router.push('/');
         var database = firebase.database();
         var couchRef = database.ref('live-matches');
 
@@ -50,6 +50,10 @@ const data = (store) => {
 
         couchRef.on('child_added', dispatchAdd);
         couchRef.on('child_changed', dispatchUpdate);
+
+        store.dispatch(ready());
+        console.log('pushing to ', path);
+        router.push(path);
       });
     }
   };
