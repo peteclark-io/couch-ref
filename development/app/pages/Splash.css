@@ -1,0 +1,25 @@
+@import "../css/branding.css";
+
+.splash {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--brand-primary)
+}
+
+.brand {
+   font-family: var(--font-primary);
+   color: white;
+   font-size: 6em;
+   text-align: center;
+   margin-top: 40vh;
+}
+
+.loading {
+   font-family: var(--font-secondary-bold);
+   color: white;
+   text-align: center;
+   margin-top: 20px;
+}

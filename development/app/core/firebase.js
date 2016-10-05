@@ -20,7 +20,7 @@ function createMatch(value){
 
 const data = (store) => {
   return {
-    init: function(){
+    init: function(router){
       var config = {
         apiKey: "AIzaSyAoRaeRoKYx6Q_tuOVeK753OWmtuJEyQX8",
         authDomain: "couchref-9962e.firebaseapp.com",
@@ -34,6 +34,7 @@ const data = (store) => {
         var errorCode = error.code;
         var errorMessage = error.message;
       }).then(() => {
+        router.push('/');
         var database = firebase.database();
         var couchRef = database.ref('live-matches');
 
