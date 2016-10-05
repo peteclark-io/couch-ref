@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 
+import Errors from './pages/Errors';
 import Splash from './pages/Splash';
 import CouchRef from './pages/CouchRef';
 import MatchPage from './pages/MatchPage';
@@ -30,6 +31,7 @@ ReactDOM.render(
         </Route>
       </Route>
       <Route path="/splash" component={Splash} />
+      <Route path="/error" component={Errors} />
     </Router>
   </Provider>,
   container

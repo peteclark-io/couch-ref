@@ -1,0 +1,46 @@
+@import "../../../css/branding.css";
+
+.animate {
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button {
+	position: relative;
+	margin: 0px 10px 10px 0px;
+	padding: 0.4em 1.6em;
+	border-radius: 0.4em;
+	font-family: var(--font-secondary);
+	font-size: 1em;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.red {
+	background-color: var(--brand-danger);
+	border-bottom: 5px solid #BD3E31;
+}
+
+.green {
+	background-color: var(--brand-primary);
+	border-bottom: 5px solid #329B28;
+}
+
+.green:hover {
+	color: whitesmoke;
+}
+
+.red:hover {
+	color: whitesmoke;
+}
+
+.action-button:hover {
+	text-decoration: none;
+}
+
+.action-button:active {
+	transform: translate(0px, -0.4em);
+  -webkit-transform: translate(0px, -0.4em);
+	border-bottom: 1px solid;
+}

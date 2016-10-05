@@ -34,6 +34,7 @@ const data = (store) => {
       return firebase.auth().signInAnonymously().catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
+        router.push('/error');
       }).then(() => {
         var database = firebase.database();
         var couchRef = database.ref('live-matches');
@@ -52,7 +53,6 @@ const data = (store) => {
         couchRef.on('child_changed', dispatchUpdate);
 
         store.dispatch(ready());
-        console.log('pushing to ', path);
         router.push(path);
       });
     }

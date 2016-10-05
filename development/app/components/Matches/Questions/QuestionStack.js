@@ -1,7 +1,11 @@
 'use strict'
 
 import React from 'react';
+import classNames from 'classnames';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
+
 import styles from './styles.css';
+import Question from './Question';
 
 const QuestionStack = React.createClass({
 
@@ -11,8 +15,10 @@ const QuestionStack = React.createClass({
 
    render: function() {
       return (
-         <div>
-            
+         <div className={bootstrap.row}>
+            <div className={bootstrap['col-xs-12']}>
+                <Question time="92min" question="Should Koscielny's Goal Stand?" number={1} />
+            </div>
          </div>
       );
    }

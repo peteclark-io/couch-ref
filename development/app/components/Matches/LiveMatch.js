@@ -8,7 +8,7 @@ var matches = [];
 
 const getLiveMatch = (state = {matches: []}, id) => {
    var filtered = _.filter(state.matches, {id: id});
-   return filtered.length === 0 ? {} : filtered[0];
+   return filtered.length === 0 ? undefined : filtered[0];
 };
 
 const mapStateToProps = (state, ownProps) => {

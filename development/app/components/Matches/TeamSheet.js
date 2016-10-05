@@ -27,7 +27,7 @@ const TeamSheet = React.createClass({
   },
 
   getInitialState: function(){
-      return {show: true};
+      return {show: false};
   },
 
   showTeamSheets: function(){

@@ -1,9 +1,11 @@
 'use strict'
 
 import React from 'react';
+import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './styles.css';
 import TeamSheet from './TeamSheet';
+import QuestionStack from './Questions/QuestionStack';
 
 const Match = React.createClass({
 
@@ -33,13 +35,22 @@ const Match = React.createClass({
    },
 
    render: function() {
+      if (!this.props.match){
+        return (
+          <div className={styles.progress}>
+            <ThreeBounce />
+          </div>
+        );
+      }
+
       return (
          <div>
-           <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
-           <TeamSheet
-              referee={this.props.match.referee}
-              homeLineup={this.props.match.homeLineup}
-              awayLineup={this.props.match.awayLineup} />
+            <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
+            <TeamSheet
+               referee={this.props.match.referee}
+               homeLineup={this.props.match.homeLineup}
+               awayLineup={this.props.match.awayLineup} />
+            <QuestionStack />
          </div>
       );
    }
