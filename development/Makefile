@@ -1,10 +1,20 @@
-default: prod
+default: dev
 
-dev:
-	webpack --watch --progress --colors
+dev: pre-steps dependencies webpack serve
+
+pre-steps: /usr/local/bin/webpack
+/usr/local/bin/webpack:
+	npm install -g webpack
+
+dependencies: ./node_modules
+./node_modules: ./package.json
+	npm install
+
+webpack:
+	webpack --watch --progress --colors &
 
 serve:
-	cd dist && serve
+	node server.js
 
 prod:
 	webpack -p --config webpack.config.prod.js --progress --colors
