@@ -17,10 +17,15 @@
 	-webkit-transition: all 0.1s;
 }
 
+.spacer {
+	margin-top: 15px;
+}
+
 .action-button {
 	margin: 0px 0.4em 0.4em 0px;
 	padding: 0.4em 1.6em; /**/
 	border-radius: 0.4em;
+
 	font-family: var(--font-secondary);
 	font-size: 1em;
 	color: white;

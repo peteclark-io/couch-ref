@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React from 'react';
 import classNames from 'classnames';
@@ -24,6 +24,9 @@ const Question = React.createClass({
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-10'])}>
                   <h2>{this.props.question}</h2>
+                  <div className={styles.spacer}></div>
+                  <a className={classNames(styles['action-button'], styles.green, styles.animate)}>Yes</a>
+                  <a className={classNames(styles['action-button'], styles.red, styles.animate)}>No</a>
                </div>
             </div>
          </div>

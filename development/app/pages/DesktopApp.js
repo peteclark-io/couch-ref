@@ -15,10 +15,10 @@ const DesktopApp = React.createClass({
          <CouchRefHeader />
          <div className={bootstrap.container}>
             <div className={bootstrap.row}>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-6'], bootstrap['col-lg-4'])}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-6'], bootstrap['col-lg-4'])}>
                   <MatchList />
                </div>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-6'], bootstrap['col-lg-8'])}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-6'], bootstrap['col-lg-8'])}>
                   {this.props.children}
                </div>
             </div>
