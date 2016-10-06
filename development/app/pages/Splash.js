@@ -1,11 +1,34 @@
 'use strict';
 
 import React from 'react';
-import styles from './Splash.css';
-
+import { connect } from 'react-redux';
 import {ThreeBounce} from 'better-react-spinkit';
 
+import styles from './Splash.css';
+
 const Splash = React.createClass({
+
+   propTypes: {
+      ready: React.PropTypes.bool
+   },
+
+   contextTypes: {
+      router: React.PropTypes.object
+   },
+
+   componentWillMount: function(){
+      this.checkIfReady();
+   },
+
+   componentWillUpdate: function(){
+      this.checkIfReady();
+   },
+
+   checkIfReady: function(){
+      if (this.props.ready){
+         this.context.router.push('/');
+      }
+   },
 
    render: function() {
      return (
@@ -19,4 +42,18 @@ const Splash = React.createClass({
   }
 });
 
-export default Splash;
+const isReady = (state = {ready: false}) => {
+   return state.ready;
+};
+
+const mapStateToProps = (state) => {
+   return {
+     ready: isReady(state)
+   };
+};
+
+const LiveSplash = connect(
+  mapStateToProps
+)(Splash);
+
+export default LiveSplash;
