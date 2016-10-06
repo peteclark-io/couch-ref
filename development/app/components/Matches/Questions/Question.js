@@ -20,10 +20,10 @@ const Question = React.createClass({
          <div className={styles.question}>
             <div className={bootstrap.row}>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-2'])}>
-                  <h2><small>{this.props.time}</small></h2>
+                  <h3><small>{this.props.time}</small></h3>
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-10'])}>
-                  <h2>{this.props.question}</h2>
+                  <h3>{this.props.question}</h3>
                   <div className={styles.spacer}></div>
                   <a className={classNames(styles['action-button'], styles.green, styles.animate)}>Yes</a>
                   <a className={classNames(styles['action-button'], styles.red, styles.animate)}>No</a>

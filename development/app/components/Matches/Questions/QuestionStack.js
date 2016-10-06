@@ -21,6 +21,9 @@ const QuestionStack = React.createClass({
                <div className={bootstrap['col-xs-12']}>
                   <Question time="92min" question="Should Koscielny's Goal Stand?" number={1} />
                </div>
+               <div className={bootstrap['col-xs-12']}>
+                  <Question time="57min" question="Should the referee have booked Mustafi?" number={2} />
+               </div>
             </div>
          </div>
       );
