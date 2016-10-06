@@ -44,16 +44,19 @@
 	border-bottom: 0.2em solid #329B28;
 }
 
-.green:hover {
-	color: black;
-}
-
-.red:hover {
-	color: black;
-}
-
 .action-button:hover {
 	text-decoration: none;
+	color: white;
+}
+
+@media (min-width: 768px) {
+	.green:hover {
+		color: black;
+	}
+
+	.red:hover {
+		color: black;
+	}
 }
 
 .action-button:active {
