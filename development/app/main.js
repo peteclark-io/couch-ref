@@ -29,7 +29,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={CouchRef}>
-         <IndexRoute component={MatchList} />
+         {/**<IndexRoute component={MatchList} />*/}
          <Route path="/match/:matchId" component={MatchPage} />
       </Route>
 
