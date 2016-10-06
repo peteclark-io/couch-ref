@@ -44,3 +44,8 @@
     whitesmoke 20px
   );
 }
+
+.loading {
+  font-size: 7em;
+  text-align: center;
+}

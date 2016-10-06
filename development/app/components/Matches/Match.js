@@ -37,7 +37,7 @@ const Match = React.createClass({
    render: function() {
       if (!this.props.match){
         return (
-          <div className={styles.progress}>
+          <div className={styles.loading}>
             <ThreeBounce />
           </div>
         );

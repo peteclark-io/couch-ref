@@ -15,9 +15,12 @@ const QuestionStack = React.createClass({
 
    render: function() {
       return (
-         <div className={bootstrap.row}>
-            <div className={bootstrap['col-xs-12']}>
-                <Question time="92min" question="Should Koscielny's Goal Stand?" number={1} />
+         <div>
+            <h1 className={styles.question}>Live Questions</h1>
+            <div className={bootstrap.row}>
+               <div className={bootstrap['col-xs-12']}>
+                  <Question time="92min" question="Should Koscielny's Goal Stand?" number={1} />
+               </div>
             </div>
          </div>
       );

@@ -17,20 +17,27 @@ const Question = React.createClass({
 
    render: function() {
       return (
-         <div>
-            <h3>{this.props.time}</h3>
-            <h1>{this.props.question}</h1>
+         <div className={styles.question}>
             <div className={bootstrap.row}>
-                <div className={bootstrap['col-xs-6']}>
-                    <a className={classNames(styles['action-button'], styles.green, styles.animate, styles.shadow)}>Yes</a>
-                </div>
-                <div className={bootstrap['col-xs-6']}>
-                    <a className={classNames(styles['action-button'], styles.red, styles.animate, styles.shadow)}>No</a>
-                </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-2'])}>
+                  <h2><small>{this.props.time}</small></h2>
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-10'])}>
+                  <h2>{this.props.question}</h2>
+               </div>
             </div>
          </div>
       );
    }
 });
+
+/*
+<div className={classNames(bootstrap.row, styles['question-buttons'])}>
+   <div className={bootstrap['col-xs-6']}>
+        <a className={classNames(styles['action-button'], styles.green, styles.animate)}>Yes</a>
+        <a className={classNames(styles['action-button'], styles.red, styles.animate)}>No</a>
+   </div>
+</div>
+*/
 
 export default Question;

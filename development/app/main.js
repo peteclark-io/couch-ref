@@ -4,12 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, IndexRoute, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import Errors from './pages/Errors';
 import Splash from './pages/Splash';
 import CouchRef from './pages/CouchRef';
+
+import MatchList from './pages/MatchList';
 import MatchPage from './pages/MatchPage';
 
 import store from './core/store';
@@ -27,9 +29,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={CouchRef}>
-        <Route path="/match/:matchId" component={MatchPage}>
-        </Route>
+         <IndexRoute component={MatchList} />
+         <Route path="/match/:matchId" component={MatchPage} />
       </Route>
+
       <Route path="/splash" component={Splash} />
       <Route path="/error" component={Errors} />
     </Router>
