@@ -49,7 +49,9 @@ const Match = React.createClass({
             <TeamSheet
                referee={this.props.match.referee}
                homeLineup={this.props.match.homeLineup}
-               awayLineup={this.props.match.awayLineup} />
+               homeSubs={this.props.match.homeSubs}
+               awayLineup={this.props.match.awayLineup}
+               awaySubs={this.props.match.awaySubs} />
             <QuestionStack />
          </div>
       );

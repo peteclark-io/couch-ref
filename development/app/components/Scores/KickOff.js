@@ -13,7 +13,7 @@ const KickOff = React.createClass({
   render: function() {
     var kickOffLocal = moment(this.props.kickOff);
     return (
-        <span className={styles['kick-off']} ref={node => (this.root = node)}>{kickOffLocal.format("ddd Do HH:mm")}</span>
+        <span className={styles['kick-off']} ref={node => (this.root = node)}>{kickOffLocal.format("ddd Do MMM HH:mm")}</span>
     );
   }
 });

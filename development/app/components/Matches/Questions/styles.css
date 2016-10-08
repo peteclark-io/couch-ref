@@ -44,6 +44,11 @@
 	border-bottom: 0.2em solid #329B28;
 }
 
+.blue {
+	background-color: var(--brand-tertiary);
+	border-bottom: 0.2em solid #60C6D6;
+}
+
 .action-button:hover {
 	text-decoration: none;
 	color: white;

@@ -5,6 +5,7 @@ import {updateMatch, addMatch} from '../ducks/matches';
 import {ready} from '../ducks/ready';
 
 function createMatch(value){
+  console.log(value);
   return {
     id: value.id,
     kickOff: value.kick_off,
@@ -15,7 +16,10 @@ function createMatch(value){
     fullTime: value.full_time,
     referee: value.referee,
     homeLineup: value.home_lineup,
-    awayLineup: value.away_lineup
+    homeSubs: value.home_subs,
+    awayLineup: value.away_lineup,
+    awaySubs: value.away_subs,
+    questions: value.questions
   };
 }
 
@@ -36,19 +40,21 @@ const data = (store) => {
         var errorMessage = error.message;
         router.push('/error');
       }).then(() => {
+        console.log('Connected to Firebase.');
         var database = firebase.database();
         var couchRef = database.ref('live-matches');
 
         couchRef.off();
         var dispatchAdd = function(data){
+          console.log('here');
           store.dispatch(addMatch(createMatch(data.val())));
         };
 
         var dispatchUpdate = function(data){
-          var value = data.val();
+          console.log('here');
           store.dispatch(updateMatch(createMatch(data.val())));
         };
-
+        
         couchRef.on('child_added', dispatchAdd);
         couchRef.on('child_changed', dispatchUpdate);
 

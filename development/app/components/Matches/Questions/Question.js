@@ -9,23 +9,25 @@ import styles from './styles.css';
 const Question = React.createClass({
 
    propTypes: {
+      id: React.PropTypes.string,
       question: React.PropTypes.string,
+      asked: React.PropTypes.string,
       time: React.PropTypes.string,
-      type: React.PropTypes.string,
-      number: React.PropTypes.number
+      description: React.PropTypes.string,
+      decision: React.PropTypes.string
    },
 
    render: function() {
       return (
          <div className={styles.question}>
             <div className={bootstrap.row}>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-2'])}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
                   <h3><small>{this.props.time}</small></h3>
                </div>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-10'])}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
                   <h3>{this.props.question}</h3>
                   <div className={styles.spacer}></div>
-                  <a className={classNames(styles['action-button'], styles.green, styles.animate)}>Yes</a>
+                  <a className={classNames(styles['action-button'], styles.blue, styles.animate)}>Yes</a>
                   <a className={classNames(styles['action-button'], styles.red, styles.animate)}>No</a>
                </div>
             </div>

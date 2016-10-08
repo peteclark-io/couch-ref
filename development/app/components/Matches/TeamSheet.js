@@ -17,7 +17,21 @@ const TeamSheet = React.createClass({
         'fullName': React.PropTypes.string,
         'position': React.PropTypes.string
       })),
+    'homeSubs': React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        'number': React.PropTypes.number,
+        'moniker': React.PropTypes.string,
+        'fullName': React.PropTypes.string,
+        'position': React.PropTypes.string
+      })),
     'awayLineup': React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        'number': React.PropTypes.number,
+        'moniker': React.PropTypes.string,
+        'fullName': React.PropTypes.string,
+        'position': React.PropTypes.string
+      })),
+    'awaySubs': React.PropTypes.arrayOf(
       React.PropTypes.shape({
         'number': React.PropTypes.number,
         'moniker': React.PropTypes.string,
@@ -71,6 +85,25 @@ const TeamSheet = React.createClass({
                                 </div>;
                        })}
                    </div>
+                 </div>
+                 <h3>Subs</h3>
+                 <div className={bootstrap['col-xs-6']}>
+                     {this.props.homeSubs.map(player => {
+                       return <div className={bootstrap.row} key={player.number}>
+                                 <div className={bootstrap['col-xs-12']}>
+                                   <p className={styles.player}><span>{player.number}</span> {player.moniker}</p>
+                                 </div>
+                              </div>;
+                     })}
+                 </div>
+                 <div className={bootstrap['col-xs-6']}>
+                     {this.props.awaySubs.map(player => {
+                       return <div className={bootstrap.row} key={player.number}>
+                                 <div className={bootstrap['col-xs-12']}>
+                                   <p className={styles.player}><span>{player.number}</span> {player.moniker}</p>
+                                 </div>
+                              </div>;
+                     })}
                  </div>
                  <h4 className={styles.referee}>Referee: {this.props.referee}</h4>
                </div> : null
