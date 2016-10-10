@@ -91,24 +91,25 @@
           ],
           "questions":[
             {
-              "id": "question1",
               "gid": "group1",
               "time": "92min",
-              "asked": "2016-09-10T13:01:00.000Z",
-              "question": "Was it a handball?",
-              "description": "Koscielny appeared to touch the ball with his hand, but was it handball?",
-              "decision": "No",
-              "group": "Kosicelny's Last Minute Winner"
-            },
-            {
-              "id": "question2",
-              "gid": "group1",
-              "time": "92min",
-              "asked": "2016-09-10T13:01:00.000Z",
-              "question": "Was he offside?",
-              "description": "Was Koscielny ahead of the play when he deflected the ball into the net?",
-              "decision": "No",
-              "group": "Kosicelny's Last Minute Winner"
+              "group": "Kosicelny's Last Minute Winner",
+              "questions": [
+                 {
+                    "id": "question1",
+                    "asked": "2016-09-10T13:01:00.000Z",
+                    "question": "Was it a handball?",
+                    "description": "Koscielny appeared to touch the ball with his hand, but was it handball?",
+                    "decision": "No"
+                 },
+                 {
+                   "id": "question2",
+                   "asked": "2016-09-10T13:01:00.000Z",
+                   "question": "Was he offside?",
+                   "description": "Koscielny appeared to be ahead of play when he deflected the ball into the net.",
+                   "decision": "No"
+                 }
+              ]
             },
             {
               "id": "question3",

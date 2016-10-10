@@ -5,7 +5,7 @@ import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './styles.css';
 import TeamSheet from './TeamSheet';
-import QuestionStack from './Questions/QuestionStack';
+import QuestionList from './Questions/QuestionList';
 
 const Match = React.createClass({
 
@@ -63,7 +63,7 @@ const Match = React.createClass({
                homeSubs={this.props.match.homeSubs}
                awayLineup={this.props.match.awayLineup}
                awaySubs={this.props.match.awaySubs} />
-            <QuestionStack questions={this.props.match.questions} />
+            <QuestionList questions={this.props.match.questions} />
          </div>
       );
    }

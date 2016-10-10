@@ -8,7 +8,7 @@ import styles from './styles.css';
 import Question from './Question';
 import QuestionGroup from './QuestionGroup';
 
-const QuestionStack = React.createClass({
+const QuestionList = React.createClass({
 
    propTypes: {
       questions: React.PropTypes.arrayOf(
@@ -31,11 +31,12 @@ const QuestionStack = React.createClass({
             <div className={bootstrap.row}>
                {this.props.questions.map(question => {
                  if (question.gid){
-                   return <div className={bootstrap['col-xs-12']} key={question.id}>
+                   return <div className={bootstrap['col-xs-12']} key={question.gid}>
                              <QuestionGroup
                                  gid={question.gid}
                                  time={question.time}
                                  group={question.group}
+                                 questions={question.questions}
                                />
                           </div>;
                  }
@@ -57,4 +58,4 @@ const QuestionStack = React.createClass({
    }
 });
 
-export default QuestionStack;
+export default QuestionList;

@@ -26,7 +26,7 @@ const Question = React.createClass({
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
                   <h3>{this.props.question}</h3>
-                  <div className={styles.spacer}></div>
+                  {/* <div className={styles.spacer}></div> */}
                   <a className={classNames(styles['action-button'], styles.blue, styles.animate)}>Yes</a>
                   <a className={classNames(styles['action-button'], styles.red, styles.animate)}>No</a>
                </div>

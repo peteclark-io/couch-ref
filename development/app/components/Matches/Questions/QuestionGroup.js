@@ -4,6 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
+import Question from './Question';
 import styles from './styles.css';
 
 const QuestionGroup = React.createClass({
@@ -33,6 +34,20 @@ const QuestionGroup = React.createClass({
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
                   <h3>{this.props.group}</h3>
                </div>
+            </div>
+            <div className={bootstrap.row}>
+               {this.props.questions.map(question => {
+                 return <div className={bootstrap['col-xs-12']} key={question.id}>
+                           <Question
+                               id={question.id}
+                               time={question.time}
+                               asked={question.asked}
+                               question={question.question}
+                               description={question.description}
+                               decision={question.decision}
+                             />
+                        </div>;
+               })}
             </div>
          </div>
       );
