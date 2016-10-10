@@ -9,6 +9,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import Errors from './pages/banners/Errors';
 import Splash from './pages/banners/Splash';
+import Login from './pages/banners/Login';
 
 import MatchList from './pages/sections/MatchList';
 import MatchPage from './pages/sections/MatchPage';
@@ -38,6 +39,7 @@ ReactDOM.render(
 
       <Route path="/splash" component={Splash} />
       <Route path="/error" component={Errors} />
+      <Route path="/login" component={Login} />
     </Router>
   </Provider>,
   container

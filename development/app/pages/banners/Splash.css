@@ -22,3 +22,8 @@
    text-align: center;
    margin-top: 20px;
 }
+
+.google {
+  background-image: url('/image/google.png');
+  width: 200px;
+}

@@ -34,14 +34,16 @@ const data = (store) => {
          messagingSenderId: "416088688451"
       };
 
-      firebase.initializeApp(config);
+      var provider = new firebase.auth.GoogleAuthProvider();
 
-      return firebase.auth().signInAnonymously().catch(function(error) {
+      firebase.initializeApp(config);
+      
+      firebase.auth().getRedirectResult().catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
         router.push('/error');
-      }).then(() => {
-        console.log('Connected to Firebase.');
+      }).then((user) => {
+        console.log('Connected to Firebase.', user);
         var database = firebase.database();
         var couchRef = database.ref('/v0/live-matches');
 
