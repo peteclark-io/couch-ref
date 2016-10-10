@@ -1,11 +1,9 @@
-'use strict'
+'use strict';
 
 import React from 'react';
 import styles from './MatchList.css';
 
-import LiveMatch from '../components/Matches/LiveMatch';
-
-const MatchPage = React.createClass({
+const QuestionResults = React.createClass({
 
   render: function() {
     return (
@@ -14,4 +12,4 @@ const MatchPage = React.createClass({
   }
 });
 
-export default MatchPage;
+export default QuestionResults;

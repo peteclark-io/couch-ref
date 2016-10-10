@@ -15,6 +15,7 @@ webpack:
 
 serve:
 	node server.js
+	open http://localhost:9000/
 
 prod:
 	webpack -p --config webpack.config.prod.js --progress --colors

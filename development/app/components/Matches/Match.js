@@ -5,7 +5,7 @@ import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './styles.css';
 import TeamSheet from './TeamSheet';
-import QuestionList from './Questions/QuestionList';
+import QuestionList from '../Questions/QuestionList';
 
 const Match = React.createClass({
 
@@ -57,13 +57,14 @@ const Match = React.createClass({
       return (
          <div>
             <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
-            <TeamSheet
-               referee={this.props.match.referee}
-               homeLineup={this.props.match.homeLineup}
-               homeSubs={this.props.match.homeSubs}
-               awayLineup={this.props.match.awayLineup}
-               awaySubs={this.props.match.awaySubs} />
             <QuestionList questions={this.props.match.questions} />
+            <div className={styles.spacer}></div>
+            <TeamSheet
+                referee={this.props.match.referee}
+                homeLineup={this.props.match.homeLineup}
+                homeSubs={this.props.match.homeSubs}
+                awayLineup={this.props.match.awayLineup}
+                awaySubs={this.props.match.awaySubs} />
          </div>
       );
    }

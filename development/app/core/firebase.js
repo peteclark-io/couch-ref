@@ -19,7 +19,7 @@ function createMatch(value){
     homeSubs: value.home_subs,
     awayLineup: value.away_lineup,
     awaySubs: value.away_subs,
-    questions: value.questions
+    questions: value.questions ? value.questions : []
   };
 }
 

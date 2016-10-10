@@ -1,11 +1,15 @@
-@import "../../../css/branding.css";
+@import "../../css/branding.css";
 
 .question {
 	font-family: var(--font-questions);
 }
 
 .question h2 {
-	margin: 5px 0px;
+	font-size: 1.6em;
+}
+
+.question h3 {
+	font-size: 1.4em;
 }
 
 .question-buttons {

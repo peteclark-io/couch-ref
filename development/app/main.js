@@ -7,12 +7,14 @@ import { Provider } from 'react-redux';
 import { Router, IndexRoute, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 
-import Errors from './pages/Errors';
-import Splash from './pages/Splash';
-import CouchRef from './pages/CouchRef';
+import Errors from './pages/banners/Errors';
+import Splash from './pages/banners/Splash';
 
-import MatchList from './pages/MatchList';
-import MatchPage from './pages/MatchPage';
+import MatchList from './pages/sections/MatchList';
+import MatchPage from './pages/sections/MatchPage';
+import StatsPage from './pages/sections/StatsPage';
+
+import CouchRef from './pages/CouchRef';
 
 import store from './core/store';
 import firebase from './core/firebase';
@@ -31,6 +33,7 @@ ReactDOM.render(
       <Route path="/" component={CouchRef}>
          {/**<IndexRoute component={MatchList} />*/}
          <Route path="/match/:matchId" component={MatchPage} />
+         <Route path="/question/:questionId" component={StatsPage} />
       </Route>
 
       <Route path="/splash" component={Splash} />

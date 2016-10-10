@@ -86,24 +86,26 @@ const TeamSheet = React.createClass({
                        })}
                    </div>
                  </div>
-                 <h3>Subs</h3>
-                 <div className={bootstrap['col-xs-6']}>
-                     {this.props.homeSubs.map(player => {
-                       return <div className={bootstrap.row} key={player.number}>
-                                 <div className={bootstrap['col-xs-12']}>
-                                   <p className={styles.player}><span>{player.number}</span> {player.moniker}</p>
-                                 </div>
-                              </div>;
-                     })}
-                 </div>
-                 <div className={bootstrap['col-xs-6']}>
-                     {this.props.awaySubs.map(player => {
-                       return <div className={bootstrap.row} key={player.number}>
-                                 <div className={bootstrap['col-xs-12']}>
-                                   <p className={styles.player}><span>{player.number}</span> {player.moniker}</p>
-                                 </div>
-                              </div>;
-                     })}
+                 <h4 className={styles['team-sheet-header']}>Subs</h4>
+                 <div className={bootstrap.row}>
+                    <div className={bootstrap['col-xs-6']}>
+                       {this.props.homeSubs.map(player => {
+                         return <div className={bootstrap.row} key={player.number}>
+                                   <div className={bootstrap['col-xs-12']}>
+                                     <p className={styles.player}><span>{player.number}</span> {player.moniker}</p>
+                                   </div>
+                                </div>;
+                       })}
+                    </div>
+                    <div className={bootstrap['col-xs-6']}>
+                       {this.props.awaySubs.map(player => {
+                         return <div className={bootstrap.row} key={player.number}>
+                                   <div className={bootstrap['col-xs-12']}>
+                                     <p className={styles.player}><span>{player.number}</span> {player.moniker}</p>
+                                   </div>
+                                </div>;
+                       })}
+                    </div>
                  </div>
                  <h4 className={styles.referee}>Referee: {this.props.referee}</h4>
                </div> : null

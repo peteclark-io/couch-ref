@@ -23,7 +23,7 @@
             {"number": 22, "moniker": "Mkhitaryan", "full_name": "Henrikh Mkhitaryan", "position": "LW"},
             {"number": 9, "moniker": "Ibrahimovic", "full_name": "Zlatan Ibrahimovic", "position": "ST"}
           ],
-          "home_subs": [],
+          "home_subs": [{"number": 9, "moniker": "Ibrahimovic", "full_name": "Zlatan Ibrahimovic", "position": "ST"}],
           "away_lineup": [
             {"number": 1, "moniker": "Bravo", "full_name": "", "position": "GK"},
             {"number": 3, "moniker": "Sagna", "full_name": "", "position": "LB"},
@@ -37,7 +37,7 @@
             {"number": 72, "moniker": "Iheanacho", "full_name": "", "position": "LW"},
             {"number": 9, "moniker": "Nolito", "full_name": "", "position": "ST"}
           ],
-          "away_subs": [],
+          "away_subs": [{"number": 9, "moniker": "Nolito", "full_name": "", "position": "ST"}],
           "questions": []
         },
         "match2": {

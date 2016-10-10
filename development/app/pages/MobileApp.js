@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import CouchRefHeader from '../components/Common/CouchRefHeader';
-import MatchList from './MatchList';
+import MatchList from './sections/MatchList';
 
 const MobileApp = React.createClass({
 
