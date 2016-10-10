@@ -46,7 +46,7 @@
 
 .blue {
 	background-color: var(--brand-tertiary);
-	border-bottom: 0.2em solid #60C6D6;
+	border-bottom: 0.2em solid #51A8B5; /*60C6D6 */
 }
 
 .action-button:hover {
@@ -60,6 +60,10 @@
 	}
 
 	.red:hover {
+		color: black;
+	}
+
+	.blue:hover {
 		color: black;
 	}
 }

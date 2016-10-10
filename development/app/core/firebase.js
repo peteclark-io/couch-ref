@@ -27,10 +27,11 @@ const data = (store) => {
   return {
     init: function(router, path){
       var config = {
-        apiKey: "AIzaSyAoRaeRoKYx6Q_tuOVeK753OWmtuJEyQX8",
-        authDomain: "couchref-9962e.firebaseapp.com",
-        databaseURL: "https://couchref-9962e.firebaseio.com",
-        storageBucket: "couchref-9962e.appspot.com",
+         apiKey: "AIzaSyAoRaeRoKYx6Q_tuOVeK753OWmtuJEyQX8",
+         authDomain: "couchref-9962e.firebaseapp.com",
+         databaseURL: "https://couchref-9962e.firebaseio.com",
+         storageBucket: "couchref-9962e.appspot.com",
+         messagingSenderId: "416088688451"
       };
 
       firebase.initializeApp(config);
@@ -42,19 +43,23 @@ const data = (store) => {
       }).then(() => {
         console.log('Connected to Firebase.');
         var database = firebase.database();
-        var couchRef = database.ref('live-matches');
+        var couchRef = database.ref('/v0/live-matches');
 
         couchRef.off();
+        var dispatchAll = function(data){
+           console.log(data.val());
+           //store.dispatch(addMatch(createMatch(data.val())));
+        };
+
         var dispatchAdd = function(data){
-          console.log('here');
           store.dispatch(addMatch(createMatch(data.val())));
         };
 
         var dispatchUpdate = function(data){
-          console.log('here');
           store.dispatch(updateMatch(createMatch(data.val())));
         };
-        
+
+        //couchRef.on('value', dispatchAll);
         couchRef.on('child_added', dispatchAdd);
         couchRef.on('child_changed', dispatchUpdate);
 

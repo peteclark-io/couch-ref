@@ -30,7 +30,18 @@ const Match = React.createClass({
              'moniker': React.PropTypes.string,
              'fullName': React.PropTypes.string,
              'position': React.PropTypes.string
-           }))
+          })),
+          'questions': React.PropTypes.arrayOf(
+            React.PropTypes.shape({
+              id: React.PropTypes.string,
+              gid: React.PropTypes.string,
+              group: React.PropTypes.string,
+              asked: React.PropTypes.string,
+              question: React.PropTypes.string,
+              time: React.PropTypes.string,
+              description: React.PropTypes.string,
+              decision: React.PropTypes.string
+            }))
        })
    },
 
@@ -52,7 +63,7 @@ const Match = React.createClass({
                homeSubs={this.props.match.homeSubs}
                awayLineup={this.props.match.awayLineup}
                awaySubs={this.props.match.awaySubs} />
-            <QuestionStack />
+            <QuestionStack questions={this.props.match.questions} />
          </div>
       );
    }
