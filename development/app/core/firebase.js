@@ -3,6 +3,7 @@
 import firebase from 'firebase';
 import {updateMatch, addMatch} from '../ducks/matches';
 import {ready} from '../ducks/ready';
+import {authenticated} from '../ducks/authenticated';
 
 function createMatch(value){
   console.log(value);
@@ -37,13 +38,32 @@ const data = (store) => {
       var provider = new firebase.auth.GoogleAuthProvider();
 
       firebase.initializeApp(config);
-      
-      firebase.auth().getRedirectResult().catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        router.push('/error');
-      }).then((user) => {
-        console.log('Connected to Firebase.', user);
+
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          couchRef(user);
+        } else {
+          firebase.auth().getRedirectResult().catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            router.push('/error');
+          }).then((auth) => {
+            if (!auth.user){
+              console.log('User not authenticated!');
+              router.push('/login');
+              return;
+            }
+
+            couchRef(auth.user);
+          });
+        }
+      });
+
+      const couchRef = (user) => {
+        console.log('Connected to Couch Ref.', user);
+
+        store.dispatch(authenticated());
+
         var database = firebase.database();
         var couchRef = database.ref('/v0/live-matches');
 
@@ -67,7 +87,7 @@ const data = (store) => {
 
         store.dispatch(ready());
         router.push(path);
-      });
+      }
     }
   };
 }

@@ -1,0 +1,39 @@
+@import "../../css/branding.css";
+
+.splash {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--brand-primary)
+}
+
+.brand {
+   font-family: var(--font-primary);
+   color: var(--brand-secondary);
+   font-size: 6em;
+   text-align: center;
+   margin-top: 24vh;
+}
+
+.with {
+  margin-top: 50px;
+  font-family: var(--font-primary);
+  color: var(--brand-secondary);
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.auth-providers {
+  text-align: center;
+}
+
+.auth-providers img {
+  width: 50px;
+  cursor: pointer;
+}
+
+.auth-providers img:nth-child(even) {
+  margin-left: 10px;
+}

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import classNames from 'classnames';
+import _ from 'lodash';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import styles from './styles.css';
@@ -25,11 +26,13 @@ const QuestionList = React.createClass({
    },
 
    render: function() {
+      var questions = _.reverse(_.sortBy(this.props.questions, ['time']));
+
       return (
          <div>
             <h1 className={styles.question}>Live Questions</h1>
             <div className={bootstrap.row}>
-               {this.props.questions.map(question => {
+               {questions.map(question => {
                  if (question.gid){
                    return <div className={bootstrap['col-xs-12']} key={question.gid}>
                              <QuestionGroup

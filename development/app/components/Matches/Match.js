@@ -1,10 +1,10 @@
 'use strict'
 
 import React from 'react';
+import {Link} from 'react-router';
 import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './styles.css';
-import TeamSheet from './TeamSheet';
 import QuestionList from '../Questions/QuestionList';
 
 const Match = React.createClass({
@@ -16,21 +16,6 @@ const Match = React.createClass({
          'away': React.PropTypes.string,
          'goalsHome': React.PropTypes.number,
          'goalsAway': React.PropTypes.number,
-         'referee': React.PropTypes.string,
-         'homeLineup': React.PropTypes.arrayOf(
-           React.PropTypes.shape({
-             'number': React.PropTypes.number,
-             'moniker': React.PropTypes.string,
-             'fullName': React.PropTypes.string,
-             'position': React.PropTypes.string
-           })),
-         'awayLineup': React.PropTypes.arrayOf(
-           React.PropTypes.shape({
-             'number': React.PropTypes.number,
-             'moniker': React.PropTypes.string,
-             'fullName': React.PropTypes.string,
-             'position': React.PropTypes.string
-          })),
           'questions': React.PropTypes.arrayOf(
             React.PropTypes.shape({
               id: React.PropTypes.string,
@@ -57,14 +42,8 @@ const Match = React.createClass({
       return (
          <div>
             <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
+            <Link className={styles.link} to={`/teams/${this.props.match.id}`}><h3>Teams</h3></Link>
             <QuestionList questions={this.props.match.questions} />
-            <div className={styles.spacer}></div>
-            <TeamSheet
-                referee={this.props.match.referee}
-                homeLineup={this.props.match.homeLineup}
-                homeSubs={this.props.match.homeSubs}
-                awayLineup={this.props.match.awayLineup}
-                awaySubs={this.props.match.awaySubs} />
          </div>
       );
    }

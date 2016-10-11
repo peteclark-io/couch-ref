@@ -26,6 +26,7 @@ const Splash = React.createClass({
 
    checkIfReady: function(){
       if (this.props.ready){
+         console.log('hi');
          this.context.router.push('/');
       }
    },

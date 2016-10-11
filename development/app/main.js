@@ -13,6 +13,7 @@ import Login from './pages/banners/Login';
 
 import MatchList from './pages/sections/MatchList';
 import MatchPage from './pages/sections/MatchPage';
+import TeamSheetPage from './pages/sections/TeamSheetPage';
 import StatsPage from './pages/sections/StatsPage';
 
 import CouchRef from './pages/CouchRef';
@@ -32,9 +33,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={CouchRef}>
-         {/**<IndexRoute component={MatchList} />*/}
          <Route path="/match/:matchId" component={MatchPage} />
          <Route path="/question/:questionId" component={StatsPage} />
+         <Route path="/teams/:matchId" component={TeamSheetPage} />
       </Route>
 
       <Route path="/splash" component={Splash} />

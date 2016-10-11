@@ -1,7 +1,7 @@
 'use strict';
 
 import { connect } from 'react-redux';
-import Match from './Match';
+import TeamSheet from './TeamSheet';
 import _ from 'lodash';
 
 const getLiveMatch = (state = {matches: []}, id) => {
@@ -15,8 +15,8 @@ const mapStateToProps = (state, ownProps) => {
    };
 };
 
-const LiveMatch = connect(
+const LiveTeamSheet = connect(
   mapStateToProps
-)(Match);
+)(TeamSheet);
 
-export default LiveMatch;
+export default LiveTeamSheet;
