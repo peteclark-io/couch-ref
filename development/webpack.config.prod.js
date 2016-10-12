@@ -26,7 +26,7 @@ module.exports = {
                 query: {
                   sourceMap: false,
                   modules: true,
-                  localIdentName: '[hash:base64:4]',
+                  localIdentName: '[hash:base64:6]',
                   minimize: true,
                 }
             }, {
