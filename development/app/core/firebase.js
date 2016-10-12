@@ -68,10 +68,6 @@ const data = (store) => {
         var couchRef = database.ref('/v0/live-matches');
 
         couchRef.off();
-        var dispatchAll = function(data){
-           console.log(data.val());
-           //store.dispatch(addMatch(createMatch(data.val())));
-        };
 
         var dispatchAdd = function(data){
           store.dispatch(addMatch(createMatch(data.val())));
@@ -81,7 +77,6 @@ const data = (store) => {
           store.dispatch(updateMatch(createMatch(data.val())));
         };
 
-        //couchRef.on('value', dispatchAll);
         couchRef.on('child_added', dispatchAdd);
         couchRef.on('child_changed', dispatchUpdate);
 

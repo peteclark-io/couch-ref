@@ -8,6 +8,10 @@
 	color: var(--brand-danger)
 }
 
+.referee-decision {
+	color: var(--brand-tertiary)
+}
+
 .question h2 {
 	font-size: 1.6em;
 }

@@ -5,6 +5,7 @@
 match=$1
 question=$2
 timestamp=$3
+
 if [ -z $match ]; then
    firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
    echo "Enter Match ID (valid IDs above):"
