@@ -25,7 +25,9 @@ const Match = React.createClass({
               question: React.PropTypes.string,
               time: React.PropTypes.string,
               description: React.PropTypes.string,
-              decision: React.PropTypes.string
+              decision: React.PropTypes.string,
+              controversial: React.PropTypes.bool,
+              refereeDecision: React.PropTypes.bool
             }))
        })
    },

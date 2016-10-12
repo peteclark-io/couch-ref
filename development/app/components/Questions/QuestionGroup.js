@@ -20,7 +20,9 @@ const QuestionGroup = React.createClass({
           asked: React.PropTypes.string,
           time: React.PropTypes.string,
           description: React.PropTypes.string,
-          decision: React.PropTypes.string
+          decision: React.PropTypes.string,
+          controversial: React.PropTypes.bool,
+          refereeDecision: React.PropTypes.bool
         }))
    },
 
@@ -38,14 +40,7 @@ const QuestionGroup = React.createClass({
             <div className={bootstrap.row}>
                {this.props.questions.map(question => {
                  return <div className={bootstrap['col-xs-12']} key={question.id}>
-                           <Question
-                               id={question.id}
-                               time={question.time}
-                               asked={question.asked}
-                               question={question.question}
-                               description={question.description}
-                               decision={question.decision}
-                             />
+                           <Question question={question} />
                         </div>;
                })}
             </div>

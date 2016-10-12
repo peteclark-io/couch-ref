@@ -4,6 +4,10 @@
 	font-family: var(--font-questions);
 }
 
+.controversy {
+	color: var(--brand-danger)
+}
+
 .question h2 {
 	font-size: 1.6em;
 }

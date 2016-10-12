@@ -11,7 +11,7 @@ const MatchList = React.createClass({
   render: function() {
     return (
       <div>
-         <h2 className={styles.header}>Live Scores</h2>
+         <h2 className={styles.header}>Today&#39;s Fixtures</h2>
          <div className={styles.spacer}></div>
          <LiveScores />
       </div>
