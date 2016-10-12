@@ -17,7 +17,7 @@ if [ -z $question ]; then
 fi
 
 if [ -z $timestamp ]; then
-   echo "Enter the match time in the format XXmin:"
+   echo "Enter the match time in the format XXmins:"
    read timestamp
 fi
 
