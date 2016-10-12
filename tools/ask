@@ -1,0 +1,16 @@
+#!/bin/bash
+
+. ./.secret
+
+match=$1
+question=$2
+timestamp=$3
+
+asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
+uuid=$(uuidgen | tr 'A-Z' 'a-z')
+
+json=$(echo '[{"asked": "'${asked}'","decision": "","description": "","id": "'${uuid}'","question": "'${question}'","time": "'${timestamp}'"}]')
+
+echo $json
+
+firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions
