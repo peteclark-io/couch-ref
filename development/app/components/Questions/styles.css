@@ -5,11 +5,27 @@
 }
 
 .controversy {
-	color: var(--brand-danger)
+	color: var(--brand-danger);
+	text-transform: uppercase;
 }
 
 .referee-decision {
-	color: var(--brand-tertiary)
+	color: var(--brand-tertiary);
+	text-transform: uppercase;
+}
+
+.decision {
+	text-transform: uppercase;
+	color: var(--brand-danger);
+}
+
+.question-group {
+	font-size: 	1.8em;
+	color: var(--brand-primary);
+}
+
+.question h1 {
+	font-size: 2em;
 }
 
 .question h2 {
@@ -31,6 +47,14 @@
 
 .spacer {
 	margin-top: 15px;
+}
+
+.link {
+	color: black;
+}
+
+.link:hover {
+	text-decoration: none;
 }
 
 .action-button {

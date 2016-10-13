@@ -1,0 +1,65 @@
+#!/bin/bash
+
+. ./.secret
+
+match=$1
+timestamp=$2
+group=$3
+
+if [ -z $match ]; then
+   firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
+   echo "Enter Match ID (valid IDs above):"
+   read match
+fi
+
+if [ -z $timestamp ]; then
+   echo "Enter the match time in the format XXmin:"
+   read timestamp
+fi
+
+if [ -z $group ]; then
+   echo "Enter the group header:"
+   read group
+fi
+
+gid=$(uuidgen | tr 'A-Z' 'a-z')
+
+function question {
+   asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
+   uuid=$(uuidgen | tr 'A-Z' 'a-z')
+
+   echo "Enter the question:"
+   read question
+}
+
+function question_json {
+   echo '[{"asked": "'${asked}'","decision": "","description": "","id": "'${uuid}'","question": "'${question}'"}]'
+}
+
+question
+q_json=$(question_json)
+
+while :
+do
+   echo "Another question? [Y/n]"
+   read another
+
+   case $another in
+      [Yy] | "" )
+         question
+         tmp=$(question_json)
+         q_json=$(echo $q_json | jq ". |= .+ $tmp")
+         ;;
+      [Nn] )
+         break
+         ;;
+      *)
+         echo "Sorry what? Say Y or N pls."
+         ;;
+   esac
+done
+
+asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
+json=$(echo '[{"gid":"'${gid}'", "group":"'${group}'", "time": "'${timestamp}'", "asked":"'${asked}'", "questions": '$q_json'}]')
+
+firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions

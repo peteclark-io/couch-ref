@@ -13,6 +13,7 @@ const QuestionGroup = React.createClass({
       gid: React.PropTypes.string,
       group: React.PropTypes.string,
       time: React.PropTypes.string,
+      asked: React.PropTypes.string,
       questions: React.PropTypes.arrayOf(
         React.PropTypes.shape({
           id: React.PropTypes.string,
@@ -31,10 +32,10 @@ const QuestionGroup = React.createClass({
          <div className={styles.question}>
             <div className={bootstrap.row}>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
-                  <h2><small>{this.props.time}</small></h2>
+                  <h1 className={styles['question-group']}><small>{this.props.time}</small></h1>
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
-                  <h2>{this.props.group}</h2>
+                  <h1 className={styles['question-group']}>{this.props.group}</h1>
                </div>
             </div>
             <div className={bootstrap.row}>

@@ -28,7 +28,7 @@ const QuestionList = React.createClass({
    },
 
    render: function() {
-      var questions = _.reverse(_.sortBy(this.props.questions, ['time']));
+      var questions = _.reverse(_.sortBy(this.props.questions, ['asked']));
 
       return (
          <div>
@@ -40,6 +40,7 @@ const QuestionList = React.createClass({
                              <QuestionGroup
                                  gid={question.gid}
                                  time={question.time}
+                                 asked={question.asked}
                                  group={question.group}
                                  questions={question.questions}
                                />

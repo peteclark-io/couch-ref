@@ -5,6 +5,8 @@
 match=$1
 question=$2
 timestamp=$3
+controversy=$4
+decision=$5
 
 if [ -z $match ]; then
    firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
@@ -22,9 +24,48 @@ if [ -z $timestamp ]; then
    read timestamp
 fi
 
+if [ -z $decision ]; then
+   echo "Was it a referee decision? [Y/n]"
+   read decision
+
+   case $decision in
+      [Yy] | "" )
+         echo "What was the decision? 'Yes' or 'No'."
+         read decision
+         echo "Can you give a brief description of what happened? (leave blank if you cba)"
+         read description
+         ;;
+      [Nn] )
+         ;;
+      *)
+         echo "Assuming you meant yes..."
+         echo "What was the decision? 'Yes' or 'No'."
+         read decision
+         ;;
+   esac
+fi
+
+if [ -z $controversy ]; then
+   echo "Is this controversial? [y/N]"
+   read controversy
+
+   case $controversy in
+      [Yy] )
+         controversy="true"
+         ;;
+      [Nn] | "" )
+         controversy="false"
+         ;;
+      *)
+         echo "Assuming you meant no..."
+         controversy="false"
+         ;;
+   esac
+fi
+
 asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
 uuid=$(uuidgen | tr 'A-Z' 'a-z')
 
-json=$(echo '[{"asked": "'${asked}'","decision": "","description": "","id": "'${uuid}'","question": "'${question}'","time": "'${timestamp}'"}]')
+json=$(echo '[{"asked": "'${asked}'","decision": "'$decision'", "description": "'$description'", "controversial": '$controversy', "id": "'${uuid}'","question": "'${question}'","time": "'${timestamp}'"}]')
 
 firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions
