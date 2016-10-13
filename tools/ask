@@ -36,6 +36,7 @@ if [ -z $decision ]; then
          read description
          ;;
       [Nn] )
+         decision=""
          ;;
       *)
          echo "Assuming you meant yes..."
