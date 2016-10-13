@@ -28,7 +28,7 @@ const Question = React.createClass({
                this.props.question.controversial ?
                <div className={bootstrap.row}>
                   <div className={bootstrap['col-xs-12']}>
-                     <h2 className={styles.controversy}>Controversial!</h2>
+                     <h2 className={styles.controversy}>Controversy!</h2>
                   </div>
                </div>
                : null

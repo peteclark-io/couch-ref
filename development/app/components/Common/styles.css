@@ -6,7 +6,12 @@ body {
   background-color: rgba(55,171,46,1);
   padding: 4px;
   margin-top: 0px;
-  position: sticky;
+  width: 100%;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .brand-header h1 {
