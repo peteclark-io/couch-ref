@@ -1,16 +1,32 @@
 @import "../../css/branding.css";
 
-.question {
+.questions-list {
 	font-family: var(--font-questions);
+}
+
+.questions-list .header {
+	font-size: 2.6rem;
+}
+
+.questions-list h1, h2, h3, h4, h5, h6 {
+	margin-top: 0.6rem;
+	margin-bottom: 1rem;
+}
+
+.question {
+	padding-bottom: 8px;
+	border-bottom: 1px solid whitesmoke;
 }
 
 .controversy {
 	color: var(--brand-danger);
+	font-size: 1.6rem;
 	text-transform: uppercase;
 }
 
 .referee-decision {
 	color: var(--brand-tertiary);
+	font-size: 1.2rem;
 	text-transform: uppercase;
 }
 
@@ -19,34 +35,37 @@
 	color: var(--brand-danger);
 }
 
-.question-group {
-	font-size: 	1.8em;
+.question-group .time, .group-title {
+	font-size: 	1.8rem;
+}
+
+.question-group .group-title {
 	color: var(--brand-primary);
+	text-transform: uppercase;
+}
+
+.question {
+	margin-top: 24px;
 }
 
 .question h1 {
-	font-size: 2em;
+	font-size: 2.2rem;
 }
 
 .question h2 {
-	font-size: 1.6em;
+	font-size: 2rem;
 }
 
 .question h3 {
-	font-size: 1.4em;
+	font-size: 1.8rem;
 }
 
 .question-buttons {
 	margin-top: 10px;
 }
 
-.animate {
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-}
-
 .spacer {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .link {
@@ -57,61 +76,8 @@
 	text-decoration: none;
 }
 
-.action-button {
-	margin: 0px 0.4em 0.4em 0px;
-	padding: 0.4em 1.6em; /**/
-	border-radius: 0.4em;
-
-	font-family: var(--font-secondary);
-	font-size: 1em;
-	color: white;
-	float: left;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.red {
-	background-color: var(--brand-danger);
-	border-bottom: 0.2em solid #BD3E31;
-}
-
-.green {
-	background-color: var(--brand-primary);
-	border-bottom: 0.2em solid #329B28;
-}
-
-.blue {
-	background-color: var(--brand-tertiary);
-	border-bottom: 0.2em solid #51A8B5; /*60C6D6 */
-}
-
-.action-button:hover {
-	text-decoration: none;
-	color: white;
-}
-
 @media (max-width: 768px){
 	.question h1, h2, h3 {
 		margin: 6px 0px;
 	}
-}
-
-@media (min-width: 768px) {
-	.green:hover {
-		color: black;
-	}
-
-	.red:hover {
-		color: black;
-	}
-
-	.blue:hover {
-		color: black;
-	}
-}
-
-.action-button:active {
-	-webkit-transform: translate(0px, 0.2em);
-	transform: translate(0px, 0.2em);
-	border-bottom: 0.1em solid;
 }

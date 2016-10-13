@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import styles from './styles.css';
+import buttons from './buttons.css';
 
 const Question = React.createClass({
 
@@ -23,22 +24,12 @@ const Question = React.createClass({
 
    render: function() {
       return (
-         <div className={styles.question}>
+         <div>
             {
                this.props.question.controversial ?
                <div className={bootstrap.row}>
                   <div className={bootstrap['col-xs-12']}>
-                     <h2 className={styles.controversy}>Controversy!</h2>
-                  </div>
-               </div>
-               : null
-            }
-
-            {
-               this.props.question.decision && this.props.question.decision !== "" && !this.props.question.controversial ?
-               <div className={bootstrap.row}>
-                  <div className={bootstrap['col-xs-12']}>
-                     <h2 className={styles['referee-decision']}>Decision!</h2>
+                     <h2 className={styles.controversy}>Game Changer!</h2>
                   </div>
                </div>
                : null
@@ -46,7 +37,7 @@ const Question = React.createClass({
 
             <div className={bootstrap.row}>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
-                  <h3><small>{this.props.question.time}</small></h3>
+                  <h3 className={styles.time}><small>{this.props.question.time}</small></h3>
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
                   <Link className={styles.link} to={`/question/${this.props.question.id}`}><h3>{this.props.question.question}</h3></Link>
@@ -61,11 +52,9 @@ const Question = React.createClass({
                         <h4><small>{this.props.question.description}</small></h4>
                      : null
                   }
-                  {/*
                   <div className={styles.spacer}></div>
-                  <a className={classNames(styles['action-button'], styles.blue, styles.animate)}>Yes</a>
-                  <a className={classNames(styles['action-button'], styles.red, styles.animate)}>No</a>
-                  */}
+                  <a className={classNames(buttons['action-button'], buttons.blue, buttons.animate)}>Yes</a>
+                  <a className={classNames(buttons['action-button'], buttons.red, buttons.animate)}>No</a>
                </div>
             </div>
          </div>

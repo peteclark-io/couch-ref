@@ -2,22 +2,25 @@
 
 .teams {
   font-family: var(--font-secondary-bold);
-  font-size: 1.2em;
+  font-size: 1.6rem;
   text-transform: uppercase;
   color: black;
 }
 
 .goals {
   font-family: var(--font-secondary-bold);
-  font-size: 1.1em;
+  font-size: 1.4rem;
   color: black;
   float: right;
 }
 
 .link {
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: none;
 }
 
 .match-list {
@@ -32,7 +35,7 @@
 .kick-off {
   line-height: normal;
   font-family: var(--font-secondary);
-  font-size: 0.9em;
+  font-size: 1rem;
 }
 
 .full-time {
@@ -46,6 +49,6 @@
 }
 
 .loading {
-  font-size: 7em;
+  font-size: 14rem;
   text-align: center;
 }

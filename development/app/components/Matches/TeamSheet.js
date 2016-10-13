@@ -77,7 +77,7 @@ const TeamSheet = React.createClass({
                   })}
               </div>
             </div>
-            <h4 className={styles['team-sheet-header']}>Subs</h4>
+            <h4 className={styles['subs']}>Subs</h4>
             <div className={bootstrap.row}>
                <div className={bootstrap['col-xs-6']}>
                   {this.props.match.homeSubs.map(player => {
