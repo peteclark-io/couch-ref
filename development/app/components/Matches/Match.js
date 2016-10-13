@@ -3,6 +3,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {ThreeBounce} from 'better-react-spinkit';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import classNames from 'classnames';
 
 import styles from './styles.css';
 import QuestionList from '../Questions/QuestionList';
@@ -43,8 +45,14 @@ const Match = React.createClass({
 
       return (
          <div>
-            <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
-            <Link className={styles.link} to={`/teams/${this.props.match.id}`}><h3>Teams</h3></Link>
+            <div className={bootstrap.row}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'])}>
+                  <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-4'])}>
+                  <Link className={styles.link} to={`/teams/${this.props.match.id}`}><h2 className={styles['match-header']}><small>Teams</small></h2></Link>
+               </div>
+            </div>
             <QuestionList questions={this.props.match.questions} />
          </div>
       );

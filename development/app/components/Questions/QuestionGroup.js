@@ -30,12 +30,12 @@ const QuestionGroup = React.createClass({
    render: function() {
       return (
          <div className={styles.question}>
-            <div className={bootstrap.row}>
+            <div className={classNames(bootstrap.row, styles['question-group'])}>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
-                  <h1 className={styles['question-group']}><small>{this.props.time}</small></h1>
+                  <h1 className={styles.time}><small>{this.props.time}</small></h1>
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
-                  <h1 className={styles['question-group']}>{this.props.group}</h1>
+                  <h1 className={styles['group-title']}>{this.props.group}</h1>
                </div>
             </div>
             <div className={bootstrap.row}>

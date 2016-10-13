@@ -6,11 +6,13 @@
 
 .controversy {
 	color: var(--brand-danger);
+	font-size: 1.6rem;
 	text-transform: uppercase;
 }
 
 .referee-decision {
 	color: var(--brand-tertiary);
+	font-size: 1.2rem;
 	text-transform: uppercase;
 }
 
@@ -19,21 +21,25 @@
 	color: var(--brand-danger);
 }
 
-.question-group {
-	font-size: 	1.8em;
+.question-group .time, .group-title {
+	font-size: 	1.8rem;
+}
+
+.question-group .group-title {
 	color: var(--brand-primary);
+	text-transform: uppercase;
 }
 
 .question h1 {
-	font-size: 2em;
+	font-size: 2rem;
 }
 
 .question h2 {
-	font-size: 1.6em;
+	font-size: 1.6rem;
 }
 
 .question h3 {
-	font-size: 1.4em;
+	font-size: 1.4rem;
 }
 
 .question-buttons {
@@ -58,12 +64,12 @@
 }
 
 .action-button {
-	margin: 0px 0.4em 0.4em 0px;
-	padding: 0.4em 1.6em; /**/
-	border-radius: 0.4em;
+	margin: 0px 0.4rem 0.4rem 0px;
+	padding: 0.4rem 1.6rem; /**/
+	border-radius: 0.4rem;
 
 	font-family: var(--font-secondary);
-	font-size: 1em;
+	font-size: 1rem;
 	color: white;
 	float: left;
 	text-decoration: none;
@@ -72,17 +78,17 @@
 
 .red {
 	background-color: var(--brand-danger);
-	border-bottom: 0.2em solid #BD3E31;
+	border-bottom: 0.2rem solid #BD3E31;
 }
 
 .green {
 	background-color: var(--brand-primary);
-	border-bottom: 0.2em solid #329B28;
+	border-bottom: 0.2rem solid #329B28;
 }
 
 .blue {
 	background-color: var(--brand-tertiary);
-	border-bottom: 0.2em solid #51A8B5; /*60C6D6 */
+	border-bottom: 0.2rem solid #51A8B5; /*60C6D6 */
 }
 
 .action-button:hover {
@@ -111,7 +117,7 @@
 }
 
 .action-button:active {
-	-webkit-transform: translate(0px, 0.2em);
-	transform: translate(0px, 0.2em);
-	border-bottom: 0.1em solid;
+	-webkit-transform: translate(0px, 0.2rem);
+	transform: translate(0px, 0.2rem);
+	border-bottom: 0.1rem solid;
 }

@@ -2,14 +2,14 @@
 
 .teams {
   font-family: var(--font-secondary-bold);
-  font-size: 1.2em;
+  font-size: 1.2rem;
   text-transform: uppercase;
   color: black;
 }
 
 .goals {
   font-family: var(--font-secondary-bold);
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: black;
   float: right;
 }
@@ -32,7 +32,7 @@
 .kick-off {
   line-height: normal;
   font-family: var(--font-secondary);
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .full-time {
@@ -46,6 +46,6 @@
 }
 
 .loading {
-  font-size: 7em;
+  font-size: 7rem;
   text-align: center;
 }
