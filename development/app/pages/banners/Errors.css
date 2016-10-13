@@ -13,7 +13,7 @@
 .error {
    font-family: var(--font-primary);
    color: var(--brand-secondary);
-   font-size: 6rem;
+   font-size: 6em;
 
    margin-top: 30vh;
 }
@@ -25,5 +25,5 @@
 }
 
 .emoji {
-  font-size: 0.5rem;
+  font-size: 0.5em;
 }

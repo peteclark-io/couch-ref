@@ -31,8 +31,8 @@ const QuestionList = React.createClass({
       var questions = _.reverse(_.sortBy(this.props.questions, ['asked']));
 
       return (
-         <div>
-            <h1 className={styles.question}>Live Questions</h1>
+         <div className={styles['questions-list']}>
+            <h1 className={styles.header}>Live Questions</h1>
             <div className={bootstrap.row}>
                {questions.map(question => {
                  if (question.gid){
@@ -46,7 +46,7 @@ const QuestionList = React.createClass({
                                />
                           </div>;
                  }
-                 return <div className={bootstrap['col-xs-12']} key={question.id}>
+                 return <div className={classNames(bootstrap['col-xs-12'], styles.question)} key={question.id}>
                            <Question question={question} />
                         </div>;
                })}

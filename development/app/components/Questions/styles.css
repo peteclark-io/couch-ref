@@ -1,7 +1,21 @@
 @import "../../css/branding.css";
 
-.question {
+.questions-list {
 	font-family: var(--font-questions);
+}
+
+.questions-list .header {
+	font-size: 2.6rem;
+}
+
+.questions-list h1, h2, h3, h4, h5, h6 {
+	margin-top: 0.6rem;
+	margin-bottom: 1rem;
+}
+
+.question {
+	padding-bottom: 8px;
+	border-bottom: 1px solid whitesmoke;
 }
 
 .controversy {
@@ -30,29 +44,28 @@
 	text-transform: uppercase;
 }
 
+.question {
+	margin-top: 24px;
+}
+
 .question h1 {
-	font-size: 2rem;
+	font-size: 2.2rem;
 }
 
 .question h2 {
-	font-size: 1.6rem;
+	font-size: 2rem;
 }
 
 .question h3 {
-	font-size: 1.4rem;
+	font-size: 1.8rem;
 }
 
 .question-buttons {
 	margin-top: 10px;
 }
 
-.animate {
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-}
-
 .spacer {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .link {
@@ -63,61 +76,8 @@
 	text-decoration: none;
 }
 
-.action-button {
-	margin: 0px 0.4rem 0.4rem 0px;
-	padding: 0.4rem 1.6rem; /**/
-	border-radius: 0.4rem;
-
-	font-family: var(--font-secondary);
-	font-size: 1rem;
-	color: white;
-	float: left;
-	text-decoration: none;
-	cursor: pointer;
-}
-
-.red {
-	background-color: var(--brand-danger);
-	border-bottom: 0.2rem solid #BD3E31;
-}
-
-.green {
-	background-color: var(--brand-primary);
-	border-bottom: 0.2rem solid #329B28;
-}
-
-.blue {
-	background-color: var(--brand-tertiary);
-	border-bottom: 0.2rem solid #51A8B5; /*60C6D6 */
-}
-
-.action-button:hover {
-	text-decoration: none;
-	color: white;
-}
-
 @media (max-width: 768px){
 	.question h1, h2, h3 {
 		margin: 6px 0px;
 	}
-}
-
-@media (min-width: 768px) {
-	.green:hover {
-		color: black;
-	}
-
-	.red:hover {
-		color: black;
-	}
-
-	.blue:hover {
-		color: black;
-	}
-}
-
-.action-button:active {
-	-webkit-transform: translate(0px, 0.2rem);
-	transform: translate(0px, 0.2rem);
-	border-bottom: 0.1rem solid;
 }
