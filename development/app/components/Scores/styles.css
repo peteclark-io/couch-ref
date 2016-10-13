@@ -30,6 +30,8 @@
 
 .match-list li {
   margin-bottom: 18px;
+  padding: 5px;
+  border-radius: 1px;
 }
 
 .kick-off {

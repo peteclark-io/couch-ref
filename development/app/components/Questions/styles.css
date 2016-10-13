@@ -77,6 +77,10 @@
 }
 
 @media (max-width: 768px){
+	.question {
+		margin-top: 12px;
+	}
+
 	.question h1, h2, h3 {
 		margin: 6px 0px;
 	}
