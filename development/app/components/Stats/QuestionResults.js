@@ -8,6 +8,8 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {ThreeBounce} from 'better-react-spinkit';
 import {Doughnut} from 'react-chartjs-2';
 
+import SimpleLine from '../Charts/SimpleLine';
+
 const QuestionResults = React.createClass({
 
   propTypes: {

@@ -9,6 +9,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {ThreeBounce} from 'better-react-spinkit';
 
+import ResultsIndicator from './ResultsIndicator';
 import styles from './styles.css';
 import buttons from './buttons.css';
 
@@ -67,6 +68,9 @@ const Question = React.createClass({
                   <div className={styles.spacer}></div>
                   <a className={classNames(buttons['action-button'], buttons['dark-blue'], buttons.animate)}>Yes</a>
                   <a className={classNames(buttons['action-button'], buttons.blue, buttons.animate)}>No</a>
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
+                  <ResultsIndicator id={this.props.question.id} />
                </div>
             </div>
          </div>
