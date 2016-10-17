@@ -18,12 +18,7 @@ const QuestionList = React.createClass({
           gid: React.PropTypes.string,
           group: React.PropTypes.string,
           asked: React.PropTypes.string,
-          question: React.PropTypes.string,
-          time: React.PropTypes.string,
-          description: React.PropTypes.string,
-          decision: React.PropTypes.string,
-          controversial: React.PropTypes.bool,
-          refereeDecision: React.PropTypes.bool
+          time: React.PropTypes.string
         }))
    },
 
@@ -47,7 +42,7 @@ const QuestionList = React.createClass({
                           </div>;
                  }
                  return <div className={classNames(bootstrap['col-xs-12'], styles.question)} key={question.id}>
-                           <Question question={question} />
+                           <Question id={question.id} />
                         </div>;
                })}
 

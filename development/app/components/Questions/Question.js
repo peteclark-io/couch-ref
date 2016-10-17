@@ -1,9 +1,13 @@
 'use strict';
 
 import React from 'react';
+
+import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
+
+import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './styles.css';
 import buttons from './buttons.css';
@@ -23,6 +27,14 @@ const Question = React.createClass({
    },
 
    render: function() {
+       if (!this.props.question){
+         return (
+           <div className={styles.loading}>
+             <ThreeBounce />
+           </div>
+         );
+       }
+
       return (
          <div>
             {
@@ -62,4 +74,18 @@ const Question = React.createClass({
    }
 });
 
-export default Question;
+const getQuestion = (state = {questions: {}}, id) => {
+  return state.questions[id] ? state.questions[id] : {};
+};
+
+const mapStateToProps = (state, ownProps) => {
+   return {
+     question: getQuestion(state, ownProps.id)
+   };
+};
+
+const LiveQuestion = connect(
+  mapStateToProps
+)(Question);
+
+export default LiveQuestion;

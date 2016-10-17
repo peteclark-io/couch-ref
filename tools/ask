@@ -67,6 +67,8 @@ fi
 asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
 uuid=$(uuidgen | tr 'A-Z' 'a-z')
 
-json=$(echo '[{"asked": "'${asked}'","decision": "'$decision'", "description": "'$description'", "controversial": '$controversy', "id": "'${uuid}'","question": "'${question}'","time": "'${timestamp}'"}]')
+match_json='[{"id": "'${uuid}'","asked": "'${asked}'"}]'
+json='{"id": "'${uuid}'", "asked": "'${asked}'","decision": "'$decision'", "description": "'$description'", "controversial": '$controversy', "question": "'${question}'","time": "'${timestamp}'"}'
 
-firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions
+echo ${json} | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $match_json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions

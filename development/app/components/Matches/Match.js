@@ -24,12 +24,11 @@ const Match = React.createClass({
               gid: React.PropTypes.string,
               group: React.PropTypes.string,
               asked: React.PropTypes.string,
-              question: React.PropTypes.string,
               time: React.PropTypes.string,
-              description: React.PropTypes.string,
-              decision: React.PropTypes.string,
-              controversial: React.PropTypes.bool,
-              refereeDecision: React.PropTypes.bool
+              'questions': React.PropTypes.arrayOf(
+                React.PropTypes.shape({
+                  id: React.PropTypes.string
+                }))
             }))
        })
    },

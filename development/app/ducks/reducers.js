@@ -1,11 +1,18 @@
+'use strict';
+
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+
 import matches from './matches';
 import ready from './ready';
+import questions from './questions';
+import statistics from './statistics';
 import authenticated from './authenticated';
-import { routerReducer } from 'react-router-redux';
 
 const rootReducer = combineReducers({
     matches: matches,
+    questions: questions,
+    statistics: statistics,
     ready: ready,
     authenticated: authenticated,
     routing: routerReducer

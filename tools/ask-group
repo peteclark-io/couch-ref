@@ -33,11 +33,16 @@ function question {
 }
 
 function question_json {
-   echo '[{"asked": "'${asked}'","decision": "","description": "","id": "'${uuid}'","question": "'${question}'"}]'
+   echo '{"id": "'${uuid}'", "asked": "'${asked}'","decision": "","description": "","question": "'${question}'"}'
+}
+
+function question_id_json {
+  echo '[{"id": "'${uuid}'"}]'
 }
 
 question
-q_json=$(question_json)
+echo $(question_json) | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+ids_json=$(question_id_json)
 
 while :
 do
@@ -47,8 +52,9 @@ do
    case $another in
       [Yy] | "" )
          question
-         tmp=$(question_json)
-         q_json=$(echo $q_json | jq ". |= .+ $tmp")
+         tmp=$(question_id_json)
+         echo $(question_json) | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+         ids_json=$(echo $ids_json | jq ". |= .+ $tmp")
          ;;
       [Nn] )
          break
@@ -60,6 +66,6 @@ do
 done
 
 asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
-json=$(echo '[{"gid":"'${gid}'", "group":"'${group}'", "time": "'${timestamp}'", "asked":"'${asked}'", "questions": '$q_json'}]')
+json=$(echo '[{"gid":"'${gid}'", "group":"'${group}'", "time": "'${timestamp}'", "asked":"'${asked}'", "questions": '$ids_json'}]')
 
 firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions

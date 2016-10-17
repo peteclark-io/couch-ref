@@ -16,14 +16,7 @@ const QuestionGroup = React.createClass({
       asked: React.PropTypes.string,
       questions: React.PropTypes.arrayOf(
         React.PropTypes.shape({
-          id: React.PropTypes.string,
-          question: React.PropTypes.string,
-          asked: React.PropTypes.string,
-          time: React.PropTypes.string,
-          description: React.PropTypes.string,
-          decision: React.PropTypes.string,
-          controversial: React.PropTypes.bool,
-          refereeDecision: React.PropTypes.bool
+          id: React.PropTypes.string
         }))
    },
 
@@ -41,7 +34,7 @@ const QuestionGroup = React.createClass({
             <div className={bootstrap.row}>
                {this.props.questions.map(question => {
                  return <div className={bootstrap['col-xs-12']} key={question.id}>
-                           <Question question={question} />
+                           <Question id={question.id} />
                         </div>;
                })}
             </div>

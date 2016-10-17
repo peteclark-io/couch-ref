@@ -1,12 +1,15 @@
 'use strict'
 
 import firebase from 'firebase';
+
 import {updateMatch, addMatch} from '../ducks/matches';
+import {updateQuestion, addQuestion} from '../ducks/questions';
+import {updateStatistic, addStatistic} from '../ducks/statistics';
+
 import {ready} from '../ducks/ready';
 import {authenticated} from '../ducks/authenticated';
 
 function createMatch(value){
-  console.log(value);
   return {
     id: value.id,
     kickOff: value.kick_off,
@@ -21,6 +24,26 @@ function createMatch(value){
     awayLineup: value.away_lineup,
     awaySubs: value.away_subs,
     questions: value.questions ? value.questions : []
+  };
+}
+
+function createQuestion(value){
+  return {
+    id: value.id,
+    time: value.time,
+    asked: value.asked,
+    question: value.question,
+    description: value.description,
+    decision: value.decision,
+    controversial: value.controversial
+  };
+}
+
+function createStatistic(value){
+  return {
+    id: value.id,
+    simple: value.simple,
+    breakdown: value.breakdown
   };
 }
 
@@ -65,20 +88,46 @@ const data = (store) => {
         store.dispatch(authenticated());
 
         var database = firebase.database();
-        var couchRef = database.ref('/v0/live-matches');
+        var liveMatches = database.ref('/v0/live-matches');
+        var liveQuestions = database.ref('/v0/live-questions');
+        var liveStatistics = database.ref('/v0/live-statistics');
 
-        couchRef.off();
+        liveMatches.off();
+        liveQuestions.off();
+        liveStatistics.off();
 
-        var dispatchAdd = function(data){
+        var dispatchAddMatch = function(data){
           store.dispatch(addMatch(createMatch(data.val())));
         };
 
-        var dispatchUpdate = function(data){
+        var dispatchUpdateMatch = function(data){
           store.dispatch(updateMatch(createMatch(data.val())));
         };
 
-        couchRef.on('child_added', dispatchAdd);
-        couchRef.on('child_changed', dispatchUpdate);
+        var dispatchAddQuestion = function(data){
+          store.dispatch(addQuestion(createQuestion(data.val())));
+        };
+
+        var dispatchUpdateQuestion = function(data){
+          store.dispatch(updateQuestion(createQuestion(data.val())));
+        };
+
+        var dispatchAddStatistic = function(data){
+          store.dispatch(addStatistic(createStatistic(data.val())));
+        };
+
+        var dispatchUpdateStatistic = function(data){
+          store.dispatch(updateStatistic(createStatistic(data.val())));
+        };
+
+        liveMatches.on('child_added', dispatchAddMatch);
+        liveMatches.on('child_changed', dispatchUpdateMatch);
+
+        liveQuestions.on('child_added', dispatchAddQuestion);
+        liveQuestions.on('child_changed', dispatchUpdateQuestion);
+
+        liveStatistics.on('child_added', dispatchAddStatistic);
+        liveStatistics.on('child_changed', dispatchUpdateStatistic);
 
         store.dispatch(ready());
         router.push(path);
