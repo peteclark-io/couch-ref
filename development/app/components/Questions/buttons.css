@@ -33,23 +33,19 @@
 	border-bottom: 0.2rem solid #51A8B5; /*60C6D6 */
 }
 
+.yellow {
+	background-color: rgba(254,205,82,1);
+	border-bottom: 0.2rem solid rgba(253,171,54,1);
+}
+
+.dark-blue {
+	background-color: rgba(60,90,150,1);
+	border-bottom: 0.2rem solid #2F4778;
+}
+
 .action-button:hover {
 	text-decoration: none;
 	color: white;
-}
-
-@media (min-width: 768px) {
-	.green:hover {
-		color: black;
-	}
-
-	.red:hover {
-		color: black;
-	}
-
-	.blue:hover {
-		color: black;
-	}
 }
 
 .action-button:active {

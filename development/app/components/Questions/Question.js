@@ -53,8 +53,8 @@ const Question = React.createClass({
                      : null
                   }
                   <div className={styles.spacer}></div>
-                  <a className={classNames(buttons['action-button'], buttons.blue, buttons.animate)}>Yes</a>
-                  <a className={classNames(buttons['action-button'], buttons.red, buttons.animate)}>No</a>
+                  <a className={classNames(buttons['action-button'], buttons['dark-blue'], buttons.animate)}>Yes</a>
+                  <a className={classNames(buttons['action-button'], buttons.blue, buttons.animate)}>No</a>
                </div>
             </div>
          </div>

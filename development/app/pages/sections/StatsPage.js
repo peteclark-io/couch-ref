@@ -1,13 +1,14 @@
 'use strict'
 
 import React from 'react';
-import styles from './MatchList.css';
+
+import QuestionResults from '../../components/Stats/QuestionResults';
 
 const StatsPage = React.createClass({
 
   render: function() {
     return (
-      <h1>Stats</h1>
+      <QuestionResults />
     );
   }
 });

@@ -12,4 +12,6 @@
   --brand-secondary:  white;
   --brand-danger:     #ed5c5c;
   --brand-tertiary:   #66d3e4;
+
+  --brand-warning:    rgba(254,205,82,1);
 }
