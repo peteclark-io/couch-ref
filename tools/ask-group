@@ -66,6 +66,11 @@ do
 done
 
 asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
-json=$(echo '[{"gid":"'${gid}'", "group":"'${group}'", "time": "'${timestamp}'", "asked":"'${asked}'", "questions": '$ids_json'}]')
+json='[{"gid":"'${gid}'", "group":"'${group}'", "time": "'${timestamp}'", "asked":"'${asked}'", "questions": '$ids_json'}]'
+
+echo ${json} | jq
+
+echo "This ok? (hit enter if yeah, hit ctrl-c if nah)"
+read
 
 firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions

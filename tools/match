@@ -2,28 +2,34 @@
 
 . ./.secret
 
-match=$1
-question=$2
-timestamp=$3
-if [ -z $match ]; then
-   firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
-   echo "Enter Match ID (valid IDs above):"
-   read match
+home=$1
+away=$2
+referee=$3
+
+if [ -z $home ]; then
+   echo "Enter Home Team:"
+   read home
 fi
 
-if [ -z $question ]; then
-   echo "Enter the question you'd like to ask:"
-   read question
+if [ -z $away ]; then
+   echo "Enter Away Team:"
+   read away
 fi
 
-if [ -z $timestamp ]; then
-   echo "Enter the match time in the format XXmins:"
-   read timestamp
+if [ -z $referee ]; then
+   echo "Enter the match referee:"
+   read referee
 fi
 
-asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
+if [ -z $kick_off ]; then
+   echo "Enter the kick off time - IMPORTANT: this must be in the format YYYY-MM-DDTHH:MM:SS.000, and MUST be in UTC (i.e. one hour behind the UK)"
+   read kick_off
+fi
+
 uuid=$(uuidgen | tr 'A-Z' 'a-z')
+json='{"id": "'${uuid}'","home": "'$home'","away": "'$away'","home_score": 0,"away_score": 0,"home_lineup": [], "home_subs": [], "away_lineup": [], "away_subs": [], "kick_off": "'${kick_off}'", "referee": "'$referee'"}'
 
-json=$(echo '[{"asked": "'${asked}'","decision": "","description": "","id": "'${uuid}'","question": "'${question}'","time": "'${timestamp}'"}]')
+echo $json | jq
 
-firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions
+echo "This ok? (hit enter if yeah, hit ctrl-c if nah)"
+read

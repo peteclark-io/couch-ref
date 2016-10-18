@@ -70,5 +70,10 @@ uuid=$(uuidgen | tr 'A-Z' 'a-z')
 match_json='[{"id": "'${uuid}'","asked": "'${asked}'"}]'
 json='{"id": "'${uuid}'", "asked": "'${asked}'","decision": "'$decision'", "description": "'$description'", "controversial": '$controversy', "question": "'${question}'","time": "'${timestamp}'"}'
 
+echo ${json} | jq
+
+echo "This ok? (hit enter if yeah, hit ctrl-c if nah)"
+read
+
 echo ${json} | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
 firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $match_json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions
