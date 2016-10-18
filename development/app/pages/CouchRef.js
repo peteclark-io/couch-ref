@@ -1,10 +1,10 @@
 'use strict';
 
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 import DesktopApp from './DesktopApp';
 import MobileApp from './MobileApp';
-import MediaQuery from 'react-responsive';
 
 const CouchRef = React.createClass({
 
