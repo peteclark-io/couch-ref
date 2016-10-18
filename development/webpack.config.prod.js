@@ -37,6 +37,8 @@ module.exports = {
         ]
     },
     plugins: [
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.optimize.MinChunkSizePlugin({minChunkSize: 50000}),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: true,
