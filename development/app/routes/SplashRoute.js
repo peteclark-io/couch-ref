@@ -1,13 +1,10 @@
 'use strict';
 
+
+
 const SplashRoute = {
   path: '/splash',
-
-  getComponents(nextState, callback) {
-    require.ensure([], function (require) {
-      callback(null, require('../pages/banners/Splash').default)
-    })
-  }
+  component: Splash
 };
 
 export default SplashRoute;
