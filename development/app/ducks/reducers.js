@@ -7,6 +7,7 @@ import matches from './matches';
 import ready from './ready';
 import questions from './questions';
 import statistics from './statistics';
+import votes from './votes';
 import authenticated from './authenticated';
 
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     statistics: statistics,
     ready: ready,
     authenticated: authenticated,
-    routing: routerReducer
+    routing: routerReducer,
+    votes: votes
 });
 
 export default rootReducer;

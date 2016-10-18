@@ -1,5 +1,5 @@
 site2
 /ios
 /public/200.html
-/public/js/bundle.js
+/public/js/*bundle.js
 /public/js/*.svg

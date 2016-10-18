@@ -7,17 +7,6 @@ import { Provider } from 'react-redux';
 import { Router, IndexRoute, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 
-import Errors from './pages/banners/Errors';
-import Splash from './pages/banners/Splash';
-import Login from './pages/banners/Login';
-
-import MatchList from './pages/sections/MatchList';
-import MatchPage from './pages/sections/MatchPage';
-import TeamSheetPage from './pages/sections/TeamSheetPage';
-import StatsPage from './pages/sections/StatsPage';
-
-import CouchRef from './pages/CouchRef';
-
 import store from './core/store';
 import firebase from './core/firebase';
 
@@ -29,19 +18,23 @@ const history = syncHistoryWithStore(browserHistory, store);
 firebase(store).init(history, window.location.pathname);
 history.push('/splash'); // move to splash screen - firebase will move to main screen once initialized.
 
+const rootRoute = {
+   path: '/',
+   component: require('./pages/CouchRef').default,
+   childRoutes: [
+      require('./routes/MatchRoute').default,
+      require('./routes/TeamsRoute').default,
+      require('./routes/StatsRoute').default,
+
+      require('./routes/SplashRoute').default,
+      require('./routes/LoginRoute').default,
+      require('./routes/ErrorsRoute').default
+   ]
+}
+
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={CouchRef}>
-         <Route path="/match/:matchId" component={MatchPage} />
-         <Route path="/question/:questionId" component={StatsPage} />
-         <Route path="/teams/:matchId" component={TeamSheetPage} />
-      </Route>
-
-      <Route path="/splash" component={Splash} />
-      <Route path="/error" component={Errors} />
-      <Route path="/login" component={Login} />
-    </Router>
+    <Router history={history} routes={rootRoute} />
   </Provider>,
   container
 );
