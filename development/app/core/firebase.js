@@ -10,6 +10,7 @@ import {createMatch, createQuestion, createStatistic} from './mappers';
 
 import {ready} from '../ducks/ready';
 import {authenticated} from '../ducks/authenticated';
+import {inspectFirebase} from '../ducks/user';
 
 const openDatabase = (store, db, mapper, update, add) => {
   db.off();
@@ -63,6 +64,10 @@ const data = (store) => {
       const couchRef = (user) => {
         console.log('Connected to Couch Ref.', user.uid);
 
+        store.dispatch(inspectFirebase({
+          uid: user.uid,
+          fullName: user.displayName
+        }));
         store.dispatch(authenticated());
 
         var database = firebase.database();

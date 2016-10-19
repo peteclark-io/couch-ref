@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
     ready: ready,
     authenticated: authenticated,
     routing: routerReducer,
-    votes: votes
+    user: user
 });
 
 export default rootReducer;

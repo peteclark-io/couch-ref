@@ -2,7 +2,17 @@
 
 import Cookies from 'js-cookie';
 
-export default const run = () => {
-  var questions = Cookies.get('user.voted.questions');
-  
+export default function run(){
+  var cookieQ = Cookies.get('user.voted.questions')
+  if (!cookieQ){
+    return {
+      votes: []
+    };
+  }
+
+  var questions = JSON.parse(cookieQ);
+  console.log(questions);
+  return {
+    votes: questions
+  };
 };

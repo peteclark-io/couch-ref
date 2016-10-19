@@ -40,8 +40,14 @@ function question_id_json {
   echo '[{"id": "'${uuid}'"}]'
 }
 
+function stats_json {
+  echo '{"id": "'${uuid}'", "simple": {"yes": 0, "no": 0}}'
+}
+
 question
-echo $(question_json) | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+question_json | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+stats_json | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-statistics/${uuid}
+
 ids_json=$(question_id_json)
 
 while :
@@ -53,7 +59,8 @@ do
       [Yy] | "" )
          question
          tmp=$(question_id_json)
-         echo $(question_json) | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+         question_json | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-questions/${uuid}
+         stats_json | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-statistics/${uuid}
          ids_json=$(echo $ids_json | jq ". |= .+ $tmp")
          ;;
       [Nn] )

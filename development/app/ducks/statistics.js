@@ -3,20 +3,17 @@
 const STATISTICS_UPDATE = 'couch-ref/statistics/STATISTICS_UPDATE'
 const ADD_STATISTIC = 'couch-ref/statistics/ADD_STATISTIC'
 
-function getUpdatedState(action){
-  var results = action.results;
-  var updated = {};
-  updated[results.id] = results;
-  return updated;
-}
-
 export default function reducer(state = {}, action){
   switch(action.type){
     case STATISTICS_UPDATE:
-      return Object.assign({}, state, getUpdatedState(action));
+      return Object.assign({}, state, {
+        [action.results.id]: action.results
+      });
 
     case ADD_STATISTIC:
-      return Object.assign({}, state, getUpdatedState(action));
+      return Object.assign({}, state, {
+        [action.results.id]: action.results
+      });
 
     default:
       return state;

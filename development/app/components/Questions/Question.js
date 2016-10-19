@@ -8,8 +8,9 @@ import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {ThreeBounce} from 'better-react-spinkit';
+import {saveVote} from '../../core/db-actions';
 
-import {vote} from '../../ducks/votes';
+import {vote} from '../../ducks/user';
 
 import ResultsIndicator from './ResultsIndicator';
 import styles from './styles.css';
@@ -31,6 +32,7 @@ const Question = React.createClass({
          description: React.PropTypes.string,
          decision: React.PropTypes.string
       }),
+      votedOn: React.PropTypes.bool,
       vote: React.PropTypes.func
    },
 
@@ -75,7 +77,7 @@ const Question = React.createClass({
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
                   {
-                    !this.context.user ?
+                    !this.props.votedOn ?
                     <div>
                       <div className={styles.spacer}></div>
                       <a onClick={() => {this.props.vote(this.props.question, true)}}
@@ -97,15 +99,21 @@ const getQuestion = (state = {questions: {}}, id) => {
   return state.questions[id] ? state.questions[id] : {};
 };
 
+const getVotes = (state = { user: {votes: {} } }, id) => {
+  return state.user.votes && state.user.votes[id] ? true : false;
+};
+
 const mapStateToProps = (state, ownProps) => {
    return {
-     question: getQuestion(state, ownProps.id)
+     question: getQuestion(state, ownProps.id),
+     votedOn: getVotes(state, ownProps.id)
    };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     vote: (question, result) => {
+      saveVote(question, result);
       dispatch(vote(question, result));
     }
   }

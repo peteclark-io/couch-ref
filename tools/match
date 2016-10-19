@@ -33,3 +33,5 @@ echo $json | jq
 
 echo "This ok? (hit enter if yeah, hit ctrl-c if nah)"
 read
+
+echo ${json} | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${uuid}
