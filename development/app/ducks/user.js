@@ -1,12 +1,23 @@
 'use strict';
 
 const VOTE = 'couch-ref/user/VOTE';
+const INSPECT_COOKIES = 'couch-ref/user/INSPECT_COOKIES';
 
 export default function reducer(state = {}, action){
   switch(action.type){
     case VOTE:
-      return Object.assign({}, state, getUpdatedState(action));
+      return Object.assign({}, state, {
+         votes: {
+            [action.question.id]: action.vote
+         }
+      });
 
+    case INSPECT_COOKIES:
+      return Object.assign({}, state, {
+         local: {
+            
+         }
+      });
     default:
       return state;
   }
@@ -14,4 +25,8 @@ export default function reducer(state = {}, action){
 
 export function vote(question, vote) {
   return {type: VOTE, question: question, vote: vote};
+}
+
+export function inspectCookies(cookies) {
+  return {type: INSPECT_COOKIES, cookies: cookies};
 }

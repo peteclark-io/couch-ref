@@ -7,7 +7,7 @@ import matches from './matches';
 import ready from './ready';
 import questions from './questions';
 import statistics from './statistics';
-import votes from './votes';
+import user from './user';
 import authenticated from './authenticated';
 
 const rootReducer = combineReducers({
