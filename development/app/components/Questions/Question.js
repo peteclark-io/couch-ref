@@ -9,11 +9,17 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {ThreeBounce} from 'better-react-spinkit';
 
+import {vote} from '../../ducks/votes';
+
 import ResultsIndicator from './ResultsIndicator';
 import styles from './styles.css';
 import buttons from './buttons.css';
 
 const Question = React.createClass({
+
+   contextTypes: {
+     user: React.PropTypes.object
+   },
 
    propTypes: {
       question: React.PropTypes.shape({
@@ -24,7 +30,8 @@ const Question = React.createClass({
          time: React.PropTypes.string,
          description: React.PropTypes.string,
          decision: React.PropTypes.string
-      })
+      }),
+      vote: React.PropTypes.func
    },
 
    render: function() {
@@ -65,12 +72,20 @@ const Question = React.createClass({
                         <h4><small>{this.props.question.description}</small></h4>
                      : null
                   }
-                  <div className={styles.spacer}></div>
-                  <a className={classNames(buttons['action-button'], buttons['dark-blue'], buttons.animate)}>Yes</a>
-                  <a className={classNames(buttons['action-button'], buttons.blue, buttons.animate)}>No</a>
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
-                  <ResultsIndicator id={this.props.question.id} />
+                  {
+                    !this.context.user ?
+                    <div>
+                      <div className={styles.spacer}></div>
+                      <a onClick={() => {this.props.vote(this.props.question, true)}}
+                         className={classNames(buttons['action-button'], buttons['dark-blue'], buttons.animate)}>Yes</a>
+                      <a onClick={() => {this.props.vote(this.props.question, false)}}
+                         className={classNames(buttons['action-button'], buttons.blue, buttons.animate)}>No</a>
+                    </div>
+                    :
+                    <ResultsIndicator id={this.props.question.id} />
+                  }
                </div>
             </div>
          </div>
@@ -88,8 +103,17 @@ const mapStateToProps = (state, ownProps) => {
    };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    vote: (question, result) => {
+      dispatch(vote(question, result));
+    }
+  }
+};
+
 const LiveQuestion = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Question);
 
 export default LiveQuestion;

@@ -22,7 +22,6 @@ const SimpleLine = React.createClass({
    },
 
    render: function() {
-      console.log(this.props.data);
       if (max(this.props.data) === 0){
         return null;
       }

@@ -9,7 +9,7 @@ import styles from './styles.css';
 const ResultsIndicator = React.createClass({
 
    propTypes: {
-     data: React.PropTypes.arrayOf(React.PropTypes.number)
+     data: React.PropTypes.arrayOf(React.PropTypes.object)
    },
 
    render: function() {

@@ -21,7 +21,6 @@ const Score = React.createClass({
   },
 
   render: function() {
-    console.log(this.props.match)
     return (
       <div ref={node => (this.root = node)}>
         <KickOff kickOff={this.props.match.kickOff} />

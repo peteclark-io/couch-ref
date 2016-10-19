@@ -6,46 +6,24 @@ import {updateMatch, addMatch} from '../ducks/matches';
 import {updateQuestion, addQuestion} from '../ducks/questions';
 import {updateStatistic, addStatistic} from '../ducks/statistics';
 
+import {createMatch, createQuestion, createStatistic} from './mappers';
+
 import {ready} from '../ducks/ready';
 import {authenticated} from '../ducks/authenticated';
 
-function createMatch(value){
-  return {
-    id: value.id,
-    kickOff: value.kick_off,
-    home: value.home,
-    away: value.away,
-    goalsHome: value.home_score,
-    goalsAway: value.away_score,
-    fullTime: value.full_time,
-    referee: value.referee,
-    homeLineup: value.home_lineup,
-    homeSubs: value.home_subs,
-    awayLineup: value.away_lineup,
-    awaySubs: value.away_subs,
-    questions: value.questions ? value.questions : []
+const openDatabase = (store, db, mapper, update, add) => {
+  db.off();
+  var dispatchAdd = function(data){
+    store.dispatch(add(mapper(data.val())));
   };
-}
 
-function createQuestion(value){
-  return {
-    id: value.id,
-    time: value.time,
-    asked: value.asked,
-    question: value.question,
-    description: value.description,
-    decision: value.decision,
-    controversial: value.controversial
+  var dispatchUpdate = function(data){
+    store.dispatch(update(mapper(data.val())));
   };
-}
 
-function createStatistic(value){
-  return {
-    id: value.id,
-    simple: value.simple,
-    breakdown: value.breakdown
-  };
-}
+  db.on('child_added', dispatchAdd);
+  db.on('child_changed', dispatchUpdate);
+};
 
 const data = (store) => {
   return {
@@ -83,51 +61,21 @@ const data = (store) => {
       });
 
       const couchRef = (user) => {
-        console.log('Connected to Couch Ref.', user);
+        console.log('Connected to Couch Ref.', user.uid);
 
         store.dispatch(authenticated());
 
         var database = firebase.database();
+
         var liveMatches = database.ref('/v0/live-matches');
         var liveQuestions = database.ref('/v0/live-questions');
         var liveStatistics = database.ref('/v0/live-statistics');
 
-        liveMatches.off();
-        liveQuestions.off();
-        liveStatistics.off();
+        //var user = database.ref('/v0/users/' + user.uid);
 
-        var dispatchAddMatch = function(data){
-          store.dispatch(addMatch(createMatch(data.val())));
-        };
-
-        var dispatchUpdateMatch = function(data){
-          store.dispatch(updateMatch(createMatch(data.val())));
-        };
-
-        var dispatchAddQuestion = function(data){
-          store.dispatch(addQuestion(createQuestion(data.val())));
-        };
-
-        var dispatchUpdateQuestion = function(data){
-          store.dispatch(updateQuestion(createQuestion(data.val())));
-        };
-
-        var dispatchAddStatistic = function(data){
-          store.dispatch(addStatistic(createStatistic(data.val())));
-        };
-
-        var dispatchUpdateStatistic = function(data){
-          store.dispatch(updateStatistic(createStatistic(data.val())));
-        };
-
-        liveMatches.on('child_added', dispatchAddMatch);
-        liveMatches.on('child_changed', dispatchUpdateMatch);
-
-        liveQuestions.on('child_added', dispatchAddQuestion);
-        liveQuestions.on('child_changed', dispatchUpdateQuestion);
-
-        liveStatistics.on('child_added', dispatchAddStatistic);
-        liveStatistics.on('child_changed', dispatchUpdateStatistic);
+        openDatabase(store, liveMatches, createMatch, updateMatch, addMatch);
+        openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
+        openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
 
         store.dispatch(ready());
         router.push(path);
