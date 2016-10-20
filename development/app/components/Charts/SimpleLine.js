@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactFauxDOM from 'react-faux-dom';
+import Measure from 'react-measure';
 
 import _ from 'lodash';
 
@@ -21,13 +22,17 @@ const SimpleLine = React.createClass({
      width: React.PropTypes.number
    },
 
+   getInitialState: function(){
+      return {dimensions: {}};
+   },
+
    render: function() {
       if (max(this.props.data) === 0){
         return null;
       }
 
       var chart = ReactFauxDOM.createElement('svg')
-      var xAxis = scaleLinear().domain([0, max(this.props.data.map(i => i.value))]).range([0, 1000]);
+      var xAxis = scaleLinear().domain([0, max(this.props.data.map(i => i.value))]).range([0, this.state.dimensions.width]);
 
       var bars = select(chart)
         .attr('width', '100%')
@@ -52,7 +57,13 @@ const SimpleLine = React.createClass({
          .attr('height', 3)
          .attr('fill', (d, i) => { return i % 2 === 0 ? 'rgba(60,90,150,1)' : '#51A8B5'});
 
-      return chart.toReact();
+      return (
+         <Measure onMeasure={(dimensions) => {
+            this.setState({dimensions})
+         }}>
+            {chart.toReact()}
+         </Measure>
+      );
    }
 });
 

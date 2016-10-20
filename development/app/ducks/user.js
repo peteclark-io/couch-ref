@@ -9,7 +9,9 @@ export default function reducer(state = {}, action){
     case VOTE:
       return Object.assign({}, state, {
          votes: Object.assign({}, state.votes, {
-            [action.question.id]: action.vote
+            [action.question.id]: {
+               result: action.vote
+            }
          })
       });
 
