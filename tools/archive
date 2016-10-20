@@ -1,0 +1,11 @@
+#!/bin/bash
+
+. ./.secret
+
+firebase --project ${project} --token ${token} database:get /v0/live-matches | jq . > ../archive/live-matches-$(gdate +'%Y%m%d').json
+firebase --project ${project} --token ${token} database:get /v0/live-questions | jq . > ../archive/live-questions-$(gdate +'%Y%m%d').json
+firebase --project ${project} --token ${token} database:get /v0/live-statistics | jq . > ../archive/live-statistics-$(gdate +'%Y%m%d').json
+
+firebase --project ${project} --token ${token} database:remove /v0/live-matches
+firebase --project ${project} --token ${token} database:remove /v0/live-questions
+firebase --project ${project} --token ${token} database:remove /v0/live-statistics
