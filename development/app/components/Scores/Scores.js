@@ -1,6 +1,9 @@
 'use strict'
 
 import React from 'react';
+import _ from 'lodash';
+import moment from 'moment';
+
 import {Link} from 'react-router';
 import {ThreeBounce} from 'better-react-spinkit';
 
@@ -15,6 +18,7 @@ const Scores = React.createClass({
         'id': React.PropTypes.string,
         'home': React.PropTypes.string,
         'away': React.PropTypes.string,
+        'kickOff': React.PropTypes.object,
         'goalsHome': React.PropTypes.number,
         'goalsAway': React.PropTypes.number
       }))
@@ -29,16 +33,37 @@ const Scores = React.createClass({
         );
      }
 
-      return (
-         <ul className={styles['match-list']}>
-            {this.props.matches.map(function(match) {
-               return <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
-                  <Link className={styles.link} to={`/match/${match.id}`}>
-                     <Score match={match} />
-                  </Link>
-                </li>;
-             })}
-         </ul>
+     var today = moment(24, 'HH'); // midnight tonight
+     console.log(today);
+
+     var todaysFixtures = _.filter(this.props.matches, (i) => {
+        return i.kickOff.isBefore(today);
+     });
+
+     var fixtures = this.props.matches;
+     var title = 'Upcoming Fixtures';
+
+     if (todaysFixtures.length > 0){
+        fixtures = todaysFixtures;
+        title = 'Today\'s Fixtures';
+     }
+
+    return (
+         <div>
+            <h2 className={styles['fixture-list-header']}>{title}</h2>
+            <div className={styles.spacer}></div>
+
+            <ul className={styles['match-list']}>
+               {fixtures.map(function(match) {
+                  return <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
+                     <Link className={styles.link} to={`/match/${match.id}`}>
+                        <Score match={match} />
+                     </Link>
+                   </li>;
+                })}
+            </ul>
+         </div>
+
       );
   }
 });

@@ -1,9 +1,11 @@
 'use strict';
 
+import moment from 'moment';
+
 export const createMatch = (value) => {
   return {
     id: value.id,
-    kickOff: value.kick_off,
+    kickOff: moment(value.kick_off),
     home: value.home,
     away: value.away,
     goalsHome: value.home_score,

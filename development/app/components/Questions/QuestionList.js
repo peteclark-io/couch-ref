@@ -29,6 +29,14 @@ const QuestionList = React.createClass({
          <div className={styles['questions-list']}>
             <h1 className={styles.header}>Live Questions</h1>
             <div className={bootstrap.row}>
+               {
+                  questions.length === 0 ?
+                  <div className={bootstrap['col-xs-12']}>
+                     <h4 className={styles.spacer}>No questions have been asked yet</h4>
+                  </div>
+                  : null
+               }
+
                {questions.map(question => {
                  if (question.gid){
                    return <div className={bootstrap['col-xs-12']} key={question.gid}>

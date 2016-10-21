@@ -7,6 +7,15 @@
   color: black;
 }
 
+.spacer {
+  margin-bottom: 36px;
+}
+
+.fixture-list-header {
+  font-family: var(--font-primary);
+  margin-top: 20px;
+}
+
 .goals {
   font-family: var(--font-secondary-bold);
   font-size: 1.4rem;

@@ -12,7 +12,7 @@ const Score = React.createClass({
   propTypes: {
     match: React.PropTypes.shape({
       'id': React.PropTypes.string,
-      'kickOff': React.PropTypes.string,
+      'kickOff': React.PropTypes.object,
       'home': React.PropTypes.string,
       'away': React.PropTypes.string,
       'goalsHome': React.PropTypes.number,
