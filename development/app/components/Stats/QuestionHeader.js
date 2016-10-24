@@ -3,6 +3,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import {ThreeBounce} from 'better-react-spinkit';
+
 import styles from './styles.css';
 
 const QuestionHeader = React.createClass({
@@ -20,8 +22,19 @@ const QuestionHeader = React.createClass({
   },
 
   render: function() {
+    if (!this.props.question){
+      return (
+        <div className={styles.loading}>
+          <ThreeBounce />
+        </div>
+      );
+    }
+
     return (
-      <h1 className={styles.header}>{this.props.question.question}</h1>
+      <div>
+        <h1 className={styles.header}>{this.props.question.question}</h1>
+        <h4 className={styles.referee}>Referee Decision: <span className={styles.decision}>{this.props.question.decision}</span></h4>
+      </div>
     );
   }
 });

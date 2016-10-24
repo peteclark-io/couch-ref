@@ -14,4 +14,7 @@
   --brand-tertiary:   #66d3e4;
 
   --brand-warning:    rgba(254,205,82,1);
+
+  --brand-yes:        #66d3e4;
+  --brand-no:         rgba(60,90,150,1);
 }

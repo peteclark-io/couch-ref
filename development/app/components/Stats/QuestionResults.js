@@ -1,14 +1,16 @@
 'use strict';
 
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+
 import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {ThreeBounce} from 'better-react-spinkit';
-import {Doughnut} from 'react-chartjs-2';
 
-import SimpleLine from '../Charts/SimpleLine';
+import styles from './styles.css';
+import OverallChart from './OverallChart';
+import SideCharts from './SideCharts';
 
 const QuestionResults = React.createClass({
 
@@ -23,39 +25,28 @@ const QuestionResults = React.createClass({
   },
 
   render: function() {
-    if (!this.props.results){
+      if (!this.props.results){
+        return (
+          <div className={styles.loading}>
+            <ThreeBounce />
+          </div>
+        );
+      }
+
       return (
-        <div>
-          <ThreeBounce />
+        <div className={bootstrap.row}>
+          <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'])}>
+            <div className={bootstrap.row}>
+              <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
+                <h3 className={styles.verdict}>Verdict</h3>
+              </div>
+            </div>
+          </div>
+          <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-4'])}>
+            <SideCharts results={this.props.results} />
+          </div>
         </div>
       );
-    }
-
-    console.log(this.props.results);
-
-    var data = {
-      labels: ['Yes', 'No'],
-      datasets: [
-        {
-          data: [this.props.results.simple.yes, this.props.results.simple.no],
-          backgroundColor: [
-              'rgba(55,171,46,1)',
-              '#ed5c5c'
-          ]
-        }
-      ]
-    };
-
-    return (
-      <div className={bootstrap.row}>
-        <div className={bootstrap['col-xs-12']}>
-        {
-          this.props.results.simple.yes === 0 || this.props.results.simple.no === 0
-          ? <h4>No Votes</h4> : <Doughnut data={data} height={150} />
-        }
-        </div>
-      </div>
-    );
   }
 });
 

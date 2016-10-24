@@ -43,6 +43,16 @@
 	border-bottom: 0.2rem solid #2F4778;
 }
 
+.yes {
+	background-color: var(--brand-yes);
+	border-bottom: 0.2rem solid #51A8B5; /*60C6D6 */
+}
+
+.no {
+	background-color: var(--brand-no);
+	border-bottom: 0.2rem solid #2F4778;
+}
+
 .action-button:hover {
 	text-decoration: none;
 	color: white;
