@@ -32,8 +32,22 @@ func main() {
 	app.Before = altsrc.InitInputSourceWithContext(flags, altsrc.NewYamlSourceFromFlagFunc("config"))
 	app.Flags = flags
 
-	app.Action = func(ctx *cli.Context) {
+	app.Commands = []cli.Command{
+		{
+			Name:    "fixtures",
+			Aliases: []string{"f"},
+			Flags: []cli.Flag{
+				cli.IntFlag{
+					Name:  "matchday",
+					Usage: "The matchday to query for.",
+				},
+			},
+			Usage: "Query for fixtures for the provided matchday.",
+			Action: func(c *cli.Context) error {
 
+				return nil
+			},
+		},
 	}
 
 	app.Run(os.Args)
