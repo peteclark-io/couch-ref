@@ -28,6 +28,6 @@ func parseURL(parse string) *url.URL {
 	return uri
 }
 
-func ReadMatches(matchday int) []structs.Match {
-
+func ReadMatches(matchday int) []structs.Match, error {
+	return []structs.Match{}, nil
 }

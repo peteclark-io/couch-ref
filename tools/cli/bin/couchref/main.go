@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	fixtures "github.com/peteclark-io/couch-ref/tools/cli/fixtures"
 	"github.com/urfave/cli"
 	"gopkg.in/urfave/cli.v1/altsrc"
 )
@@ -38,14 +39,14 @@ func main() {
 			Aliases: []string{"f"},
 			Flags: []cli.Flag{
 				cli.IntFlag{
-					Name:  "matchday",
+					Name:  "m, matchday",
 					Usage: "The matchday to query for.",
 				},
 			},
 			Usage: "Query for fixtures for the provided matchday.",
 			Action: func(c *cli.Context) error {
-
-				return nil
+				matches, err := fixtures.ReadMatches(c.Int("matchday"))
+				return err
 			},
 		},
 	}
