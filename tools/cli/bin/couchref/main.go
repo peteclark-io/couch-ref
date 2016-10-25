@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/peteclark-io/couch-ref/tools/cli/clubs"
-	fixtures "github.com/peteclark-io/couch-ref/tools/cli/fixtures"
+	"github.com/peteclark-io/couch-ref/tools/cli/fixtures"
 	"github.com/urfave/cli"
 	"gopkg.in/urfave/cli.v1/altsrc"
 )
@@ -52,7 +52,14 @@ func main() {
 				client := &http.Client{}
 				api := fixtures.Fixtures{Client: client, FixturesURL: "http://api.football-data.org/v1/competitions/426/fixtures"}
 
-				_, err := api.ReadFixtures(c.Int("matchday"))
+				fixtures, err := api.ReadFixtures(c.Int("matchday"))
+				if err != nil {
+					return err
+				}
+
+				d, _ := json.Marshal(fixtures)
+				os.Stdout.Write(d)
+
 				return err
 			},
 		},

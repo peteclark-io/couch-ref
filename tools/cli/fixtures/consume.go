@@ -6,15 +6,23 @@ import (
 	"github.com/peteclark-io/couch-ref/tools/cli/structs"
 )
 
-func (a Fixtures) readFixtures(matchday int) (*[]structs.Fixture, error) {
-	resp, err := a.Client.Get(a.FixturesURL)
+type fixturesResponse struct {
+	Fixtures []structs.Fixture `json:"fixtures"`
+}
+
+func (f Fixtures) readFixtures() (*[]structs.Fixture, error) {
+	resp, err := f.Client.Get(f.FixturesURL)
 	if err != nil {
 		return nil, err
 	}
 
-	var fixtures []structs.Fixture
+	var results fixturesResponse
 	decoder := json.NewDecoder(resp.Body)
-	decoder.Decode(&fixtures)
+	err = decoder.Decode(&results)
 
-	return &fixtures, nil
+	if err != nil {
+		return nil, err
+	}
+
+	return &results.Fixtures, nil
 }

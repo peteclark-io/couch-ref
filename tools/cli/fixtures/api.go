@@ -16,5 +16,17 @@ type Fixtures struct {
 }
 
 func (f Fixtures) ReadFixtures(matchday int) (*[]structs.Fixture, error) {
-	return &[]structs.Fixture{}, nil
+	all, err := f.readFixtures()
+	if err != nil {
+		return nil, err
+	}
+
+	filtered := make([]structs.Fixture, 0)
+	for _, fixture := range *all {
+		if fixture.Matchday == matchday {
+			filtered = append(filtered, fixture)
+		}
+	}
+
+	return &filtered, nil
 }
