@@ -10,8 +10,6 @@ import {scaleLinear} from "d3-scale";
 import {select} from "d3-selection";
 import {max} from "d3-array";
 
-import styles from './SimpleLine.css';
-
 const SimpleLine = React.createClass({
 
    propTypes: {

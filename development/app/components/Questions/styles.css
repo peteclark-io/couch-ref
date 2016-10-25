@@ -24,6 +24,12 @@
 	text-transform: uppercase;
 }
 
+.loading {
+  margin-top: 100px;
+  font-size: 7rem;
+  text-align: center;
+}
+
 .referee-decision {
 	color: var(--brand-tertiary);
 	font-size: 1.2rem;
