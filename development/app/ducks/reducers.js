@@ -9,6 +9,7 @@ import questions from './questions';
 import statistics from './statistics';
 import user from './user';
 import authenticated from './authenticated';
+import clubs from './clubs';
 
 const rootReducer = combineReducers({
     matches: matches,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     ready: ready,
     authenticated: authenticated,
     routing: routerReducer,
-    user: user
+    user: user,
+    clubs: clubs
 });
 
 export default rootReducer;

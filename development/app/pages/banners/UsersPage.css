@@ -1,0 +1,43 @@
+@import "../../css/branding.css";
+
+.splash {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--brand-primary);
+   text-align: center;
+   color: var(--brand-secondary);
+}
+
+.brand {
+   font-family: var(--font-primary);
+   font-size: 6em;
+   margin-top: 10vh;
+}
+
+.question {
+  font-family: var(--font-primary);
+  font-size: 2.6em;
+  margin-top: 50px;
+}
+
+.clubs {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.clubs li {
+  text-decoration: none;
+  display: inline-block;;
+  width: 100px;
+  padding: 8px;
+  margin: 5px;
+}
+
+.clubs img {
+  height: 100px;
+  width: 100px;
+}

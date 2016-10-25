@@ -16,7 +16,8 @@ const rootRoute = {
          component: Splash,
       },
       require('./LoginRoute').default,
-      require('./ErrorsRoute').default
+      require('./ErrorsRoute').default,
+      require('./UsersRoute').default
    ]
 };
 

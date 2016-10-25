@@ -11,6 +11,7 @@ import {createMatch, createQuestion, createStatistic} from './mappers';
 import {ready} from '../ducks/ready';
 import {authenticated} from '../ducks/authenticated';
 import {inspectFirebase} from '../ducks/user';
+import {addClubs} from '../ducks/clubs';
 
 const openDatabase = (store, db, mapper, update, add) => {
   db.off();
@@ -62,7 +63,7 @@ const data = (store) => {
       });
 
       const couchRef = (user) => {
-        console.log('Connected to Couch Ref.', user.uid);
+        console.log('Connected to Couch Ref.', user);
 
         store.dispatch(inspectFirebase({
           uid: user.uid,
@@ -81,6 +82,11 @@ const data = (store) => {
         openDatabase(store, liveMatches, createMatch, updateMatch, addMatch);
         openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
         openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
+
+        var clubs = database.ref('/v0/clubs');
+        clubs.once('value').then((snapshot) => {
+          store.dispatch(addClubs(snapshot.val()));
+        });
 
         store.dispatch(ready());
         router.push(path);
