@@ -1,8 +1,12 @@
 package main
 
 import (
+	"encoding/json"
+	"net/http"
+	"net/url"
 	"os"
 
+	"github.com/peteclark-io/couch-ref/tools/cli/clubs"
 	fixtures "github.com/peteclark-io/couch-ref/tools/cli/fixtures"
 	"github.com/urfave/cli"
 	"gopkg.in/urfave/cli.v1/altsrc"
@@ -45,13 +49,43 @@ func main() {
 			},
 			Usage: "Query for fixtures for the provided matchday.",
 			Action: func(c *cli.Context) error {
-				matches, err := fixtures.ReadMatches(c.Int("matchday"))
+				client := &http.Client{}
+				api := fixtures.Fixtures{Client: client, FixturesURL: "http://api.football-data.org/v1/competitions/426/fixtures"}
+
+				_, err := api.ReadFixtures(c.Int("matchday"))
+				return err
+			},
+		},
+		{
+			Name:    "clubs",
+			Aliases: []string{"c"},
+			Usage:   "Download club data.",
+			Action: func(c *cli.Context) error {
+				client := &http.Client{}
+				api := clubs.Clubs{Client: client, ClubsURL: "http://api.football-data.org/v1/competitions/426/teams"}
+
+				clubs, err := api.ReadClubs()
+				if err != nil {
+					return err
+				}
+
+				d, _ := json.Marshal(clubs)
+				os.Stdout.Write(d)
+
 				return err
 			},
 		},
 	}
 
 	app.Run(os.Args)
+}
+
+func parseURL(parse string) *url.URL {
+	uri, err := url.Parse(parse)
+	if err != nil {
+		panic(err)
+	}
+	return uri
 }
 
 func version() string {
