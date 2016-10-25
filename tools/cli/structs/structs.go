@@ -1,10 +1,14 @@
 package structs
 
 type Fixture struct {
-	Date     string `json:"date"`
-	Matchday int    `json:"matchday"`
-	Home     string `json:"homeTeamName"`
-	Away     string `json:"awayTeamName"`
+	Id        string `json:"id"`
+	Home      string `json:"home"`
+	HomeScore int    `json:"home_score"`
+	Away      string `json:"away"`
+	AwayScore int    `json:"away_score"`
+	KickOff   string `json:"kick_off"`
+	Matchday  int    `json:"-"`
+	Referee   string `json:"referee"`
 }
 
 type Club struct {
