@@ -1,0 +1,38 @@
+@import "../../css/branding.css";
+
+.clubs-container {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.clubs {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.clubs li {
+  text-decoration: none;
+  display: inline-block;
+  width: 100px;
+  padding: 8px;
+  margin: 5px;
+}
+
+.clubs li:hover {
+   background-color: var(--brand-tertiary);
+}
+
+.clubs img {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.loading {
+  margin-top: 100px;
+  font-size: 7rem;
+  text-align: center;
+}

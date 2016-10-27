@@ -3,6 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import ClubCrests from '../../components/Users/ClubCrests';
 import styles from './UsersPage.css';
 
 const UsersPage = React.createClass({
@@ -22,25 +23,11 @@ const UsersPage = React.createClass({
          <h1 className={styles.brand}>Tell Us About Yourself!</h1>
          <h3 className={styles.question}>Who Do You Support?</h3>
 
-         <div className={styles['clubs-container']}>
-           <ul className={styles.clubs}>
-              {this.props.clubs.map((c) => {
-                return (
-                  <li key={c.name}>
-                    <img src={c.crestUrl} alt={c.name} onClick={() => {
-                      console.log('click!')
-                    }}></img>
-                  </li>
-                );
-              })}
-           </ul>
-         </div>
-
+         <ClubCrests clubs={this.props.clubs} />
       </div>
     );
   }
 });
-
 
 const getUser = (state = {user: {}}, id) => {
   return state.user.remote ? state.user : null;
