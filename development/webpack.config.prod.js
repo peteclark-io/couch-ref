@@ -31,6 +31,9 @@ module.exports = {
                   minimize: true,
                 }
             }, {
+              test: /\.scss$/,
+              loaders: ["style", "css", "sass"]
+            }, {
               test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)(\?.*)?$/,
               loader: 'url-loader?limit=50000'
             }
