@@ -50,14 +50,14 @@ func main() {
 			Usage: "Query for fixtures for the provided matchday.",
 			Action: func(c *cli.Context) error {
 				client := &http.Client{}
-				api := fixtures.Fixtures{Client: client, FixturesURL: "http://api.football-data.org/v1/competitions/426/fixtures"}
+				api := fixtures.NewFixturesReader(client)
 
-				fixtures, err := api.ReadFixtures(c.Int("matchday"))
+				fs, err := api.ReadFixtures(c.Int("matchday"))
 				if err != nil {
 					return err
 				}
 
-				d, _ := json.Marshal(fixtures)
+				d, _ := json.Marshal(fixtures.ToMap(*fs))
 				os.Stdout.Write(d)
 
 				return err
@@ -69,7 +69,7 @@ func main() {
 			Usage:   "Download club data.",
 			Action: func(c *cli.Context) error {
 				client := &http.Client{}
-				api := clubs.Clubs{Client: client, ClubsURL: "http://api.football-data.org/v1/competitions/426/teams"}
+				api := clubs.NewClubReader(client)
 
 				clubs, err := api.ReadClubs()
 				if err != nil {

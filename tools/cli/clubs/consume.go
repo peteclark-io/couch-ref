@@ -20,9 +20,35 @@ func (c Clubs) readClubs() (*[]structs.Club, error) {
 	decoder := json.NewDecoder(resp.Body)
 	err = decoder.Decode(&results)
 
+	var teams []structs.Club
+	for _, team := range results.Teams {
+		team.ShortName = c.mapShortname(team.ShortName)
+		teams = append(teams, team)
+	}
+
 	if err != nil {
 		return nil, err
 	}
 
-	return &results.Teams, nil
+	return &teams, nil
+}
+
+func (c Clubs) mapShortname(short string) string {
+	switch short {
+	case "ManCity":
+		return "Man City"
+	case "Foxes":
+		return "Leicester"
+	case "West Bromwich":
+		return "West Brom"
+	case "ManU":
+		return "Man Utd"
+	case "Swans":
+		return "Swansea"
+	case "Spurs":
+		return "Tottenham"
+	case "Crystal":
+		return "Crystal Palace"
+	}
+	return short
 }
