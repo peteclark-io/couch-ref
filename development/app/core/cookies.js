@@ -28,3 +28,13 @@ export default function run(){
 export function saveClub(club){
   Cookies.set('user.club', JSON.stringify(club))
 };
+
+export function saveVoteAsCookie(user, question, vote){
+  var votes = Object.assign({}, user.votes, {
+    [question.id]: {
+      result: vote
+    }
+  });
+  console.log('Cookie votes.', votes);
+  Cookies.set('user.voted.questions', JSON.stringify(votes))
+};

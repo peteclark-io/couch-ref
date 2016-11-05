@@ -9,6 +9,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {ThreeBounce} from 'better-react-spinkit';
 import {saveVote} from '../../core/db-actions';
+import {saveVoteAsCookie} from '../../core/cookies';
 
 import {vote} from '../../ducks/user';
 
@@ -63,7 +64,7 @@ const Question = React.createClass({
                   <h3 className={styles.time}><small>{this.props.question.time}</small></h3>
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
-                  <Link className={styles.link} to={`/question/${this.props.question.id}`}><h3>{this.props.question.question}</h3></Link>
+                  <h3>{this.props.question.question}</h3>
                   {
                      this.props.question.decision && this.props.question.decision !== "" ?
                         <h4>REFEREE&#39;S CALL: <span className={styles.decision}>{this.props.question.decision}</span></h4>
@@ -87,7 +88,11 @@ const Question = React.createClass({
                          className={classNames(buttons['action-button'], buttons.no, buttons.animate)}>No</a>
                     </div>
                     :
-                    <ResultsIndicator id={this.props.question.id} />
+                    <div>
+                      <ResultsIndicator id={this.props.question.id} />
+                      <div className={styles.spacer}></div>
+                      <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
+                    </div>
                   }
                </div>
             </div>
@@ -120,6 +125,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     vote: (user, question, result) => {
       saveVote(user, question, result);
+      saveVoteAsCookie(user, question, result);
       dispatch(vote(question, result));
     }
   }

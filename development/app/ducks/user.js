@@ -25,9 +25,7 @@ export default function reducer(state = {}, action){
     case INSPECT_COOKIES:
       return Object.assign({}, state, {
          club: Object.assign({}, state.club, action.cookies.club),
-         local: {
-            votes: action.cookies.votes
-         }
+         votes: Object.assign({}, state.votes, action.cookies.votes)
       });
 
     case INSPECT_FIREBASE:
