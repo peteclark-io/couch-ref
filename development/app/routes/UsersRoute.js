@@ -11,8 +11,16 @@ const UsersRoute = {
        component: require('../components/Users/ClubCrests').default
      },
      {
-        path: 'asl',
-        component: require('../components/Users/ASL').default
+        path: 'dob',
+        component: require('../components/Users/DateOfBirth').default
+     },
+     {
+        path: 'sex',
+        component: require('../components/Users/Gender').default
+     },
+     {
+        path: 'location',
+        component: require('../components/Users/Location').default
      }
   ]
 };

@@ -83,9 +83,9 @@ const Question = React.createClass({
                     <div>
                       <div className={styles.spacer}></div>
                       <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}
-                         className={classNames(buttons['action-button'], buttons.yes, buttons.animate)}>Yes</a>
+                         className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Yes</a>
                       <a onClick={() => {this.props.vote(this.props.user, this.props.question, false)}}
-                         className={classNames(buttons['action-button'], buttons.no, buttons.animate)}>No</a>
+                         className={classNames(buttons['action-button'], buttons.no, buttons.animate, styles.button)}>No</a>
                     </div>
                     :
                     <div>

@@ -6,14 +6,12 @@
 }
 
 .action-button {
-	margin: 0px 0.4rem 0.4rem 0px;
 	padding: 0.4rem 1.6rem; /**/
 	border-radius: 0.4rem;
 
 	font-family: var(--font-secondary);
-	font-size: 1rem;
 	color: white;
-	float: left;
+
 	text-decoration: none;
 	cursor: pointer;
 }

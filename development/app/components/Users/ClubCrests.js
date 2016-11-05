@@ -32,14 +32,14 @@ const ClubCrests = React.createClass({
     return (
       <div>
          <h3 className={styles.question}>Who Do You Support in the Premier League?</h3>
-         <div className={styles['clubs-container']}>
+         <section className={styles['clubs-container']}>
            <ul className={styles.clubs}>
            {this.props.clubs.map((c) => {
               return (
                  <li key={c.name}>
                  <img src={c.crestUrl} alt={c.name} onClick={() => {
                     this.props.selectClub(c);
-                    this.context.router.push('/');
+                    this.context.router.push('/users/dob');
                  }}></img>
                  </li>
               );
@@ -47,7 +47,7 @@ const ClubCrests = React.createClass({
            </ul>
            {/*<button>Other</button>*/}
            <h4 className={styles.disclaimer}>We currently only collect data on Premier League fans, sorry if you support someone else!</h4>
-         </div>
+         </section>
       </div>
     );
   }
