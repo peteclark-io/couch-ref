@@ -71,7 +71,7 @@ asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
 uuid=$(uuidgen | tr 'A-Z' 'a-z')
 
 match_json='[{"id": "'${uuid}'","asked": "'${asked}'"}]'
-json='{"id": "'${uuid}'", "asked": "'${asked}'","decision": "'$decision'", "description": "'$description'", "controversial": '$controversy', "question": "'${question}'","time": "'${timestamp}'"}'
+json='{"id": "'${uuid}'", "match": "'${match}'", "asked": "'${asked}'","decision": "'${decision}'", "description": "'${description}'", "controversial": '${controversy}', "question": "'${question}'","time": "'${timestamp}'"}'
 
 stat_json='{"id": "'${uuid}'", "simple": {"yes": 0, "no": 0}}'
 

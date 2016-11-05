@@ -59,8 +59,18 @@ const getQuestionResults = (state = {statistics: {}}, id) => {
   return state.statistics[id] ? state.statistics[id] : {id: id, breakdown: {club: {}}, simple: {yes: 0, no: 0}};
 };
 
-const getMatch = (state = {match: {}}, id) => {
-  return {home: "Sunderland", away: "Arsenal"};
+const getMatch = (state = {questions: {}, match: {}}, id) => {
+  if (!state.questions || !state.questions[id]){
+    return undefined;
+  }
+
+  var question = state.questions[id];
+  if (!question.match || !state.match[question.match]){
+    return undefined;
+  }
+
+  var match = state.match[question.match];
+  return {home: match.home, away: match.away}
 };
 
 const mapStateToProps = (state, ownProps) => {

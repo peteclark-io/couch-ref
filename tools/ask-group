@@ -33,7 +33,7 @@ function question {
 }
 
 function question_json {
-   echo '{"id": "'${uuid}'", "asked": "'${asked}'","decision": "","description": "","question": "'${question}'"}'
+   echo '{"id": "'${uuid}'", "match":"'${match}'", "asked": "'${asked}'","decision": "","description": "","question": "'${question}'"}'
 }
 
 function question_id_json {

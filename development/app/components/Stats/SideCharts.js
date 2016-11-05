@@ -33,18 +33,23 @@ const SideCharts = React.createClass({
         );
       }
 
-      var homeBreakdown = this.props.results.breakdown.club[this.props.match.home];
-      var awayBreakdown = this.props.results.breakdown.club[this.props.match.away];
-      
-      var away = {
-        yes: awayBreakdown ? awayBreakdown.yes : 0,
-        no: awayBreakdown ? awayBreakdown.no : 0
-      };
+      var home = {yes:0, no: 0};
+      var away = {yes:0, no: 0};
 
-      var home = {
-        yes: homeBreakdown ? homeBreakdown.yes : 0,
-        no: homeBreakdown ? homeBreakdown.no : 0
-      };
+      if (this.props.match){
+        var homeBreakdown = this.props.results.breakdown.club[this.props.match.home];
+        var awayBreakdown = this.props.results.breakdown.club[this.props.match.away];
+
+        away = {
+          yes: awayBreakdown ? awayBreakdown.yes : 0,
+          no: awayBreakdown ? awayBreakdown.no : 0
+        };
+
+        home = {
+          yes: homeBreakdown ? homeBreakdown.yes : 0,
+          no: homeBreakdown ? homeBreakdown.no : 0
+        };
+      }
 
       return (
         <div className={bootstrap.row}>
