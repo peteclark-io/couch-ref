@@ -19,6 +19,11 @@ if [ -z $question ]; then
    read question
 fi
 
+if [ -z $description ]; then
+  echo "Can you give a brief description of what happened? (leave blank if you cba)"
+  read description
+fi
+
 if [ -z $timestamp ]; then
    echo "Enter the match time in the format XXmin:"
    read timestamp
@@ -32,8 +37,6 @@ if [ -z $decision ]; then
       [Yy] | "" )
          echo "What was the decision? 'Yes' or 'No'."
          read decision
-         echo "Can you give a brief description of what happened? (leave blank if you cba)"
-         read description
          ;;
       [Nn] )
          decision=""
@@ -68,7 +71,7 @@ asked=$(gdate -u --rfc-3339=seconds | sed 's/ /T/')
 uuid=$(uuidgen | tr 'A-Z' 'a-z')
 
 match_json='[{"id": "'${uuid}'","asked": "'${asked}'"}]'
-json='{"id": "'${uuid}'", "asked": "'${asked}'","decision": "'$decision'", "description": "'$description'", "controversial": '$controversy', "question": "'${question}'","time": "'${timestamp}'"}'
+json='{"id": "'${uuid}'", "match": "'${match}'", "asked": "'${asked}'","decision": "'${decision}'", "description": "'${description}'", "controversial": '${controversy}', "question": "'${question}'","time": "'${timestamp}'"}'
 
 stat_json='{"id": "'${uuid}'", "simple": {"yes": 0, "no": 0}}'
 

@@ -32,8 +32,13 @@
 .auth-providers img {
   width: 50px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
-.auth-providers img:nth-child(even) {
-  margin-left: 10px;
+.auth-providers img:first-child {
+  margin-left: 0px;
+}
+
+.facebook {
+  padding: 3px;
 }

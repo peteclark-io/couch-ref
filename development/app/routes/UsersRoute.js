@@ -1,13 +1,20 @@
 'use strict';
 
 const UsersRoute = {
-  path: '/user',
+  path: '/users',
 
-  getComponents(nextState, callback) {
-    require.ensure([], function (require) {
-      callback(null, require('../pages/banners/UsersPage').default)
-    })
-  }
+  component: require('../pages/banners/UsersPage').default,
+
+  childRoutes: [
+     {
+       path: 'club',
+       component: require('../components/Users/ClubCrests').default
+     },
+     {
+        path: 'asl',
+        component: require('../components/Users/ASL').default
+     }
+  ]
 };
 
 export default UsersRoute;

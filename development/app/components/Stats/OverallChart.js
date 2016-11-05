@@ -16,6 +16,12 @@ const OverallChart = React.createClass({
   },
 
   render: function() {
+    if (this.props.yes === 0 && this.props.no === 0) {
+      return (
+        <h5>No data!</h5>
+      );
+    }
+
     var data = {
       labels: ['Yes', 'No'],
       datasets: [

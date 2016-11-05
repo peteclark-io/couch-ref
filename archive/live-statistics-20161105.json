@@ -1,0 +1,112 @@
+{
+  "349e4d9a-acd6-4569-b4b2-2c842a1c2681": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      }
+    },
+    "id": "349e4d9a-acd6-4569-b4b2-2c842a1c2681",
+    "simple": {
+      "no": 7,
+      "yes": 5
+    }
+  },
+  "355673f8-e29a-4437-889a-b04230b80adf": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 5,
+          "yes": 4
+        },
+        "Bournemouth": {
+          "no": 1,
+          "yes": 0
+        },
+        "Sunderland": {
+          "no": 0,
+          "yes": 1
+        }
+      }
+    },
+    "id": "355673f8-e29a-4437-889a-b04230b80adf",
+    "simple": {
+      "no": 7,
+      "yes": 11
+    }
+  },
+  "3f82b87c-14e3-4a2d-867c-da62a5054f22": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 1
+        },
+        "Bournemouth": {
+          "no": 1,
+          "yes": 0
+        }
+      }
+    },
+    "id": "3f82b87c-14e3-4a2d-867c-da62a5054f22",
+    "simple": {
+      "no": 5,
+      "yes": 4
+    }
+  },
+  "808cf6d7-90ea-4930-8a4f-5e6dac81755d": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 2,
+          "yes": 2
+        }
+      }
+    },
+    "id": "808cf6d7-90ea-4930-8a4f-5e6dac81755d",
+    "simple": {
+      "no": 5,
+      "yes": 3
+    }
+  },
+  "aabdb03b-e1b8-432d-b8c4-1d5f60a5d9ff": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 2
+        }
+      }
+    },
+    "id": "aabdb03b-e1b8-432d-b8c4-1d5f60a5d9ff",
+    "simple": {
+      "no": 2,
+      "yes": 6
+    }
+  },
+  "meal": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 16
+        },
+        "Bournemouth": {
+          "no": 0,
+          "yes": 1
+        },
+        "Sunderland": {
+          "no": 1,
+          "yes": 1
+        }
+      }
+    },
+    "id": "meal",
+    "simple": {
+      "no": 6,
+      "yes": 32
+    }
+  }
+}

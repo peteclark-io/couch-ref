@@ -15,8 +15,13 @@ import SideCharts from './SideCharts';
 const QuestionResults = React.createClass({
 
   propTypes: {
+    match: React.PropTypes.shape({
+      home: React.PropTypes.string,
+      away: React.PropTypes.string
+    }),
     results: React.PropTypes.shape({
        id: React.PropTypes.string,
+       breakdown: React.PropTypes.object,
        simple: React.PropTypes.shape({
          yes: React.PropTypes.number,
          no: React.PropTypes.number
@@ -43,7 +48,7 @@ const QuestionResults = React.createClass({
             </div>
           </div>
           <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-4'])}>
-            <SideCharts results={this.props.results} />
+            <SideCharts match={this.props.match} results={this.props.results} />
           </div>
         </div>
       );
@@ -51,12 +56,27 @@ const QuestionResults = React.createClass({
 });
 
 const getQuestionResults = (state = {statistics: {}}, id) => {
-  return state.statistics[id] ? state.statistics[id] : {id: id, simple: {yes: 0, no: 0}};
+  return state.statistics[id] ? state.statistics[id] : {id: id, breakdown: {club: {}}, simple: {yes: 0, no: 0}};
+};
+
+const getMatch = (state = {questions: {}, match: {}}, id) => {
+  if (!state.questions || !state.questions[id]){
+    return undefined;
+  }
+
+  var question = state.questions[id];
+  if (!question.match || !state.match[question.match]){
+    return undefined;
+  }
+
+  var match = state.match[question.match];
+  return {home: match.home, away: match.away}
 };
 
 const mapStateToProps = (state, ownProps) => {
    return {
-     results: getQuestionResults(state, ownProps.id)
+     results: getQuestionResults(state, ownProps.id),
+     match: getMatch(state, ownProps.id)
    };
 };
 

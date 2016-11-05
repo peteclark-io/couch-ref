@@ -89,6 +89,14 @@ const data = (store) => {
         });
 
         store.dispatch(ready());
+
+        var userClub = store.getState().user.club;
+        console.log(userClub);
+        if (!userClub || !userClub.shortName){
+          router.push('/users');
+          return;
+        }
+
         router.push(path);
       }
     }

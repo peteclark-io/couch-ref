@@ -3,52 +3,57 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import ClubCrests from '../../components/Users/ClubCrests';
 import styles from './UsersPage.css';
 
 const UsersPage = React.createClass({
 
   propTypes: {
     user: React.PropTypes.object,
-    clubs: React.PropTypes.array
+    location: React.PropTypes.object
+  },
+
+  contextTypes: {
+     router: React.PropTypes.object
+  },
+
+  componentWillMount: function(){
+     this.checkRoute();
+  },
+
+  componentWillUpdate: function(){
+     this.checkRoute();
+  },
+
+  checkRoute: function(){
+     var path = this.props.location.pathname.replace(/\/$/, '');
+     if (path === '/users'){
+       this.context.router.push('/users/club');
+     }
   },
 
   render: function() {
-    if (!this.props.user.remote || !this.props.clubs){
+    if (!this.props.user.remote){
       return null;
     }
 
     return (
       <div className={styles.splash}>
          <h1 className={styles.brand}>Tell Us About Yourself!</h1>
-         <h3 className={styles.question}>Who Do You Support?</h3>
-
-         <ul className={styles.clubs}>
-            {this.props.clubs.map((c) => {
-              return (
-                <li key={c.name}>
-                  <img src={c.crestUrl} alt={c.name}></img>
-                </li>
-              );
-            })}
-         </ul>
+         {this.props.children}
       </div>
     );
   }
 });
 
-
 const getUser = (state = {user: {}}, id) => {
   return state.user.remote ? state.user : null;
 };
 
-const getClubs = (state = {clubs: []}, id) => {
-  return state.clubs.length > 0 ? state.clubs : null;
-};
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
    return {
      user: getUser(state),
-     clubs: getClubs(state)
+     location: ownProps.location
    };
 };
 
