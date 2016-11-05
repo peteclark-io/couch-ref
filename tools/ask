@@ -19,6 +19,11 @@ if [ -z $question ]; then
    read question
 fi
 
+if [ -z $description ]; then
+  echo "Can you give a brief description of what happened? (leave blank if you cba)"
+  read description
+fi
+
 if [ -z $timestamp ]; then
    echo "Enter the match time in the format XXmin:"
    read timestamp
@@ -32,8 +37,6 @@ if [ -z $decision ]; then
       [Yy] | "" )
          echo "What was the decision? 'Yes' or 'No'."
          read decision
-         echo "Can you give a brief description of what happened? (leave blank if you cba)"
-         read description
          ;;
       [Nn] )
          decision=""

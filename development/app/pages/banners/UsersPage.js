@@ -9,7 +9,27 @@ import styles from './UsersPage.css';
 const UsersPage = React.createClass({
 
   propTypes: {
-    user: React.PropTypes.object
+    user: React.PropTypes.object,
+    location: React.PropTypes.object
+  },
+
+  contextTypes: {
+     router: React.PropTypes.object
+  },
+
+  componentWillMount: function(){
+     this.checkRoute();
+  },
+
+  componentWillUpdate: function(){
+     this.checkRoute();
+  },
+
+  checkRoute: function(){
+     var path = this.props.location.pathname.replace(/\/$/, '');
+     if (path === '/users'){
+       this.context.router.push('/users/club');
+     }
   },
 
   render: function() {
@@ -30,9 +50,10 @@ const getUser = (state = {user: {}}, id) => {
   return state.user.remote ? state.user : null;
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
    return {
-     user: getUser(state)
+     user: getUser(state),
+     location: ownProps.location
    };
 };
 

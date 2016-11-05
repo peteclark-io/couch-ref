@@ -9,7 +9,8 @@ import styles from './Splash.css';
 const Splash = React.createClass({
 
    propTypes: {
-      ready: React.PropTypes.bool
+      ready: React.PropTypes.bool,
+      user: React.PropTypes.object
    },
 
    contextTypes: {
@@ -46,9 +47,14 @@ const isReady = (state = {ready: false}) => {
    return state.ready;
 };
 
+const getUser = (state = {user: {}}) => {
+   return state.user;
+};
+
 const mapStateToProps = (state) => {
    return {
-     ready: isReady(state)
+     ready: isReady(state),
+     user: getUser(state)
    };
 };
 

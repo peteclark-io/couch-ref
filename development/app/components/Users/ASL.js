@@ -5,12 +5,22 @@ import {connect} from 'react-redux';
 
 import {ThreeBounce} from 'better-react-spinkit';
 
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import styles from './styles.css';
 
 const ASL = React.createClass({
 
   propTypes: {
     clubs: React.PropTypes.array
+  },
+
+  getInitialState: function(){
+     return {
+       dob: moment()
+     };
   },
 
   render: function() {
@@ -23,18 +33,17 @@ const ASL = React.createClass({
     }
 
     return (
-      <div className={styles['clubs-container']}>
-        <ul className={styles.clubs}>
-           {this.props.clubs.map((c) => {
-             return (
-               <li key={c.name}>
-                 <img src={c.crestUrl} alt={c.name} onClick={() => {
-                   console.log('click!')
-                 }}></img>
-               </li>
-             );
-           })}
-        </ul>
+      <div>
+         <h3 className={styles.question}>Age, Sex, Location?</h3>
+         <div className={styles['asl-container']}>
+            <section className={styles.age}>
+              <DatePicker
+                  selected={this.state.dob}
+                  onChange={(update) => {
+                    console.log(update);
+                  }} />
+            </section>
+         </div>
       </div>
     );
   }
@@ -61,6 +70,6 @@ const mapDispatchToProps = (dispatch) => {
 
 const LiveASL = connect(
   mapStateToProps
-)(ClubCrests);
+)(ASL);
 
 export default LiveASL;

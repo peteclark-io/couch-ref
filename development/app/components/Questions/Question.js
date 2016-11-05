@@ -33,7 +33,8 @@ const Question = React.createClass({
          decision: React.PropTypes.string
       }),
       votedOn: React.PropTypes.bool,
-      vote: React.PropTypes.func
+      vote: React.PropTypes.func,
+      user: React.PropTypes.object
    },
 
    render: function() {
@@ -80,9 +81,9 @@ const Question = React.createClass({
                     !this.props.votedOn ?
                     <div>
                       <div className={styles.spacer}></div>
-                      <a onClick={() => {this.props.vote(this.props.question, true)}}
+                      <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}
                          className={classNames(buttons['action-button'], buttons.yes, buttons.animate)}>Yes</a>
-                      <a onClick={() => {this.props.vote(this.props.question, false)}}
+                      <a onClick={() => {this.props.vote(this.props.user, this.props.question, false)}}
                          className={classNames(buttons['action-button'], buttons.no, buttons.animate)}>No</a>
                     </div>
                     :
@@ -103,17 +104,22 @@ const getVotes = (state = { user: {votes: {} } }, id) => {
   return state.user.votes && state.user.votes[id] ? true : false;
 };
 
+const getUser = (state = { user: {} }) => {
+  return state.user;
+};
+
 const mapStateToProps = (state, ownProps) => {
    return {
      question: getQuestion(state, ownProps.id),
-     votedOn: getVotes(state, ownProps.id)
+     votedOn: getVotes(state, ownProps.id),
+     user: getUser(state)
    };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    vote: (question, result) => {
-      saveVote(question, result);
+    vote: (user, question, result) => {
+      saveVote(user, question, result);
       dispatch(vote(question, result));
     }
   }

@@ -12,7 +12,7 @@ const UsersRoute = {
      },
      {
         path: 'asl',
-        component: require('../components/Users/ClubCrests').default
+        component: require('../components/Users/ASL').default
      }
   ]
 };

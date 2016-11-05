@@ -7,6 +7,15 @@
   flex: 0 1 auto;
 }
 
+.disclaimer {
+  font-family: var(--font-secondary);
+  font-size: 1.2em;
+  color: black;
+  margin: 0px;
+  margin-top: 60px;
+  padding-bottom: 30px;
+}
+
 .clubs-container {
   background-color: white;
   width: 100%;
@@ -29,7 +38,7 @@
 }
 
 .clubs li:hover {
-   background-color: var(--brand-tertiary);
+   background-color: whitesmoke;
 }
 
 .clubs img {
