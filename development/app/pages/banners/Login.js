@@ -31,8 +31,18 @@ const Login = React.createClass({
       }
    },
 
-   login: function(){
+   googleLogin: function(){
      var provider = new firebase.auth.GoogleAuthProvider();
+     firebase.auth().signInWithRedirect(provider);
+   },
+
+   facebookLogin: function(){
+     var provider = new firebase.auth.FacebookAuthProvider();
+     firebase.auth().signInWithRedirect(provider);
+   },
+
+   twitterLogin: function(){
+     var provider = new firebase.auth.TwitterAuthProvider();
      firebase.auth().signInWithRedirect(provider);
    },
 
@@ -42,7 +52,9 @@ const Login = React.createClass({
              <h1 className={styles.brand}>Couch Ref</h1>
              <h3 className={styles.with}>Login With</h3>
              <div className={styles['auth-providers']}>
-                <img src="/images/auth/google.svg" onClick={this.login} />
+                <img src="/images/auth/google.svg" onClick={this.googleLogin} />
+                <img className={styles.facebook} src="/images/auth/facebook.png" onClick={this.facebookLogin} />
+                <img className={styles.facebook} src="/images/auth/twitter.svg" onClick={this.twitterLogin} />
              </div>
           </div>
       );
