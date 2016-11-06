@@ -7,9 +7,15 @@ const rootRoute = {
          path: '/',
          component: require('../pages/CouchRef').default,
          childRoutes: [
-            require('./MatchRoute').default,
-            require('./TeamsRoute').default,
-            require('./StatsRoute').default
+            {
+              path: '/match/:matchId',
+              component: require('../pages/sections/MatchPage').default
+            },
+            {
+              path: '/question/:questionId',
+              component: require('../pages/sections/StatsPage').default
+            },
+            require('./TeamsRoute').default
          ]
       }, {
          path: '/splash',
