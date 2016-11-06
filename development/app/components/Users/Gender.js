@@ -3,6 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import classNames from 'classnames';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {setSex} from '../../ducks/user';
 
@@ -37,16 +38,24 @@ const Gender = React.createClass({
          <h3 className={styles.question}>Sex?</h3>
          <div className={styles['asl-container']}>
             <section className={styles.sex}>
-              <select className={styles['sex-select']} onChange={this.onChange}>
-                {sex.map(s => {
-                  return <option key={s}>{s}</option>
-                })}
-              </select>
-              <a onClick={() => {
-                this.props.save(this.state);
-                this.context.router.push('/users/location');
-              }}
-                 className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
+              <div className={bootstrap.row}>
+                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
+                  <select className={styles['sex-select']} onChange={this.onChange}>
+                    {sex.map(s => {
+                      return <option key={s}>{s}</option>
+                    })}
+                  </select>
+                </div>
+                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
+                  <a onClick={() => {
+                    this.props.save(this.state);
+                    this.context.router.push('/users/location');
+                  }}
+                     className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
+                </div>
+              </div>
+
+
             </section>
          </div>
       </div>
