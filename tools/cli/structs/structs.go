@@ -17,3 +17,22 @@ type Club struct {
 	ShortName        string `json:"shortName"`
 	Name             string `json:"name"`
 }
+
+type QuestionResults struct {
+	Id        string           `json:"id"`
+	Simple    SimpleStatistics `json:"simple"`
+	Breakdown Breakdown        `json:"breakdown"`
+}
+
+type SimpleStatistics struct {
+	Yes int `json:"yes"`
+	No  int `json:"no"`
+}
+
+type Breakdown struct {
+	Club ClubBreakdown `json:"club"`
+	Age  AgeBreakdown  `json:"age"`
+}
+
+type ClubBreakdown map[string]SimpleStatistics
+type AgeBreakdown map[string]SimpleStatistics

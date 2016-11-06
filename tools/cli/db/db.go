@@ -21,7 +21,13 @@ func (f Firebase) Write(path string, data interface{}) error {
 	}
 
 	cmd := exec.Command("firebase --non-interactive --project " + f.Project + " --token " + f.AuthToken + " database:set -y " + path)
-	cmd.StdinPipe().Write(j)
+	pipe, err := cmd.StdinPipe()
+	if err != nil {
+		return err
+	}
 
+	pipe.Write(j)
 	cmd.Start()
+
+	return nil
 }
