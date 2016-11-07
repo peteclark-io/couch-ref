@@ -30,14 +30,7 @@ module.exports = {
             }
         }, {
             test: /\.css$/,
-            loader: 'postcss-loader',
-            query: {
-                sourceMap: false,
-                modules: true,
-                localIdentName: '[local]-[hash:base64:4]',
-                minimize: true,
-                importLoaders: true
-            }
+            loader: 'postcss-loader'
         }, {
             test: /\.scss$/,
             loaders: ["style", "css", "sass"]

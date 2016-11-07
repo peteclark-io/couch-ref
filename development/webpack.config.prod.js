@@ -31,6 +31,9 @@ module.exports = {
                   minimize: true,
                 }
             }, {
+                test: /\.css$/,
+                loader: 'postcss-loader'
+            }, {
               test: /\.scss$/,
               loaders: ["style", "css", "sass"]
             }, {
