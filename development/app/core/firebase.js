@@ -64,14 +64,17 @@ const data = (store) => {
 
       const couchRef = (user) => {
         console.log('Connected to Couch Ref.', user);
-
         store.dispatch(inspectFirebase({
-          uid: user.uid,
-          fullName: user.displayName
+           remote: {
+             uid: user.uid,
+             fullName: user.displayName
+           }
         }));
         store.dispatch(authenticated());
 
         var database = firebase.database();
+
+        var userUid = database.ref('/v0/users/' + user.uid);
 
         var liveMatches = database.ref('/v0/live-matches');
         var liveQuestions = database.ref('/v0/live-questions');
@@ -86,18 +89,65 @@ const data = (store) => {
         var clubs = database.ref('/v0/clubs');
         clubs.once('value').then((snapshot) => {
           store.dispatch(addClubs(snapshot.val()));
+
+          userUid.once('value').then((userSnap) => {
+             var data = userSnap.val();
+             console.log('Loaded user data.', data);
+             store.dispatch(ready());
+
+             if (!data){
+               router.push('/users');
+               return;
+             }
+
+             var results = store.getState().clubs.filter((c) => {
+                return c.name === data.club;
+             });
+
+             var userClub = results.length === 1 ? results[0] : undefined;
+             if (userClub){
+                store.dispatch(inspectFirebase({
+                   club: userClub,
+                }));
+             } else {
+                router.push('/users/club');
+             }
+
+             if (data.birthday){
+                store.dispatch(inspectFirebase({
+                   remote: {
+                      birthday: data.birthday
+                   }
+                }));
+             } else {
+                router.push('/users/birthday');
+             }
+
+             if (data.sex) {
+                store.dispatch(inspectFirebase({
+                   remote: {
+                      sex: data.sex
+                   }
+                }));
+             } else {
+                router.push('/users/sex');
+                return
+             }
+
+             if (data.location) {
+                store.dispatch(inspectFirebase({
+                   remote: {
+                      location: data.location
+                   }
+                }));
+             } else {
+                router.push('/users/location');
+                return
+             }
+             
+             router.push(path);
+          });
         });
-
-        store.dispatch(ready());
-
-        var userClub = store.getState().user.club;
-        console.log(userClub);
-        if (!userClub || !userClub.shortName){
-          router.push('/users');
-          return;
-        }
-
-        router.push(path);
       }
     }
   };

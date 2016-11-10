@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {setSex} from '../../ducks/user';
+import {saveSex} from '../../core/db-actions';
 
 import buttons from '../Questions/buttons.css';
 import styles from './styles.css';
@@ -15,7 +16,8 @@ const sex = ["Female", "Male", "Other"];
 const Gender = React.createClass({
 
   propTypes: {
-    save: React.PropTypes.func
+    save: React.PropTypes.func,
+    user: React.PropTypes.object
   },
 
   contextTypes: {
@@ -48,14 +50,12 @@ const Gender = React.createClass({
                 </div>
                 <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
                   <a onClick={() => {
-                    this.props.save(this.state);
+                    this.props.save(this.props.user, this.state);
                     this.context.router.push('/users/location');
                   }}
                      className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
                 </div>
               </div>
-
-
             </section>
          </div>
       </div>
@@ -63,16 +63,27 @@ const Gender = React.createClass({
   }
 });
 
+const getUser = (state = { user: {} }) => {
+  return state.user;
+};
+
+const mapStateToProps = (state) => {
+   return {
+     user: getUser(state)
+   };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    save: (state) => {
+    save: (user, state) => {
       dispatch(setSex(state.sex));
+      saveSex(user, state.sex);
     }
   }
 };
 
 const LiveGender = connect(
-  undefined,
+  mapStateToProps,
   mapDispatchToProps
 )(Gender);
 

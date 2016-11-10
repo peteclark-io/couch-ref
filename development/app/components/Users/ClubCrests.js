@@ -7,13 +7,16 @@ import {ThreeBounce} from 'better-react-spinkit';
 
 import {selectClub} from '../../ducks/user';
 import styles from './styles.css';
+
 import {saveClub} from '../../core/cookies';
+import {saveClub as saveClubToDb} from '../../core/db-actions';
 
 const ClubCrests = React.createClass({
 
   propTypes: {
     clubs: React.PropTypes.array,
-    selectClub: React.PropTypes.func
+    selectClub: React.PropTypes.func,
+    user: React.PropTypes.object
   },
 
   contextTypes: {
@@ -38,8 +41,8 @@ const ClubCrests = React.createClass({
               return (
                  <li key={c.name}>
                  <img src={c.crestUrl} alt={c.name} onClick={() => {
-                    this.props.selectClub(c);
-                    this.context.router.push('/users/dob');
+                    this.props.selectClub(this.props.user, c);
+                    this.context.router.push('/users/birthday');
                  }}></img>
                  </li>
               );
@@ -57,17 +60,23 @@ const getClubs = (state = {clubs: []}, id) => {
   return state.clubs.length > 0 ? state.clubs : null;
 };
 
+const getUser = (state = { user: {} }) => {
+  return state.user;
+};
+
 const mapStateToProps = (state) => {
    return {
-     clubs: getClubs(state)
+     clubs: getClubs(state),
+     user: getUser(state)
    };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    selectClub: (club) => {
+    selectClub: (user, club) => {
       dispatch(selectClub(club));
       saveClub(club);
+      saveClubToDb(user, club);
     }
   }
 };

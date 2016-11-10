@@ -49,10 +49,8 @@ export default function reducer(state = {}, action){
 
     case INSPECT_FIREBASE:
       return Object.assign({}, state, {
-         remote: {
-            uid: action.user.uid,
-            fullName: action.user.fullName
-         }
+         club: Object.assign({}, state.club, action.user.club),
+         remote: Object.assign({}, state.remote, action.user.remote)
       });
     default:
       return state;

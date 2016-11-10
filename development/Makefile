@@ -1,7 +1,7 @@
 default: clean dev
 
 clean:
-	rm ../public/js/*bundle.js
+	- rm ../public/js/*bundle.js
 
 dev: pre-steps dependencies webpack serve
 

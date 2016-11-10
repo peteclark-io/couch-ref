@@ -11,7 +11,7 @@ const UsersRoute = {
        component: require('../components/Users/ClubCrests').default
      },
      {
-        path: 'dob',
+        path: 'birthday',
         component: require('../components/Users/DateOfBirth').default
      },
      {

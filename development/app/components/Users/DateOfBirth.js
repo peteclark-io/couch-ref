@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import moment from 'moment';
 
 import {setDateOfBirth} from '../../ducks/user';
+import {saveDateOfBirth} from '../../core/db-actions';
 
 import buttons from '../Questions/buttons.css';
 import styles from './styles.css';
@@ -16,7 +17,8 @@ const currentYear = moment().year();
 const DateOfBirth = React.createClass({
 
   propTypes: {
-    onChange: React.PropTypes.func
+    onChange: React.PropTypes.func,
+    user: React.PropTypes.object
   },
 
   contextTypes: {
@@ -78,7 +80,7 @@ const DateOfBirth = React.createClass({
               </select>
               <a onClick={() =>
                 {
-                  this.props.onChange(this.state);
+                  this.props.onChange(this.state, this.props.user);
                   this.context.router.push('/users/sex');
                 }}
                 className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
@@ -89,16 +91,28 @@ const DateOfBirth = React.createClass({
   }
 });
 
+const getUser = (state = { user: {} }) => {
+  return state.user;
+};
+
+const mapStateToProps = (state) => {
+   return {
+     user: getUser(state)
+   };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChange: (state) => {
-      dispatch(setDateOfBirth(moment.utc({years: state.year, months: state.month, date: state.day, hour: 0, minute: 0})));
+    onChange: (state, user) => {
+      var birthday = moment.utc({years: state.year, months: state.month, date: state.day, hour: 0, minute: 0})
+      dispatch(setDateOfBirth(birthday));
+      saveDateOfBirth(user, birthday)
     }
   }
 };
 
 const LiveDateOfBirth = connect(
-  undefined,
+  mapStateToProps,
   mapDispatchToProps
 )(DateOfBirth);
 
