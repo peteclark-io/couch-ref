@@ -40,7 +40,7 @@ const Gender = React.createClass({
          <h3 className={styles.question}>Sex?</h3>
          <div className={styles['asl-container']}>
             <div className={bootstrap.row}>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
+               <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-xs-offset-1'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
                   <form className={bootstrap['form-inline']}>
                      <div className={bootstrap['form-group']}>
                         <select className={bootstrap['form-control']} onChange={this.onChange}>

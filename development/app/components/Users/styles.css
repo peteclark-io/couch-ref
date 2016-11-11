@@ -69,7 +69,7 @@
 .button {
   font-size: 1.6em;
   margin-left: 1em;
-  float:left;
+  float: left;
 }
 
 section {
@@ -90,6 +90,7 @@ select {
 
 @media (max-width: 768px){
 	select {
+     appearance:         none;
      font-size: 1.2em;
    }
 }
