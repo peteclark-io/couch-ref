@@ -3,6 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import classNames from 'classnames';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {setLocation} from '../../ducks/user';
 import {saveLocation} from '../../core/db-actions';
@@ -38,21 +39,29 @@ const Location = React.createClass({
       <div>
          <h3 className={styles.question}>Location?</h3>
          <div className={styles['asl-container']}>
-            <section className={styles.sex}>
-              <select defaultValue={'United Kingdom'} onChange={this.onChange}>
-                {countries.map(c => {
-                  if (c === 'United Kingdom'){
-                    return <option key={c}>{c}</option>
-                  }
-                  return <option key={c}>{c}</option>
-                })}
-              </select>
-              <a onClick={() => {
-                this.props.save(this.props.user, this.state);
-                this.context.router.push('/');
-              }}
-                 className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
-            </section>
+            <div className={bootstrap.row}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
+                  <form className={bootstrap['form-inline']}>
+                     <div className={bootstrap['form-group']}>
+                       <select className={bootstrap['form-control']} defaultValue={'United Kingdom'} onChange={this.onChange}>
+                         {countries.map(c => {
+                           if (c === 'United Kingdom'){
+                             return <option key={c}>{c}</option>
+                           }
+                           return <option key={c}>{c}</option>
+                         })}
+                       </select>
+                     </div>
+                     <div className={bootstrap['form-group']}>
+                        <a onClick={() => {
+                          this.props.save(this.props.user, this.state);
+                          this.context.router.push('/');
+                        }}
+                           className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
+                     </div>
+                  </form>
+               </div>
+            </div>
          </div>
       </div>
     );

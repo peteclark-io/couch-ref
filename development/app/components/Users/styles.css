@@ -69,6 +69,7 @@
 .button {
   font-size: 1.6em;
   margin-left: 1em;
+  float:left;
 }
 
 section {
@@ -87,20 +88,8 @@ select {
   border-color: whitesmoke;
 }
 
-select:first-child {
-  margin-right: 0px;
-}
-
-select > option {
-   background: white;
-   font-weight: lighter;
-}
-
 @media (max-width: 768px){
 	select {
-    -webkit-appearance: none;
-    -moz-appearance:    none;
-    appearance:         none;
-    font-size: 1.2em;
-  }
+     font-size: 1.2em;
+   }
 }

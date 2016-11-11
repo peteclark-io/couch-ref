@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import classNames from 'classnames';
 import moment from 'moment';
 
@@ -66,25 +67,38 @@ const DateOfBirth = React.createClass({
       <div>
          <h3 className={styles.question}>When&#39;s Your Date of Birth?</h3>
          <div className={styles['asl-container']}>
-            <section className={styles.age}>
-              <select onChange={this.onSelectDay}>
-                {days}
-              </select>
-              <select onChange={this.onSelectMonth}>
-                {months.map(month => {
-                  return <option key={month}>{month}</option>
-                })}
-              </select>
-              <select onChange={this.onSelectYear}>
-                {years}
-              </select>
-              <a onClick={() =>
-                {
-                  this.props.onChange(this.state, this.props.user);
-                  this.context.router.push('/users/sex');
-                }}
-                className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
-            </section>
+            <div className={bootstrap.row}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
+                  <form className={bootstrap['form-inline']}>
+                     <div className={bootstrap['form-group']}>
+                        <select className={bootstrap['form-control']} onChange={this.onSelectDay}>
+                        {days}
+                        </select>
+                     </div>
+                     <div className={bootstrap['form-group']}>
+                        <select className={bootstrap['form-control']} onChange={this.onSelectMonth}>
+                        {months.map(month => {
+                           return <option key={month}>{month}</option>
+                        })}
+                        </select>
+                     </div>
+                     <div className={bootstrap['form-group']}>
+                        <select className={bootstrap['form-control']} onChange={this.onSelectYear}>
+                        {years}
+                        </select>
+                     </div>
+                     <div className={bootstrap['form-group']}>
+                        <a className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}
+                           onClick={() =>
+                              {
+                                 this.props.onChange(this.state, this.props.user);
+                                 this.context.router.push('/users/sex');
+                              }}
+                        >Save</a>
+                     </div>
+                  </form>
+               </div>
+            </div>
          </div>
       </div>
     );

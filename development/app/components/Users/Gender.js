@@ -39,24 +39,26 @@ const Gender = React.createClass({
       <div>
          <h3 className={styles.question}>Sex?</h3>
          <div className={styles['asl-container']}>
-            <section className={styles.sex}>
-              <div className={bootstrap.row}>
-                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
-                  <select className={styles['sex-select']} onChange={this.onChange}>
-                    {sex.map(s => {
-                      return <option key={s}>{s}</option>
-                    })}
-                  </select>
-                </div>
-                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-2'])}>
-                  <a onClick={() => {
-                    this.props.save(this.props.user, this.state);
-                    this.context.router.push('/users/location');
-                  }}
-                     className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
-                </div>
-              </div>
-            </section>
+            <div className={bootstrap.row}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
+                  <form className={bootstrap['form-inline']}>
+                     <div className={bootstrap['form-group']}>
+                        <select className={bootstrap['form-control']} onChange={this.onChange}>
+                          {sex.map(s => {
+                            return <option key={s}>{s}</option>
+                          })}
+                        </select>
+                     </div>
+                     <div className={bootstrap['form-group']}>
+                        <a onClick={() => {
+                           this.props.save(this.props.user, this.state);
+                           this.context.router.push('/users/location');
+                        }}
+                        className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
+                     </div>
+                  </form>
+               </div>
+            </div>
          </div>
       </div>
     );
