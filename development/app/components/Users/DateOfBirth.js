@@ -45,10 +45,9 @@ const DateOfBirth = React.createClass({
   checkState: function(){
     if (this.props.user && this.props.user.remote && this.props.user.remote.birthday){
       var birthday = this.props.user.remote.birthday;
-      console.log('hi', birthday);
       this.setState({
         year: birthday.year(),
-        month: months[birthday.month()],
+        month: birthday.month(),
         day: birthday.date()
       });
     }
@@ -96,7 +95,7 @@ const DateOfBirth = React.createClass({
                         </select>
                      </div>
                      <div className={bootstrap['form-group']}>
-                        <select className={bootstrap['form-control']} defaultValue={this.state.month} onChange={this.onSelectMonth}>
+                        <select className={bootstrap['form-control']} defaultValue={months[this.state.month]} onChange={this.onSelectMonth}>
                         {months.map(month => {
                            return <option key={month}>{month}</option>
                         })}
@@ -139,6 +138,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onChange: (state, user) => {
       var birthday = moment.utc({years: state.year, months: state.month, date: state.day, hour: 0, minute: 0})
+      console.log('hiiiii', birthday, state);
       dispatch(setDateOfBirth(birthday));
       saveDateOfBirth(user, birthday)
     }

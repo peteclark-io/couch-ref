@@ -112,6 +112,7 @@ const data = (store) => {
                 }));
              } else {
                 router.push('/users/club');
+                return;
              }
 
              if (data.birthday){
@@ -124,9 +125,11 @@ const data = (store) => {
                   }));
                 } else {
                   router.push('/users/birthday');
+                  return;
                 }
              } else {
                 router.push('/users/birthday');
+                return;
              }
 
              if (data.sex) {
@@ -137,7 +140,7 @@ const data = (store) => {
                 }));
              } else {
                 router.push('/users/sex');
-                return
+                return;
              }
 
              if (data.location) {
@@ -148,7 +151,7 @@ const data = (store) => {
                 }));
              } else {
                 router.push('/users/location');
-                return
+                return;
              }
 
              router.push(path);
