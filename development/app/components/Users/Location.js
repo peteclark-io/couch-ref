@@ -28,6 +28,22 @@ const Location = React.createClass({
     return {location: 'United Kingdom'};
   },
 
+  componentWillMount: function(){
+    this.checkState();
+  },
+
+  componentWillUpdate: function(){
+    this.checkState();
+  },
+
+  checkState: function(){
+    if (this.props.user && this.props.user.remote && this.props.user.remote.location){
+      this.setState({
+        location: this.props.user.remote.location
+      });
+    }
+  },
+
   onChange: function(event){
     this.setState({
       location: event.target.value
@@ -43,7 +59,7 @@ const Location = React.createClass({
                <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-xs-offset-1'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
                   <form className={bootstrap['form-inline']}>
                      <div className={bootstrap['form-group']}>
-                       <select className={bootstrap['form-control']} defaultValue={'United Kingdom'} onChange={this.onChange}>
+                       <select className={bootstrap['form-control']} defaultValue={this.state.location} onChange={this.onChange}>
                          {countries.map(c => {
                            if (c === 'United Kingdom'){
                              return <option key={c}>{c}</option>

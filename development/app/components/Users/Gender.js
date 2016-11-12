@@ -34,6 +34,22 @@ const Gender = React.createClass({
     });
   },
 
+  componentWillMount: function(){
+    this.checkState();
+  },
+
+  componentWillUpdate: function(){
+    this.checkState();
+  },
+
+  checkState: function(){
+    if (this.props.user && this.props.user.remote && this.props.user.remote.sex){
+      this.setState({
+        sex: this.props.user.remote.sex
+      });
+    }
+  },
+
   render: function() {
     return (
       <div>
@@ -43,7 +59,7 @@ const Gender = React.createClass({
                <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-xs-offset-1'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
                   <form className={bootstrap['form-inline']}>
                      <div className={bootstrap['form-group']}>
-                        <select className={bootstrap['form-control']} onChange={this.onChange}>
+                        <select className={bootstrap['form-control']} defaultValue={this.state.sex} onChange={this.onChange}>
                           {sex.map(s => {
                             return <option key={s}>{s}</option>
                           })}

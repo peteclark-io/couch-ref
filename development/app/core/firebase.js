@@ -1,6 +1,7 @@
 'use strict'
 
 import firebase from 'firebase';
+import moment from 'moment';
 
 import {updateMatch, addMatch} from '../ducks/matches';
 import {updateQuestion, addQuestion} from '../ducks/questions';
@@ -114,11 +115,16 @@ const data = (store) => {
              }
 
              if (data.birthday){
-                store.dispatch(inspectFirebase({
-                   remote: {
-                      birthday: data.birthday
-                   }
-                }));
+                var parsed = moment(data.birthday);
+                if (parsed.isValid()){
+                  store.dispatch(inspectFirebase({
+                    remote: {
+                      birthday: parsed
+                    }
+                  }));
+                } else {
+                  router.push('/users/birthday');
+                }
              } else {
                 router.push('/users/birthday');
              }
@@ -144,7 +150,7 @@ const data = (store) => {
                 router.push('/users/location');
                 return
              }
-             
+
              router.push(path);
           });
         });

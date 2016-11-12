@@ -34,6 +34,26 @@ const DateOfBirth = React.createClass({
     };
   },
 
+  componentWillMount: function(){
+    this.checkState();
+  },
+
+  componentWillUpdate: function(){
+    this.checkState();
+  },
+
+  checkState: function(){
+    if (this.props.user && this.props.user.remote && this.props.user.remote.birthday){
+      var birthday = this.props.user.remote.birthday;
+      console.log('hi', birthday);
+      this.setState({
+        year: birthday.year(),
+        month: months[birthday.month()],
+        day: birthday.date()
+      });
+    }
+  },
+
   onSelectDay: function(event){
     this.setState(Object.assign({}, this.state, {
       day: parseInt(event.target.value)
@@ -71,19 +91,19 @@ const DateOfBirth = React.createClass({
                <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-xs-offset-1'], bootstrap['col-sm-8'], bootstrap['col-sm-offset-2'])}>
                   <form className={bootstrap['form-inline']}>
                      <div className={bootstrap['form-group']}>
-                        <select className={bootstrap['form-control']} onChange={this.onSelectDay}>
+                        <select className={bootstrap['form-control']} defaultValue={this.state.day} onChange={this.onSelectDay}>
                         {days}
                         </select>
                      </div>
                      <div className={bootstrap['form-group']}>
-                        <select className={bootstrap['form-control']} onChange={this.onSelectMonth}>
+                        <select className={bootstrap['form-control']} defaultValue={this.state.month} onChange={this.onSelectMonth}>
                         {months.map(month => {
                            return <option key={month}>{month}</option>
                         })}
                         </select>
                      </div>
                      <div className={bootstrap['form-group']}>
-                        <select className={bootstrap['form-control']} onChange={this.onSelectYear}>
+                        <select className={bootstrap['form-control']} defaultValue={this.state.year} onChange={this.onSelectYear}>
                         {years}
                         </select>
                      </div>
