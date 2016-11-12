@@ -20,6 +20,15 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 
+.brand-header a:hover, a:active {
+  text-decoration: none;
+}
+
+.brand-header h3 {
+  color: white;
+  font-family: 'Dosis', sans-serif;
+}
+
 .container {
   max-width: 800px;
 }
