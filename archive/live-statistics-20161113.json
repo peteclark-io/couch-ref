@@ -1,0 +1,134 @@
+{
+  "0979d532-faf0-4e4d-8562-7b0f49e8e420": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 5
+        },
+        "Bournemouth": {
+          "no": 1,
+          "yes": 0
+        },
+        "Everton": {
+          "no": 0,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        },
+        "undefined": {
+          "no": 0,
+          "yes": 1
+        }
+      }
+    },
+    "id": "0979d532-faf0-4e4d-8562-7b0f49e8e420",
+    "simple": {
+      "no": 1,
+      "yes": 8
+    }
+  },
+  "4bbf6ef9-669d-42cd-8140-2c0ade544794": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 2,
+          "yes": 5
+        },
+        "Bournemouth": {
+          "no": 0,
+          "yes": 1
+        },
+        "Everton": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        },
+        "Liverpool": {
+          "no": 0,
+          "yes": 1
+        },
+        "undefined": {
+          "no": 0,
+          "yes": 1
+        }
+      }
+    },
+    "id": "4bbf6ef9-669d-42cd-8140-2c0ade544794",
+    "simple": {
+      "no": 3,
+      "yes": 9
+    }
+  },
+  "5272c1bb-a496-4ba9-aade-42c1082c2923": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 4,
+          "yes": 2
+        },
+        "Bournemouth": {
+          "no": 1,
+          "yes": 0
+        },
+        "Everton": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 1,
+          "yes": 0
+        },
+        "undefined": {
+          "no": 1,
+          "yes": 0
+        }
+      }
+    },
+    "id": "5272c1bb-a496-4ba9-aade-42c1082c2923",
+    "simple": {
+      "no": 8,
+      "yes": 2
+    }
+  },
+  "af5cffb4-5ee9-4a10-8f45-7f052b1f600d": {
+    "breakdown": {
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 5
+        },
+        "Bournemouth": {
+          "no": 1,
+          "yes": 0
+        },
+        "Everton": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        },
+        "Liverpool": {
+          "no": 0,
+          "yes": 1
+        },
+        "undefined": {
+          "no": 1,
+          "yes": 0
+        }
+      }
+    },
+    "id": "af5cffb4-5ee9-4a10-8f45-7f052b1f600d",
+    "simple": {
+      "no": 4,
+      "yes": 7
+    }
+  }
+}

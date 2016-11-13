@@ -14,7 +14,6 @@ export default function reducer(state = [], action){
 
   switch(action.type){
     case MATCH_UPDATE:
-      console.log('Handling update', match);
       return sort([
         ..._.differenceWith(state, [match], (val, compare) => {return val.id === compare.id}),
         match

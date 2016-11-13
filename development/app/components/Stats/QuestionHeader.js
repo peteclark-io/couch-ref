@@ -33,7 +33,11 @@ const QuestionHeader = React.createClass({
     return (
       <div>
         <h1 className={styles.header}>{this.props.question.question}</h1>
-        <h4 className={styles.referee}>Referee Decision: <span className={styles.decision}>{this.props.question.decision}</span></h4>
+        {
+          this.props.question.decision !== '' ?
+          <h4 className={styles.referee}>Referee Decision: <span className={styles.decision}>{this.props.question.decision}</span></h4>
+          : undefined
+        }
       </div>
     );
   }

@@ -71,6 +71,7 @@ const data = (store) => {
              fullName: user.displayName
            }
         }));
+        
         store.dispatch(authenticated());
 
         var database = firebase.database();

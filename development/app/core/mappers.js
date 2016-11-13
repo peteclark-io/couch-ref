@@ -28,7 +28,8 @@ export const createQuestion = (value) => {
     question: value.question,
     description: value.description,
     decision: value.decision,
-    controversial: value.controversial
+    controversial: value.controversial,
+    match: value.match
   };
 }
 
