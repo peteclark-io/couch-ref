@@ -11,7 +11,7 @@ import {saveLocation} from '../../core/db-actions';
 import buttons from '../Questions/buttons.css';
 import styles from './styles.css';
 
-import countries from './countries';
+import countries from '../../core/countries';
 
 const Location = React.createClass({
 

@@ -15,6 +15,16 @@
   margin-bottom: 20px;
 }
 
+.headline {
+   font-family: var(--font-secondary);
+   font-size: 5rem;
+   color: var(--brand-primary);
+}
+
+.headline small {
+   font-size: 2rem;
+}
+
 .verdict-header {
   font-family: var(--font-secondary);
   font-size: 3rem;
