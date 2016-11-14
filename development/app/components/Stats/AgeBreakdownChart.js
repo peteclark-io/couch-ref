@@ -23,20 +23,26 @@ const AgeBreakdownChart = React.createClass({
       );
     }
 
-    var results = groups.map((group) => {
+    var yep = groups.map((group) => {
       var data = this.props.age[group];
       return data ? data.yes : 0;
+    });
+
+    var nope = groups.map((group) => {
+      var data = this.props.age[group];
+      return data ? data.no : 0;
     });
 
     var data = {
       labels: groups,
       datasets: [
         {
-          data: results,
-          backgroundColor: [
-              'rgba(60,90,150,1)',
-              '#66d3e4'
-          ]
+          data: yep,
+          backgroundColor: ['rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)']
+        },
+        {
+          data: nope,
+          backgroundColor: ['#66d3e4','#66d3e4','#66d3e4','#66d3e4','#66d3e4','#66d3e4']
         }
       ]
     };
@@ -52,13 +58,13 @@ const AgeBreakdownChart = React.createClass({
       },
       scales: {
         xAxes: [{
-            stacked: true,
             gridLines: {
               display: false
             }
         }],
         yAxes: [{
-          display: false
+          display: false,
+          stacked: false
         }]
       }
     };

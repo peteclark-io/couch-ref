@@ -43,8 +43,15 @@ const QuestionResults = React.createClass({
       return (
         <div className={bootstrap.row}>
           <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'])}>
-            <Verdict match={this.props.match} results={this.props.results} />
-            <AgeBreakdownChart age={this.props.results.breakdown.age} />
+            <div className={bootstrap.row}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
+                  <Verdict match={this.props.match} results={this.props.results} />
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
+                  <h3 className={styles['verdict-header']}>Breakdown by Age</h3>
+                  <AgeBreakdownChart age={this.props.results.breakdown.age} />
+               </div>
+            </div>
           </div>
           <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-4'])}>
             <SideCharts match={this.props.match} results={this.props.results} />
