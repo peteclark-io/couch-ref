@@ -13,6 +13,7 @@ import OverallChart from './OverallChart';
 import SideCharts from './SideCharts';
 import Verdict from './Verdict';
 import AgeBreakdownChart from './AgeBreakdownChart';
+import SexBreakdownChart from './SexBreakdownChart';
 
 const QuestionResults = React.createClass({
 
@@ -50,6 +51,10 @@ const QuestionResults = React.createClass({
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
                   <h3 className={styles['verdict-header']}>Breakdown by Age</h3>
                   <AgeBreakdownChart age={this.props.results.breakdown.age} />
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
+                  <h3 className={styles['verdict-header']}>Breakdown by Gender</h3>
+                  <SexBreakdownChart sex={this.props.results.breakdown.sex} />
                </div>
             </div>
           </div>
