@@ -1,0 +1,21 @@
+{
+  "cbbd48cd-1228-41c9-bd74-3d8f527d2ac4": {
+    "away": "Tottenham",
+    "away_score": 0,
+    "home": "Arsenal",
+    "home_score": 0,
+    "id": "cbbd48cd-1228-41c9-bd74-3d8f527d2ac4",
+    "kick_off": "2016-11-13T17:30:00.000Z",
+    "questions": [
+      {
+        "asked": "2016-11-13T18:27:06+00:00",
+        "id": "c2be2400-b7df-4a36-9972-51c07130ddd9"
+      },
+      {
+        "asked": "2016-11-13T18:28:09+00:00",
+        "id": "ee2b8a0f-bf4a-4081-bee7-0857354d1557"
+      }
+    ],
+    "referee": "Mark Clattenburg"
+  }
+}

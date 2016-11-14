@@ -40,7 +40,7 @@ const createHeadline = (highlight) => {
    var yes = true;
 
    if (highlight.percentage < 0.1){
-      perc = 1 - highlight.percentage * 100;
+      perc = (1 - highlight.percentage) * 100;
       yes = false;
    }
 
