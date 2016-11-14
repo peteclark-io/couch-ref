@@ -21,8 +21,8 @@ export const saveVote = (user, question, vote) => {
     generateAgeBreakdown(user, vote, breakdown);
     generateLocationBreakdown(user, vote, breakdown);
 
-    if (user.remote.sex){
-      vote ? breakdown.sex[user.remote.sex].yes++ : breakdown.sex[user.remote.sex].no++;
+    if (user.sex){
+      vote ? breakdown.sex[user.sex].yes++ : breakdown.sex[user.sex].no++;
     }
 
     stat.breakdown = breakdown;
@@ -84,28 +84,28 @@ const generateClubBreakdown = (user, vote, breakdown) => {
 };
 
 const generateLocationBreakdown = (user, vote, breakdown) => {
-  if (!user.remote.location){
+  if (!user.location){
     return;
   }
 
   if (!breakdown.location){
-    breakdown.location = {[user.remote.location]: zeroValue()};
+    breakdown.location = {[user.location]: zeroValue()};
   }
 
-  if (!breakdown.location[user.remote.location]){
-    breakdown.location[user.remote.location] = zeroValue();
+  if (!breakdown.location[user.location]){
+    breakdown.location[user.location] = zeroValue();
   }
 
-  vote ? breakdown.location[user.remote.location].yes++ : breakdown.location[user.remote.location].no++;
+  vote ? breakdown.location[user.location].yes++ : breakdown.location[user.location].no++;
 };
 
 const generateAgeBreakdown = (user, vote, breakdown) => {
-  if (!user.remote.birthday){
+  if (!user.birthday){
     return;
   }
 
-  var age = moment().diff(user.remote.birthday, 'years');
-  console.log(user.remote.birthday, age);
+  var age = moment().diff(user.birthday, 'years');
+  console.log(user.birthday, age);
   var group = ageGroup(age);
 
   if (!breakdown.age){

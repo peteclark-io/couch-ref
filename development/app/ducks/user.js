@@ -28,18 +28,18 @@ export default function reducer(state = {}, action){
 
     case SET_DOB:
       return Object.assign({}, state, {
-         dob: action.dob
+         birthday: action.birthday
       });
 
     case SET_SEX:
-      return Object.assign({}, state, {
-         sex: action.sex
-      });
+       return Object.assign({}, state, {
+          sex: action.sex
+       });
 
     case SET_LOCATION:
-      return Object.assign({}, state, {
-         location: action.location
-      });
+       return Object.assign({}, state, {
+          location: action.location
+       });
 
     case INSPECT_COOKIES:
       return Object.assign({}, state, {
@@ -61,8 +61,8 @@ export function selectClub(club) {
   return {type: SELECT_CLUB, club: club};
 }
 
-export function setDateOfBirth(dob) {
-  return {type: SET_DOB, dob: dob};
+export function setDateOfBirth(birthday) {
+  return {type: SET_DOB, birthday: birthday};
 }
 
 export function setSex(sex) {

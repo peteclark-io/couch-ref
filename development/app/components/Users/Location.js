@@ -25,23 +25,12 @@ const Location = React.createClass({
   },
 
   getInitialState: function(){
-    return {location: 'United Kingdom'};
-  },
-
-  componentWillMount: function(){
-    this.checkState();
-  },
-
-  componentWillUpdate: function(){
-    this.checkState();
-  },
-
-  checkState: function(){
-    if (this.props.user && this.props.user.remote && this.props.user.remote.location){
-      this.setState({
-        location: this.props.user.remote.location
-      });
-    }
+     if (this.props.user && this.props.user.location){
+       return {
+         location: this.props.user.location
+       };
+     }
+     return {location: 'United Kingdom'};
   },
 
   onChange: function(event){

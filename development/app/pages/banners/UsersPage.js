@@ -33,7 +33,7 @@ const UsersPage = React.createClass({
   },
 
   render: function() {
-    if (!this.props.user.remote){
+    if (!this.props.user){
       return null;
     }
 
@@ -47,7 +47,7 @@ const UsersPage = React.createClass({
 });
 
 const getUser = (state = {user: {}}, id) => {
-  return state.user.remote ? state.user : null;
+  return state.user ? state.user : null;
 };
 
 const mapStateToProps = (state, ownProps) => {

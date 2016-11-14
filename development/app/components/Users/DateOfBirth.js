@@ -27,22 +27,20 @@ const DateOfBirth = React.createClass({
   },
 
   getInitialState: function(){
-    return {
-      year: currentYear,
-      month: 0,
-      day: 1
-    };
-  },
+      if (this.props.user && this.props.user.birthday){
+         var birthday = this.props.user.birthday;
+         return {
+            year: birthday.year(),
+            month: birthday.month(),
+            day: birthday.date()
+         };
+      }
 
-  componentWillMount: function(){
-    if (this.props.user && this.props.user.remote && this.props.user.remote.birthday){
-      var birthday = this.props.user.remote.birthday;
-      this.setState({
-        year: birthday.year(),
-        month: birthday.month(),
-        day: birthday.date()
-      });
-    }
+      return {
+         year: currentYear,
+         month: 0,
+         day: 1
+      };
   },
 
   onSelectDay: function(event){
@@ -130,7 +128,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onChange: (state, user) => {
       var birthday = moment.utc({years: state.year, months: state.month, date: state.day, hour: 0, minute: 0})
-      console.log('Birthday', state, birthday);
       dispatch(setDateOfBirth(birthday));
       saveDateOfBirth(user, birthday)
     }

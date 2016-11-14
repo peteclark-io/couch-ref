@@ -25,29 +25,18 @@ const Gender = React.createClass({
   },
 
   getInitialState: function(){
-    return {sex: 'Female'};
+     if (this.props.user && this.props.user.sex){
+      return {
+         sex: this.props.user.sex
+      };
+     }
+     return {sex: 'Female'};
   },
 
   onChange: function(event){
     this.setState({
       sex: event.target.value
     });
-  },
-
-  componentWillMount: function(){
-    this.checkState();
-  },
-
-  componentWillUpdate: function(){
-    this.checkState();
-  },
-
-  checkState: function(){
-    if (this.props.user && this.props.user.remote && this.props.user.remote.sex){
-      this.setState({
-        sex: this.props.user.remote.sex
-      });
-    }
   },
 
   render: function() {

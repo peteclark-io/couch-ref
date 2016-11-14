@@ -11,7 +11,7 @@ import {createMatch, createQuestion, createStatistic} from './mappers';
 
 import {ready} from '../ducks/ready';
 import {authenticated} from '../ducks/authenticated';
-import {inspectFirebase} from '../ducks/user';
+import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation} from '../ducks/user';
 import {addClubs} from '../ducks/clubs';
 
 const openDatabase = (store, db, mapper, update, add) => {
@@ -71,7 +71,7 @@ const data = (store) => {
              fullName: user.displayName
            }
         }));
-        
+
         store.dispatch(authenticated());
 
         var database = firebase.database();
@@ -111,6 +111,7 @@ const data = (store) => {
                 store.dispatch(inspectFirebase({
                    club: userClub,
                 }));
+                store.dispatch(selectClub(userClub));
              } else {
                 router.push('/users/club');
                 return;
@@ -124,6 +125,7 @@ const data = (store) => {
                       birthday: parsed
                     }
                   }));
+                  store.dispatch(setDateOfBirth(parsed));
                 } else {
                   router.push('/users/birthday');
                   return;
@@ -139,6 +141,7 @@ const data = (store) => {
                       sex: data.sex
                    }
                 }));
+                store.dispatch(setSex(data.sex));
              } else {
                 router.push('/users/sex');
                 return;
@@ -150,6 +153,7 @@ const data = (store) => {
                       location: data.location
                    }
                 }));
+                store.dispatch(setLocation(data.location));
              } else {
                 router.push('/users/location');
                 return;
