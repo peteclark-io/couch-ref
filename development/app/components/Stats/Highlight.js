@@ -21,6 +21,10 @@ const Highlight = React.createClass({
 
    render: function() {
       var hl = highlight(this.props.age, this.props.sex, this.props.location);
+      if (!hl) {
+         return null; // nothing to see here...
+      }
+
       return (
          <div>
             <h2 className={styles.headline}>{hl.headline}% <small>{hl.blurb}</small></h2>
