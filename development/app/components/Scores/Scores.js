@@ -34,18 +34,19 @@ const Scores = React.createClass({
      }
 
      var today = moment(24, 'HH'); // midnight tonight
-     console.log(today);
-
      var todaysFixtures = _.filter(this.props.matches, (i) => {
         return i.kickOff.isBefore(today);
      });
 
-     var fixtures = this.props.matches;
      var title = 'Upcoming Fixtures';
-
+     var fixtures = [];
      if (todaysFixtures.length > 0){
         fixtures = todaysFixtures;
         title = 'Today\'s Fixtures';
+     } else {
+        fixtures = _.filter(this.props.matches, (i) => {
+          return i.kickOff.isAfter(today);
+       });
      }
 
     return (

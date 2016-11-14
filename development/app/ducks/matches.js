@@ -20,6 +20,15 @@ export default function reducer(state = [], action){
       ]);
 
     case ADD_MATCH:
+      var update = _.find(state, (m) => {m.id === match.id});
+      if (update){
+         console.log('Update found in add!!');
+         return sort([
+           ..._.differenceWith(state, [match], (val, compare) => {return val.id === compare.id}),
+           match
+         ]);
+      }
+
       return sort([...state, match]);
     default:
       return state;
