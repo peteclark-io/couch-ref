@@ -12,6 +12,7 @@ type Firebase struct {
 
 type DB interface {
 	Write(path string, data interface{}) error
+	Get(path string) ([]byte, error)
 }
 
 func (f Firebase) Write(path string, data interface{}) error {
@@ -20,7 +21,7 @@ func (f Firebase) Write(path string, data interface{}) error {
 		return err
 	}
 
-	cmd := exec.Command("firebase --non-interactive --project " + f.Project + " --token " + f.AuthToken + " database:set -y " + path)
+	cmd := exec.Command("/usr/local/bin/firebase", "--non-interactive", "--project", f.Project, "--token", f.AuthToken, "database:set", "-y", path)
 	pipe, err := cmd.StdinPipe()
 	if err != nil {
 		return err
@@ -30,4 +31,9 @@ func (f Firebase) Write(path string, data interface{}) error {
 	cmd.Start()
 
 	return nil
+}
+
+func (f Firebase) Get(path string) ([]byte, error) {
+	cmd := exec.Command("/usr/local/bin/firebase", "--non-interactive", "--project", f.Project, "--token", f.AuthToken, "database:get", path)
+	return cmd.Output()
 }

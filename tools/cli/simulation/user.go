@@ -50,11 +50,10 @@ func (s *Simulation) createUsers(fixture structs.Fixture) []userSimulator {
 	numNeutrals := s.Total - numFans
 
 	for i := 0; i < numFans; i++ {
-		
+
 	}
 }
 
 func random(from []string) string {
 	return from[rand.Intn(len(from))-1]
 }
-
