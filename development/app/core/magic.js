@@ -24,20 +24,20 @@ export function verdict(match, results){
   var neutral = results.simple;
 
   var home = undefined;
-  if (results.breakdown[match.home]){
+  if (results.breakdown.club[match.home]){
     home = {
-      yes: results.breakdown[match.home].yes,
-      no: results.breakdown[match.home].no
+      yes: results.breakdown.club[match.home].yes,
+      no: results.breakdown.club[match.home].no
     };
     neutral.yes = neutral.yes - home.yes;
     neutral.no = neutral.no - home.no;
   }
 
   var away = undefined;
-  if (results.breakdown && results.breakdown[match.away]){
+  if (results.breakdown.club[match.away]){
     away = {
-      yes: results.breakdown[match.away].yes,
-      no: results.breakdown[match.away].no
+      yes: results.breakdown.club[match.away].yes,
+      no: results.breakdown.club[match.away].no
     };
     neutral.yes = neutral.yes - away.yes;
     neutral.no = neutral.no - away.no;

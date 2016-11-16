@@ -47,11 +47,7 @@ const data = (store) => {
         if (user) {
           couchRef(user);
         } else {
-          firebase.auth().getRedirectResult().catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            router.push('/error');
-          }).then((auth) => {
+          firebase.auth().getRedirectResult().then((auth) => {
             if (!auth.user){
               console.log('User not authenticated!');
               router.push('/login');
@@ -59,6 +55,10 @@ const data = (store) => {
             }
 
             couchRef(auth.user);
+          }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            router.push('/error');
           });
         }
       });

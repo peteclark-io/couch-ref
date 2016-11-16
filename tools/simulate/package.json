@@ -12,6 +12,7 @@
     "co": "^4.6.0",
     "firebase": "^3.6.0",
     "firebase-admin": "^4.0.1",
+    "get-stdin": "^5.0.1",
     "yargs": "^6.4.0"
   }
 }

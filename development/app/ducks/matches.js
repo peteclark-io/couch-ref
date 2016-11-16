@@ -11,6 +11,7 @@ function sort(arr){
 
 export default function reducer(state = [], action){
   var match = action.match;
+  console.log('Action found!', match);
 
   switch(action.type){
     case MATCH_UPDATE:
@@ -20,9 +21,9 @@ export default function reducer(state = [], action){
       ]);
 
     case ADD_MATCH:
-      var update = _.find(state, (m) => {m.id === match.id});
+      var update = state.filter((entry) => { return entry.id === match.id; }).length > 0;
+      console.log('Is update', update)
       if (update){
-         console.log('Update found in add!!');
          return sort([
            ..._.differenceWith(state, [match], (val, compare) => {return val.id === compare.id}),
            match

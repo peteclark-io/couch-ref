@@ -1,7 +1,8 @@
 'use strict';
 
-let admin = require('firebase-admin');
-let co = require('co');
+const admin = require('firebase-admin');
+const co = require('co');
+const getStdin = require('get-stdin');
 
 admin.initializeApp({
    credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk-o2lct-36ef2f56f1.json'),
@@ -23,21 +24,55 @@ exports.handler = (argv) => {
       });
    };
 
-   const getUsersFromStdin = () => {
+   const answer = (obj, prop, decision) => {
+      if (!obj[prop]){
+         obj[prop] = {yes: 0, no: 0};
+      }
 
-   };
+      decision ? obj[prop].yes++ : obj[prop].no++;
+   }
 
    const answerQuestion = (question, users) => {
-      var statistic = db.ref('/v0/live-statistics/' + question);
-      statistic.transaction((stat) => {
+      var statistic = db.ref('/v0/live-statistics/' + question.id);
 
+      statistic.transaction((stat) => {
+         if (!stat){
+            console.log('Failed stat...', question, stat);
+            return stat;
+         }
+
+         users.map((user) => {
+            var decision = Math.random() >= 0.5;
+
+            if (user.fan) {
+               decision = Math.random() >= 0.9;
+               decision = user.club === 'Arsenal' ? !decision : decision;
+            }
+
+            try {
+               answer(stat, 'simple', decision);
+               answer(stat.breakdown.age, user.age, decision);
+               answer(stat.breakdown.sex, user.sex, decision);
+               answer(stat.breakdown.location, user.location, decision);
+               answer(stat.breakdown.club, user.club, decision);
+            } catch(err){
+               console.log(err);
+            }
+         });
+         console.log('Done!', question.id);
+         return stat;
       });
    };
 
    co(function *(){
       var qs = yield getQuestions();
+      questions.off();
+
+      var stdin = yield getStdin();
+      var users = JSON.parse(stdin);
+
       qs.map((q) => {
-         console.log(q);
+         answerQuestion(q, users);
       });
    });
 };
