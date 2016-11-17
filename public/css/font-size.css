@@ -1,0 +1,9 @@
+body {
+   font-size: 10px !important;
+}
+
+@media (max-width: 768px){
+	body {
+		font-size: 8px !important;
+	}
+}

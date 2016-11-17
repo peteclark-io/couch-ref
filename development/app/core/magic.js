@@ -91,7 +91,7 @@ const decideVerdict = (percentage) => {
   }
 
   if (percentage < 0.5){
-    return 'No';
+    return 'No!';
   }
 
   if (percentage < 0.2){
@@ -102,7 +102,7 @@ const decideVerdict = (percentage) => {
     return 'Too Close to Call!';
   }
 
-  return 'Yes';
+  return 'Yes!';
 };
 
 const decideConfidence = (confidence) => {
