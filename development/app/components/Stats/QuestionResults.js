@@ -67,13 +67,13 @@ const QuestionResults = React.createClass({
                   </div>
                </div>*/}
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
+                  <OverallCharts match={this.props.match} results={this.props.results} />
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
                   <Highlight
                      age={this.props.results.breakdown.age}
                      sex={this.props.results.breakdown.sex}
                      location={this.props.results.breakdown.location} />
-               </div>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
-                  <OverallCharts match={this.props.match} results={this.props.results} />
                </div>
             </div>
          </div>
