@@ -5,14 +5,14 @@ const co = require('co');
 const getStdin = require('get-stdin');
 
 admin.initializeApp({
-   credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk-o2lct-36ef2f56f1.json'),
+   credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk-o2lct-1e2a593606.json'),
    databaseURL: "https://couchref-9962e.firebaseio.com"
 });
 
 exports.command = 'simulate <matchId>';
 exports.describe = '';
 exports.handler = (argv) => {
-   //admin.database.enableLogging(true);
+   admin.database.enableLogging(true);
    var db = admin.database();
    var questions = db.ref('/v0/live-matches/' + argv.matchId + '/questions');
 
@@ -33,6 +33,7 @@ exports.handler = (argv) => {
    }
 
    const answerQuestion = (question, users) => {
+      console.log('hi');
       var statistic = db.ref('/v0/live-statistics/' + question.id);
 
       statistic.transaction((stat) => {
@@ -45,7 +46,7 @@ exports.handler = (argv) => {
             var decision = Math.random() >= 0.5;
 
             if (user.fan) {
-               decision = Math.random() >= 0.9;
+               decision = Math.random() >= (1 - user.bias);
                decision = user.club === 'Arsenal' ? !decision : decision;
             }
 
@@ -69,10 +70,13 @@ exports.handler = (argv) => {
       questions.off();
 
       var stdin = yield getStdin();
-      var users = JSON.parse(stdin);
-
-      qs.map((q) => {
-         answerQuestion(q, users);
-      });
+      try {
+        var users = JSON.parse(stdin);
+        qs.map((q) => {
+          answerQuestion(q, users);
+        });
+      } catch(err){
+        console.log(err);
+      }
    });
 };

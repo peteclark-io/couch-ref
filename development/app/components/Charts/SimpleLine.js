@@ -45,6 +45,7 @@ const SimpleLine = React.createClass({
         });
 
       bars.append('text')
+          .style('font-size', '10px')
           .attr('dy', -1)
           .text((d) => {
             return d.title;

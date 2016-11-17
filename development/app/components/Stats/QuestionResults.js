@@ -17,6 +17,7 @@ import Highlight from './Highlight';
 const QuestionResults = React.createClass({
 
    propTypes: {
+      clubs: React.PropTypes.array,
       match: React.PropTypes.shape({
          home: React.PropTypes.string,
          away: React.PropTypes.string
@@ -71,9 +72,11 @@ const QuestionResults = React.createClass({
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
                   <Highlight
+                     clubs={this.props.clubs}
                      age={this.props.results.breakdown.age}
                      sex={this.props.results.breakdown.sex}
-                     location={this.props.results.breakdown.location} />
+                     location={this.props.results.breakdown.location}
+                     club={this.props.results.breakdown.club} />
                </div>
             </div>
          </div>
@@ -83,6 +86,10 @@ const QuestionResults = React.createClass({
 
 const getQuestion = (state = {questions: {}}, id) => {
    return state.questions[id] ? state.questions[id] : {};
+};
+
+const getClubs = (state = {clubs: []}) => {
+  return state.clubs.map((c) => c.shortName);
 };
 
 const getQuestionResults = (state = {statistics: {}}, id) => {
@@ -115,7 +122,8 @@ const mapStateToProps = (state, ownProps) => {
    return {
       results: getQuestionResults(state, ownProps.id),
       match: getMatch(state, ownProps.id),
-      question: getQuestion(state, ownProps.id)
+      question: getQuestion(state, ownProps.id),
+      clubs: getClubs(state)
    };
 };
 

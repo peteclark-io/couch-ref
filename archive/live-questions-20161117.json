@@ -1,0 +1,32 @@
+{
+  "06b5d1d9-93b1-4a91-9ddd-1772a1f970aa": {
+    "asked": "2016-11-14T13:49:20+00:00",
+    "controversial": false,
+    "decision": "No",
+    "description": "Apparently there was an election.",
+    "id": "06b5d1d9-93b1-4a91-9ddd-1772a1f970aa",
+    "match": "c5732153-26c4-4015-9e0d-bfe2ace7cce2",
+    "question": "Do you feel optimistic about the future of the USA?",
+    "time": "Build Up"
+  },
+  "1e3152c6-6469-421a-b5a4-d23f92579753": {
+    "asked": "2016-11-14T13:47:03+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "",
+    "id": "1e3152c6-6469-421a-b5a4-d23f92579753",
+    "match": "c5732153-26c4-4015-9e0d-bfe2ace7cce2",
+    "question": "Are you having a good day?",
+    "time": "Build Up"
+  },
+  "d2b33b86-d2cb-402f-a740-d54e9d11c224": {
+    "asked": "2016-11-14T13:47:53+00:00",
+    "controversial": true,
+    "decision": "",
+    "description": "I feel like poop today.",
+    "id": "d2b33b86-d2cb-402f-a740-d54e9d11c224",
+    "match": "c5732153-26c4-4015-9e0d-bfe2ace7cce2",
+    "question": "Are you still nursing the remnants of a hangover?",
+    "time": "Build Up"
+  }
+}

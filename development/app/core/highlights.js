@@ -7,16 +7,17 @@ const genders = ['Male', 'Female'];
 const ageGroups = ['< 20', '21 - 30', '31 - 40', '41 - 50', '51 - 60', '60+'];
 const populationRequirement = 10;
 
-export function highlight(age, sex, location){
+export function highlight(clubs, age, sex, location, club){
    var ageH = ageHighlights(age);
    var sexH = sexHighlights(sex);
    var countryH = countryHighlights(location);
+   var clubH = clubHighlights(clubs, club);
 
-   if (ageH.length === 0 && sexH.length === 0 && countryH.length === 0){
+   if (ageH.length === 0 && sexH.length === 0 && countryH.length === 0 && clubH.length === 0){
       return
    }
 
-   var sorted = _.sortBy(_.union(ageH, sexH, countryH), ['percentage', 'type']);
+   var sorted = _.sortBy(_.union(clubH, ageH, sexH, countryH), ['type', 'percentage']);
 
    var top = sorted[0];
    var bottom = sorted[sorted.length-1];
@@ -56,8 +57,31 @@ const createBlurb = (highlight) => {
          return 'of ' + highlight.group + ' users voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
       case 'location':
          return 'of users from ' + highlight.group + ' voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
+       case 'club':
+          return 'of users who support ' + highlight.group + ' voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
    }
    return '';
+};
+
+const clubHighlights = (clubs, clubD) => {
+   var perc = clubs.map((club) => {
+      if (!clubD[club]){
+         return undefined;
+      }
+
+      var total = clubD[club].yes + clubD[club].no;
+      return {
+         type: 'club',
+         group: club,
+         percentage: clubD[club].yes / total
+      };
+   }).filter((r) => {
+      if (r && (r.percentage > 0.9 || r.percentage < 0.1)){
+         return r;
+      }
+   });
+
+   return perc;
 };
 
 const countryHighlights = (location) => {

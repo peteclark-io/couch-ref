@@ -21,7 +21,7 @@ export function verdict(match, results){
     return basicVerdict(match, results);
   }
 
-  var neutral = results.simple;
+  var neutral = {yes: results.simple.yes, no: results.simple.no};
 
   var home = undefined;
   if (results.breakdown.club[match.home]){
@@ -43,7 +43,7 @@ export function verdict(match, results){
     neutral.no = neutral.no - away.no;
   }
 
-  console.log(home, away);
+  console.log(home, away, neutral);
   var homePerc = producePercentage(home);
   var awayPerc = producePercentage(away);
   var neutralPerc = producePercentage(neutral);
@@ -90,7 +90,11 @@ const decideVerdict = (percentage) => {
     return 'Resounding Yes!';
   }
 
-  if (percentage < 0.5){
+  if (percentage < 0.49 && percentage >= 0.47){
+    return 'Close, but No!';
+  }
+
+  if (percentage < 0.47 && percentage >= 0.2){
     return 'No!';
   }
 
@@ -98,8 +102,12 @@ const decideVerdict = (percentage) => {
     return 'Resounding No!';
   }
 
-  if(percentage < 0.54 && percentage > 0.46){
+  if(percentage < 0.51 && percentage > 0.49){
     return 'Too Close to Call!';
+  }
+
+  if (percentage < 0.53 && percentage >= 0.51){
+    return 'Close, but Yes!';
   }
 
   return 'Yes!';
