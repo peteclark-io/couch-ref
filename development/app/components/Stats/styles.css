@@ -3,50 +3,74 @@
 .header {
   font-family: var(--font-secondary);
   font-size: 3rem;
-  margin-top: 20px;
+  margin-top: 10px;
   border-bottom: 1px solid whitesmoke;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
 .overall {
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.overall h3 {
   font-family: var(--font-secondary);
   font-size: 2.2rem;
   margin-bottom: 20px;
 }
 
-.headline {
+.highlight {
+   padding: 5px;
+   border: 1px solid whitesmoke;
+   background-color: whitesmoke;
+   border-radius: 4px;
+}
+
+.highlight h2 {
    font-family: var(--font-secondary);
-   font-size: 5rem;
+   font-size: 4.4rem;
    color: var(--brand-primary);
 }
 
-.headline small {
-   font-size: 2rem;
+.highlight small {
+   font-size: 1.6rem;
 }
 
-.verdict-header {
+.minor-header {
   font-family: var(--font-secondary);
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
 .verdict {
-  font-family: var(--font-secondary);
-  font-size: 5rem;
-  margin-bottom: 20px;
-  font-weight: bolder;
-  color: var(--brand-no);
-  text-transform: uppercase;
+   background-color: var(--brand-danger);
+   padding: 2px;
+   color: white;
+   text-align: center;
+   border-radius: 4px;
+   margin: 0px 40px;
+   margin-bottom: 20px;
+}
+
+.verdict h1 {
+   font-family: var(--font-secondary);
+   font-size: 6rem;
+   margin-top: 5px;
+   margin-bottom: 10px;
+   font-weight: bolder;
+   text-transform: uppercase;
 }
 
 .confidence {
   font-size: 1.4rem;
   font-family: var(--font-primary);
+  text-align: right;
+  margin-right: 2vw;
 }
 
 .confidence-score {
-  color: var(--brand-danger);
+  color: whitesmoke;
   text-transform: uppercase;
 }
 
@@ -57,7 +81,7 @@
 }
 
 .referee {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-family: var(--font-secondary);
 }
 

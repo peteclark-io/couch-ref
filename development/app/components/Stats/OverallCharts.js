@@ -7,7 +7,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import styles from './styles.css';
 import OverallChart from './OverallChart';
 
-const SideCharts = React.createClass({
+const OverallCharts = React.createClass({
 
    propTypes: {
       match: React.PropTypes.shape({
@@ -52,23 +52,23 @@ const SideCharts = React.createClass({
       }
 
       return (
-         <div className={bootstrap.row}>
-            <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
-               <h3 className={styles.overall}>Overall</h3>
+         <div className={classNames(bootstrap.row, styles.overall)}>
+            <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-4'])}>
+               <h3>Overall</h3>
                <OverallChart
                   yes={this.props.results.simple.yes}
                   no={this.props.results.simple.no} />
             </div>
 
-            <div className={classNames(bootstrap['col-xs-6'], bootstrap['col-sm-12'])}>
-               <h3 className={styles.overall}>Home Fans</h3>
+            <div className={classNames(bootstrap['col-xs-6'], bootstrap['col-sm-4'])}>
+               <h3>Home Fans</h3>
                <OverallChart
                   yes={home.yes}
                   no={home.no} />
             </div>
 
-            <div className={classNames(bootstrap['col-xs-6'], bootstrap['col-sm-12'])}>
-               <h3 className={styles.overall}>Away Fans</h3>
+            <div className={classNames(bootstrap['col-xs-6'], bootstrap['col-sm-4'])}>
+               <h3>Away Fans</h3>
                <OverallChart
                   yes={away.yes}
                   no={away.no} />
@@ -78,4 +78,4 @@ const SideCharts = React.createClass({
    }
 });
 
-export default SideCharts;
+export default OverallCharts;

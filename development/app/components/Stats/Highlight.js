@@ -28,19 +28,19 @@ const Highlight = React.createClass({
       console.log(hl);
 
       return (
-         <div>
-            <h2 className={styles.headline}>{hl.headline}% <small>{hl.blurb}</small></h2>
+         <div className={styles.highlight}>
+            <h2>{hl.headline}% <small>{hl.blurb}</small></h2>
             {
                hl.type === 'age' ?
                <div>
-                  <h2 className={styles['verdict-header']}>Breakdown by Age</h2>
+                  <h2 className={styles['minor-header']}>Breakdown by Age</h2>
                   <AgeBreakdownChart age={this.props.age} />
                </div> : null
             }
             {
                hl.type === 'sex' ?
                <div>
-                  <h2 className={styles['verdict-header']}>Breakdown by Gender</h2>
+                  <h2 className={styles['minor-header']}>Breakdown by Gender</h2>
                   <SexBreakdownChart sex={this.props.sex} />
                </div> : null
             }

@@ -98,7 +98,7 @@ const decideVerdict = (percentage) => {
     return 'Resounding No!';
   }
 
-  if(percentage === 0.5){
+  if(percentage < 0.54 && percentage > 0.46){
     return 'Too Close to Call!';
   }
 
