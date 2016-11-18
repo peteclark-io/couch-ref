@@ -13,6 +13,7 @@ import OverallChart from './OverallChart';
 import OverallCharts from './OverallCharts';
 import Verdict from './Verdict';
 import Highlight from './Highlight';
+import ClubsBreakdown from './ClubsBreakdown';
 
 const QuestionResults = React.createClass({
 
@@ -77,6 +78,12 @@ const QuestionResults = React.createClass({
                      sex={this.props.results.breakdown.sex}
                      location={this.props.results.breakdown.location}
                      club={this.props.results.breakdown.club} />
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'], styles.overall)}>
+                  <h3>How the fans voted!</h3>
+                  <ClubsBreakdown
+                     clubs={this.props.clubs}
+                     clubData={this.props.results.breakdown.club} />
                </div>
             </div>
          </div>

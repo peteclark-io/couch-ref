@@ -1,12 +1,13 @@
 'use strict';
 
 import React from 'react';
-import {Bar} from 'react-chartjs-2';
+import {HorizontalBar} from 'react-chartjs-2';
 
 const ClubsBreakdownChart = React.createClass({
 
    propTypes: {
-      clubs: React.PropTypes.object,
+      clubs: React.PropTypes.array,
+      clubData: React.PropTypes.object,
       height: React.PropTypes.number
    },
 
@@ -21,26 +22,26 @@ const ClubsBreakdownChart = React.createClass({
          );
       }
 
-      var yep = groups.map((group) => {
-         var data = this.props.sex[group];
+      var yep = this.props.clubs.map((group) => {
+         var data = this.props.clubData[group];
          return data ? data.yes : 0;
       });
 
-      var nope = groups.map((group) => {
-         var data = this.props.sex[group];
+      var nope = this.props.clubs.map((group) => {
+         var data = this.props.clubData[group];
          return data ? data.no : 0;
       });
 
       var data = {
-         labels: groups,
+         labels: this.props.clubs,
          datasets: [
             {
                data: yep,
-               backgroundColor: ['rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)','rgba(60,90,150,1)']
+               backgroundColor: 'rgba(60,90,150,1)'
             },
             {
                data: nope,
-               backgroundColor: ['#66d3e4','#66d3e4','#66d3e4','#66d3e4','#66d3e4','#66d3e4']
+               backgroundColor: '#66d3e4'
             }
          ]
       };
@@ -55,22 +56,22 @@ const ClubsBreakdownChart = React.createClass({
             }
          },
          scales: {
-            xAxes: [{
+            yAxes: [{
+               display: true,
                gridLines: {
                   display: false
                }
             }],
-            yAxes: [{
-               display: false,
-               stacked: false
+            xAxes: [{
+               display: false
             }]
          }
       };
-      
+
       return (
-         <Bar
-         options={options}
-         data={data} />
+         <HorizontalBar
+            options={options}
+            data={data} />
       );
    }
 });
