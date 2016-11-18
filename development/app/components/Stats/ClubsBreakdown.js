@@ -48,28 +48,31 @@ const ClubsBreakdownChart = React.createClass({
 
       var options = {
          responsive: true,
+         tooltips: {
+            enabled: false
+         },
          legend: {
-            display: false,
-            position: 'right',
-            labels: {
-               boxWidth: 10
-            }
+            display: false
          },
          scales: {
             yAxes: [{
                display: true,
                gridLines: {
                   display: false
+               },
+               afterFit: function(scaleInstance) {
+                  scaleInstance.width = 100;
                }
             }],
             xAxes: [{
-               display: false
+               display: false,
             }]
          }
       };
 
       return (
          <HorizontalBar
+            height={250}
             options={options}
             data={data} />
       );

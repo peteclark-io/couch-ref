@@ -79,7 +79,7 @@ const QuestionResults = React.createClass({
                      location={this.props.results.breakdown.location}
                      club={this.props.results.breakdown.club} />
                </div>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'], styles.overall)}>
+               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'], styles.clubs)}>
                   <h3>How the fans voted!</h3>
                   <ClubsBreakdown
                      clubs={this.props.clubs}
