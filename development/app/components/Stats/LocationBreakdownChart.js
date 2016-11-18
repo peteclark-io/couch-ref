@@ -75,4 +75,4 @@ const LocationBreakdownChart = React.createClass({
   }
 });
 
-export default SexBreakdownChart;
+export default LocationBreakdownChart;
