@@ -25,7 +25,7 @@ const Highlight = React.createClass({
 
       return (
          <div className={styles.highlight}>
-            <h2>{hl.headline.toFixed(0)}% <small>{hl.blurb}</small></h2>
+            <h2>{hl.headline.toFixed(1)}% <small>{hl.blurb}</small></h2>
          </div>
       );
    }

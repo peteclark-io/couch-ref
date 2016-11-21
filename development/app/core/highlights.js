@@ -17,7 +17,8 @@ export function highlight(clubs, age, sex, location, club){
       return
    }
 
-   var sorted = _.sortBy(_.union(clubH, ageH, sexH, countryH), ['priority', 'type', 'percentage']);
+   var sorted = selectHighlight(clubH, ageH, sexH, countryH);
+   console.log('Priorities', sorted);
 
    var top = sorted[0];
    var bottom = sorted[sorted.length-1];
@@ -25,7 +26,7 @@ export function highlight(clubs, age, sex, location, club){
    createHeadline(top);
    createHeadline(bottom);
 
-   if (top.percentage > (1-bottom.percentage)){
+   if (top.headline > bottom.headline){
       return Object.assign(top, {
          blurb: createBlurb(top)
       });
@@ -34,7 +35,14 @@ export function highlight(clubs, age, sex, location, club){
    return Object.assign(bottom, {
       blurb: createBlurb(bottom)
    });
-}
+};
+
+const selectHighlight = (clubH, ageH, sexH, countryH) => {
+   var union = _.sortBy(_.union(clubH, ageH, sexH, countryH), ['priority']).reverse();
+   var priority = union[0].priority;
+   var found = union.filter((p) => {return p.priority === priority;})
+   return _.sortBy(found, ['percentage']);
+};
 
 const createHeadline = (highlight) => {
    var perc = highlight.percentage * 100;
