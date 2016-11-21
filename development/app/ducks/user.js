@@ -1,6 +1,7 @@
 'use strict';
 
 const VOTE = 'couch-ref/user/VOTE';
+const SET_VOTES = 'couch-ref/user/SET_VOTES';
 
 const SELECT_CLUB = 'couch-ref/user/SELECT_CLUB';
 const SET_DOB = 'couch-ref/user/SET_DOB';
@@ -41,6 +42,11 @@ export default function reducer(state = {}, action){
           location: action.location
        });
 
+    case SET_VOTES:
+       return Object.assign({}, state, {
+          votes: action.votes
+       });
+
     case INSPECT_COOKIES:
       return Object.assign({}, state, {
          club: Object.assign({}, state.club, action.cookies.club),
@@ -75,6 +81,10 @@ export function setLocation(location) {
 
 export function vote(question, vote) {
   return {type: VOTE, question: question, vote: vote};
+}
+
+export function setVotes(votes) {
+  return {type: SET_VOTES, votes: votes};
 }
 
 export function inspectCookies(cookies) {
