@@ -5,14 +5,14 @@ const co = require('co');
 const getStdin = require('get-stdin');
 
 admin.initializeApp({
-   credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk-o2lct-1e2a593606.json'),
+   credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk.json'),
    databaseURL: "https://couchref-9962e.firebaseio.com"
 });
 
 exports.command = 'simulate <matchId>';
 exports.describe = '';
 exports.handler = (argv) => {
-   admin.database.enableLogging(true);
+   //admin.database.enableLogging(true);
    var db = admin.database();
    var questions = db.ref('/v0/live-matches/' + argv.matchId + '/questions');
 

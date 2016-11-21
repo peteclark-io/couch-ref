@@ -17,7 +17,7 @@ export function highlight(clubs, age, sex, location, club){
       return
    }
 
-   var sorted = _.sortBy(_.union(clubH, ageH, sexH, countryH), ['type', 'percentage']);
+   var sorted = _.sortBy(_.union(clubH, ageH, sexH, countryH), ['priority', 'type', 'percentage']);
 
    var top = sorted[0];
    var bottom = sorted[sorted.length-1];
@@ -57,8 +57,8 @@ const createBlurb = (highlight) => {
          return 'of ' + highlight.group + ' users voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
       case 'location':
          return 'of users from ' + highlight.group + ' voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
-       case 'club':
-          return 'of users who support ' + highlight.group + ' voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
+      case 'club':
+         return 'of users who support ' + highlight.group + ' voted ' + (highlight.yes ? 'Yes' : 'No') + '!';
    }
    return '';
 };
@@ -71,6 +71,7 @@ const clubHighlights = (clubs, clubD) => {
 
       var total = clubD[club].yes + clubD[club].no;
       return {
+         priority: 4,
          type: 'club',
          group: club,
          percentage: clubD[club].yes / total
@@ -92,6 +93,7 @@ const countryHighlights = (location) => {
 
       var total = location[country].yes + location[country].no;
       return {
+         priority: 3,
          type: 'location',
          group: country,
          percentage: location[country].yes / total
@@ -113,6 +115,7 @@ const sexHighlights = (sex) => {
 
       var total = sex[gender].yes + sex[gender].no;
       return {
+         priority: 1,
          type: 'sex',
          group: gender,
          percentage: sex[gender].yes / total
@@ -134,6 +137,7 @@ const ageHighlights = (age) => {
 
       var total = age[group].yes + age[group].no;
       return {
+         priority: 2,
          type: 'age',
          group: group,
          percentage: age[group].yes / total

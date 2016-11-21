@@ -2,7 +2,7 @@
 
 const BASIC = 'core/magic/BASIC';
 const COMPLEX = 'core/magic/COMPLEX';
-const populationRequirement = 10;
+const populationRequirement = 100;
 
 const basicVerdict = (match, results) => {
   if (!results.simple){
@@ -90,7 +90,7 @@ const decideVerdict = (percentage) => {
     return 'Resounding Yes!';
   }
 
-  if (percentage < 0.49 && percentage >= 0.47){
+  if (percentage < 0.495 && percentage >= 0.47){
     return 'Close, but No!';
   }
 
@@ -102,11 +102,11 @@ const decideVerdict = (percentage) => {
     return 'Resounding No!';
   }
 
-  if(percentage < 0.51 && percentage > 0.49){
+  if(percentage < 0.505 && percentage > 0.495){
     return 'Too Close to Call!';
   }
 
-  if (percentage < 0.53 && percentage >= 0.51){
+  if (percentage < 0.53 && percentage >= 0.505){
     return 'Close, but Yes!';
   }
 
