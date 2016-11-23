@@ -31,7 +31,8 @@ const Question = React.createClass({
          asked: React.PropTypes.string,
          time: React.PropTypes.string,
          description: React.PropTypes.string,
-         decision: React.PropTypes.string
+         decision: React.PropTypes.string,
+         scored: React.PropTypes.bool
       }),
       votedOn: React.PropTypes.bool,
       vote: React.PropTypes.func,
@@ -79,7 +80,12 @@ const Question = React.createClass({
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
                   {
-                    !this.props.votedOn ?
+                     this.props.question.scored ?
+                     <h4 className={styles.closed}>Voting closed!</h4>
+                     : null
+                  }
+                  {
+                    !this.props.votedOn && !this.props.question.scored ?
                     <div>
                       <div className={styles.spacer}></div>
                       <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}

@@ -1,28 +1,38 @@
 'use strict';
 
 const UsersRoute = {
-  path: '/users',
+   path: '/users',
 
-  component: require('../pages/banners/UsersPage').default,
+   component: require('../pages/banners/UsersPage').default,
 
-  childRoutes: [
-     {
-       path: 'club',
-       component: require('../components/Users/ClubCrests').default
-     },
-     {
-        path: 'birthday',
-        component: require('../components/Users/DateOfBirth').default
-     },
-     {
-        path: 'sex',
-        component: require('../components/Users/Gender').default
-     },
-     {
-        path: 'location',
-        component: require('../components/Users/Location').default
-     }
-  ]
+   childRoutes: [
+      {
+         path: '/',
+         component: require('../components/Users/TellUsAboutYourself').default,
+         childRoutes: [
+            {
+               path: 'club',
+               component: require('../components/Users/ClubCrests').default
+            },
+            {
+               path: 'birthday',
+               component: require('../components/Users/DateOfBirth').default
+            },
+            {
+               path: 'sex',
+               component: require('../components/Users/Gender').default
+            },
+            {
+               path: 'location',
+               component: require('../components/Users/Location').default
+            }
+         ]
+      },
+      {
+         path: 'profile',
+         component: require('../components/Users/Profile').default
+      }
+   ]
 };
 
 export default UsersRoute;

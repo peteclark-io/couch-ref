@@ -89,6 +89,11 @@
 	font-size: 1.2rem;
 }
 
+.closed {
+	font-size: 1.4rem;
+	color: var(--brand-danger);
+}
+
 .link:hover {
 	text-decoration: none;
 }

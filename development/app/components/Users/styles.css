@@ -1,5 +1,12 @@
 @import "../../css/branding.css";
 
+.brand {
+   font-family: var(--font-primary);
+   font-size: 6em;
+   margin-top: 6vh;
+   flex: 0 1 auto;
+}
+
 .question {
   font-family: var(--font-primary);
   font-size: 3em;
@@ -56,6 +63,7 @@
 
 .asl-container {
   font-family: var(--font-secondary);
+  color: black;
   background-color: white;
   width: 100%;
   padding-top: 20px;

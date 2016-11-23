@@ -53,8 +53,13 @@ const saveScore = (db, questionDb, user) => {
          score = 2000;
       }
 
+      if (!u.answered){
+         u.answered = 0;
+      }
+
       score = score + user.score;
       u.score = score;
+      u.answered = u.answered + 1;
       return u;
    });
 };

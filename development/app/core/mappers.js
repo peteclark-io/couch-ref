@@ -29,7 +29,8 @@ export const createQuestion = (value) => {
     description: value.description,
     decision: value.decision,
     controversial: value.controversial,
-    match: value.match
+    match: value.match,
+    scored: value.scored
   };
 }
 

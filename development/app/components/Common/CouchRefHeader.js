@@ -17,7 +17,7 @@ const CouchRefHeader = React.createClass({
               <Link to={`/`}><h1>CouchRef</h1></Link>
             </div>
             <div className={bootstrap['col-xs-6']}>
-              <Link to={`/users/club`}><h3 className={bootstrap['pull-right']}>Profile</h3></Link>
+              <Link to={`/users/profile`}><h3 className={bootstrap['pull-right']}>Profile</h3></Link>
             </div>
           </div>
         </div>

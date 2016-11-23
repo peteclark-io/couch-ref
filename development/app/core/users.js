@@ -2,7 +2,7 @@
 
 import moment from 'moment';
 
-import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation, setVotes} from '../ducks/user';
+import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation, setVotes, setScore} from '../ducks/user';
 import {ready} from '../ducks/ready';
 
 export default function Users(path, store, router){
@@ -71,6 +71,10 @@ export default function Users(path, store, router){
          } else {
             router.push('/users/location');
             return;
+         }
+
+         if (data.score){
+            store.dispatch(setScore(data.score));
          }
 
          router.push(path);
