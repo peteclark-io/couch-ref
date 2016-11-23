@@ -25,16 +25,18 @@ const getMatch = (id, matches) => {
 
 const generateScore = (vote, verdict) => {
    return new Promise((resolve, reject) => {
-      var cmd = 'scores --confidence "' + verdict.confidence + '" --result "' + verdict.percentage + '" --vote "' + vote + '"'
+      var res = vote ? '' : '=false';
+      var cmd = 'scores --confidence "' + verdict.confidence + '" --result "' + verdict.percentage + '" --vote' + res
       exec(cmd, function(error, stdout, stderr) {
+         console.log(cmd);
          var score = JSON.parse(stdout).score;
          resolve(score);
       });
    });
 };
 
-const saveScore = (db, questionDb, user) => {
-   questionDb.transaction((q) => {
+const saveScore = (db, quuid, user) => {
+   db.ref('/v0/live-questions/' + quuid).transaction((q) => {
       if (!q){
          return q;
       }
@@ -62,6 +64,15 @@ const saveScore = (db, questionDb, user) => {
       u.answered = u.answered + 1;
       return u;
    });
+
+   db.ref('/v0/user-answers/' + user.uid + '/' + quuid).transaction((u) => {
+      if (!u) {
+         return u;
+      }
+
+      u.score = user.score;
+      return u;
+   });
 };
 
 exports.command = 'scores';
@@ -81,7 +92,7 @@ exports.handler = (argv) => {
       }));
 
       var usersDb = yield getFromDb(db.ref('/v0/users'));
-      var usersVotes = yield getFromDb(db.ref('/v0/users-votes'));
+      var usersVotes = yield getFromDb(db.ref('/v0/user-answers'));
 
       var uidsForVoters = Object.keys(usersVotes);
 
@@ -100,20 +111,20 @@ exports.handler = (argv) => {
                return {
                   uid: uid,
                   user: usersDb[uid],
-                  vote: usersVotes[uid][questionUuids[i]]
+                  answer: usersVotes[uid][questionUuids[i]].answer
                };
             }
             return undefined;
          });
 
          for (var j = 0 ; j < users.length ; j++){
-            var vote = users[j].vote === 'Yes' ? true : false;
+            var vote = users[j].answer === 'Yes' ? true : false;
             var score = yield generateScore(vote, verdict);
             users[j].score = score;
          }
 
          users.map((user) => {
-            saveScore(db, questionDb, user);
+            saveScore(db, questionUuids[i], user);
          });
       }
    }).catch((err) => {

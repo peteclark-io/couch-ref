@@ -85,7 +85,9 @@ export default function Users(path, store, router){
          Object.keys(data).map((uuid) => {
             Object.assign(votes, {
                [uuid]: {
-                  result: data[uuid] === 'Yes' ? true : false
+                  result: data[uuid].answer === 'Yes' ? true : false,
+                  answer: data[uuid].answer,
+                  score: data[uuid].score
                }
             })
          });

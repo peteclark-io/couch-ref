@@ -2,12 +2,11 @@
 
 const UsersRoute = {
    path: '/users',
-
    component: require('../pages/banners/UsersPage').default,
 
    childRoutes: [
       {
-         path: '/',
+         path: '',
          component: require('../components/Users/TellUsAboutYourself').default,
          childRoutes: [
             {

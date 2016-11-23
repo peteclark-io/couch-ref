@@ -13,6 +13,8 @@ import {authenticated} from '../ducks/authenticated';
 import {addClubs} from '../ducks/clubs';
 import {inspectFirebase} from '../ducks/user';
 
+import references from './references';
+
 import Users from './users';
 
 const openDatabase = (store, db, mapper, update, add) => {
@@ -77,13 +79,13 @@ const data = (store) => {
 
             var database = firebase.database();
 
-            var userUid = database.ref('/v0/users/' + user.uid);
-            var clubs = database.ref('/v0/clubs');
-            var userVotes = database.ref('/v0/users-votes/' + user.uid);
+            var userUid = database.ref(references.users + '/' + user.uid);
+            var clubs = database.ref(references.clubs);
+            var userVotes = database.ref(references.answers + '/' + user.uid);
 
-            var liveMatches = database.ref('/v0/live-matches');
-            var liveQuestions = database.ref('/v0/live-questions');
-            var liveStatistics = database.ref('/v0/live-statistics');
+            var liveMatches = database.ref(references.matches);
+            var liveQuestions = database.ref(references.questions);
+            var liveStatistics = database.ref(references.statistics);
 
             openDatabase(store, liveMatches, createMatch, updateMatch, addMatch);
             openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
@@ -94,7 +96,9 @@ const data = (store) => {
                var sesh = Users(path, store, router);
 
                userVotes.once('value').then((votesSnap) => {
-                  sesh.loadVotes(votesSnap.val());
+                  if (votesSnap.val()){
+                     sesh.loadVotes(votesSnap.val());
+                  }
                });
 
                userUid.once('value').then((userSnap) => {

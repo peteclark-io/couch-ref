@@ -2,10 +2,11 @@
 
 import firebase from 'firebase';
 import moment from 'moment';
+import references from './references';
 
 export const saveVote = (user, question, vote) => {
    var database = firebase.database();
-   var stats = database.ref('/v0/live-statistics/' + question.id);
+   var stats = database.ref(references.statistics + '/' + question.id);
 
    stats.transaction((stat) => {
       console.log(user, stat);
@@ -33,13 +34,17 @@ export const saveVote = (user, question, vote) => {
       return;
    }
 
-   var usersVotes = database.ref('/v0/users-votes/' + user.remote.uid);
+   var usersVotes = database.ref(references.answers + '/' + user.remote.uid);
    usersVotes.transaction((userVote) => {
       console.log(userVote);
       if (!userVote){
          userVote = {};
       }
-      userVote[question.id] = vote ? 'Yes' : 'No';
+
+      userVote[question.id] = {
+         answer: vote ? 'Yes' : 'No',
+         score: 0
+      };
       return userVote;
    });
 };
@@ -135,7 +140,7 @@ const generateAgeBreakdown = (user, vote, breakdown) => {
 
 export const saveClub = (user, club) => {
    var database = firebase.database();
-   var users = database.ref('/v0/users/' + user.remote.uid);
+   var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
       console.log(user, u);
@@ -149,7 +154,7 @@ export const saveClub = (user, club) => {
 
 export const saveDateOfBirth = (user, birthday) => {
    var database = firebase.database();
-   var users = database.ref('/v0/users/' + user.remote.uid);
+   var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
       console.log(user, u);
@@ -163,7 +168,7 @@ export const saveDateOfBirth = (user, birthday) => {
 
 export const saveSex = (user, sex) => {
    var database = firebase.database();
-   var users = database.ref('/v0/users/' + user.remote.uid);
+   var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
       console.log(user, u);
@@ -177,7 +182,7 @@ export const saveSex = (user, sex) => {
 
 export const saveLocation = (user, location) => {
    var database = firebase.database();
-   var users = database.ref('/v0/users/' + user.remote.uid);
+   var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
       console.log(user, u);
