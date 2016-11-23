@@ -21,8 +21,6 @@ const Highlight = React.createClass({
          return null; // nothing to see here...
       }
 
-      console.log(hl);
-
       return (
          <div className={styles.highlight}>
             <h2>{hl.headline.toFixed(1)}% <small>{hl.blurb}</small></h2>

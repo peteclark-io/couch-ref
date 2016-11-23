@@ -99,7 +99,9 @@ exports.handler = (argv) => {
       for (var i = 0 ; i < questionUuids.length ; i++){
          var questionDb = db.ref('/v0/live-questions/' + questionUuids[i]);
          var question = yield getFromDb(questionDb);
-         if (!question.decision || question.decision.trim() === '' || question.scored){
+
+         if (!question || !question.decision || question.decision.trim() === '' || question.scored){
+            console.error('Skipping ' + questionUuids[i], question);
             continue;
          }
 
@@ -118,12 +120,20 @@ exports.handler = (argv) => {
          });
 
          for (var j = 0 ; j < users.length ; j++){
+            if (!users[j]){
+               continue;
+            }
+
             var vote = users[j].answer === 'Yes' ? true : false;
             var score = yield generateScore(vote, verdict);
             users[j].score = score;
          }
 
          users.map((user) => {
+            if (!user) {
+               console.log(user);
+               return
+            }
             saveScore(db, questionUuids[i], user);
          });
       }

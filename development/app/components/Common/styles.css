@@ -27,6 +27,7 @@ body {
 .brand-header h3 {
   color: white;
   font-family: 'Dosis', sans-serif;
+  margin-left: 20px;
 }
 
 .container {
@@ -36,4 +37,12 @@ body {
 .logo {
    width: 60px;
    margin-right: 10px;
+}
+
+@media(max-width: 768px){
+   .brand-header h3 {
+      font-size: 2rem;
+      margin-left: 10px;
+      line-height: 30px;
+   }
 }

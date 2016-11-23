@@ -10,6 +10,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import {ThreeBounce} from 'better-react-spinkit';
 import {saveVote} from '../../core/db-actions';
 import {saveVoteAsCookie} from '../../core/cookies';
+import {questionScore} from '../../core/scores';
 
 import {vote} from '../../ducks/user';
 
@@ -20,7 +21,7 @@ import buttons from './buttons.css';
 const Question = React.createClass({
 
    contextTypes: {
-     user: React.PropTypes.object
+      user: React.PropTypes.object
    },
 
    propTypes: {
@@ -40,13 +41,19 @@ const Question = React.createClass({
    },
 
    render: function() {
-       if (!this.props.question){
+      if (!this.props.question){
          return (
-           <div className={styles.loading}>
-             <ThreeBounce />
-           </div>
+            <div className={styles.loading}>
+               <ThreeBounce />
+            </div>
          );
-       }
+      }
+
+      var answer = this.props.user.votes[this.props.question.id];
+      var decision = 'Too close to call!';
+      if(this.props.votedOn && answer && answer.score !== 0){
+         decision = questionScore(answer.score);
+      }
 
       return (
          <div>
@@ -68,37 +75,48 @@ const Question = React.createClass({
                   <h3>{this.props.question.question}</h3>
                   {
                      this.props.question.decision && this.props.question.decision !== "" ?
-                        <h4>REFEREE&#39;S CALL: <span className={styles.decision}>{this.props.question.decision}</span></h4>
+                     <h4>REFEREE&#39;S CALL: <span className={styles.decision}>{this.props.question.decision}</span></h4>
                      : null
                   }
-
                   {
                      this.props.question.description && this.props.question.description !== "" ?
-                        <h4><small>{this.props.question.description}</small></h4>
+                     <h4><small>{this.props.question.description}</small></h4>
                      : null
                   }
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
                   {
-                     this.props.question.scored ?
+                     !this.props.votedOn && this.props.question.scored ?
                      <h4 className={styles.closed}>Voting closed!</h4>
                      : null
                   }
                   {
-                    !this.props.votedOn && !this.props.question.scored ?
-                    <div>
-                      <div className={styles.spacer}></div>
-                      <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}
-                         className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Yes</a>
-                      <a onClick={() => {this.props.vote(this.props.user, this.props.question, false)}}
-                         className={classNames(buttons['action-button'], buttons.no, buttons.animate, styles.button)}>No</a>
-                    </div>
-                    :
-                    <div>
-                      <ResultsIndicator id={this.props.question.id} />
-                      <div className={styles.spacer}></div>
-                      <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
-                    </div>
+                     !this.props.votedOn && !this.props.question.scored ?
+                     <div>
+                        <div className={styles.spacer}></div>
+                        <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}
+                           className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Yes</a>
+                        <a onClick={() => {this.props.vote(this.props.user, this.props.question, false)}}
+                           className={classNames(buttons['action-button'], buttons.no, buttons.animate, styles.button)}>No</a>
+                     </div>
+                     : null
+                  }
+                  {
+                     this.props.votedOn && !this.props.question.scored ?
+                     <div>
+                        <ResultsIndicator id={this.props.question.id} />
+                        <div className={styles.spacer}></div>
+                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
+                     </div> : null
+                  }
+                  {
+                     this.props.votedOn && this.props.question.scored ?
+                     <div>
+                        <ResultsIndicator id={this.props.question.id} />
+                        <div className={styles.spacer}></div>
+                        <h4><span className={styles['score-title']}>Your Score!</span><span className={styles['score-decision']}>{decision}</span></h4>
+                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
+                     </div> : null
                   }
                </div>
             </div>
@@ -108,38 +126,38 @@ const Question = React.createClass({
 });
 
 const getQuestion = (state = {questions: {}}, id) => {
-  return state.questions[id] ? state.questions[id] : {};
+   return state.questions[id] ? state.questions[id] : {};
 };
 
 const getVotes = (state = { user: {votes: {} } }, id) => {
-  return state.user.votes && state.user.votes[id] ? true : false;
+   return state.user.votes && state.user.votes[id] ? true : false;
 };
 
 const getUser = (state = { user: {} }) => {
-  return state.user;
+   return state.user;
 };
 
 const mapStateToProps = (state, ownProps) => {
    return {
-     question: getQuestion(state, ownProps.id),
-     votedOn: getVotes(state, ownProps.id),
-     user: getUser(state)
+      question: getQuestion(state, ownProps.id),
+      votedOn: getVotes(state, ownProps.id),
+      user: getUser(state)
    };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    vote: (user, question, result) => {
-      saveVote(user, question, result);
-      saveVoteAsCookie(user, question, result);
-      dispatch(vote(question, result));
-    }
-  }
+   return {
+      vote: (user, question, result) => {
+         saveVote(user, question, result);
+         saveVoteAsCookie(user, question, result);
+         dispatch(vote(question, result));
+      }
+   }
 };
 
 const LiveQuestion = connect(
-  mapStateToProps,
-  mapDispatchToProps
+   mapStateToProps,
+   mapDispatchToProps
 )(Question);
 
 export default LiveQuestion;

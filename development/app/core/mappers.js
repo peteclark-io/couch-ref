@@ -34,6 +34,16 @@ export const createQuestion = (value) => {
   };
 }
 
+export const createReferee = (value) => {
+  return {
+    id: value.id,
+    name: value.name,
+    debut: moment(value.debut),
+    movement: value.movement ? value.movement : 0,
+    score: value.score ? value.score : 2000
+  };
+}
+
 export const createStatistic = (value) => {
   return {
     id: value.id,

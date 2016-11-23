@@ -7,7 +7,9 @@ import {updateMatch, addMatch} from '../ducks/matches';
 import {updateQuestion, addQuestion} from '../ducks/questions';
 import {updateStatistic, addStatistic} from '../ducks/statistics';
 
-import {createMatch, createQuestion, createStatistic} from './mappers';
+import {addReferee} from '../ducks/referees';
+
+import {createMatch, createQuestion, createStatistic, createReferee} from './mappers';
 
 import {authenticated} from '../ducks/authenticated';
 import {addClubs} from '../ducks/clubs';
@@ -67,7 +69,7 @@ const data = (store) => {
          });
 
          const couchRef = (user) => {
-            console.log('Connected to Couch Ref.', user);
+            console.log('Connected to Couch Ref.', user.uid);
             store.dispatch(inspectFirebase({
                remote: {
                   uid: user.uid,
@@ -82,6 +84,7 @@ const data = (store) => {
             var userUid = database.ref(references.users + '/' + user.uid);
             var clubs = database.ref(references.clubs);
             var userVotes = database.ref(references.answers + '/' + user.uid);
+            var referees = database.ref(references.referees);
 
             var liveMatches = database.ref(references.matches);
             var liveQuestions = database.ref(references.questions);
@@ -90,6 +93,8 @@ const data = (store) => {
             openDatabase(store, liveMatches, createMatch, updateMatch, addMatch);
             openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
             openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
+
+            openDatabase(store, referees, createReferee, addReferee, addReferee);
 
             clubs.once('value').then((snapshot) => {
                store.dispatch(addClubs(snapshot.val()));

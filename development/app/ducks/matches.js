@@ -14,17 +14,15 @@ export default function reducer(state = [], action){
 
   switch(action.type){
     case MATCH_UPDATE:
-      console.log('Action found!', match);
       return sort([
         ..._.differenceWith(state, [match], (val, compare) => {return val.id === compare.id}),
         match
       ]);
 
     case ADD_MATCH:
-      console.log('Action found!', match);
       var update = state.filter((entry) => { return entry.id === match.id; }).length > 0;
-      console.log('Is update', update);
       if (update){
+         console.log('Update found in add!', match);
          return sort([
            ..._.differenceWith(state, [match], (val, compare) => {return val.id === compare.id}),
            match

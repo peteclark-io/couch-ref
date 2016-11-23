@@ -98,6 +98,15 @@
 	text-decoration: none;
 }
 
+.score-title {
+   text-transform: uppercase;
+   color: var(--brand-primary);
+}
+
+.score-decision {
+   margin-left: 5px;
+}
+
 @media (max-width: 768px){
 	.question {
 		margin-top: 12px;

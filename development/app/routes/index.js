@@ -15,6 +15,10 @@ const rootRoute = {
               path: '/question/:questionId',
               component: require('../pages/sections/StatsPage').default
             },
+            {
+              path: '/referees',
+              component: require('../pages/sections/RefereePage').default
+            },
             require('./TeamsRoute').default
          ]
       }, {

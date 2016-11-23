@@ -9,7 +9,6 @@ export const saveVote = (user, question, vote) => {
    var stats = database.ref(references.statistics + '/' + question.id);
 
    stats.transaction((stat) => {
-      console.log(user, stat);
       var simple = stat.simple
       vote ? simple.yes++ : simple.no++;
 
@@ -36,7 +35,6 @@ export const saveVote = (user, question, vote) => {
 
    var usersVotes = database.ref(references.answers + '/' + user.remote.uid);
    usersVotes.transaction((userVote) => {
-      console.log(userVote);
       if (!userVote){
          userVote = {};
       }
@@ -124,7 +122,6 @@ const generateAgeBreakdown = (user, vote, breakdown) => {
    }
 
    var age = moment().diff(user.birthday, 'years');
-   console.log(user.birthday, age);
    var group = ageGroup(age);
 
    if (!breakdown.age){
@@ -143,7 +140,6 @@ export const saveClub = (user, club) => {
    var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
-      console.log(user, u);
       if (!u){
          u = {};
       }
@@ -157,7 +153,6 @@ export const saveDateOfBirth = (user, birthday) => {
    var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
-      console.log(user, u);
       if (!u){
          u = {};
       }
@@ -171,7 +166,6 @@ export const saveSex = (user, sex) => {
    var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
-      console.log(user, u);
       if (!u){
          u = {};
       }
@@ -185,7 +179,6 @@ export const saveLocation = (user, location) => {
    var users = database.ref(references.users + '/' + user.remote.uid);
 
    users.transaction((u) => {
-      console.log(user, u);
       if (!u){
          u = {};
       }

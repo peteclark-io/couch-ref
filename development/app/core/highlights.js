@@ -18,7 +18,6 @@ export function highlight(clubs, age, sex, location, club){
    }
 
    var sorted = selectHighlight(clubH, ageH, sexH, countryH);
-   console.log('Priorities', sorted);
 
    var top = sorted[0];
    var bottom = sorted[sorted.length-1];

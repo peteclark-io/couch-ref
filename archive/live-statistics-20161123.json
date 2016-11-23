@@ -1,0 +1,3385 @@
+{
+  "11694b80-e593-459a-86a1-046a9c41e960": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 117,
+          "yes": 90
+        },
+        "31 - 40": {
+          "no": 97,
+          "yes": 90
+        },
+        "41 - 50": {
+          "no": 93,
+          "yes": 93
+        },
+        "51 - 60": {
+          "no": 105,
+          "yes": 87
+        },
+        "60+": {
+          "no": 103,
+          "yes": 107
+        },
+        "< 20": {
+          "no": 115,
+          "yes": 107
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 10,
+          "yes": 439
+        },
+        "Bournemouth": {
+          "no": 8,
+          "yes": 6
+        },
+        "Burnley": {
+          "no": 9,
+          "yes": 5
+        },
+        "Chelsea": {
+          "no": 9,
+          "yes": 7
+        },
+        "Crystal Palace": {
+          "no": 11,
+          "yes": 9
+        },
+        "Everton": {
+          "no": 4,
+          "yes": 4
+        },
+        "Hull": {
+          "no": 10,
+          "yes": 5
+        },
+        "Leicester": {
+          "no": 4,
+          "yes": 11
+        },
+        "Liverpool": {
+          "no": 7,
+          "yes": 6
+        },
+        "Man City": {
+          "no": 6,
+          "yes": 6
+        },
+        "Man Utd": {
+          "no": 481,
+          "yes": 9
+        },
+        "Middlesbrough": {
+          "no": 10,
+          "yes": 9
+        },
+        "Southampton": {
+          "no": 5,
+          "yes": 6
+        },
+        "Stoke": {
+          "no": 2,
+          "yes": 11
+        },
+        "Sunderland": {
+          "no": 9,
+          "yes": 9
+        },
+        "Swansea": {
+          "no": 12,
+          "yes": 6
+        },
+        "Tottenham": {
+          "no": 6,
+          "yes": 2
+        },
+        "Watford": {
+          "no": 9,
+          "yes": 8
+        },
+        "West Brom": {
+          "no": 8,
+          "yes": 9
+        },
+        "West Ham": {
+          "no": 10,
+          "yes": 7
+        }
+      },
+      "location": {
+        "Afghanistan": {
+          "no": 3,
+          "yes": 2
+        },
+        "Aland Islands": {
+          "no": 5,
+          "yes": 3
+        },
+        "Albania": {
+          "no": 4,
+          "yes": 1
+        },
+        "Algeria": {
+          "no": 2,
+          "yes": 2
+        },
+        "American Samoa": {
+          "no": 2,
+          "yes": 6
+        },
+        "Andorra": {
+          "no": 1,
+          "yes": 0
+        },
+        "Angola": {
+          "no": 3,
+          "yes": 4
+        },
+        "Anguilla": {
+          "no": 1,
+          "yes": 2
+        },
+        "Antarctica": {
+          "no": 3,
+          "yes": 1
+        },
+        "Antigua and Barbuda": {
+          "no": 1,
+          "yes": 1
+        },
+        "Argentina": {
+          "no": 3,
+          "yes": 3
+        },
+        "Armenia": {
+          "no": 3,
+          "yes": 4
+        },
+        "Aruba": {
+          "no": 3,
+          "yes": 4
+        },
+        "Australia": {
+          "no": 1,
+          "yes": 1
+        },
+        "Austria": {
+          "no": 1,
+          "yes": 0
+        },
+        "Azerbaijan": {
+          "no": 3,
+          "yes": 3
+        },
+        "Bahamas": {
+          "no": 2,
+          "yes": 0
+        },
+        "Bahrain": {
+          "no": 1,
+          "yes": 2
+        },
+        "Bangladesh": {
+          "no": 6,
+          "yes": 0
+        },
+        "Barbados": {
+          "no": 3,
+          "yes": 1
+        },
+        "Belarus": {
+          "no": 3,
+          "yes": 2
+        },
+        "Belgium": {
+          "no": 2,
+          "yes": 2
+        },
+        "Belize": {
+          "no": 1,
+          "yes": 4
+        },
+        "Benin": {
+          "no": 4,
+          "yes": 4
+        },
+        "Bermuda": {
+          "no": 5,
+          "yes": 0
+        },
+        "Bhutan": {
+          "no": 7,
+          "yes": 4
+        },
+        "Bolivia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Bonaire, Saint Eustatius and Saba": {
+          "no": 0,
+          "yes": 2
+        },
+        "Bosnia and Herzegovina": {
+          "no": 2,
+          "yes": 4
+        },
+        "Botswana": {
+          "no": 3,
+          "yes": 2
+        },
+        "Bouvet Island": {
+          "no": 1,
+          "yes": 1
+        },
+        "Brazil": {
+          "no": 2,
+          "yes": 4
+        },
+        "British Indian Ocean Territory": {
+          "no": 3,
+          "yes": 1
+        },
+        "British Virgin Islands": {
+          "no": 1,
+          "yes": 4
+        },
+        "Brunei": {
+          "no": 2,
+          "yes": 1
+        },
+        "Bulgaria": {
+          "no": 3,
+          "yes": 3
+        },
+        "Burkina Faso": {
+          "no": 2,
+          "yes": 3
+        },
+        "Burundi": {
+          "no": 7,
+          "yes": 1
+        },
+        "Cambodia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Cameroon": {
+          "no": 2,
+          "yes": 4
+        },
+        "Canada": {
+          "no": 5,
+          "yes": 2
+        },
+        "Cape Verde": {
+          "no": 0,
+          "yes": 4
+        },
+        "Cayman Islands": {
+          "no": 2,
+          "yes": 2
+        },
+        "Central African Republic": {
+          "no": 3,
+          "yes": 2
+        },
+        "Chad": {
+          "no": 3,
+          "yes": 3
+        },
+        "Chile": {
+          "no": 2,
+          "yes": 1
+        },
+        "China": {
+          "no": 2,
+          "yes": 2
+        },
+        "Christmas Island": {
+          "no": 3,
+          "yes": 3
+        },
+        "Cocos Islands": {
+          "no": 3,
+          "yes": 1
+        },
+        "Colombia": {
+          "no": 2,
+          "yes": 5
+        },
+        "Comoros": {
+          "no": 1,
+          "yes": 2
+        },
+        "Cook Islands": {
+          "no": 3,
+          "yes": 2
+        },
+        "Costa Rica": {
+          "no": 2,
+          "yes": 3
+        },
+        "Croatia": {
+          "no": 0,
+          "yes": 2
+        },
+        "Cuba": {
+          "no": 1,
+          "yes": 1
+        },
+        "Curacao": {
+          "no": 2,
+          "yes": 0
+        },
+        "Cyprus": {
+          "no": 3,
+          "yes": 4
+        },
+        "Czech Republic": {
+          "no": 4,
+          "yes": 2
+        },
+        "Democratic Republic of the Congo": {
+          "no": 1,
+          "yes": 4
+        },
+        "Denmark": {
+          "no": 1,
+          "yes": 2
+        },
+        "Djibouti": {
+          "no": 3,
+          "yes": 2
+        },
+        "Dominica": {
+          "no": 2,
+          "yes": 0
+        },
+        "Dominican Republic": {
+          "no": 3,
+          "yes": 1
+        },
+        "East Timor": {
+          "no": 4,
+          "yes": 4
+        },
+        "Ecuador": {
+          "no": 7,
+          "yes": 0
+        },
+        "Egypt": {
+          "no": 1,
+          "yes": 4
+        },
+        "El Salvador": {
+          "no": 3,
+          "yes": 1
+        },
+        "Equatorial Guinea": {
+          "no": 3,
+          "yes": 3
+        },
+        "Eritrea": {
+          "no": 2,
+          "yes": 0
+        },
+        "Estonia": {
+          "no": 1,
+          "yes": 0
+        },
+        "Ethiopia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Falkland Islands": {
+          "no": 1,
+          "yes": 2
+        },
+        "Faroe Islands": {
+          "no": 2,
+          "yes": 3
+        },
+        "Fiji": {
+          "no": 0,
+          "yes": 1
+        },
+        "Finland": {
+          "no": 2,
+          "yes": 2
+        },
+        "France": {
+          "no": 2,
+          "yes": 1
+        },
+        "French Guiana": {
+          "no": 3,
+          "yes": 2
+        },
+        "French Polynesia": {
+          "no": 1,
+          "yes": 4
+        },
+        "French Southern Territories": {
+          "no": 2,
+          "yes": 2
+        },
+        "Gabon": {
+          "no": 4,
+          "yes": 2
+        },
+        "Gambia": {
+          "no": 4,
+          "yes": 7
+        },
+        "Georgia": {
+          "no": 2,
+          "yes": 3
+        },
+        "Germany": {
+          "no": 1,
+          "yes": 6
+        },
+        "Ghana": {
+          "no": 1,
+          "yes": 3
+        },
+        "Gibraltar": {
+          "no": 1,
+          "yes": 0
+        },
+        "Greece": {
+          "no": 3,
+          "yes": 2
+        },
+        "Greenland": {
+          "no": 3,
+          "yes": 2
+        },
+        "Grenada": {
+          "no": 3,
+          "yes": 1
+        },
+        "Guadeloupe": {
+          "no": 2,
+          "yes": 3
+        },
+        "Guam": {
+          "no": 4,
+          "yes": 2
+        },
+        "Guatemala": {
+          "no": 3,
+          "yes": 2
+        },
+        "Guernsey": {
+          "no": 3,
+          "yes": 3
+        },
+        "Guinea": {
+          "no": 4,
+          "yes": 1
+        },
+        "Guinea-Bissau": {
+          "no": 4,
+          "yes": 0
+        },
+        "Guyana": {
+          "no": 3,
+          "yes": 1
+        },
+        "Haiti": {
+          "no": 3,
+          "yes": 2
+        },
+        "Heard Island and McDonald Islands": {
+          "no": 3,
+          "yes": 3
+        },
+        "Honduras": {
+          "no": 3,
+          "yes": 6
+        },
+        "Hong Kong": {
+          "no": 3,
+          "yes": 2
+        },
+        "Hungary": {
+          "no": 3,
+          "yes": 3
+        },
+        "Iceland": {
+          "no": 2,
+          "yes": 5
+        },
+        "India": {
+          "no": 2,
+          "yes": 2
+        },
+        "Indonesia": {
+          "no": 3,
+          "yes": 5
+        },
+        "Iran": {
+          "no": 1,
+          "yes": 2
+        },
+        "Iraq": {
+          "no": 3,
+          "yes": 3
+        },
+        "Ireland": {
+          "no": 3,
+          "yes": 4
+        },
+        "Isle of Man": {
+          "no": 2,
+          "yes": 1
+        },
+        "Israel": {
+          "no": 4,
+          "yes": 3
+        },
+        "Italy": {
+          "no": 1,
+          "yes": 4
+        },
+        "Ivory Coast": {
+          "no": 4,
+          "yes": 3
+        },
+        "Japan": {
+          "no": 1,
+          "yes": 2
+        },
+        "Jersey": {
+          "no": 1,
+          "yes": 2
+        },
+        "Jordan": {
+          "no": 4,
+          "yes": 3
+        },
+        "Kazakhstan": {
+          "no": 3,
+          "yes": 6
+        },
+        "Kenya": {
+          "no": 3,
+          "yes": 0
+        },
+        "Kiribati": {
+          "no": 2,
+          "yes": 2
+        },
+        "Kosovo": {
+          "no": 1,
+          "yes": 5
+        },
+        "Kuwait": {
+          "no": 1,
+          "yes": 3
+        },
+        "Kyrgyzstan": {
+          "no": 4,
+          "yes": 2
+        },
+        "Laos": {
+          "no": 1,
+          "yes": 4
+        },
+        "Latvia": {
+          "no": 1,
+          "yes": 2
+        },
+        "Lebanon": {
+          "no": 6,
+          "yes": 2
+        },
+        "Lesotho": {
+          "no": 3,
+          "yes": 2
+        },
+        "Liberia": {
+          "no": 3,
+          "yes": 6
+        },
+        "Libya": {
+          "no": 1,
+          "yes": 2
+        },
+        "Liechtenstein": {
+          "no": 1,
+          "yes": 1
+        },
+        "Lithuania": {
+          "no": 5,
+          "yes": 2
+        },
+        "Luxembourg": {
+          "no": 2,
+          "yes": 2
+        },
+        "Macao": {
+          "no": 2,
+          "yes": 2
+        },
+        "Macedonia": {
+          "no": 1,
+          "yes": 1
+        },
+        "Madagascar": {
+          "no": 4,
+          "yes": 2
+        },
+        "Malawi": {
+          "no": 3,
+          "yes": 6
+        },
+        "Malaysia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Maldives": {
+          "no": 3,
+          "yes": 3
+        },
+        "Mali": {
+          "no": 2,
+          "yes": 5
+        },
+        "Malta": {
+          "no": 5,
+          "yes": 2
+        },
+        "Marshall Islands": {
+          "no": 1,
+          "yes": 2
+        },
+        "Martinique": {
+          "no": 1,
+          "yes": 3
+        },
+        "Mauritania": {
+          "no": 4,
+          "yes": 1
+        },
+        "Mauritius": {
+          "no": 5,
+          "yes": 3
+        },
+        "Mayotte": {
+          "no": 2,
+          "yes": 3
+        },
+        "Mexico": {
+          "no": 5,
+          "yes": 2
+        },
+        "Micronesia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Moldova": {
+          "no": 2,
+          "yes": 0
+        },
+        "Monaco": {
+          "no": 1,
+          "yes": 2
+        },
+        "Mongolia": {
+          "no": 2,
+          "yes": 2
+        },
+        "Montenegro": {
+          "no": 2,
+          "yes": 1
+        },
+        "Montserrat": {
+          "no": 3,
+          "yes": 0
+        },
+        "Morocco": {
+          "no": 6,
+          "yes": 2
+        },
+        "Mozambique": {
+          "no": 7,
+          "yes": 0
+        },
+        "Myanmar": {
+          "no": 3,
+          "yes": 2
+        },
+        "Namibia": {
+          "no": 2,
+          "yes": 3
+        },
+        "Nepal": {
+          "no": 1,
+          "yes": 3
+        },
+        "Netherlands": {
+          "no": 4,
+          "yes": 3
+        },
+        "New Caledonia": {
+          "no": 1,
+          "yes": 3
+        },
+        "New Zealand": {
+          "no": 1,
+          "yes": 4
+        },
+        "Nicaragua": {
+          "no": 2,
+          "yes": 4
+        },
+        "Niger": {
+          "no": 0,
+          "yes": 2
+        },
+        "Nigeria": {
+          "no": 3,
+          "yes": 4
+        },
+        "Niue": {
+          "no": 1,
+          "yes": 0
+        },
+        "Norfolk Island": {
+          "no": 4,
+          "yes": 1
+        },
+        "North Korea": {
+          "no": 4,
+          "yes": 0
+        },
+        "Northern Mariana Islands": {
+          "no": 3,
+          "yes": 1
+        },
+        "Norway": {
+          "no": 0,
+          "yes": 3
+        },
+        "Oman": {
+          "no": 2,
+          "yes": 1
+        },
+        "Pakistan": {
+          "no": 0,
+          "yes": 2
+        },
+        "Palau": {
+          "no": 3,
+          "yes": 3
+        },
+        "Palestinian Territory": {
+          "no": 3,
+          "yes": 2
+        },
+        "Panama": {
+          "no": 1,
+          "yes": 3
+        },
+        "Papua New Guinea": {
+          "no": 5,
+          "yes": 3
+        },
+        "Paraguay": {
+          "no": 6,
+          "yes": 1
+        },
+        "Peru": {
+          "no": 0,
+          "yes": 3
+        },
+        "Philippines": {
+          "no": 2,
+          "yes": 1
+        },
+        "Pitcairn": {
+          "no": 0,
+          "yes": 3
+        },
+        "Poland": {
+          "no": 1,
+          "yes": 4
+        },
+        "Portugal": {
+          "no": 3,
+          "yes": 1
+        },
+        "Puerto Rico": {
+          "no": 1,
+          "yes": 1
+        },
+        "Qatar": {
+          "no": 4,
+          "yes": 7
+        },
+        "Republic of the Congo": {
+          "no": 2,
+          "yes": 3
+        },
+        "Reunion": {
+          "no": 0,
+          "yes": 2
+        },
+        "Romania": {
+          "no": 5,
+          "yes": 1
+        },
+        "Russia": {
+          "no": 4,
+          "yes": 1
+        },
+        "Rwanda": {
+          "no": 1,
+          "yes": 3
+        },
+        "Saint Barthelemy": {
+          "no": 3,
+          "yes": 0
+        },
+        "Saint Helena": {
+          "no": 4,
+          "yes": 5
+        },
+        "Saint Kitts and Nevis": {
+          "no": 4,
+          "yes": 3
+        },
+        "Saint Lucia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Saint Martin": {
+          "no": 0,
+          "yes": 1
+        },
+        "Saint Pierre and Miquelon": {
+          "no": 1,
+          "yes": 3
+        },
+        "Saint Vincent and the Grenadines": {
+          "no": 4,
+          "yes": 3
+        },
+        "Samoa": {
+          "no": 3,
+          "yes": 4
+        },
+        "San Marino": {
+          "no": 1,
+          "yes": 3
+        },
+        "Sao Tome and Principe": {
+          "no": 3,
+          "yes": 3
+        },
+        "Saudi Arabia": {
+          "no": 5,
+          "yes": 2
+        },
+        "Senegal": {
+          "no": 3,
+          "yes": 1
+        },
+        "Serbia": {
+          "no": 4,
+          "yes": 2
+        },
+        "Seychelles": {
+          "no": 6,
+          "yes": 2
+        },
+        "Sierra Leone": {
+          "no": 1,
+          "yes": 2
+        },
+        "Singapore": {
+          "no": 1,
+          "yes": 1
+        },
+        "Sint Maarten": {
+          "no": 4,
+          "yes": 5
+        },
+        "Slovakia": {
+          "no": 5,
+          "yes": 0
+        },
+        "Slovenia": {
+          "no": 4,
+          "yes": 3
+        },
+        "Solomon Islands": {
+          "no": 2,
+          "yes": 4
+        },
+        "Somalia": {
+          "no": 1,
+          "yes": 4
+        },
+        "South Africa": {
+          "no": 2,
+          "yes": 3
+        },
+        "South Georgia and the South Sandwich Islands": {
+          "no": 2,
+          "yes": 2
+        },
+        "South Korea": {
+          "no": 4,
+          "yes": 1
+        },
+        "South Sudan": {
+          "no": 1,
+          "yes": 1
+        },
+        "Spain": {
+          "no": 1,
+          "yes": 1
+        },
+        "Sri Lanka": {
+          "no": 3,
+          "yes": 3
+        },
+        "Sudan": {
+          "no": 0,
+          "yes": 2
+        },
+        "Suriname": {
+          "no": 1,
+          "yes": 2
+        },
+        "Svalbard and Jan Mayen": {
+          "no": 2,
+          "yes": 2
+        },
+        "Swaziland": {
+          "no": 6,
+          "yes": 2
+        },
+        "Sweden": {
+          "no": 2,
+          "yes": 2
+        },
+        "Switzerland": {
+          "no": 4,
+          "yes": 4
+        },
+        "Syria": {
+          "no": 1,
+          "yes": 2
+        },
+        "Taiwan": {
+          "no": 1,
+          "yes": 4
+        },
+        "Tajikistan": {
+          "no": 2,
+          "yes": 3
+        },
+        "Tanzania": {
+          "no": 2,
+          "yes": 4
+        },
+        "Thailand": {
+          "no": 1,
+          "yes": 6
+        },
+        "Togo": {
+          "no": 5,
+          "yes": 1
+        },
+        "Tokelau": {
+          "no": 4,
+          "yes": 3
+        },
+        "Tonga": {
+          "no": 2,
+          "yes": 3
+        },
+        "Trinidad and Tobago": {
+          "no": 3,
+          "yes": 2
+        },
+        "Tunisia": {
+          "no": 3,
+          "yes": 3
+        },
+        "Turkey": {
+          "no": 5,
+          "yes": 2
+        },
+        "Turkmenistan": {
+          "no": 2,
+          "yes": 4
+        },
+        "Turks and Caicos Islands": {
+          "no": 1,
+          "yes": 2
+        },
+        "Tuvalu": {
+          "no": 2,
+          "yes": 4
+        },
+        "US Virgin Islands": {
+          "no": 3,
+          "yes": 2
+        },
+        "Uganda": {
+          "no": 3,
+          "yes": 0
+        },
+        "Ukraine": {
+          "no": 1,
+          "yes": 2
+        },
+        "United Arab Emirates": {
+          "no": 0,
+          "yes": 2
+        },
+        "United Kingdom": {
+          "no": 6,
+          "yes": 2
+        },
+        "United States": {
+          "no": 1,
+          "yes": 1
+        },
+        "United States Minor Outlying Islands": {
+          "no": 3,
+          "yes": 3
+        },
+        "Uruguay": {
+          "no": 2,
+          "yes": 2
+        },
+        "Uzbekistan": {
+          "no": 2,
+          "yes": 2
+        },
+        "Vanuatu": {
+          "no": 5,
+          "yes": 0
+        },
+        "Vatican": {
+          "no": 3,
+          "yes": 3
+        },
+        "Venezuela": {
+          "no": 0,
+          "yes": 3
+        },
+        "Vietnam": {
+          "no": 5,
+          "yes": 1
+        },
+        "Wallis and Futuna": {
+          "no": 2,
+          "yes": 0
+        },
+        "Western Sahara": {
+          "no": 0,
+          "yes": 1
+        },
+        "Yemen": {
+          "no": 4,
+          "yes": 1
+        },
+        "Zambia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Zimbabwe": {
+          "no": 4,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 309,
+          "yes": 308
+        },
+        "Male": {
+          "no": 321,
+          "yes": 266
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "11694b80-e593-459a-86a1-046a9c41e960",
+    "simple": {
+      "no": 630,
+      "yes": 574
+    }
+  },
+  "33dfe3f0-2575-4f31-a953-f7f17bf102bc": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 106,
+          "yes": 108
+        },
+        "31 - 40": {
+          "no": 92,
+          "yes": 95
+        },
+        "41 - 50": {
+          "no": 95,
+          "yes": 91
+        },
+        "51 - 60": {
+          "no": 94,
+          "yes": 98
+        },
+        "60+": {
+          "no": 105,
+          "yes": 105
+        },
+        "< 20": {
+          "no": 108,
+          "yes": 115
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 6,
+          "yes": 450
+        },
+        "Bournemouth": {
+          "no": 7,
+          "yes": 7
+        },
+        "Burnley": {
+          "no": 6,
+          "yes": 8
+        },
+        "Chelsea": {
+          "no": 6,
+          "yes": 10
+        },
+        "Crystal Palace": {
+          "no": 7,
+          "yes": 13
+        },
+        "Everton": {
+          "no": 3,
+          "yes": 5
+        },
+        "Hull": {
+          "no": 6,
+          "yes": 9
+        },
+        "Leicester": {
+          "no": 8,
+          "yes": 8
+        },
+        "Liverpool": {
+          "no": 8,
+          "yes": 5
+        },
+        "Man City": {
+          "no": 3,
+          "yes": 9
+        },
+        "Man Utd": {
+          "no": 479,
+          "yes": 11
+        },
+        "Middlesbrough": {
+          "no": 12,
+          "yes": 7
+        },
+        "Southampton": {
+          "no": 5,
+          "yes": 6
+        },
+        "Stoke": {
+          "no": 8,
+          "yes": 5
+        },
+        "Sunderland": {
+          "no": 7,
+          "yes": 11
+        },
+        "Swansea": {
+          "no": 5,
+          "yes": 13
+        },
+        "Tottenham": {
+          "no": 6,
+          "yes": 2
+        },
+        "Watford": {
+          "no": 4,
+          "yes": 13
+        },
+        "West Brom": {
+          "no": 8,
+          "yes": 9
+        },
+        "West Ham": {
+          "no": 6,
+          "yes": 11
+        }
+      },
+      "location": {
+        "Afghanistan": {
+          "no": 3,
+          "yes": 2
+        },
+        "Aland Islands": {
+          "no": 5,
+          "yes": 3
+        },
+        "Albania": {
+          "no": 4,
+          "yes": 1
+        },
+        "Algeria": {
+          "no": 2,
+          "yes": 2
+        },
+        "American Samoa": {
+          "no": 1,
+          "yes": 7
+        },
+        "Andorra": {
+          "no": 1,
+          "yes": 0
+        },
+        "Angola": {
+          "no": 3,
+          "yes": 4
+        },
+        "Anguilla": {
+          "no": 1,
+          "yes": 2
+        },
+        "Antarctica": {
+          "no": 4,
+          "yes": 0
+        },
+        "Antigua and Barbuda": {
+          "no": 1,
+          "yes": 1
+        },
+        "Argentina": {
+          "no": 6,
+          "yes": 0
+        },
+        "Armenia": {
+          "no": 2,
+          "yes": 5
+        },
+        "Aruba": {
+          "no": 5,
+          "yes": 2
+        },
+        "Australia": {
+          "no": 1,
+          "yes": 1
+        },
+        "Austria": {
+          "no": 1,
+          "yes": 0
+        },
+        "Azerbaijan": {
+          "no": 2,
+          "yes": 4
+        },
+        "Bahamas": {
+          "no": 2,
+          "yes": 0
+        },
+        "Bahrain": {
+          "no": 1,
+          "yes": 2
+        },
+        "Bangladesh": {
+          "no": 6,
+          "yes": 0
+        },
+        "Barbados": {
+          "no": 2,
+          "yes": 2
+        },
+        "Belarus": {
+          "no": 3,
+          "yes": 2
+        },
+        "Belgium": {
+          "no": 2,
+          "yes": 2
+        },
+        "Belize": {
+          "no": 1,
+          "yes": 4
+        },
+        "Benin": {
+          "no": 3,
+          "yes": 5
+        },
+        "Bermuda": {
+          "no": 2,
+          "yes": 3
+        },
+        "Bhutan": {
+          "no": 5,
+          "yes": 6
+        },
+        "Bolivia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Bonaire, Saint Eustatius and Saba": {
+          "no": 0,
+          "yes": 2
+        },
+        "Bosnia and Herzegovina": {
+          "no": 1,
+          "yes": 5
+        },
+        "Botswana": {
+          "no": 2,
+          "yes": 3
+        },
+        "Bouvet Island": {
+          "no": 1,
+          "yes": 1
+        },
+        "Brazil": {
+          "no": 5,
+          "yes": 1
+        },
+        "British Indian Ocean Territory": {
+          "no": 3,
+          "yes": 1
+        },
+        "British Virgin Islands": {
+          "no": 2,
+          "yes": 3
+        },
+        "Brunei": {
+          "no": 3,
+          "yes": 0
+        },
+        "Bulgaria": {
+          "no": 3,
+          "yes": 3
+        },
+        "Burkina Faso": {
+          "no": 1,
+          "yes": 4
+        },
+        "Burundi": {
+          "no": 7,
+          "yes": 1
+        },
+        "Cambodia": {
+          "no": 5,
+          "yes": 0
+        },
+        "Cameroon": {
+          "no": 2,
+          "yes": 4
+        },
+        "Canada": {
+          "no": 4,
+          "yes": 3
+        },
+        "Cape Verde": {
+          "no": 1,
+          "yes": 3
+        },
+        "Cayman Islands": {
+          "no": 3,
+          "yes": 1
+        },
+        "Central African Republic": {
+          "no": 3,
+          "yes": 2
+        },
+        "Chad": {
+          "no": 4,
+          "yes": 2
+        },
+        "Chile": {
+          "no": 1,
+          "yes": 2
+        },
+        "China": {
+          "no": 1,
+          "yes": 3
+        },
+        "Christmas Island": {
+          "no": 3,
+          "yes": 3
+        },
+        "Cocos Islands": {
+          "no": 3,
+          "yes": 1
+        },
+        "Colombia": {
+          "no": 1,
+          "yes": 6
+        },
+        "Comoros": {
+          "no": 2,
+          "yes": 1
+        },
+        "Cook Islands": {
+          "no": 1,
+          "yes": 4
+        },
+        "Costa Rica": {
+          "no": 3,
+          "yes": 2
+        },
+        "Croatia": {
+          "no": 0,
+          "yes": 2
+        },
+        "Cuba": {
+          "no": 1,
+          "yes": 1
+        },
+        "Curacao": {
+          "no": 2,
+          "yes": 0
+        },
+        "Cyprus": {
+          "no": 3,
+          "yes": 4
+        },
+        "Czech Republic": {
+          "no": 3,
+          "yes": 3
+        },
+        "Democratic Republic of the Congo": {
+          "no": 1,
+          "yes": 4
+        },
+        "Denmark": {
+          "no": 2,
+          "yes": 1
+        },
+        "Djibouti": {
+          "no": 2,
+          "yes": 3
+        },
+        "Dominica": {
+          "no": 2,
+          "yes": 0
+        },
+        "Dominican Republic": {
+          "no": 3,
+          "yes": 1
+        },
+        "East Timor": {
+          "no": 3,
+          "yes": 5
+        },
+        "Ecuador": {
+          "no": 6,
+          "yes": 1
+        },
+        "Egypt": {
+          "no": 2,
+          "yes": 3
+        },
+        "El Salvador": {
+          "no": 2,
+          "yes": 2
+        },
+        "Equatorial Guinea": {
+          "no": 3,
+          "yes": 3
+        },
+        "Eritrea": {
+          "no": 2,
+          "yes": 0
+        },
+        "Estonia": {
+          "no": 0,
+          "yes": 1
+        },
+        "Ethiopia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Falkland Islands": {
+          "no": 1,
+          "yes": 2
+        },
+        "Faroe Islands": {
+          "no": 2,
+          "yes": 3
+        },
+        "Fiji": {
+          "no": 0,
+          "yes": 1
+        },
+        "Finland": {
+          "no": 2,
+          "yes": 2
+        },
+        "France": {
+          "no": 0,
+          "yes": 3
+        },
+        "French Guiana": {
+          "no": 3,
+          "yes": 2
+        },
+        "French Polynesia": {
+          "no": 0,
+          "yes": 5
+        },
+        "French Southern Territories": {
+          "no": 2,
+          "yes": 2
+        },
+        "Gabon": {
+          "no": 2,
+          "yes": 4
+        },
+        "Gambia": {
+          "no": 4,
+          "yes": 7
+        },
+        "Georgia": {
+          "no": 2,
+          "yes": 3
+        },
+        "Germany": {
+          "no": 2,
+          "yes": 5
+        },
+        "Ghana": {
+          "no": 1,
+          "yes": 3
+        },
+        "Gibraltar": {
+          "no": 1,
+          "yes": 0
+        },
+        "Greece": {
+          "no": 2,
+          "yes": 3
+        },
+        "Greenland": {
+          "no": 3,
+          "yes": 2
+        },
+        "Grenada": {
+          "no": 3,
+          "yes": 1
+        },
+        "Guadeloupe": {
+          "no": 2,
+          "yes": 3
+        },
+        "Guam": {
+          "no": 4,
+          "yes": 2
+        },
+        "Guatemala": {
+          "no": 3,
+          "yes": 2
+        },
+        "Guernsey": {
+          "no": 3,
+          "yes": 3
+        },
+        "Guinea": {
+          "no": 4,
+          "yes": 1
+        },
+        "Guinea-Bissau": {
+          "no": 4,
+          "yes": 0
+        },
+        "Guyana": {
+          "no": 3,
+          "yes": 1
+        },
+        "Haiti": {
+          "no": 3,
+          "yes": 2
+        },
+        "Heard Island and McDonald Islands": {
+          "no": 2,
+          "yes": 4
+        },
+        "Honduras": {
+          "no": 3,
+          "yes": 6
+        },
+        "Hong Kong": {
+          "no": 3,
+          "yes": 2
+        },
+        "Hungary": {
+          "no": 3,
+          "yes": 3
+        },
+        "Iceland": {
+          "no": 3,
+          "yes": 4
+        },
+        "India": {
+          "no": 2,
+          "yes": 2
+        },
+        "Indonesia": {
+          "no": 2,
+          "yes": 6
+        },
+        "Iran": {
+          "no": 2,
+          "yes": 1
+        },
+        "Iraq": {
+          "no": 3,
+          "yes": 3
+        },
+        "Ireland": {
+          "no": 5,
+          "yes": 2
+        },
+        "Isle of Man": {
+          "no": 2,
+          "yes": 1
+        },
+        "Israel": {
+          "no": 4,
+          "yes": 3
+        },
+        "Italy": {
+          "no": 1,
+          "yes": 4
+        },
+        "Ivory Coast": {
+          "no": 4,
+          "yes": 3
+        },
+        "Japan": {
+          "no": 2,
+          "yes": 1
+        },
+        "Jersey": {
+          "no": 1,
+          "yes": 2
+        },
+        "Jordan": {
+          "no": 4,
+          "yes": 3
+        },
+        "Kazakhstan": {
+          "no": 3,
+          "yes": 6
+        },
+        "Kenya": {
+          "no": 2,
+          "yes": 1
+        },
+        "Kiribati": {
+          "no": 2,
+          "yes": 2
+        },
+        "Kosovo": {
+          "no": 1,
+          "yes": 5
+        },
+        "Kuwait": {
+          "no": 1,
+          "yes": 3
+        },
+        "Kyrgyzstan": {
+          "no": 2,
+          "yes": 4
+        },
+        "Laos": {
+          "no": 2,
+          "yes": 3
+        },
+        "Latvia": {
+          "no": 1,
+          "yes": 2
+        },
+        "Lebanon": {
+          "no": 5,
+          "yes": 3
+        },
+        "Lesotho": {
+          "no": 3,
+          "yes": 2
+        },
+        "Liberia": {
+          "no": 5,
+          "yes": 4
+        },
+        "Libya": {
+          "no": 1,
+          "yes": 2
+        },
+        "Liechtenstein": {
+          "no": 1,
+          "yes": 1
+        },
+        "Lithuania": {
+          "no": 4,
+          "yes": 3
+        },
+        "Luxembourg": {
+          "no": 1,
+          "yes": 3
+        },
+        "Macao": {
+          "no": 2,
+          "yes": 2
+        },
+        "Macedonia": {
+          "no": 1,
+          "yes": 1
+        },
+        "Madagascar": {
+          "no": 1,
+          "yes": 5
+        },
+        "Malawi": {
+          "no": 4,
+          "yes": 5
+        },
+        "Malaysia": {
+          "no": 3,
+          "yes": 0
+        },
+        "Maldives": {
+          "no": 3,
+          "yes": 3
+        },
+        "Mali": {
+          "no": 2,
+          "yes": 5
+        },
+        "Malta": {
+          "no": 5,
+          "yes": 2
+        },
+        "Marshall Islands": {
+          "no": 1,
+          "yes": 2
+        },
+        "Martinique": {
+          "no": 1,
+          "yes": 3
+        },
+        "Mauritania": {
+          "no": 3,
+          "yes": 2
+        },
+        "Mauritius": {
+          "no": 4,
+          "yes": 4
+        },
+        "Mayotte": {
+          "no": 2,
+          "yes": 3
+        },
+        "Mexico": {
+          "no": 4,
+          "yes": 3
+        },
+        "Micronesia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Moldova": {
+          "no": 2,
+          "yes": 0
+        },
+        "Monaco": {
+          "no": 1,
+          "yes": 2
+        },
+        "Mongolia": {
+          "no": 2,
+          "yes": 2
+        },
+        "Montenegro": {
+          "no": 2,
+          "yes": 1
+        },
+        "Montserrat": {
+          "no": 1,
+          "yes": 2
+        },
+        "Morocco": {
+          "no": 6,
+          "yes": 2
+        },
+        "Mozambique": {
+          "no": 4,
+          "yes": 3
+        },
+        "Myanmar": {
+          "no": 3,
+          "yes": 2
+        },
+        "Namibia": {
+          "no": 1,
+          "yes": 4
+        },
+        "Nepal": {
+          "no": 3,
+          "yes": 1
+        },
+        "Netherlands": {
+          "no": 5,
+          "yes": 2
+        },
+        "New Caledonia": {
+          "no": 1,
+          "yes": 3
+        },
+        "New Zealand": {
+          "no": 1,
+          "yes": 4
+        },
+        "Nicaragua": {
+          "no": 3,
+          "yes": 3
+        },
+        "Niger": {
+          "no": 0,
+          "yes": 2
+        },
+        "Nigeria": {
+          "no": 3,
+          "yes": 4
+        },
+        "Niue": {
+          "no": 1,
+          "yes": 0
+        },
+        "Norfolk Island": {
+          "no": 4,
+          "yes": 1
+        },
+        "North Korea": {
+          "no": 4,
+          "yes": 0
+        },
+        "Northern Mariana Islands": {
+          "no": 2,
+          "yes": 2
+        },
+        "Norway": {
+          "no": 0,
+          "yes": 3
+        },
+        "Oman": {
+          "no": 2,
+          "yes": 1
+        },
+        "Pakistan": {
+          "no": 0,
+          "yes": 2
+        },
+        "Palau": {
+          "no": 3,
+          "yes": 3
+        },
+        "Palestinian Territory": {
+          "no": 2,
+          "yes": 3
+        },
+        "Panama": {
+          "no": 1,
+          "yes": 3
+        },
+        "Papua New Guinea": {
+          "no": 3,
+          "yes": 5
+        },
+        "Paraguay": {
+          "no": 5,
+          "yes": 2
+        },
+        "Peru": {
+          "no": 0,
+          "yes": 3
+        },
+        "Philippines": {
+          "no": 2,
+          "yes": 1
+        },
+        "Pitcairn": {
+          "no": 0,
+          "yes": 3
+        },
+        "Poland": {
+          "no": 1,
+          "yes": 4
+        },
+        "Portugal": {
+          "no": 3,
+          "yes": 1
+        },
+        "Puerto Rico": {
+          "no": 1,
+          "yes": 1
+        },
+        "Qatar": {
+          "no": 5,
+          "yes": 6
+        },
+        "Republic of the Congo": {
+          "no": 3,
+          "yes": 2
+        },
+        "Reunion": {
+          "no": 0,
+          "yes": 2
+        },
+        "Romania": {
+          "no": 5,
+          "yes": 1
+        },
+        "Russia": {
+          "no": 4,
+          "yes": 1
+        },
+        "Rwanda": {
+          "no": 1,
+          "yes": 3
+        },
+        "Saint Barthelemy": {
+          "no": 3,
+          "yes": 0
+        },
+        "Saint Helena": {
+          "no": 3,
+          "yes": 6
+        },
+        "Saint Kitts and Nevis": {
+          "no": 3,
+          "yes": 4
+        },
+        "Saint Lucia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Saint Martin": {
+          "no": 0,
+          "yes": 1
+        },
+        "Saint Pierre and Miquelon": {
+          "no": 1,
+          "yes": 3
+        },
+        "Saint Vincent and the Grenadines": {
+          "no": 3,
+          "yes": 4
+        },
+        "Samoa": {
+          "no": 3,
+          "yes": 4
+        },
+        "San Marino": {
+          "no": 1,
+          "yes": 3
+        },
+        "Sao Tome and Principe": {
+          "no": 2,
+          "yes": 4
+        },
+        "Saudi Arabia": {
+          "no": 4,
+          "yes": 3
+        },
+        "Senegal": {
+          "no": 2,
+          "yes": 2
+        },
+        "Serbia": {
+          "no": 4,
+          "yes": 2
+        },
+        "Seychelles": {
+          "no": 7,
+          "yes": 1
+        },
+        "Sierra Leone": {
+          "no": 1,
+          "yes": 2
+        },
+        "Singapore": {
+          "no": 1,
+          "yes": 1
+        },
+        "Sint Maarten": {
+          "no": 3,
+          "yes": 6
+        },
+        "Slovakia": {
+          "no": 4,
+          "yes": 1
+        },
+        "Slovenia": {
+          "no": 5,
+          "yes": 2
+        },
+        "Solomon Islands": {
+          "no": 2,
+          "yes": 4
+        },
+        "Somalia": {
+          "no": 2,
+          "yes": 3
+        },
+        "South Africa": {
+          "no": 2,
+          "yes": 3
+        },
+        "South Georgia and the South Sandwich Islands": {
+          "no": 1,
+          "yes": 3
+        },
+        "South Korea": {
+          "no": 4,
+          "yes": 1
+        },
+        "South Sudan": {
+          "no": 0,
+          "yes": 2
+        },
+        "Spain": {
+          "no": 1,
+          "yes": 1
+        },
+        "Sri Lanka": {
+          "no": 3,
+          "yes": 3
+        },
+        "Sudan": {
+          "no": 0,
+          "yes": 2
+        },
+        "Suriname": {
+          "no": 1,
+          "yes": 2
+        },
+        "Svalbard and Jan Mayen": {
+          "no": 2,
+          "yes": 2
+        },
+        "Swaziland": {
+          "no": 5,
+          "yes": 3
+        },
+        "Sweden": {
+          "no": 2,
+          "yes": 2
+        },
+        "Switzerland": {
+          "no": 4,
+          "yes": 4
+        },
+        "Syria": {
+          "no": 1,
+          "yes": 2
+        },
+        "Taiwan": {
+          "no": 1,
+          "yes": 4
+        },
+        "Tajikistan": {
+          "no": 2,
+          "yes": 3
+        },
+        "Tanzania": {
+          "no": 2,
+          "yes": 4
+        },
+        "Thailand": {
+          "no": 2,
+          "yes": 5
+        },
+        "Togo": {
+          "no": 5,
+          "yes": 1
+        },
+        "Tokelau": {
+          "no": 3,
+          "yes": 4
+        },
+        "Tonga": {
+          "no": 2,
+          "yes": 3
+        },
+        "Trinidad and Tobago": {
+          "no": 3,
+          "yes": 2
+        },
+        "Tunisia": {
+          "no": 3,
+          "yes": 3
+        },
+        "Turkey": {
+          "no": 6,
+          "yes": 1
+        },
+        "Turkmenistan": {
+          "no": 2,
+          "yes": 4
+        },
+        "Turks and Caicos Islands": {
+          "no": 2,
+          "yes": 1
+        },
+        "Tuvalu": {
+          "no": 3,
+          "yes": 3
+        },
+        "US Virgin Islands": {
+          "no": 4,
+          "yes": 1
+        },
+        "Uganda": {
+          "no": 3,
+          "yes": 0
+        },
+        "Ukraine": {
+          "no": 2,
+          "yes": 1
+        },
+        "United Arab Emirates": {
+          "no": 0,
+          "yes": 2
+        },
+        "United Kingdom": {
+          "no": 2,
+          "yes": 14
+        },
+        "United States": {
+          "no": 1,
+          "yes": 1
+        },
+        "United States Minor Outlying Islands": {
+          "no": 2,
+          "yes": 4
+        },
+        "Uruguay": {
+          "no": 1,
+          "yes": 3
+        },
+        "Uzbekistan": {
+          "no": 2,
+          "yes": 2
+        },
+        "Vanuatu": {
+          "no": 4,
+          "yes": 1
+        },
+        "Vatican": {
+          "no": 4,
+          "yes": 2
+        },
+        "Venezuela": {
+          "no": 0,
+          "yes": 3
+        },
+        "Vietnam": {
+          "no": 5,
+          "yes": 1
+        },
+        "Wallis and Futuna": {
+          "no": 1,
+          "yes": 1
+        },
+        "Western Sahara": {
+          "no": 0,
+          "yes": 1
+        },
+        "Yemen": {
+          "no": 3,
+          "yes": 2
+        },
+        "Zambia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Zimbabwe": {
+          "no": 4,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 295,
+          "yes": 324
+        },
+        "Male": {
+          "no": 305,
+          "yes": 288
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "33dfe3f0-2575-4f31-a953-f7f17bf102bc",
+    "simple": {
+      "no": 600,
+      "yes": 612
+    }
+  },
+  "c685d0d7-771b-4f5f-9139-80a4c874ef9c": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 160,
+          "yes": 147
+        },
+        "31 - 40": {
+          "no": 146,
+          "yes": 137
+        },
+        "41 - 50": {
+          "no": 152,
+          "yes": 136
+        },
+        "51 - 60": {
+          "no": 150,
+          "yes": 149
+        },
+        "60+": {
+          "no": 151,
+          "yes": 154
+        },
+        "< 20": {
+          "no": 167,
+          "yes": 162
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 49,
+          "yes": 642
+        },
+        "Bournemouth": {
+          "no": 10,
+          "yes": 11
+        },
+        "Burnley": {
+          "no": 12,
+          "yes": 10
+        },
+        "Chelsea": {
+          "no": 11,
+          "yes": 12
+        },
+        "Crystal Palace": {
+          "no": 13,
+          "yes": 18
+        },
+        "Everton": {
+          "no": 12,
+          "yes": 6
+        },
+        "Hull": {
+          "no": 10,
+          "yes": 7
+        },
+        "Leicester": {
+          "no": 14,
+          "yes": 14
+        },
+        "Liverpool": {
+          "no": 12,
+          "yes": 9
+        },
+        "Man City": {
+          "no": 9,
+          "yes": 7
+        },
+        "Man Utd": {
+          "no": 667,
+          "yes": 49
+        },
+        "Middlesbrough": {
+          "no": 15,
+          "yes": 11
+        },
+        "Southampton": {
+          "no": 5,
+          "yes": 12
+        },
+        "Stoke": {
+          "no": 14,
+          "yes": 10
+        },
+        "Sunderland": {
+          "no": 14,
+          "yes": 14
+        },
+        "Swansea": {
+          "no": 8,
+          "yes": 13
+        },
+        "Tottenham": {
+          "no": 9,
+          "yes": 5
+        },
+        "Watford": {
+          "no": 13,
+          "yes": 14
+        },
+        "West Brom": {
+          "no": 14,
+          "yes": 13
+        },
+        "West Ham": {
+          "no": 13,
+          "yes": 10
+        }
+      },
+      "location": {
+        "Afghanistan": {
+          "no": 4,
+          "yes": 4
+        },
+        "Aland Islands": {
+          "no": 7,
+          "yes": 4
+        },
+        "Albania": {
+          "no": 5,
+          "yes": 2
+        },
+        "Algeria": {
+          "no": 3,
+          "yes": 2
+        },
+        "American Samoa": {
+          "no": 4,
+          "yes": 4
+        },
+        "Andorra": {
+          "no": 2,
+          "yes": 0
+        },
+        "Angola": {
+          "no": 4,
+          "yes": 4
+        },
+        "Anguilla": {
+          "no": 3,
+          "yes": 3
+        },
+        "Antarctica": {
+          "no": 5,
+          "yes": 2
+        },
+        "Antigua and Barbuda": {
+          "no": 2,
+          "yes": 2
+        },
+        "Argentina": {
+          "no": 4,
+          "yes": 4
+        },
+        "Armenia": {
+          "no": 7,
+          "yes": 4
+        },
+        "Aruba": {
+          "no": 2,
+          "yes": 7
+        },
+        "Australia": {
+          "no": 2,
+          "yes": 0
+        },
+        "Austria": {
+          "no": 2,
+          "yes": 1
+        },
+        "Azerbaijan": {
+          "no": 2,
+          "yes": 5
+        },
+        "Bahamas": {
+          "no": 3,
+          "yes": 5
+        },
+        "Bahrain": {
+          "no": 4,
+          "yes": 3
+        },
+        "Bangladesh": {
+          "no": 7,
+          "yes": 0
+        },
+        "Barbados": {
+          "no": 4,
+          "yes": 2
+        },
+        "Belarus": {
+          "no": 4,
+          "yes": 2
+        },
+        "Belgium": {
+          "no": 4,
+          "yes": 4
+        },
+        "Belize": {
+          "no": 3,
+          "yes": 4
+        },
+        "Benin": {
+          "no": 4,
+          "yes": 5
+        },
+        "Bermuda": {
+          "no": 4,
+          "yes": 4
+        },
+        "Bhutan": {
+          "no": 7,
+          "yes": 6
+        },
+        "Bolivia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Bonaire, Saint Eustatius and Saba": {
+          "no": 0,
+          "yes": 4
+        },
+        "Bosnia and Herzegovina": {
+          "no": 5,
+          "yes": 6
+        },
+        "Botswana": {
+          "no": 3,
+          "yes": 3
+        },
+        "Bouvet Island": {
+          "no": 3,
+          "yes": 2
+        },
+        "Brazil": {
+          "no": 4,
+          "yes": 2
+        },
+        "British Indian Ocean Territory": {
+          "no": 8,
+          "yes": 2
+        },
+        "British Virgin Islands": {
+          "no": 4,
+          "yes": 3
+        },
+        "Brunei": {
+          "no": 3,
+          "yes": 0
+        },
+        "Bulgaria": {
+          "no": 4,
+          "yes": 4
+        },
+        "Burkina Faso": {
+          "no": 1,
+          "yes": 6
+        },
+        "Burundi": {
+          "no": 6,
+          "yes": 3
+        },
+        "Cambodia": {
+          "no": 5,
+          "yes": 3
+        },
+        "Cameroon": {
+          "no": 3,
+          "yes": 5
+        },
+        "Canada": {
+          "no": 5,
+          "yes": 3
+        },
+        "Cape Verde": {
+          "no": 1,
+          "yes": 4
+        },
+        "Cayman Islands": {
+          "no": 4,
+          "yes": 2
+        },
+        "Central African Republic": {
+          "no": 3,
+          "yes": 5
+        },
+        "Chad": {
+          "no": 5,
+          "yes": 2
+        },
+        "Chile": {
+          "no": 4,
+          "yes": 3
+        },
+        "China": {
+          "no": 3,
+          "yes": 1
+        },
+        "Christmas Island": {
+          "no": 6,
+          "yes": 4
+        },
+        "Cocos Islands": {
+          "no": 3,
+          "yes": 3
+        },
+        "Colombia": {
+          "no": 2,
+          "yes": 5
+        },
+        "Comoros": {
+          "no": 3,
+          "yes": 3
+        },
+        "Cook Islands": {
+          "no": 2,
+          "yes": 4
+        },
+        "Costa Rica": {
+          "no": 8,
+          "yes": 4
+        },
+        "Croatia": {
+          "no": 1,
+          "yes": 5
+        },
+        "Cuba": {
+          "no": 3,
+          "yes": 2
+        },
+        "Curacao": {
+          "no": 2,
+          "yes": 1
+        },
+        "Cyprus": {
+          "no": 6,
+          "yes": 3
+        },
+        "Czech Republic": {
+          "no": 5,
+          "yes": 3
+        },
+        "Democratic Republic of the Congo": {
+          "no": 3,
+          "yes": 8
+        },
+        "Denmark": {
+          "no": 4,
+          "yes": 2
+        },
+        "Djibouti": {
+          "no": 8,
+          "yes": 0
+        },
+        "Dominica": {
+          "no": 3,
+          "yes": 2
+        },
+        "Dominican Republic": {
+          "no": 3,
+          "yes": 4
+        },
+        "East Timor": {
+          "no": 4,
+          "yes": 5
+        },
+        "Ecuador": {
+          "no": 7,
+          "yes": 1
+        },
+        "Egypt": {
+          "no": 3,
+          "yes": 6
+        },
+        "El Salvador": {
+          "no": 2,
+          "yes": 3
+        },
+        "Equatorial Guinea": {
+          "no": 4,
+          "yes": 4
+        },
+        "Eritrea": {
+          "no": 3,
+          "yes": 2
+        },
+        "Estonia": {
+          "no": 2,
+          "yes": 1
+        },
+        "Ethiopia": {
+          "no": 6,
+          "yes": 1
+        },
+        "Falkland Islands": {
+          "no": 1,
+          "yes": 7
+        },
+        "Faroe Islands": {
+          "no": 5,
+          "yes": 2
+        },
+        "Fiji": {
+          "no": 1,
+          "yes": 3
+        },
+        "Finland": {
+          "no": 2,
+          "yes": 3
+        },
+        "France": {
+          "no": 1,
+          "yes": 2
+        },
+        "French Guiana": {
+          "no": 2,
+          "yes": 3
+        },
+        "French Polynesia": {
+          "no": 2,
+          "yes": 5
+        },
+        "French Southern Territories": {
+          "no": 3,
+          "yes": 7
+        },
+        "Gabon": {
+          "no": 4,
+          "yes": 3
+        },
+        "Gambia": {
+          "no": 5,
+          "yes": 9
+        },
+        "Georgia": {
+          "no": 3,
+          "yes": 7
+        },
+        "Germany": {
+          "no": 3,
+          "yes": 6
+        },
+        "Ghana": {
+          "no": 2,
+          "yes": 3
+        },
+        "Gibraltar": {
+          "no": 1,
+          "yes": 0
+        },
+        "Greece": {
+          "no": 7,
+          "yes": 2
+        },
+        "Greenland": {
+          "no": 3,
+          "yes": 3
+        },
+        "Grenada": {
+          "no": 4,
+          "yes": 1
+        },
+        "Guadeloupe": {
+          "no": 2,
+          "yes": 3
+        },
+        "Guam": {
+          "no": 5,
+          "yes": 2
+        },
+        "Guatemala": {
+          "no": 6,
+          "yes": 3
+        },
+        "Guernsey": {
+          "no": 3,
+          "yes": 6
+        },
+        "Guinea": {
+          "no": 4,
+          "yes": 3
+        },
+        "Guinea-Bissau": {
+          "no": 5,
+          "yes": 1
+        },
+        "Guyana": {
+          "no": 3,
+          "yes": 4
+        },
+        "Haiti": {
+          "no": 3,
+          "yes": 3
+        },
+        "Heard Island and McDonald Islands": {
+          "no": 2,
+          "yes": 5
+        },
+        "Honduras": {
+          "no": 5,
+          "yes": 7
+        },
+        "Hong Kong": {
+          "no": 5,
+          "yes": 2
+        },
+        "Hungary": {
+          "no": 8,
+          "yes": 6
+        },
+        "Iceland": {
+          "no": 2,
+          "yes": 6
+        },
+        "India": {
+          "no": 3,
+          "yes": 5
+        },
+        "Indonesia": {
+          "no": 5,
+          "yes": 8
+        },
+        "Iran": {
+          "no": 2,
+          "yes": 3
+        },
+        "Iraq": {
+          "no": 3,
+          "yes": 7
+        },
+        "Ireland": {
+          "no": 4,
+          "yes": 5
+        },
+        "Isle of Man": {
+          "no": 3,
+          "yes": 1
+        },
+        "Israel": {
+          "no": 5,
+          "yes": 4
+        },
+        "Italy": {
+          "no": 1,
+          "yes": 4
+        },
+        "Ivory Coast": {
+          "no": 6,
+          "yes": 5
+        },
+        "Jamaica": {
+          "no": 2,
+          "yes": 2
+        },
+        "Japan": {
+          "no": 3,
+          "yes": 2
+        },
+        "Jersey": {
+          "no": 2,
+          "yes": 3
+        },
+        "Jordan": {
+          "no": 4,
+          "yes": 5
+        },
+        "Kazakhstan": {
+          "no": 6,
+          "yes": 4
+        },
+        "Kenya": {
+          "no": 3,
+          "yes": 2
+        },
+        "Kiribati": {
+          "no": 3,
+          "yes": 5
+        },
+        "Kosovo": {
+          "no": 2,
+          "yes": 5
+        },
+        "Kuwait": {
+          "no": 4,
+          "yes": 7
+        },
+        "Kyrgyzstan": {
+          "no": 4,
+          "yes": 3
+        },
+        "Laos": {
+          "no": 1,
+          "yes": 5
+        },
+        "Latvia": {
+          "no": 2,
+          "yes": 4
+        },
+        "Lebanon": {
+          "no": 6,
+          "yes": 4
+        },
+        "Lesotho": {
+          "no": 3,
+          "yes": 2
+        },
+        "Liberia": {
+          "no": 5,
+          "yes": 6
+        },
+        "Libya": {
+          "no": 2,
+          "yes": 2
+        },
+        "Liechtenstein": {
+          "no": 3,
+          "yes": 0
+        },
+        "Lithuania": {
+          "no": 4,
+          "yes": 3
+        },
+        "Luxembourg": {
+          "no": 2,
+          "yes": 3
+        },
+        "Macao": {
+          "no": 3,
+          "yes": 2
+        },
+        "Macedonia": {
+          "no": 3,
+          "yes": 1
+        },
+        "Madagascar": {
+          "no": 5,
+          "yes": 4
+        },
+        "Malawi": {
+          "no": 5,
+          "yes": 6
+        },
+        "Malaysia": {
+          "no": 3,
+          "yes": 0
+        },
+        "Maldives": {
+          "no": 2,
+          "yes": 6
+        },
+        "Mali": {
+          "no": 3,
+          "yes": 6
+        },
+        "Malta": {
+          "no": 7,
+          "yes": 8
+        },
+        "Marshall Islands": {
+          "no": 2,
+          "yes": 3
+        },
+        "Martinique": {
+          "no": 3,
+          "yes": 3
+        },
+        "Mauritania": {
+          "no": 4,
+          "yes": 6
+        },
+        "Mauritius": {
+          "no": 3,
+          "yes": 6
+        },
+        "Mayotte": {
+          "no": 2,
+          "yes": 3
+        },
+        "Mexico": {
+          "no": 5,
+          "yes": 6
+        },
+        "Micronesia": {
+          "no": 2,
+          "yes": 4
+        },
+        "Moldova": {
+          "no": 4,
+          "yes": 2
+        },
+        "Monaco": {
+          "no": 1,
+          "yes": 3
+        },
+        "Mongolia": {
+          "no": 4,
+          "yes": 4
+        },
+        "Montenegro": {
+          "no": 5,
+          "yes": 1
+        },
+        "Montserrat": {
+          "no": 6,
+          "yes": 4
+        },
+        "Morocco": {
+          "no": 7,
+          "yes": 4
+        },
+        "Mozambique": {
+          "no": 5,
+          "yes": 4
+        },
+        "Myanmar": {
+          "no": 4,
+          "yes": 3
+        },
+        "Namibia": {
+          "no": 2,
+          "yes": 4
+        },
+        "Nauru": {
+          "no": 3,
+          "yes": 2
+        },
+        "Nepal": {
+          "no": 4,
+          "yes": 3
+        },
+        "Netherlands": {
+          "no": 8,
+          "yes": 2
+        },
+        "New Caledonia": {
+          "no": 4,
+          "yes": 4
+        },
+        "New Zealand": {
+          "no": 2,
+          "yes": 5
+        },
+        "Nicaragua": {
+          "no": 3,
+          "yes": 5
+        },
+        "Niger": {
+          "no": 2,
+          "yes": 4
+        },
+        "Nigeria": {
+          "no": 6,
+          "yes": 4
+        },
+        "Niue": {
+          "no": 1,
+          "yes": 2
+        },
+        "Norfolk Island": {
+          "no": 6,
+          "yes": 3
+        },
+        "North Korea": {
+          "no": 4,
+          "yes": 2
+        },
+        "Northern Mariana Islands": {
+          "no": 4,
+          "yes": 4
+        },
+        "Norway": {
+          "no": 1,
+          "yes": 2
+        },
+        "Oman": {
+          "no": 3,
+          "yes": 1
+        },
+        "Pakistan": {
+          "no": 2,
+          "yes": 4
+        },
+        "Palau": {
+          "no": 4,
+          "yes": 10
+        },
+        "Palestinian Territory": {
+          "no": 4,
+          "yes": 4
+        },
+        "Panama": {
+          "no": 5,
+          "yes": 3
+        },
+        "Papua New Guinea": {
+          "no": 3,
+          "yes": 9
+        },
+        "Paraguay": {
+          "no": 7,
+          "yes": 2
+        },
+        "Peru": {
+          "no": 2,
+          "yes": 3
+        },
+        "Philippines": {
+          "no": 3,
+          "yes": 4
+        },
+        "Pitcairn": {
+          "no": 1,
+          "yes": 6
+        },
+        "Poland": {
+          "no": 2,
+          "yes": 4
+        },
+        "Portugal": {
+          "no": 4,
+          "yes": 2
+        },
+        "Puerto Rico": {
+          "no": 2,
+          "yes": 4
+        },
+        "Qatar": {
+          "no": 8,
+          "yes": 7
+        },
+        "Republic of the Congo": {
+          "no": 2,
+          "yes": 3
+        },
+        "Reunion": {
+          "no": 1,
+          "yes": 3
+        },
+        "Romania": {
+          "no": 7,
+          "yes": 2
+        },
+        "Russia": {
+          "no": 3,
+          "yes": 2
+        },
+        "Rwanda": {
+          "no": 4,
+          "yes": 4
+        },
+        "Saint Barthelemy": {
+          "no": 3,
+          "yes": 1
+        },
+        "Saint Helena": {
+          "no": 5,
+          "yes": 6
+        },
+        "Saint Kitts and Nevis": {
+          "no": 4,
+          "yes": 4
+        },
+        "Saint Lucia": {
+          "no": 3,
+          "yes": 5
+        },
+        "Saint Martin": {
+          "no": 3,
+          "yes": 2
+        },
+        "Saint Pierre and Miquelon": {
+          "no": 4,
+          "yes": 4
+        },
+        "Saint Vincent and the Grenadines": {
+          "no": 6,
+          "yes": 5
+        },
+        "Samoa": {
+          "no": 5,
+          "yes": 5
+        },
+        "San Marino": {
+          "no": 2,
+          "yes": 4
+        },
+        "Sao Tome and Principe": {
+          "no": 3,
+          "yes": 4
+        },
+        "Saudi Arabia": {
+          "no": 6,
+          "yes": 3
+        },
+        "Senegal": {
+          "no": 2,
+          "yes": 3
+        },
+        "Serbia": {
+          "no": 3,
+          "yes": 4
+        },
+        "Seychelles": {
+          "no": 8,
+          "yes": 2
+        },
+        "Sierra Leone": {
+          "no": 5,
+          "yes": 1
+        },
+        "Singapore": {
+          "no": 2,
+          "yes": 1
+        },
+        "Sint Maarten": {
+          "no": 5,
+          "yes": 9
+        },
+        "Slovakia": {
+          "no": 6,
+          "yes": 2
+        },
+        "Slovenia": {
+          "no": 8,
+          "yes": 3
+        },
+        "Solomon Islands": {
+          "no": 5,
+          "yes": 8
+        },
+        "Somalia": {
+          "no": 2,
+          "yes": 3
+        },
+        "South Africa": {
+          "no": 4,
+          "yes": 3
+        },
+        "South Georgia and the South Sandwich Islands": {
+          "no": 1,
+          "yes": 3
+        },
+        "South Korea": {
+          "no": 3,
+          "yes": 3
+        },
+        "South Sudan": {
+          "no": 1,
+          "yes": 2
+        },
+        "Spain": {
+          "no": 5,
+          "yes": 1
+        },
+        "Sri Lanka": {
+          "no": 4,
+          "yes": 2
+        },
+        "Sudan": {
+          "no": 0,
+          "yes": 3
+        },
+        "Suriname": {
+          "no": 4,
+          "yes": 3
+        },
+        "Svalbard and Jan Mayen": {
+          "no": 5,
+          "yes": 3
+        },
+        "Swaziland": {
+          "no": 8,
+          "yes": 5
+        },
+        "Sweden": {
+          "no": 3,
+          "yes": 4
+        },
+        "Switzerland": {
+          "no": 4,
+          "yes": 5
+        },
+        "Syria": {
+          "no": 2,
+          "yes": 3
+        },
+        "Taiwan": {
+          "no": 1,
+          "yes": 6
+        },
+        "Tajikistan": {
+          "no": 5,
+          "yes": 5
+        },
+        "Tanzania": {
+          "no": 4,
+          "yes": 5
+        },
+        "Thailand": {
+          "no": 4,
+          "yes": 5
+        },
+        "Togo": {
+          "no": 5,
+          "yes": 3
+        },
+        "Tokelau": {
+          "no": 4,
+          "yes": 5
+        },
+        "Tonga": {
+          "no": 5,
+          "yes": 3
+        },
+        "Trinidad and Tobago": {
+          "no": 1,
+          "yes": 4
+        },
+        "Tunisia": {
+          "no": 4,
+          "yes": 3
+        },
+        "Turkey": {
+          "no": 8,
+          "yes": 3
+        },
+        "Turkmenistan": {
+          "no": 4,
+          "yes": 6
+        },
+        "Turks and Caicos Islands": {
+          "no": 3,
+          "yes": 2
+        },
+        "Tuvalu": {
+          "no": 2,
+          "yes": 6
+        },
+        "US Virgin Islands": {
+          "no": 6,
+          "yes": 1
+        },
+        "Uganda": {
+          "no": 4,
+          "yes": 0
+        },
+        "Ukraine": {
+          "no": 5,
+          "yes": 3
+        },
+        "United Arab Emirates": {
+          "no": 2,
+          "yes": 3
+        },
+        "United Kingdom": {
+          "no": 5,
+          "yes": 12
+        },
+        "United States": {
+          "no": 1,
+          "yes": 1
+        },
+        "United States Minor Outlying Islands": {
+          "no": 7,
+          "yes": 3
+        },
+        "Uruguay": {
+          "no": 3,
+          "yes": 3
+        },
+        "Uzbekistan": {
+          "no": 3,
+          "yes": 2
+        },
+        "Vanuatu": {
+          "no": 5,
+          "yes": 1
+        },
+        "Vatican": {
+          "no": 7,
+          "yes": 5
+        },
+        "Venezuela": {
+          "no": 2,
+          "yes": 2
+        },
+        "Vietnam": {
+          "no": 6,
+          "yes": 1
+        },
+        "Wallis and Futuna": {
+          "no": 1,
+          "yes": 1
+        },
+        "Western Sahara": {
+          "no": 1,
+          "yes": 1
+        },
+        "Yemen": {
+          "no": 4,
+          "yes": 3
+        },
+        "Zambia": {
+          "no": 3,
+          "yes": 3
+        },
+        "Zimbabwe": {
+          "no": 6,
+          "yes": 4
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 470,
+          "yes": 463
+        },
+        "Male": {
+          "no": 456,
+          "yes": 422
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "c685d0d7-771b-4f5f-9139-80a4c874ef9c",
+    "simple": {
+      "no": 926,
+      "yes": 885
+    }
+  }
+}

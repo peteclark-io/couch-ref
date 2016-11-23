@@ -16,7 +16,7 @@ const basicVerdict = (match, results) => {
 };
 
 export function verdict(match, results){
-  console.log('Generating verdict.', match, results);
+  console.log('Generating verdict.', match);
   if (!results.breakdown){
     return basicVerdict(match, results);
   }
@@ -43,7 +43,6 @@ export function verdict(match, results){
     neutral.no = neutral.no - away.no;
   }
 
-  console.log(home, away, neutral);
   var homePerc = producePercentage(home);
   var awayPerc = producePercentage(away);
   var neutralPerc = producePercentage(neutral);
