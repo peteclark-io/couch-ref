@@ -12,7 +12,7 @@ export default function Users(path, store, router){
          store.dispatch(ready());
 
          if (!data){
-           router.push('/users');
+           router.push('/users/club');
            return;
          }
 
