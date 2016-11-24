@@ -8,6 +8,7 @@ import classNames from 'classnames';
 
 import styles from './styles.css';
 import QuestionList from '../Questions/QuestionList';
+import MatchRating from './MatchRating';
 
 const Match = React.createClass({
 
@@ -56,6 +57,7 @@ const Match = React.createClass({
                  : null
                }
             </div>
+            <MatchRating id={this.props.match.id} />
             <QuestionList questions={this.props.match.questions} />
          </div>
       );
