@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import {matchScore} from '../../core/scores';
 import styles from './styles.css';
 
-const MatchRating = React.createClass({
+const RefereeRating = React.createClass({
 
    propTypes: {
       user: React.PropTypes.object,
@@ -48,10 +48,6 @@ const MatchRating = React.createClass({
    }
 });
 
-const getUser = (state = {user: {}}) => {
-   return state.user;
-};
-
 const getLiveMatch = (state = {matches: []}, id) => {
    var filtered = _.filter(state.matches, {id: id});
    return filtered.length === 0 ? undefined : filtered[0];
@@ -59,13 +55,12 @@ const getLiveMatch = (state = {matches: []}, id) => {
 
 const mapStateToProps = (state, ownProps) => {
    return {
-      user: getUser(state, ownProps.id),
       match: getLiveMatch(state, ownProps.id)
    };
 };
 
-const LiveMatchRating = connect(
+const LiveRefereeRating = connect(
    mapStateToProps
-)(MatchRating);
+)(RefereeRating);
 
-export default LiveMatchRating;
+export default LiveRefereeRating;

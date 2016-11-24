@@ -6,11 +6,6 @@ const _ = require('lodash');
 const magic = require('./magic');
 const exec = require('child_process').exec;
 
-admin.initializeApp({
-   credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk.json'),
-   databaseURL: "https://couchref-9962e.firebaseio.com"
-});
-
 const getFromDb = (db) => {
    return new Promise((resolve, reject) => {
       db.once('value', (snapshot) => {
@@ -75,9 +70,14 @@ const saveScore = (db, quuid, user) => {
    });
 };
 
-exports.command = 'scores';
+exports.command = 'users';
 exports.describe = '';
 exports.handler = (argv) => {
+   admin.initializeApp({
+      credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk.json'),
+      databaseURL: "https://couchref-9962e.firebaseio.com"
+   });
+   
    //admin.database.enableLogging(true);
    var db = admin.database();
 
