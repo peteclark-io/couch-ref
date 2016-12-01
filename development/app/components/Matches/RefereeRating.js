@@ -27,7 +27,7 @@ const RefereeRating = React.createClass({
       var title = matchScore(overall);
 
       return (
-         <div className={styles['match-rating']}>
+         <div className={styles['ref-rating']}>
             <h3>Referee Rating</h3>
             <h2>{title}</h2>
          </div>
