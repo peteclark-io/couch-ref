@@ -42,10 +42,18 @@ export const createReferee = (value) => {
       name: value.name,
       debut: moment(value.debut).freeze(),
       movement: value.movement ? value.movement : 0,
+      appearances: refereeAppearances(value),
       scores: value.scores,
       totalScore: refereeTotal(value)
    };
 }
+
+const refereeAppearances = (value) => {
+   if (!value.scores){
+      return 0;
+   }
+   return Object.keys(value.scores).length;
+};
 
 const refereeTotal = (value) => {
    if (!value.scores){
@@ -53,7 +61,7 @@ const refereeTotal = (value) => {
    }
 
    var entries = Object.keys(value.scores);
-   return _.sum(entries.map((e) => {
+   return 2000 + _.sum(entries.map((e) => {
       return value.scores[e];
    }));
 };

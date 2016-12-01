@@ -26,7 +26,7 @@ const RefereeTable = React.createClass({
       var refs = Object.keys(this.props.referees).map((id) => {
          return this.props.referees[id];
       });
-      refs = _.orderBy(refs, ['score', 'name.last'], ['desc', 'asc']);
+      refs = _.orderBy(refs, ['totalScore', 'name.last'], ['desc', 'asc']);
 
       return (
          <div className={styles.referees}>
@@ -35,6 +35,9 @@ const RefereeTable = React.createClass({
                return (
                   <div className={styles['ref-row']} key={ref.id}>
                      <h4 className={styles.name}>{ref.name.display}</h4>
+                     <p>CouchRef Appearances: {ref.appearances}</p>
+                     <p>Professional Debut: {ref.debut.format("MMM YYYY")}</p>
+                     <p className={styles.score}>Score: {ref.totalScore.toFixed(0)}</p>
                   </div>
                );
             })}

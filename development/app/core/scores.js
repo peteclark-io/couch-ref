@@ -17,7 +17,7 @@ export const questionScore = (score) => {
    }
 
    if(score <= 0 && score > -1) {
-      return 'It was close, but not a good decision.';
+      return 'Close, but not a good decision.';
    }
 
    if(score <= -1 && score > -2.5) {

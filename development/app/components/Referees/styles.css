@@ -13,7 +13,7 @@
 
 .header {
    font-size: 3.4rem;
-   margin-bottom: 30px;
+   margin-bottom: 50px;
    text-align: center;
 }
 
@@ -23,8 +23,11 @@
    border-radius: 4px;
 }
 
+.ref-row * {
+   padding: 3px;
+}
+
 .ref-row .name {
-   padding: 6px;
    font-size: 2rem;
 }
 
