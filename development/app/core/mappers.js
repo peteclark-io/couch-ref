@@ -1,12 +1,12 @@
 'use strict';
 
-import moment from 'moment';
+import moment from 'frozen-moment';
 import _ from 'lodash';
 
 export const createMatch = (value) => {
    return {
       id: value.id,
-      kickOff: moment(value.kick_off),
+      kickOff: moment(value.kick_off).freeze(),
       home: value.home,
       away: value.away,
       goalsHome: value.home_score,
@@ -40,7 +40,7 @@ export const createReferee = (value) => {
    return {
       id: value.id,
       name: value.name,
-      debut: moment(value.debut),
+      debut: moment(value.debut).freeze(),
       movement: value.movement ? value.movement : 0,
       scores: value.scores,
       totalScore: refereeTotal(value)

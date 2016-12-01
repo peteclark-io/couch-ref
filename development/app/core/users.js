@@ -32,7 +32,7 @@ export default function Users(path, store, router){
          }
 
          if (data.birthday){
-            var parsed = moment(data.birthday);
+            var parsed = moment(data.birthday).freeze();
             if (parsed.isValid()){
               store.dispatch(inspectFirebase({
                 remote: {

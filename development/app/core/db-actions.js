@@ -1,7 +1,7 @@
 'use strict';
 
 import firebase from 'firebase';
-import moment from 'moment';
+import moment from 'frozen-moment';
 import references from './references';
 
 export const saveVote = (user, question, vote) => {
