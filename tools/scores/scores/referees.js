@@ -30,19 +30,36 @@ const generateScore = (vote, verdict) => {
    });
 };
 
-const saveRefereeScore = (db, referee, score) => {
-   db.ref('/v0/referees/' + referee).transaction((ref) => {
-      if (!ref) {
-         return ref;
+const saveScoreForQuestion = (db, question, score) => {
+   db.ref('/v0/live-questions/' + question).transaction((q) => {
+      if (!q) {
+         return q;
       }
 
-      if (!ref.score) {
-         ref.score = 2000;
-      }
-
-      ref.score = ref.score + score;
-      return ref;
+      q.referee_score = score;
+      return q;
    });
+};
+
+const saveRefereeScores = (db, scores) => {
+   var referees = Object.keys(scores);
+   referees.map((ref) => {
+      var matches = Object.keys(scores[ref]);
+      matches.map((match) => {
+         db.ref('/v0/referees/' + ref).transaction((r) => {
+            if (!r) {
+               return r;
+            }
+
+            if (!r.scores) {
+               r.scores = {};
+            }
+
+            r.scores[match] = scores[ref][match].score;
+            return r;
+         });
+      });
+   })
 };
 
 exports.command = 'referees';
@@ -66,12 +83,13 @@ exports.handler = (argv) => {
          return match.questions.map((q) => {return q.id;});
       }));
 
+      var matchScores = {};
+
       for (var i = 0 ; i < questionUuids.length ; i++){
          var questionDb = db.ref('/v0/live-questions/' + questionUuids[i]);
          var question = yield getFromDb(questionDb);
 
          if (!question || !question.decision || question.decision.trim() === ''){
-            //console.error('Skipping ' + questionUuids[i], question);
             continue;
          }
 
@@ -83,8 +101,21 @@ exports.handler = (argv) => {
          var vote = question.decision === 'Yes' ? true : false;
          var score = yield generateScore(vote, verdict);
 
-         saveRefereeScore(db, match.referee, score);
+         saveScoreForQuestion(db, questionUuids[i], score);
+         if (!matchScores[match.referee]){
+            matchScores[match.referee] = {
+               [match.id]: {id: match.id, score: 0}
+            };
+         }
+
+         if (!matchScores[match.referee][match.id]){
+            matchScores[match.referee][match.id] = {id: match.id, score: 0}
+         }
+
+         matchScores[match.referee][match.id].score = matchScores[match.referee][match.id].score + score;
       }
+
+      saveRefereeScores(db, matchScores);
    }).catch((err) => {
       console.log(err);
    }).then(() => {

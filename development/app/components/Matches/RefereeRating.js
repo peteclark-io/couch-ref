@@ -13,35 +13,22 @@ import styles from './styles.css';
 const RefereeRating = React.createClass({
 
    propTypes: {
-      user: React.PropTypes.object,
-      match: React.PropTypes.object
+      match: React.PropTypes.object,
+      referee: React.PropTypes.object
    },
 
    render: function() {
-      if (!this.props.match){
+      if (!this.props.match || !this.props.referee){
          return null;
       }
 
-      var scores = this.props.match.questions.map((q) => {
-         var answer = this.props.user.votes[q.id];
-         if (answer){
-            return answer.score;
-         }
-         return undefined;
-      }).filter((s) => {return s;});
-
-      if(scores.length === 0){
-         return null;
-      }
-
-      var overall = _.sum(scores);
-      console.log('Score for the match', overall, scores)
-      var normalized = overall / scores.length;
-      var title = matchScore(normalized);
+      var overall = this.props.referee.scores[this.props.match.id];
+      console.log('Ref score for the match', overall)
+      var title = matchScore(overall);
 
       return (
          <div className={styles['match-rating']}>
-            <h3>Your Match Rating</h3>
+            <h3>Referee Rating</h3>
             <h2>{title}</h2>
          </div>
       );
@@ -53,9 +40,16 @@ const getLiveMatch = (state = {matches: []}, id) => {
    return filtered.length === 0 ? undefined : filtered[0];
 };
 
+const getReferee = (match, state = {referees: {}}) => {
+   var ref = state.referees[match.referee];
+   return ref ? ref : undefined;
+};
+
 const mapStateToProps = (state, ownProps) => {
+   var match = getLiveMatch(state, ownProps.id);
    return {
-      match: getLiveMatch(state, ownProps.id)
+      match: match,
+      referee: getReferee(match, state)
    };
 };
 
