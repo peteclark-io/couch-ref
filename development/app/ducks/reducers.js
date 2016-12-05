@@ -11,6 +11,7 @@ import user from './user';
 import authenticated from './authenticated';
 import clubs from './clubs';
 import referees from './referees';
+import errors from './errors';
 
 const rootReducer = combineReducers({
     matches: matches,
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     routing: routerReducer,
     user: user,
     clubs: clubs,
-    referees: referees
+    referees: referees,
+    errors: errors
 });
 
 export default rootReducer;

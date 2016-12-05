@@ -8,6 +8,7 @@ import {updateQuestion, addQuestion} from '../ducks/questions';
 import {updateStatistic, addStatistic} from '../ducks/statistics';
 
 import {addReferee} from '../ducks/referees';
+import {addError} from '../ducks/errors';
 
 import {createMatch, createQuestion, createStatistic, createReferee} from './mappers';
 
@@ -63,6 +64,7 @@ const data = (store) => {
                }).catch(function(error) {
                   var errorCode = error.code;
                   var errorMessage = error.message;
+                  store.dispatch(addError(errorMessage, errorCode));
 
                   if (errorCode === 'auth/operation-not-supported-in-this-environment'){
                      router.push('/private-browser');

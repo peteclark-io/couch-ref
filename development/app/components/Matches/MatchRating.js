@@ -23,6 +23,10 @@ const MatchRating = React.createClass({
       }
 
       var scores = this.props.match.questions.map((q) => {
+         if (!this.props.user.votes || !this.props.user.votes[q.id]){
+            return undefined;
+         }
+
          var answer = this.props.user.votes[q.id];
          if (answer){
             return answer.score;

@@ -8,6 +8,18 @@ import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './styles.css';
 
+const movement = (movement) => {
+   if (movement > 0){
+      return 'moved-up';
+   }
+
+   if (movement === 0){
+      return 'no-move';
+   }
+
+   return 'moved-down';
+};
+
 const RefereeTable = React.createClass({
 
    propTypes: {
@@ -38,6 +50,7 @@ const RefereeTable = React.createClass({
                      <p>CouchRef Appearances: {ref.appearances}</p>
                      <p>Professional Debut: {ref.debut.format("MMM YYYY")}</p>
                      <p className={styles.score}>Score: {ref.totalScore.toFixed(0)}</p>
+                     <span className={styles.movement}><div className={styles[movement(ref.movement)]}></div>{ref.movement}</span>
                   </div>
                );
             })}

@@ -49,8 +49,13 @@ const Question = React.createClass({
          );
       }
 
-      var answer = this.props.user.votes[this.props.question.id];
+      var answer = undefined;
       var decision = 'Too close to call!';
+
+      if (this.props.user.votes && this.props.user.votes[this.props.question.id]){
+         answer = this.props.user.votes[this.props.question.id];
+      }
+
       if(this.props.votedOn && answer && answer.score !== 0){
          decision = questionScore(answer.score);
       }

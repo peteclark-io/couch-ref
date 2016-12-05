@@ -80,6 +80,11 @@
   float: left;
 }
 
+.edit-club {
+   width: 200px;
+   height: 200px;
+}
+
 section {
   margin-top: 20px;
 }
