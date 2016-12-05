@@ -4,7 +4,7 @@
   "description": "",
   "main": "bundle.js",
   "scripts": {
-    "test": "mocha"
+    "test": "echo No tests for now."
   },
   "author": "",
   "license": "",
