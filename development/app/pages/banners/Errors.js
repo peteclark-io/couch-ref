@@ -48,4 +48,8 @@ const LiveErrors = connect(
    mapStateToProps
 )(Errors);
 
+export function component(){
+   return Errors;
+}
+
 export default LiveErrors;

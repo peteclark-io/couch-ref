@@ -62,4 +62,8 @@ const LiveSplash = connect(
   mapStateToProps
 )(Splash);
 
+export function component(){
+   return Splash;
+}
+
 export default LiveSplash;

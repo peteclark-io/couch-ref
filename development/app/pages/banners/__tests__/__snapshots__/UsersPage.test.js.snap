@@ -1,0 +1,8 @@
+exports[`test UsersPage shouldn't change much. 1`] = `
+<div
+  className="splash">
+  <h1>
+    hi!
+  </h1>
+</div>
+`;

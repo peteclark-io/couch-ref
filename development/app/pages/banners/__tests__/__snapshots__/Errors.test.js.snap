@@ -1,0 +1,29 @@
+exports[`test Errors page won't change much. 1`] = `
+<div
+  className="splash">
+  <h1
+    className="error">
+    Oh No!
+  </h1>
+  <h3
+    className="message">
+    Something went wrong! Please refresh the page. 
+    <span
+      className="emoji">
+      😫
+    </span>
+  </h3>
+  <div>
+    <h5
+      className="message">
+      For the developers...
+    </h5>
+    <h5
+      className="message">
+      auth/made-up-error
+      : 
+      Some made up error.
+    </h5>
+  </div>
+</div>
+`;

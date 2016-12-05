@@ -75,4 +75,8 @@ const LiveLogin = connect(
   mapStateToProps
 )(Login);
 
+export function component(){
+   return Login;
+}
+
 export default LiveLogin;
