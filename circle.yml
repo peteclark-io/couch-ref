@@ -2,12 +2,6 @@ machine:
   node:
     version: v6.1.0
 
-dependencies:
-   pre:
-      - sudo npm cache clean -f
-      - sudo npm install -g n
-      - sudo n stable
-
 general:
   build_dir: development
 
@@ -15,5 +9,6 @@ deployment:
   release:
     tag: /v[0-9]+(\.[0-9]+)*/
     commands:
+      - nvm ls-remote
       - echo "{\"version\":\"$CIRCLE_TAG\"}" > ./version.json
       - make prod publish
