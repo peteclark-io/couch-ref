@@ -22,3 +22,10 @@
    text-align: center;
    margin-top: 20px;
 }
+
+.version {
+   font-family: var(--font-primary);
+   color: var(--brand-secondary);
+   text-align: center;
+   margin-top: 6vh;
+}
