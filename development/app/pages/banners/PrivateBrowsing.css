@@ -1,0 +1,41 @@
+@import "../../css/branding.css";
+
+.splash {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--brand-danger);
+   text-align: center;
+}
+
+.error {
+   font-family: var(--font-primary);
+   color: var(--brand-secondary);
+   font-size: 6em;
+   margin-top: 6vh;
+}
+
+.message {
+   font-family: var(--font-secondary);
+   color: var(--brand-secondary);
+   margin-top: 20px;
+   font-size: 1.6rem;
+}
+
+.message a {
+   color: white;
+   text-decoration: underline;
+}
+
+.emoji {
+  font-size: 0.5em;
+}
+
+.tldr {
+   font-family: var(--font-secondary);
+   color: var(--brand-secondary);
+   margin-top: 20px;
+   font-size: 2.8rem;
+}

@@ -63,6 +63,11 @@ const data = (store) => {
                }).catch(function(error) {
                   var errorCode = error.code;
                   var errorMessage = error.message;
+
+                  if (errorCode === 'auth/operation-not-supported-in-this-environment'){
+                     router.push('/private-browser');
+                     return;
+                  }
                   router.push('/error');
                });
             }

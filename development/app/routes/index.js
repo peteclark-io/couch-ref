@@ -27,7 +27,8 @@ const rootRoute = {
       },
       require('./LoginRoute').default,
       require('./ErrorsRoute').default,
-      require('./UsersRoute').default
+      require('./UsersRoute').default,
+      require('./PrivateBrowsingRoute').default
    ]
 };
 
