@@ -66,6 +66,9 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0"
   },
+  "scripts": {
+     "deploy": "webpack -p --config webpack.config.prod.js --progress --colors && cd ../public && cp index.html 200.html && surge"
+  },
   "jest": {
     "moduleNameMapper": {
       "^.+\\.css$": "identity-obj-proxy",
