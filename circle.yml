@@ -5,10 +5,13 @@ machine:
 general:
   build_dir: development
 
+ dependencies:
+    pre:
+      - nvm ls-remote
+
 deployment:
   release:
     tag: /v[0-9]+(\.[0-9]+)*/
     commands:
-      - nvm ls-remote
       - echo "{\"version\":\"$CIRCLE_TAG\"}" > ./version.json
       - make prod publish
