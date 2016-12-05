@@ -1,0 +1,8 @@
+general:
+  build_dir: development
+
+deployment:
+  release:
+    tag: /v[0-9]+(\.[0-9]+)*/
+    commands:
+      - cd development && make prod publish
