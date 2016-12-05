@@ -2,6 +2,12 @@ machine:
   node:
     version: v6.1.0
 
+dependencies:
+   pre:
+      - sudo npm cache clean -f
+      - sudo npm install -g n
+      - sudo n stable
+
 general:
   build_dir: development
 
