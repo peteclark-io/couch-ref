@@ -1,0 +1,30 @@
+exports[`test Login snapshot 1`] = `
+<div
+  className="splash">
+  <h1
+    className="brand">
+    Couch Ref
+  </h1>
+  <h3
+    className="with">
+    Login With
+  </h3>
+  <div
+    className="auth-providers">
+    <img
+      id="google"
+      onClick={[Function]}
+      src="/images/auth/google.svg" />
+    <img
+      className="facebook"
+      id="facebook"
+      onClick={[Function]}
+      src="/images/auth/facebook.png" />
+    <img
+      className="facebook"
+      id="twitter"
+      onClick={[Function]}
+      src="/images/auth/twitter.svg" />
+  </div>
+</div>
+`;

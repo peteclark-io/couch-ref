@@ -10,7 +10,8 @@ import styles from './Login.css';
 const Login = React.createClass({
 
    propTypes: {
-      authenticated: React.PropTypes.bool
+      authenticated: React.PropTypes.bool,
+      firebase: React.PropTypes.object
    },
 
    contextTypes: {
@@ -33,17 +34,17 @@ const Login = React.createClass({
 
    googleLogin: function(){
      var provider = new firebase.auth.GoogleAuthProvider();
-     firebase.auth().signInWithRedirect(provider);
+     this.props.firebase.auth().signInWithRedirect(provider);
    },
 
    facebookLogin: function(){
      var provider = new firebase.auth.FacebookAuthProvider();
-     firebase.auth().signInWithRedirect(provider);
+     this.props.firebase.auth().signInWithRedirect(provider);
    },
 
    twitterLogin: function(){
      var provider = new firebase.auth.TwitterAuthProvider();
-     firebase.auth().signInWithRedirect(provider);
+     this.props.firebase.auth().signInWithRedirect(provider);
    },
 
    render: function() {
@@ -52,9 +53,9 @@ const Login = React.createClass({
              <h1 className={styles.brand}>Couch Ref</h1>
              <h3 className={styles.with}>Login With</h3>
              <div className={styles['auth-providers']}>
-                <img src="/images/auth/google.svg" onClick={this.googleLogin} />
-                <img className={styles.facebook} src="/images/auth/facebook.png" onClick={this.facebookLogin} />
-                <img className={styles.facebook} src="/images/auth/twitter.svg" onClick={this.twitterLogin} />
+                <img id="google" src="/images/auth/google.svg" onClick={this.googleLogin} />
+                <img id="facebook" className={styles.facebook} src="/images/auth/facebook.png" onClick={this.facebookLogin} />
+                <img id="twitter" className={styles.facebook} src="/images/auth/twitter.svg" onClick={this.twitterLogin} />
              </div>
           </div>
       );
@@ -67,7 +68,8 @@ const isAuthenticated = (state = {authenticated: false}) => {
 
 const mapStateToProps = (state) => {
    return {
-     authenticated: isAuthenticated(state)
+     authenticated: isAuthenticated(state),
+     firebase: firebase
    };
 };
 
