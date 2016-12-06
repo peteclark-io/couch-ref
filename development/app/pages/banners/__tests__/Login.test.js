@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {component} from '../Login.js';
-import {shallow} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
 
 const firebase = (checker) => {
@@ -63,4 +63,22 @@ it('Can login via twitter', () => {
    );
 
    rendered.find('#twitter').simulate('click')
+});
+
+it('Redirects if already authenticated', () => {
+   const Login = component();
+   var routed = false;
+   const router = {
+      push: (uri) => {
+         expect(uri).toEqual('/');
+         routed = true;
+      }
+   };
+
+   const rendered = mount(
+      <Login firebase={firebase((p) => {})} authenticated={true} />,
+      {context: {router: router}}
+   );
+
+   expect(routed).toBeTruthy();
 });
