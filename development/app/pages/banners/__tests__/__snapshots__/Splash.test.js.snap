@@ -1,0 +1,10 @@
+exports[`test Splash 1`] = `
+"<div className=\"splash\">
+<h1 className=\"brand\">
+Couch Ref
+</h1>
+<div className=\"loader\">
+<ThreeBounce color=\"white\" duration=\"1.5s\" size={10} scaleEnd={1} scaleStart={0} gutter={2} timingFunction=\"ease-in-out\" />
+</div>
+</div>"
+`;
