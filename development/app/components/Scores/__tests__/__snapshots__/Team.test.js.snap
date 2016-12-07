@@ -1,0 +1,6 @@
+exports[`test Renders ok. 1`] = `
+<span
+  className="teams">
+  Arsenal
+</span>
+`;

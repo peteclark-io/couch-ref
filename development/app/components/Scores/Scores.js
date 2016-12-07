@@ -12,61 +12,72 @@ import Score from './Score';
 
 const Scores = React.createClass({
 
-  propTypes: {
-    matches: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        'id': React.PropTypes.string,
-        'home': React.PropTypes.string,
-        'away': React.PropTypes.string,
-        'kickOff': React.PropTypes.object,
-        'goalsHome': React.PropTypes.number,
-        'goalsAway': React.PropTypes.number
-      }))
-  },
+   propTypes: {
+      matches: React.PropTypes.arrayOf(
+         React.PropTypes.shape({
+            'id': React.PropTypes.string,
+            'home': React.PropTypes.string,
+            'away': React.PropTypes.string,
+            'kickOff': React.PropTypes.object,
+            'goalsHome': React.PropTypes.number,
+            'goalsAway': React.PropTypes.number
+         }))
+      },
 
-  render: function() {
-     if (this.props.matches.length === 0){
-        return (
-           <div className={styles.loading}>
-             <ThreeBounce />
-           </div>
-        );
-     }
+      render: function() {
+         if (this.props.matches.length === 0){
+            return (
+               <div className={styles.loading}>
+                  <ThreeBounce />
+               </div>
+            );
+         }
 
-     var today = moment(24, 'HH'); // midnight tonight
-     var todaysFixtures = _.filter(this.props.matches, (i) => {
-        return i.kickOff.isBefore(today);
-     });
+         var today = moment(24, 'HH'); // midnight tonight
+         var yesterday = moment(24, 'HH').subtract(1, 'days'); // midnight last night
 
-     var title = 'Upcoming Fixtures';
-     var fixtures = [];
-     if (todaysFixtures.length > 0){
-        fixtures = todaysFixtures;
-        title = 'Today\'s Fixtures';
-     } else {
-        fixtures = _.filter(this.props.matches, (i) => {
-          return i.kickOff.isAfter(today);
-       });
-     }
+         var todaysFixtures = _.filter(this.props.matches, (i) => {
+            return i.kickOff.isBefore(today) && i.kickOff.isAfter(yesterday);
+         });
 
-    return (
-         <div>
-            <h2 className={styles['fixture-list-header']}>{title}</h2>
-            <div className={styles.spacer}></div>
+         var title = 'Upcoming Fixtures';
+         var fixtures = [];
+         if (todaysFixtures.length > 0){
+            fixtures = todaysFixtures;
+            title = 'Today\'s Fixtures';
+         } else {
+            fixtures = _.filter(this.props.matches, (i) => {
+               return i.kickOff.isAfter(today);
+            });
+         }
 
-            <ul className={styles['match-list']}>
-               {fixtures.map(function(match) {
-                  return <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
-                     <Link className={styles.link} to={`/match/${match.id}`}>
-                        <Score match={match} />
-                     </Link>
-                   </li>;
-                })}
-            </ul>
-         </div>
+         if(fixtures.length === 0){
+            return (
+               <div>
+                  <h2 className={styles['fixture-list-header']}>{title}</h2>
+                  <div className={styles.spacer}></div>
+                  <h4>No Fixtures right now! Check back later for new fixtures.</h4>
+               </div>
+            )
+         }
 
-      );
-  }
-});
+         return (
+            <div>
+               <h2 className={styles['fixture-list-header']}>{title}</h2>
+               <div className={styles.spacer}></div>
 
-export default Scores;
+               <ul className={styles['match-list']}>
+                  {fixtures.map(function(match) {
+                     return <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
+                        <Link className={styles.link} to={`/match/${match.id}`}>
+                           <Score match={match} />
+                        </Link>
+                     </li>;
+                  })}
+               </ul>
+            </div>
+         );
+      }
+   });
+
+   export default Scores;

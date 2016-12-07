@@ -1,0 +1,30 @@
+exports[`test Renders ok. 1`] = `
+<div>
+  <span
+    className="kick-off">
+    Tue 4th Jan 20:00
+  </span>
+  <div
+    className="score">
+    <span
+      className="teams">
+      home
+    </span>
+    <span
+      className="goals">
+      0
+    </span>
+  </div>
+  <div
+    className="score">
+    <span
+      className="teams">
+      away
+    </span>
+    <span
+      className="goals">
+      4
+    </span>
+  </div>
+</div>
+`;

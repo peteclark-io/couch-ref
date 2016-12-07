@@ -1,0 +1,6 @@
+exports[`test Renders ok. 1`] = `
+<span
+  className="kick-off">
+  Tue 4th Jan 20:00
+</span>
+`;

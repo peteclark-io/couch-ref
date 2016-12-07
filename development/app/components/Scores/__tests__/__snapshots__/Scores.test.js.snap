@@ -1,0 +1,149 @@
+exports[`test Renders no fixtures if they're old. 1`] = `
+<div>
+  <h2
+    className="fixture-list-header">
+    Upcoming Fixtures
+  </h2>
+  <div
+    className="spacer" />
+  <h4>
+    No Fixtures right now! Check back later for new fixtures.
+  </h4>
+</div>
+`;
+
+exports[`test Renders one upcoming fixture, removes other. 1`] = `
+<div>
+  <h2
+    className="fixture-list-header">
+    Upcoming Fixtures
+  </h2>
+  <div
+    className="spacer" />
+  <ul
+    className="match-list">
+    <li
+      className="">
+      <a
+        className="link"
+        onClick={[Function]}
+        style={Object {}}>
+        <div>
+          <span
+            className="kick-off">
+            Mon 4th Jan 20:00
+          </span>
+          <div
+            className="score">
+            <span
+              className="teams">
+              home2
+            </span>
+            <span
+              className="goals">
+              1
+            </span>
+          </div>
+          <div
+            className="score">
+            <span
+              className="teams">
+              away2
+            </span>
+            <span
+              className="goals">
+              3
+            </span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`test Renders two upcoming fixtures. 1`] = `
+<div>
+  <h2
+    className="fixture-list-header">
+    Upcoming Fixtures
+  </h2>
+  <div
+    className="spacer" />
+  <ul
+    className="match-list">
+    <li
+      className="">
+      <a
+        className="link"
+        onClick={[Function]}
+        style={Object {}}>
+        <div>
+          <span
+            className="kick-off">
+            Sat 4th Jan 20:00
+          </span>
+          <div
+            className="score">
+            <span
+              className="teams">
+              home
+            </span>
+            <span
+              className="goals">
+              0
+            </span>
+          </div>
+          <div
+            className="score">
+            <span
+              className="teams">
+              away
+            </span>
+            <span
+              className="goals">
+              4
+            </span>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li
+      className="">
+      <a
+        className="link"
+        onClick={[Function]}
+        style={Object {}}>
+        <div>
+          <span
+            className="kick-off">
+            Mon 4th Jan 20:00
+          </span>
+          <div
+            className="score">
+            <span
+              className="teams">
+              home2
+            </span>
+            <span
+              className="goals">
+              1
+            </span>
+          </div>
+          <div
+            className="score">
+            <span
+              className="teams">
+              away2
+            </span>
+            <span
+              className="goals">
+              3
+            </span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+`;

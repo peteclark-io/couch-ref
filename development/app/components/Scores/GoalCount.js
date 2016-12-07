@@ -5,15 +5,15 @@ import styles from './styles.css';
 
 const GoalCount = React.createClass({
 
-  propTypes: {
-    'goals': React.PropTypes.number
-  },
+   propTypes: {
+      'goals': React.PropTypes.number
+   },
 
-  render: function() {
-    return (
-      <span className={styles.goals} ref={node => (this.root = node)}>{this.props.goals}</span>
-    );
-  }
+   render: function() {
+      return (
+         <span className={styles.goals} ref={node => (this.root = node)}>{this.props.goals}</span>
+      );
+   }
 });
 
 export default GoalCount;
