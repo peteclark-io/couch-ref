@@ -25,7 +25,11 @@ const SimpleLine = React.createClass({
    },
 
    render: function() {
-      if (max(this.props.data) === 0){
+      if (!this.props.data) {
+         return null;
+      }
+      
+      if (_.sumBy(this.props.data, 'value') === 0){
         return null;
       }
 
