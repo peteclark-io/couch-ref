@@ -29,7 +29,6 @@ export const Question = React.createClass({
          id: React.PropTypes.string,
          question: React.PropTypes.string,
          controversial: React.PropTypes.bool,
-         asked: React.PropTypes.string,
          time: React.PropTypes.string,
          description: React.PropTypes.string,
          decision: React.PropTypes.string,
@@ -52,7 +51,7 @@ export const Question = React.createClass({
       var answer = undefined;
       var decision = 'Too close to call!';
 
-      if (this.props.user.votes && this.props.user.votes[this.props.question.id]){
+      if (this.props.user && this.props.user.votes && this.props.user.votes[this.props.question.id]){
          answer = this.props.user.votes[this.props.question.id];
       }
 
