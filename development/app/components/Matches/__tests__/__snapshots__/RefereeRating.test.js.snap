@@ -1,0 +1,1 @@
+exports[`test Shows the Ref rating when one is available 1`] = `"<div class=\"ref-rating\"><h3>Referee Rating</h3><h2>Superb!</h2></div>"`;

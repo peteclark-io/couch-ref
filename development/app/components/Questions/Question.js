@@ -18,7 +18,7 @@ import ResultsIndicator from './ResultsIndicator';
 import styles from './styles.css';
 import buttons from './buttons.css';
 
-const Question = React.createClass({
+export const Question = React.createClass({
 
    contextTypes: {
       user: React.PropTypes.object

@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import {matchScore} from '../../core/scores';
 import styles from './styles.css';
 
-const RefereeRating = React.createClass({
+export const RefereeRating = React.createClass({
 
    propTypes: {
       match: React.PropTypes.object,
@@ -23,6 +23,10 @@ const RefereeRating = React.createClass({
       }
 
       var overall = this.props.referee.scores[this.props.match.id];
+      if (!overall) {
+         return null;
+      }
+      
       console.log('Ref score for the match', overall)
       var title = matchScore(overall);
 
