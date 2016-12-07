@@ -10,7 +10,7 @@ import {Link} from 'react-router';
 import buttons from '../Questions/buttons.css';
 import styles from './styles.css';
 
-const Profile = React.createClass({
+export const Profile = React.createClass({
 
    propTypes: {
       user: React.PropTypes.object

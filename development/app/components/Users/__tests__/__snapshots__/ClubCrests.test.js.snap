@@ -1,0 +1,1 @@
+exports[`test Renders ok with clubs. 1`] = `"<div><h3 class=\"question\">Who Do You Support in the Premier League?</h3><section class=\"clubs-container\"><ul class=\"clubs\"><li><img alt=\"Arsenal\"></li></ul><h4 class=\"disclaimer\">We currently only collect data on Premier League fans, sorry if you support someone else!</h4></section></div>"`;
