@@ -6,7 +6,7 @@ import {ThreeBounce} from 'better-react-spinkit';
 
 import styles from './Splash.css';
 
-const Splash = React.createClass({
+export const Splash = React.createClass({
 
    propTypes: {
       ready: React.PropTypes.bool
@@ -55,9 +55,5 @@ const mapStateToProps = (state) => {
 const LiveSplash = connect(
   mapStateToProps
 )(Splash);
-
-export function component(){
-   return Splash;
-}
 
 export default LiveSplash;

@@ -1,0 +1,1 @@
+exports[`test Should generate the right score summary. 1`] = `"<div class=\"match-rating\"><h3>Your Match Rating</h3><h2>Some Great Decisions!</h2></div>"`;

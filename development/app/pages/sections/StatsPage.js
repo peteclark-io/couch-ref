@@ -6,13 +6,11 @@ import QuestionResults from '../../components/Stats/QuestionResults';
 
 const StatsPage = React.createClass({
 
-  render: function() {
-    return (
-      <div>
-        <QuestionResults id={this.props.params.questionId} />
-      </div>
-    );
-  }
+   render: function() {
+      return (
+         <QuestionResults id={this.props.params.questionId} />
+      );
+   }
 });
 
 export default StatsPage;

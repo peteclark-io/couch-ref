@@ -7,7 +7,7 @@ import firebase from 'firebase';
 
 import styles from './Login.css';
 
-const Login = React.createClass({
+export const Login = React.createClass({
 
    propTypes: {
       authenticated: React.PropTypes.bool,
@@ -76,9 +76,5 @@ const mapStateToProps = (state) => {
 const LiveLogin = connect(
   mapStateToProps
 )(Login);
-
-export function component(){
-   return Login;
-}
 
 export default LiveLogin;

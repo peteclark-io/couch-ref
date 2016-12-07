@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {component} from '../Errors.js';
+import {Errors} from '../Errors';
 import renderer from 'react-test-renderer';
 
 test('Errors page won\'t change much.', () => {
@@ -12,7 +12,6 @@ test('Errors page won\'t change much.', () => {
       }
    }
 
-   const Errors = component();
    const rendered = renderer.create(
       <Errors errors={errors}/>
    );

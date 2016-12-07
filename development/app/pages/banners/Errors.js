@@ -4,7 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import styles from './Errors.css';
 
-const Errors = React.createClass({
+export const Errors = React.createClass({
 
    propTypes: {
       errors: React.PropTypes.object
@@ -47,9 +47,5 @@ const mapStateToProps = (state) => {
 const LiveErrors = connect(
    mapStateToProps
 )(Errors);
-
-export function component(){
-   return Errors;
-}
 
 export default LiveErrors;

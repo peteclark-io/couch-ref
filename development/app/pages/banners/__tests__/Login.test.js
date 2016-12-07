@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {component} from '../Login.js';
+import {Login} from '../Login';
 import {mount, shallow} from 'enzyme';
 import renderer from 'react-test-renderer';
 
@@ -14,7 +14,6 @@ const firebase = (checker) => {
 }
 
 test('Login snapshot', () => {
-   const Login = component();
    const rendered = renderer.create(
       <Login firebase={firebase((p) => {})} authenticated={false} />
    );
@@ -24,8 +23,6 @@ test('Login snapshot', () => {
 });
 
 it('Can login via google', () => {
-   const Login = component();
-
    const check = (provider) => {
       expect(provider.providerId).toEqual('google.com');
    };
@@ -38,8 +35,6 @@ it('Can login via google', () => {
 });
 
 it('Can login via facebook', () => {
-   const Login = component();
-
    const check = (provider) => {
       expect(provider.providerId).toEqual('facebook.com');
    };
@@ -52,8 +47,6 @@ it('Can login via facebook', () => {
 });
 
 it('Can login via twitter', () => {
-   const Login = component();
-
    const check = (provider) => {
       expect(provider.providerId).toEqual('twitter.com');
    };
@@ -66,7 +59,6 @@ it('Can login via twitter', () => {
 });
 
 it('Redirects if already authenticated', () => {
-   const Login = component();
    var routed = false;
    const router = {
       push: (uri) => {

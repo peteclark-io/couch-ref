@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import UsersPage from '../UsersPage.js';
+import UsersPage from '../UsersPage';
 import renderer from 'react-test-renderer';
 
 test('UsersPage shouldn\'t change much.', () => {

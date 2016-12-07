@@ -1,13 +1,12 @@
 'use strict';
 
 import React from 'react';
-import {component} from '../Splash.js';
+import {Splash} from '../Splash';
 import {mount, shallow} from 'enzyme';
 
 import renderer from 'react-test-renderer';
 
 test('Splash', () => {
-   const Splash = component();
    const rendered = shallow(
       <Splash ready={false} />
    );
@@ -17,7 +16,6 @@ test('Splash', () => {
 });
 
 it('Redirects if ready', () => {
-   const Splash = component();
    var routed = false;
    const router = {
       push: (uri) => {
@@ -35,7 +33,6 @@ it('Redirects if ready', () => {
 });
 
 it('Doesn\'t redirect if not ready', () => {
-   const Splash = component();
    const router = {
       push: (uri) => {
          expect(false).toBeTruthy(); // aka, fail pls.

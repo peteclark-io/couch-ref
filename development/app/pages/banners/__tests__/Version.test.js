@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import Version from '../Version.js';
+import Version from '../Version';
 import renderer from 'react-test-renderer';
 
 test('Version matches the version.json file.', () => {

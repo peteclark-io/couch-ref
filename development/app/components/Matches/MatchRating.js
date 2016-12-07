@@ -10,7 +10,7 @@ import classNames from 'classnames';
 import {matchScore} from '../../core/scores';
 import styles from './styles.css';
 
-const MatchRating = React.createClass({
+export const MatchRating = React.createClass({
 
    propTypes: {
       user: React.PropTypes.object,
@@ -18,20 +18,17 @@ const MatchRating = React.createClass({
    },
 
    render: function() {
-      if (!this.props.match){
+      if (!this.props.match || !this.props.user || !this.props.user.votes){
          return null;
       }
 
       var scores = this.props.match.questions.map((q) => {
-         if (!this.props.user.votes || !this.props.user.votes[q.id]){
+         if (!this.props.user.votes[q.id]){
             return undefined;
          }
 
          var answer = this.props.user.votes[q.id];
-         if (answer){
-            return answer.score;
-         }
-         return undefined;
+         return answer ? answer.score : undefined;
       }).filter((s) => {return s;});
 
       if(scores.length === 0){
@@ -39,8 +36,8 @@ const MatchRating = React.createClass({
       }
 
       var overall = _.sum(scores);
-      console.log('Score for the match', overall, scores)
       var normalized = overall / scores.length;
+      console.log('Score for the match', overall, scores, normalized);
       var title = matchScore(normalized);
 
       return (
