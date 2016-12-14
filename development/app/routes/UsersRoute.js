@@ -28,8 +28,8 @@ const UsersRoute = {
          ]
       },
       {
-         path: 'profile',
-         component: require('../components/Users/Profile').default
+         path: 'edit',
+         component: require('../components/Users/EditProfile').default
       }
    ]
 };

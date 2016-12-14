@@ -10,38 +10,32 @@ import {Link} from 'react-router';
 import buttons from '../Questions/buttons.css';
 import styles from './styles.css';
 
-export const Profile = React.createClass({
+export const EditProfile = React.createClass({
 
    propTypes: {
       user: React.PropTypes.object
    },
 
    render: function() {
-      var score = this.props.user.score;
-      if (!score){
-         score = 2000;
-      }
-
       return (
          <div>
-            <h1 className={styles.brand}>Profile!</h1>
-            <h3 className={styles.question}>Your Ref Rating {score.toFixed(0)}</h3>
-
+            <h1 className={styles.brand}>Edit Your Profile</h1>
+            <h1 className={styles.brand}></h1>
             <div className={styles['asl-container']}>
                <div className={bootstrap.row}>
-                  <div className={classNames(bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
+                  <div className={classNames(styles['edit-section'], bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
                      <h3>{this.props.user.birthday.format('DD/MM/YY')}</h3>
                      <Link to={'/users/birthday'}>Edit</Link>
                   </div>
-                  <div className={classNames(bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
+                  <div className={classNames(styles['edit-section'], bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
                      <h3>{this.props.user.sex}</h3>
                      <Link to={'/users/sex'}>Edit</Link>
                   </div>
-                  <div className={classNames(bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
+                  <div className={classNames(styles['edit-section'], bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
                      <h3>{this.props.user.location}</h3>
                      <Link to={'/users/location'}>Edit</Link>
                   </div>
-                  <div className={classNames(bootstrap['cols-xs-12'], bootstrap['col-sm-12'])}>
+                  <div className={classNames(styles['edit-section'], bootstrap['cols-xs-12'], bootstrap['col-sm-12'])}>
                      <h3><img className={styles['edit-club']} src={this.props.user.club.crestUrl}></img></h3>
                      <Link to={'/users/club'}>Edit</Link>
                   </div>
@@ -62,8 +56,8 @@ const mapStateToProps = (state) => {
    };
 };
 
-const LiveProfile = connect(
+const LiveEditProfile = connect(
    mapStateToProps
-)(Profile);
+)(EditProfile);
 
-export default LiveProfile;
+export default LiveEditProfile;

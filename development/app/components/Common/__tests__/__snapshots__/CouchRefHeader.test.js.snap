@@ -30,7 +30,7 @@ exports[`test Renders ok. 1`] = `
           style={Object {}}>
           <h3
             className="pull-right">
-            Referees
+            Your Score
           </h3>
         </a>
       </div>

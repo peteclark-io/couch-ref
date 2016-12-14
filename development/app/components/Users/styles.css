@@ -80,6 +80,10 @@
   float: left;
 }
 
+.edit-section {
+   margin-bottom: 40px;
+}
+
 .edit-club {
    width: 200px;
    height: 200px;
@@ -105,5 +109,19 @@ select {
 	select {
      appearance:         none;
      font-size: 1.2em;
+   }
+
+   .brand {
+      font-size: 4em;
+      margin-top: 6vh;
+   }
+
+   .question {
+     font-family: var(--font-primary);
+     font-size: 2em;
+   }
+
+   .edit-section {
+      margin-bottom: 20px;
    }
 }
