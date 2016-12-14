@@ -1,0 +1,148 @@
+{
+  "227fd002-17e1-4fa6-bc2f-c272427c040e": {
+    "asked": "2016-11-23T21:07:48+00:00",
+    "controversial": true,
+    "decision": "No",
+    "description": "Cavani was through on goal, but late pressure from Koscielny appeared to put the striker off.",
+    "id": "227fd002-17e1-4fa6-bc2f-c272427c040e",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Did Koscielny foul Cavani?",
+    "referee_score": -1.954473620228545,
+    "scored": true,
+    "time": "63min"
+  },
+  "261a32cf-e005-40c4-bd9e-a5689da42dd3": {
+    "asked": "2016-11-23T19:43:00+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "",
+    "id": "261a32cf-e005-40c4-bd9e-a5689da42dd3",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Will Arsenal top the group tonight?",
+    "time": "Build Up"
+  },
+  "48d2a5e1-5881-4cd4-8cbb-0cb29a7047ea": {
+    "asked": "2016-11-23T20:31:52+00:00",
+    "controversial": true,
+    "decision": "No",
+    "description": "There appeared to be very little contact made by the PSG defender.",
+    "id": "48d2a5e1-5881-4cd4-8cbb-0cb29a7047ea",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Did Sanchez dive for the penalty?",
+    "referee_score": -2.0513513596154604,
+    "scored": true,
+    "time": "44min"
+  },
+  "62e6da5e-87da-4612-b7cc-beb73003372d": {
+    "asked": "2016-11-23T20:27:21+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "",
+    "id": "62e6da5e-87da-4612-b7cc-beb73003372d",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Do Arsenal deserve to be behind?",
+    "time": "44min"
+  },
+  "6e28a81d-3c69-437c-94df-f142bce3cc01": {
+    "asked": "2016-11-23T21:17:52+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "Arsenal rarely make a change before the 70th minute.",
+    "id": "6e28a81d-3c69-437c-94df-f142bce3cc01",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Does Wenger leave it too late to make substitutes?",
+    "time": "73min"
+  },
+  "72478201-d368-4d33-bd7a-28388f0a4f2c": {
+    "asked": "2016-11-23T21:39:35+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "",
+    "id": "72478201-d368-4d33-bd7a-28388f0a4f2c",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Is 2-2 a fair result?",
+    "time": "Post Match"
+  },
+  "790e2043-39d8-411e-b6a0-156386bf9626": {
+    "asked": "2016-11-23T21:23:30+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "Cavani was set through on goal, but his chip failed to deceive Ospina.",
+    "id": "790e2043-39d8-411e-b6a0-156386bf9626",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Should Cavani have scored?",
+    "time": "78min"
+  },
+  "83a7b3e8-081e-460e-ab53-ad1282b67fe2": {
+    "asked": "2016-11-23T20:45:03+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "",
+    "id": "83a7b3e8-081e-460e-ab53-ad1282b67fe2",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Do PSG deserve to be in the lead?",
+    "time": "Half Time"
+  },
+  "a76cf80c-8deb-44eb-ad48-a8b40c40a210": {
+    "asked": "2016-11-23T21:26:34+00:00",
+    "controversial": false,
+    "decision": "",
+    "description": "A fabulous cross from the right is headed just wide from point blank range.",
+    "id": "a76cf80c-8deb-44eb-ad48-a8b40c40a210",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Should Cavani have scored... again?",
+    "time": "82min"
+  },
+  "ba995b90-50e4-4f48-94ae-6e852ed9b385": {
+    "asked": "2016-11-23T21:05:07+00:00",
+    "decision": "",
+    "description": "",
+    "id": "ba995b90-50e4-4f48-94ae-6e852ed9b385",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Will Arsenal run away with the game now they've fashioned a lead?"
+  },
+  "bd882791-c4ba-4ba6-a676-94802f07fd85": {
+    "asked": "2016-11-23T21:04:16+00:00",
+    "decision": "",
+    "description": "",
+    "id": "bd882791-c4ba-4ba6-a676-94802f07fd85",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Will PSG respond positively to going behind?"
+  },
+  "be6094aa-d457-4ec3-9fe3-98c52ee8429b": {
+    "asked": "2016-11-23T20:57:26+00:00",
+    "controversial": true,
+    "decision": "No",
+    "description": "He brought down the winger after giving the ball away at the back.",
+    "id": "be6094aa-d457-4ec3-9fe3-98c52ee8429b",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Should Koscielny have been sent off for his challenge on Lucas?",
+    "referee_score": -2.441589260288832,
+    "scored": true,
+    "time": "53min"
+  },
+  "c276f29a-8e47-4d8c-ac9d-d5f445d9d475": {
+    "asked": "2016-11-23T20:33:59+00:00",
+    "controversial": false,
+    "decision": "No",
+    "description": "He appeared to lightly brush the Welshman's face.",
+    "id": "c276f29a-8e47-4d8c-ac9d-d5f445d9d475",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Should Cavani be booked for lashing out at Ramsey?",
+    "referee_score": -2.3928865188156845,
+    "scored": true,
+    "time": "46min"
+  },
+  "f2fc4202-aadd-40aa-8335-65c03e4751e7": {
+    "asked": "2016-11-23T20:39:51+00:00",
+    "controversial": false,
+    "decision": "No",
+    "description": "He seemed to grab the strikers neck.",
+    "id": "f2fc4202-aadd-40aa-8335-65c03e4751e7",
+    "match": "a9e7c545-84a7-491b-a2ee-3f7691a69ad9",
+    "question": "Should Giroud be penalised for his treatment of Cavani in the tunnel?",
+    "referee_score": -2.150131515105085,
+    "scored": true,
+    "time": "Half Time"
+  }
+}

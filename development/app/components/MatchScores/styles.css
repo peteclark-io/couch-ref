@@ -63,3 +63,9 @@
   font-size: 14rem;
   text-align: center;
 }
+
+@media (max-width: 768px){
+   .match-list li {
+      margin-bottom: 10px;
+   }
+}

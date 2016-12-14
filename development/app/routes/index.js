@@ -19,6 +19,10 @@ const rootRoute = {
               path: '/referees',
               component: require('../pages/sections/RefereePage').default
             },
+            {
+              path: '/score',
+              component: require('../pages/sections/UserScorePage').default
+            },
             require('./TeamsRoute').default
          ]
       }, {
