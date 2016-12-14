@@ -1,14 +1,28 @@
 @import "../../css/branding.css";
 
-.score-container {
+.container {
 	font-family: var(--font-questions);
+}
+
+.centred {
    text-align: center;
 }
 
 .heading {
-	font-size: 2.6rem;
+   .margin-top: 20px;
+   font-size: 2.6rem;
 }
 
 .score {
-   font-size: 6rem;
+   font-size: 8rem;
+   color: var(--brand-no);
+}
+
+.answered .heading {
+   font-size: 2rem;
+}
+
+.answered .value {
+   color: var(--brand-no);
+   font-size: 2rem;
 }
