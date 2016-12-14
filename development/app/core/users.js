@@ -2,7 +2,9 @@
 
 import moment from 'moment';
 
-import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation, setVotes, setScore} from '../ducks/user';
+import {createUser} from './mappers';
+import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation, setVotes, addRemoteFields} from '../ducks/user';
+
 import {ready} from '../ducks/ready';
 
 export default function Users(path, store, router){
@@ -15,6 +17,8 @@ export default function Users(path, store, router){
            router.push('/users/club');
            return;
          }
+
+         store.dispatch(addRemoteFields(createUser(data)));
 
          var results = store.getState().clubs.filter((c) => {
             return c.name === data.club;
@@ -71,10 +75,6 @@ export default function Users(path, store, router){
          } else {
             router.push('/users/location');
             return;
-         }
-
-         if (data.score){
-            store.dispatch(setScore(data.score));
          }
 
          router.push(path);

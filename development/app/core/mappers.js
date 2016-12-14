@@ -48,6 +48,13 @@ export const createReferee = (value) => {
    };
 }
 
+export const createUser = (value) => {
+   return {
+      score: value.score ? value.score : 2000,
+      answered: value.answered ? value.answered : 0
+   };
+}
+
 const refereeAppearances = (value) => {
    if (!value.scores){
       return 0;

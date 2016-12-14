@@ -7,10 +7,11 @@ const SELECT_CLUB = 'couch-ref/user/SELECT_CLUB';
 const SET_DOB = 'couch-ref/user/SET_DOB';
 const SET_SEX = 'couch-ref/user/SET_SEX';
 const SET_LOCATION = 'couch-ref/user/SET_LOCATION';
-const SET_SCORE = 'couch-ref/user/SET_SCORE';
 
 const INSPECT_COOKIES = 'couch-ref/user/INSPECT_COOKIES';
 const INSPECT_FIREBASE = 'couch-ref/user/INSPECT_FIREBASE';
+
+const ADD_REMOTE_FIELDS = 'couch-ref/user/ADD_REMOTE_FIELDS';
 
 export default function reducer(state = {}, action){
    switch(action.type){
@@ -22,6 +23,12 @@ export default function reducer(state = {}, action){
             }
          })
       });
+
+      case ADD_REMOTE_FIELDS:
+      return Object.assign({}, state, {
+         answered: action.user.answered,
+         score: action.user.score
+      })
 
       case SELECT_CLUB:
       return Object.assign({}, state, {
@@ -48,11 +55,6 @@ export default function reducer(state = {}, action){
          votes: action.votes
       });
 
-      case SET_SCORE:
-      return Object.assign({}, state, {
-         score: action.score
-      });
-
       case INSPECT_COOKIES:
       return Object.assign({}, state, {
          club: Object.assign({}, state.club, action.cookies.club),
@@ -69,6 +71,10 @@ export default function reducer(state = {}, action){
    }
 };
 
+export function addRemoteFields(user) {
+   return {type: ADD_REMOTE_FIELDS, user: user};
+}
+
 export function selectClub(club) {
    return {type: SELECT_CLUB, club: club};
 }
@@ -83,10 +89,6 @@ export function setSex(sex) {
 
 export function setLocation(location) {
    return {type: SET_LOCATION, location: location};
-}
-
-export function setScore(score) {
-   return {type: SET_SCORE, score: score};
 }
 
 export function vote(question, vote) {
