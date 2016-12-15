@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import {overallScore} from '../../core/scores';
 import styles from './styles.css';
 
-export const RefereeCareer = React.createClass({
+export const Ranking = React.createClass({
 
    propTypes: {
       answered: React.PropTypes.number,
@@ -18,15 +18,9 @@ export const RefereeCareer = React.createClass({
       var career = overallScore(this.props.answered, this.props.score);
 
       return (
-         <div>
-            <div className={classNames(styles.container, styles.ranking)}>
-               <h1 className={styles.subheading}>Your Ranking</h1>
-               <h1 className={styles.heading}>{career}</h1>
-            </div>
-            <div className={classNames(styles.container, styles.answered)}>
-               <h1 className={styles.heading}>Questions Answered</h1>
-               <h2 className={styles.value}>{this.props.answered.toFixed(0)}</h2>
-            </div>
+         <div className={classNames(styles.container, styles.ranking)}>
+            <h1 className={styles.subheading}>Your Ranking</h1>
+            <h1 className={styles.heading}>{career}</h1>
          </div>
       );
    }
@@ -34,21 +28,21 @@ export const RefereeCareer = React.createClass({
 
 const getAnswered = (state = {user: {}}) => {
    return state.user.answered ? state.user.answered : 0;
-}
+};
 
 const getScore = (state = {user: {}}) => {
    return state.user.score ? state.user.score : 2000;
-}
+};
 
 const mapStateToProps = (state) => {
    return {
       answered: getAnswered(state),
       score: getScore(state)
    }
-}
+};
 
-const LiveRefereeCareer = connect(
+const LiveRanking = connect(
    mapStateToProps
-)(RefereeCareer)
+)(Ranking);
 
-export default LiveRefereeCareer
+export default LiveRanking;

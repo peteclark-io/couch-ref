@@ -25,16 +25,16 @@ export const RecentMatches = React.createClass({
 
 const getScore = (state = {user: {}}) => {
    return state.user.score ? state.user.score : 2000;
-}
+};
 
 const mapStateToProps = (state) => {
    return {
       score: getScore(state)
    }
-}
+};
 
 const LiveRecentMatches = connect(
    mapStateToProps
-)(RecentMatches)
+)(RecentMatches);
 
-export default LiveRecentMatches
+export default LiveRecentMatches;

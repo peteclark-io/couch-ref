@@ -60,10 +60,10 @@ const mapStateToProps = (state) => {
       max: results.max,
       min: results.min
    }
-}
+};
 
 const LiveTopAnswer = connect(
    mapStateToProps
-)(TopAnswer)
+)(TopAnswer);
 
-export default LiveTopAnswer
+export default LiveTopAnswer;

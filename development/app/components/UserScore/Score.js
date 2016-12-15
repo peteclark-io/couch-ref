@@ -24,16 +24,16 @@ export const Score = React.createClass({
 
 const getScore = (state = {user: {}}) => {
    return state.user.score ? state.user.score : 2000;
-}
+};
 
 const mapStateToProps = (state) => {
    return {
       score: getScore(state)
    }
-}
+};
 
 const LiveScore = connect(
    mapStateToProps
-)(Score)
+)(Score);
 
-export default LiveScore
+export default LiveScore;

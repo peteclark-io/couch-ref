@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Score from '../../components/UserScore/Score';
-import RefereeCareer from '../../components/UserScore/RefereeCareer';
-import TopAnswer from '../../components/UserScore/TopAnswer';
+import Ranking from '../../components/UserScore/Ranking';
+import RefereeStats from '../../components/UserScore/RefereeStats';
 
 const UserScorePage = React.createClass({
 
@@ -11,7 +11,8 @@ const UserScorePage = React.createClass({
       return (
          <div>
             <Score />
-            <RefereeCareer />
+            <Ranking />
+            {/*<RefereeStats />*/}
          </div>
       );
    }

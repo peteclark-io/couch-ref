@@ -24,16 +24,16 @@ export const YesNoRatio = React.createClass({
 
 const getScore = (state = {user: {}}) => {
 
-}
+};
 
 const mapStateToProps = (state) => {
    return {
       score: getScore(state)
    }
-}
+};
 
 const LiveYesNoRatio = connect(
    mapStateToProps
-)(YesNoRatio)
+)(YesNoRatio);
 
 export default LiveYesNoRatio;
