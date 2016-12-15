@@ -6,8 +6,18 @@ import moment from 'moment';
 import renderer from 'react-test-renderer';
 
 it('Renders two upcoming fixtures.', () => {
-   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2020-01-04T20:00:00Z')}
-   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2021-01-04T20:00:00Z')}
+   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2020-01-04T20:00:00Z'), televised: true}
+   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2021-01-04T20:00:00Z'), televised: true}
+
+   const rendered = renderer.create(
+      <Scores matches={[match, match2]} />
+   );
+   expect(rendered.toJSON()).toMatchSnapshot();
+});
+
+it('Renders only televised fixtures.', () => {
+   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2020-01-04T20:00:00Z'), televised: true}
+   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2021-01-04T20:00:00Z'), televised: false}
 
    const rendered = renderer.create(
       <Scores matches={[match, match2]} />
@@ -16,8 +26,8 @@ it('Renders two upcoming fixtures.', () => {
 });
 
 it('Renders one upcoming fixture, removes other.', () => {
-   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2016-01-04T20:00:00Z')}
-   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2021-01-04T20:00:00Z')}
+   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2016-01-04T20:00:00Z'), televised: true}
+   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2021-01-04T20:00:00Z'), televised: true}
 
    const rendered = renderer.create(
       <Scores matches={[match, match2]} />
@@ -26,8 +36,8 @@ it('Renders one upcoming fixture, removes other.', () => {
 });
 
 it('Renders no fixtures if they\'re old.', () => {
-   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2014-01-04T20:00:00Z')}
-   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2014-02-04T20:00:00Z')}
+   const match =  {id: 'id',  home: 'home',  away: 'away',  goalsHome: 0, goalsAway: 4, kickOff: moment('2014-01-04T20:00:00Z'), televised: true}
+   const match2 = {id: 'id2', home: 'home2', away: 'away2', goalsHome: 1, goalsAway: 3, kickOff: moment('2014-02-04T20:00:00Z'), televised: true}
 
    const rendered = renderer.create(
       <Scores matches={[match, match2]} />

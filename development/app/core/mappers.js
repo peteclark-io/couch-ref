@@ -17,6 +17,7 @@ export const createMatch = (value) => {
       homeSubs: value.home_subs,
       awayLineup: value.away_lineup,
       awaySubs: value.away_subs,
+      televised: value.televised,
       questions: value.questions ? value.questions : []
    };
 }

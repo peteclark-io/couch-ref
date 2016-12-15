@@ -37,7 +37,7 @@ const Scores = React.createClass({
          var yesterday = moment(24, 'HH').subtract(1, 'days'); // midnight last night
 
          var todaysFixtures = _.filter(this.props.matches, (i) => {
-            return i.kickOff.isBefore(today) && i.kickOff.isAfter(yesterday);
+            return i.kickOff.isBefore(today) && i.kickOff.isAfter(yesterday) && i.televised;
          });
 
          var title = 'Upcoming Fixtures';
@@ -47,7 +47,7 @@ const Scores = React.createClass({
             title = 'Today\'s Fixtures';
          } else {
             fixtures = _.filter(this.props.matches, (i) => {
-               return i.kickOff.isAfter(today);
+               return i.kickOff.isAfter(today) && i.televised;
             });
          }
 
