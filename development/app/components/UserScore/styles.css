@@ -26,3 +26,9 @@
    color: var(--brand-no);
    font-size: 2rem;
 }
+
+.career .heading {
+   font-size: 4rem;
+   text-align: center;
+   margin-bottom: 30px;
+}

@@ -56,7 +56,7 @@ const Scores = React.createClass({
                <div>
                   <h2 className={styles['fixture-list-header']}>{title}</h2>
                   <div className={styles.spacer}></div>
-                  <h4>No Fixtures right now! Check back later for new fixtures.</h4>
+                  <h4 className={styles['no-fixtures']}>No Fixtures right now! Check back later for new fixtures.</h4>
                </div>
             )
          }

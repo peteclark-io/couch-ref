@@ -59,6 +59,10 @@
   );
 }
 
+.no-fixtures {
+   font-family: var(--font-secondary);
+}
+
 .loading {
   font-size: 14rem;
   text-align: center;
