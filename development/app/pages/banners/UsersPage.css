@@ -16,3 +16,9 @@
    margin-top: 6vh;
    flex: 0 1 auto;
 }
+
+.back {
+   text-align: left;
+   color: white;
+   margin-bottom: 16px;
+}
