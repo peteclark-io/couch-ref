@@ -10,13 +10,11 @@ const UsersPage = React.createClass({
 
   render: function() {
     return (
-      <div>
-         <div className={styles.splash}>
-            {/*<div className={styles.back}>
-               <Link to={'/'}><h1>Back</h1></Link>
-            </div>*/}
-            {this.props.children}
-         </div>
+      <div className={styles.splash}>
+         {/*<div className={styles.back}>
+            <Link to={'/'}><h1>Back</h1></Link>
+         </div>*/}
+         {this.props.children}
       </div>
     );
   }
