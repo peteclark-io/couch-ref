@@ -1,6 +1,47 @@
 'use strict';
 
-export const overallScore = (score) => {
+export const overallScore = (answered, score) => {
+   if (answered > 10000 && score > 5000){
+      return 'Legendary Referee';
+   }
+
+   if (answered > 4000 && score > 4000) {
+      return 'World Class Referee';
+   }
+
+   if (answered > 2000 && score > 3000) {
+      return 'International Referee';
+   }
+
+   if (score > 3000){
+      return 'Excellent Referee';
+   }
+
+   if (answered > 500 && score > 2000) {
+      return 'FA Referee';
+   }
+
+   if (answered > 500 && score > 1500) {
+      return 'Semi-Pro Referee';
+   }
+
+   if (answered > 500 && score > 1000) {
+      return 'Amateur Referee';
+   }
+
+   if (answered > 500) {
+      return 'Schoolyard Referee';
+   }
+
+   if (answered > 200 && score > 2500) {
+      return 'Promising Referee';
+   }
+
+   if (answered > 200) {
+      return 'Junior Referee';
+   }
+
+   return 'Fledgling Referee';
 };
 
 export const questionScore = (score) => {

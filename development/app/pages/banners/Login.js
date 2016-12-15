@@ -51,11 +51,11 @@ export const Login = React.createClass({
        return (
           <div className={styles.splash}>
              <h1 className={styles.brand}>Couch Ref</h1>
-             <h3 className={styles.with}>Login With</h3>
+             <h2 className={styles.with}>Login With</h2>
              <div className={styles['auth-providers']}>
-                <img id="google" src="/images/auth/google.svg" onClick={this.googleLogin} />
-                <img id="facebook" className={styles.facebook} src="/images/auth/facebook.png" onClick={this.facebookLogin} />
-                <img id="twitter" className={styles.facebook} src="/images/auth/twitter.svg" onClick={this.twitterLogin} />
+                <img alt="Login with your Google Account" id="google" src="/images/auth/google.svg" onClick={this.googleLogin} />
+                <img alt="Login with Facebook" id="facebook" className={styles.facebook} src="/images/auth/facebook.png" onClick={this.facebookLogin} />
+                <img alt="Login with Twitter" id="twitter" className={styles.facebook} src="/images/auth/twitter.svg" onClick={this.twitterLogin} />
              </div>
           </div>
       );

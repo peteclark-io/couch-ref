@@ -27,7 +27,14 @@
    font-size: 2rem;
 }
 
-.career .heading {
+.ranking .subheading {
+   font-size: 2rem;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.ranking .heading {
+   color: var(--brand-no);
    font-size: 4rem;
    text-align: center;
    margin-bottom: 30px;

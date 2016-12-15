@@ -4,31 +4,23 @@ import React from 'react';
 import {connect} from 'react-redux'
 import classNames from 'classnames';
 
+import {overallScore} from '../../core/scores';
 import styles from './styles.css';
 
 export const RefereeCareer = React.createClass({
 
    propTypes: {
-      answered: React.PropTypes.number
+      answered: React.PropTypes.number,
+      score: React.PropTypes.number
    },
 
    render: function() {
-      var career = 'Fledgling Referee';
-      if (this.props.answers > 10000){
-         career = 'Legendary Referee';
-      } else if (this.props.answers > 8000) {
-         career = 'Battle-Hardened Referee';
-      } else if (this.props.answers > 4000) {
-         career = 'Experienced Referee';
-      } else if (this.props.answers > 1000) {
-         career = 'Senior Referee';
-      } else if (this.props.answers > 200) {
-         career = 'Junior Referee';
-      }
+      var career = overallScore(this.props.answered, this.props.score);
 
       return (
          <div>
-            <div className={classNames(styles.container, styles.career)}>
+            <div className={classNames(styles.container, styles.ranking)}>
+               <h1 className={styles.subheading}>Your Ranking</h1>
                <h1 className={styles.heading}>{career}</h1>
             </div>
             <div className={classNames(styles.container, styles.answered)}>
@@ -44,9 +36,14 @@ const getAnswered = (state = {user: {}}) => {
    return state.user.answered ? state.user.answered : 0;
 }
 
+const getScore = (state = {user: {}}) => {
+   return state.user.score ? state.user.score : 2000;
+}
+
 const mapStateToProps = (state) => {
    return {
-      answered: getAnswered(state)
+      answered: getAnswered(state),
+      score: getScore(state)
    }
 }
 

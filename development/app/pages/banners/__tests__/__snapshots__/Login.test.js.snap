@@ -5,22 +5,25 @@ exports[`test Login snapshot 1`] = `
     className="brand">
     Couch Ref
   </h1>
-  <h3
+  <h2
     className="with">
     Login With
-  </h3>
+  </h2>
   <div
     className="auth-providers">
     <img
+      alt="Login with your Google Account"
       id="google"
       onClick={[Function]}
       src="/images/auth/google.svg" />
     <img
+      alt="Login with Facebook"
       className="facebook"
       id="facebook"
       onClick={[Function]}
       src="/images/auth/facebook.png" />
     <img
+      alt="Login with Twitter"
       className="facebook"
       id="twitter"
       onClick={[Function]}
