@@ -68,11 +68,15 @@ const Scores = React.createClass({
 
                <ul className={styles['match-list']}>
                   {fixtures.map(function(match) {
-                     return <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
-                        <Link className={styles.link} to={`/match/${match.id}`}>
+                     return match.live ? // disable link if we're not live
+                        <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
+                           <Link className={styles.link} to={`/match/${match.id}`}>
+                              <Score match={match} />
+                           </Link>
+                        </li> :
+                        <li className={match.fullTime ? styles['full-time'] : ''} key={match.id}>
                            <Score match={match} />
-                        </Link>
-                     </li>;
+                        </li>;
                   })}
                </ul>
             </div>

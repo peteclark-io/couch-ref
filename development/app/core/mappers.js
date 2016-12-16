@@ -18,6 +18,7 @@ export const createMatch = (value) => {
       awayLineup: value.away_lineup,
       awaySubs: value.away_subs,
       televised: value.televised,
+      live: value.live ? true : false,
       questions: value.questions ? value.questions : []
    };
 }
