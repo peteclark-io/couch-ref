@@ -75,7 +75,7 @@
 }
 
 .button {
-  font-size: 1.6em;
+  font-size: 1.2em;
   margin-left: 1em;
   float: left;
 }
@@ -107,7 +107,7 @@ select {
 
 @media (max-width: 768px){
 	select {
-     appearance:         none;
+     appearance: none;
      font-size: 1.2em;
    }
 

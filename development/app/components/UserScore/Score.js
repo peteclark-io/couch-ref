@@ -9,26 +9,32 @@ import styles from './styles.css';
 export const Score = React.createClass({
 
    propTypes: {
-      score: React.PropTypes.number
+      rank: React.PropTypes.number,
+      movement: React.PropTypes.movement
    },
 
    render: function() {
       return (
          <div className={classNames(styles.container, styles.centred)}>
-            <h1 className={styles.heading}>Your Score!</h1>
-            <h2 className={styles.score}>{this.props.score.toFixed(0)}</h2>
+            <h1 className={styles.heading}>Your Ranking!</h1>
+            <h2 className={styles.score}>#{this.props.rank ? this.props.rank : 'Unranked!'}</h2>
          </div>
       );
    }
 });
 
-const getScore = (state = {user: {}}) => {
-   return state.user.score ? state.user.score : 2000;
+const getRank = (state = {user: {}}) => {
+   return state.user.rank;
+};
+
+const getMovement = (state = {user: {}}) => {
+   return state.user.movement;
 };
 
 const mapStateToProps = (state) => {
    return {
-      score: getScore(state)
+      rank: getRank(state),
+      movement: getMovement(state)
    }
 };
 

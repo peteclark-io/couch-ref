@@ -4,6 +4,7 @@ const admin = require('firebase-admin');
 const co = require('co');
 const _ = require('lodash');
 const magic = require('./magic');
+const references = require('./references');
 const exec = require('child_process').exec;
 
 const getFromDb = (db) => {
@@ -23,7 +24,6 @@ const generateScore = (vote, verdict) => {
       var res = vote ? '' : '=false';
       var cmd = 'scores --confidence "' + verdict.confidence + '" --result "' + verdict.percentage + '" --vote' + res
       exec(cmd, function(error, stdout, stderr) {
-         console.log(cmd);
          var score = JSON.parse(stdout).score;
          resolve(score);
       });
@@ -31,36 +31,22 @@ const generateScore = (vote, verdict) => {
 };
 
 const saveScore = (db, quuid, user) => {
-   db.ref('/v0/live-questions/' + quuid).transaction((q) => {
+   db.ref(references.questions + '/' + quuid).transaction((q) => {
       if (!q){
          return q;
       }
 
       q.scored = true;
+      /*db.ref(references.archiveQuestions + '/' + quuid).transaction((archive) => {
+         if (!archive){
+            return Object.assign({}, q);
+         }
+         return Object.assign({}, archive, q);
+      });*/
       return q;
    });
 
-   db.ref('/v0/users/' + user.uid).transaction((u) => {
-      if (!u) {
-         return u;
-      }
-
-      var score = u.score;
-      if (!score){
-         score = 2000;
-      }
-
-      if (!u.answered){
-         u.answered = 0;
-      }
-
-      score = score + user.score;
-      u.score = score;
-      u.answered = u.answered + 1;
-      return u;
-   });
-
-   db.ref('/v0/user-answers/' + user.uid + '/' + quuid).transaction((u) => {
+   db.ref(references.answers + '/' + user.uid + '/' + quuid).transaction((u) => {
       if (!u) {
          return u;
       }
@@ -77,12 +63,12 @@ exports.handler = (argv) => {
       credential: admin.credential.cert('./couchref-9962e-firebase-adminsdk.json'),
       databaseURL: "https://couchref-9962e.firebaseio.com"
    });
-   
+
    //admin.database.enableLogging(true);
    var db = admin.database();
 
    co(function *(){
-      var matches = yield getFromDb(db.ref('/v0/live-matches/'));
+      var matches = yield getFromDb(db.ref(references.matches));
       var readyToScore = Object.keys(matches).map((uuid) => {
          return matches[uuid];
       }).filter((match) => {return match.full_time;});
@@ -91,13 +77,13 @@ exports.handler = (argv) => {
          return match.questions.map((q) => {return q.id;});
       }));
 
-      var usersDb = yield getFromDb(db.ref('/v0/users'));
-      var usersVotes = yield getFromDb(db.ref('/v0/user-answers'));
+      var usersDb = yield getFromDb(db.ref(references.users));
+      var usersVotes = yield getFromDb(db.ref(references.answers));
 
       var uidsForVoters = Object.keys(usersVotes);
 
       for (var i = 0 ; i < questionUuids.length ; i++){
-         var questionDb = db.ref('/v0/live-questions/' + questionUuids[i]);
+         var questionDb = db.ref(references.questions + '/' + questionUuids[i]);
          var question = yield getFromDb(questionDb);
 
          if (!question || !question.decision || question.decision.trim() === '' || question.scored){
@@ -105,7 +91,7 @@ exports.handler = (argv) => {
             continue;
          }
 
-         var stats = yield getFromDb(db.ref('/v0/live-statistics/' + questionUuids[i]));
+         var stats = yield getFromDb(db.ref(references.statistics + '/' + questionUuids[i]));
          var verdict = magic.verdict(getMatch(question.match, readyToScore), stats);
 
          var users = uidsForVoters.map((uid) => {

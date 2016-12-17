@@ -27,7 +27,9 @@ export default function reducer(state = {}, action){
       case ADD_REMOTE_FIELDS:
       return Object.assign({}, state, {
          answered: action.user.answered,
-         score: action.user.score
+         score: action.user.score,
+         rank: action.user.rank,
+         movement: action.user.movement
       })
 
       case SELECT_CLUB:

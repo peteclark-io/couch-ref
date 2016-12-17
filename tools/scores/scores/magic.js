@@ -9,6 +9,7 @@ const basicVerdict = (match, results) => {
     return undefined;
   }
 
+  var perc = producePercentage(results.simple);
   return Object.assign({
     verdict: decideVerdict(perc.percentage),
     type: BASIC,

@@ -19,7 +19,6 @@ export const Ranking = React.createClass({
 
       return (
          <div className={classNames(styles.container, styles.ranking)}>
-            <h1 className={styles.subheading}>Your Ranking</h1>
             <h1 className={styles.heading}>{career}</h1>
          </div>
       );

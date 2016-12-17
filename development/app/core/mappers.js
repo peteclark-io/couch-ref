@@ -53,7 +53,9 @@ export const createReferee = (value) => {
 export const createUser = (value) => {
    return {
       score: value.score ? value.score : 2000,
-      answered: value.answered ? value.answered : 0
+      answered: value.answered ? value.answered : 0,
+      rank: value.rank ? value.rank : undefined,
+      movement: value.movement ? value.movement : 0
    };
 }
 
