@@ -18,15 +18,16 @@ export const RefereeRating = React.createClass({
    },
 
    render: function() {
-      if (!this.props.match || !this.props.referee){
+      if (!this.props.match || !this.props.referee || !this.props.referee.scores || !this.props.referee.scores[this.props.match.id]){
          return null;
       }
+
 
       var overall = this.props.referee.scores[this.props.match.id];
       if (!overall) {
          return null;
       }
-      
+
       console.log('Ref score for the match', overall)
       var title = matchScore(overall);
 
