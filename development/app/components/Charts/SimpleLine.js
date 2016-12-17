@@ -28,7 +28,7 @@ const SimpleLine = React.createClass({
       if (!this.props.data) {
          return null;
       }
-      
+
       if (_.sumBy(this.props.data, 'value') === 0){
         return null;
       }
@@ -58,7 +58,7 @@ const SimpleLine = React.createClass({
       bars.append('rect')
          .attr('width', (d) => { return xAxis(d.value); })
          .attr('height', 3)
-         .attr('fill', (d, i) => { return i % 2 === 0 ? 'rgba(60,90,150,1)' : '#51A8B5'});
+         .attr('fill', (d, i) => { return i % 2 === 0 ? '#51A8B5' : 'rgba(60,90,150,1)'});
 
       return (
          <Measure onMeasure={(dimensions) => {
