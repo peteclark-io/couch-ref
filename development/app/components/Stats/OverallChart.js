@@ -28,8 +28,8 @@ const OverallChart = React.createClass({
             {
                data: [this.props.yes, this.props.no],
                backgroundColor: [
-                  'rgba(60,90,150,1)',
-                  '#66d3e4'
+                  '#66d3e4',
+                  'rgba(60,90,150,1)'
                ]
             }
          ]

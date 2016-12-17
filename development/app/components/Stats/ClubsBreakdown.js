@@ -37,11 +37,11 @@ const ClubsBreakdownChart = React.createClass({
          datasets: [
             {
                data: yep,
-               backgroundColor: 'rgba(60,90,150,1)'
+               backgroundColor: '#66d3e4'
             },
             {
                data: nope,
-               backgroundColor: '#66d3e4'
+               backgroundColor: 'rgba(60,90,150,1)'
             }
          ]
       };
