@@ -10,7 +10,7 @@ export const Score = React.createClass({
 
    propTypes: {
       rank: React.PropTypes.number,
-      movement: React.PropTypes.movement
+      movement: React.PropTypes.number
    },
 
    render: function() {

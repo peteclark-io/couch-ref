@@ -3,11 +3,27 @@ exports[`test Renders score ok. 1`] = `
   className="container centred">
   <h1
     className="heading">
-    Your Score!
+    Your Ranking!
   </h1>
   <h2
     className="score">
-    4000
+    #
+    2
+  </h2>
+</div>
+`;
+
+exports[`test Renders unrated if no ranking. 1`] = `
+<div
+  className="container centred">
+  <h1
+    className="heading">
+    Your Ranking!
+  </h1>
+  <h2
+    className="score">
+    #
+    Unranked!
   </h2>
 </div>
 `;

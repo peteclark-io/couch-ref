@@ -7,7 +7,15 @@ import {mount, shallow} from 'enzyme';
 
 it('Renders score ok.', () => {
    const rendered = renderer.create(
-      <Score score={4000.1123} />
+      <Score rank={2} movement={1} />
+   );
+
+   expect(rendered.toJSON()).toMatchSnapshot();
+});
+
+it('Renders unrated if no ranking.', () => {
+   const rendered = renderer.create(
+      <Score />
    );
 
    expect(rendered.toJSON()).toMatchSnapshot();

@@ -2,10 +2,6 @@ exports[`test Renders rankings ok. 1`] = `
 <div
   className="container ranking">
   <h1
-    className="subheading">
-    Your Ranking
-  </h1>
-  <h1
     className="heading">
     Excellent Referee
   </h1>
