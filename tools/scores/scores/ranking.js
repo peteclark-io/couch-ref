@@ -42,7 +42,7 @@ exports.handler = (argv) => {
                return u;
             }
 
-            u.movement = u.rank ? rank - u.rank : rank;
+            u.movement = u.rank ? u.rank - rank : rank;
             u.rank = rank;
             return u;
          });
