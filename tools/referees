@@ -1,0 +1,30 @@
+#!/bin/bash
+
+. ./.secret
+
+referee=$1
+match=$2
+
+if [ -z $referee ]; then
+   firebase --project ${project} --token ${token} database:get /v0/referees | jq '[. | to_entries[] | {"id": .key, "name": .value.name.display}]'
+   echo "Enter Referee ID (valid IDs above):"
+   read referee
+fi
+
+if [ -z $match ]; then
+   firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
+   echo "Enter Match ID (valid IDs above):"
+   read match
+fi
+
+echo "{\"referee\": \"${referee}\", \"match\":\"${match}\"}" | jq
+
+echo "This ok? (hit enter if yeah, hit ctrl-c if nah)"
+read
+
+echo "\"${referee}\"" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/referee
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Failed to save ref! Please try again (soz)."
+  exit 1
+fi
