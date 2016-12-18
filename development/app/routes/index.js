@@ -12,6 +12,10 @@ const rootRoute = {
               component: require('../pages/sections/MatchPage').default
             },
             {
+              path: '/ratings/:matchId',
+              component: require('../pages/sections/MatchRatingPage').default
+            },
+            {
               path: '/question/:questionId',
               component: require('../pages/sections/StatsPage').default
             },

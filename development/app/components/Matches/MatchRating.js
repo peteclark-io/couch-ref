@@ -37,13 +37,14 @@ export const MatchRating = React.createClass({
 
       var overall = _.sum(scores);
       var normalized = overall / scores.length;
+      var done = normalized * 10000;
       console.log('Score for the match', overall, scores, normalized);
       var title = matchScore(normalized);
 
       return (
          <div className={styles['match-rating']}>
             <h3>Your Match Rating</h3>
-            <h2>{title}</h2>
+            <h2>{done.toFixed(0)}</h2>
          </div>
       );
    }
