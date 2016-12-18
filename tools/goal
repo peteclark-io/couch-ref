@@ -1,0 +1,37 @@
+#!/bin/bash
+
+. ./.secret
+
+match=$1
+team=$2
+
+if [ -z $match ]; then
+   firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
+   echo "Enter Match ID (valid IDs above):"
+   read match
+fi
+
+if [ -z $team ]; then
+   echo "Home or away team? Type ['H' or 'A']"
+   read team
+fi
+
+if [ "$team" == "H" ]; then
+   team="home_score"
+else
+   team="away_score"
+fi
+
+score=$(firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/${team})
+score=$(( $score + 1 ))
+
+echo "New Score: $score"
+echo "This ok? (hit enter if yeah, hit ctrl-c if nah)"
+read
+
+echo ${score} | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/${team}
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Failed to save question! Please try again (soz)."
+  exit 1
+fi

@@ -89,4 +89,5 @@ fi
 
 echo ${stat_json} | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-statistics/${uuid}
 
+echo "true" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/live 
 firebase --project ${project} --token ${token} database:get /v0/live-matches/${match}/questions | jq ". |= .+ $match_json" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/questions
