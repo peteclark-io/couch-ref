@@ -1,0 +1,18 @@
+#!/bin/bash
+
+. ./.secret
+
+match=$1
+
+if [ -z $match ]; then
+   firebase --project ${project} --token ${token} database:get /v0/live-matches | jq '[. | to_entries[] | {"id": .key, "home": .value.home, "away": .value.away}]'
+   echo "Enter Match ID (valid IDs above):"
+   read match
+fi
+
+echo "true" | firebase --non-interactive --project ${project} --token ${token} database:set -y /v0/live-matches/${match}/full_time
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Failed to save question! Please try again (soz)."
+  exit 1
+fi
