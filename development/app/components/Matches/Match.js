@@ -10,6 +10,7 @@ import styles from './styles.css';
 import QuestionList from '../Questions/QuestionList';
 import MatchRating from './MatchRating';
 import RefereeRating from './RefereeRating';
+import Referee from './Referee';
 
 const Match = React.createClass({
 
@@ -51,6 +52,7 @@ const Match = React.createClass({
             <div className={bootstrap.row}>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'])}>
                   <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
+                  <Referee id={this.props.match.id} />
                </div>
                {/*
                   <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-4'])}>
