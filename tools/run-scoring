@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd scores
+node index.js users
+node index.js referees
+node index.js total
+node index.js ranking
