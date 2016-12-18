@@ -141,7 +141,7 @@ export const saveClub = (user, club) => {
 
    users.transaction((u) => {
       if (!u){
-         return u;
+         u = {};
       }
       u.club = club.name;
       return u;
@@ -154,7 +154,7 @@ export const saveDateOfBirth = (user, birthday) => {
 
    users.transaction((u) => {
       if (!u){
-         return u;
+         u = {};
       }
       u.birthday = birthday.toISOString();
       return u;
@@ -167,7 +167,7 @@ export const saveSex = (user, sex) => {
 
    users.transaction((u) => {
       if (!u){
-         return u;
+         u = {};
       }
       u.sex = sex;
       return u;
@@ -180,7 +180,7 @@ export const saveLocation = (user, location) => {
 
    users.transaction((u) => {
       if (!u){
-         return u;
+         u = {};
       }
       u.location = location;
       return u;
