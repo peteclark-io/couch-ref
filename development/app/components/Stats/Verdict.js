@@ -42,9 +42,8 @@ const Verdict = React.createClass({
          <div className={bootstrap.row}>
             <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>
                <div className={styles.verdict}>
-                  {/**<h3 className={styles['minor-header']}></h3>*/}
                   <h1>{v.verdict}</h1>
-                  <h4 className={styles.confidence}>Confidence Score: <span className={styles['confidence-score']}>{v.confidence}</span></h4>
+                  {/*<h4 className={styles.confidence}>Confidence Score: <span className={styles['confidence-score']}>{v.confidence}</span></h4>*/}
                </div>
             </div>
          </div>

@@ -13,7 +13,7 @@ export const RecentMatches = React.createClass({
    },
 
    render: function() {
-
+      
       return (
          <div className={classNames(styles.container, styles.centred)}>
             <h1 className={styles.heading}>Your Score!</h1>

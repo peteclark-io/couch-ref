@@ -8,15 +8,14 @@ import classNames from 'classnames';
 
 import styles from './styles.css';
 import QuestionList from '../Questions/QuestionList';
-import MatchRating from './MatchRating';
-import RefereeRating from './RefereeRating';
-import Referee from './Referee';
+import ScoresReady from './ScoresReady';
 import MatchHeader from './MatchHeader';
 
 const Match = React.createClass({
 
    propTypes: {
-      match: React.PropTypes.object
+      match: React.PropTypes.object,
+      scoresReady: React.PropTypes.bool
    },
 
    render: function() {
@@ -31,7 +30,7 @@ const Match = React.createClass({
       return (
          <div>
             <MatchHeader match={this.props.match} />
-            {/*<RefereeRating id={this.props.match.id} />*/}
+            <ScoresReady match={this.props.match} ready={this.props.scoresReady} />
             <QuestionList questions={this.props.match.questions} />
          </div>
       );

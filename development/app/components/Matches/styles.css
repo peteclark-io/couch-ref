@@ -99,6 +99,16 @@
    color: white;
 }
 
+.scores-ready {
+   font-family: var(--font-secondary);
+   margin-bottom: 1.4em;
+   font-size: 1.2rem;
+}
+
+.scores-ready a {
+   color: var(--brand-no);
+}
+
 @media (min-width: 768px){
    .teams-link {
       margin-top: 20px;
