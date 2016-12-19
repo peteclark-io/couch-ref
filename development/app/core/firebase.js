@@ -16,6 +16,8 @@ import {authenticated} from '../ducks/authenticated';
 import {addClubs} from '../ducks/clubs';
 import {inspectFirebase} from '../ducks/user';
 
+import {saveUserData} from './db-actions';
+
 import references from './references';
 
 import Users from './users';
@@ -87,6 +89,8 @@ const data = (store) => {
             store.dispatch(authenticated());
 
             var database = firebase.database();
+
+            saveUserData(user);
 
             var userUid = database.ref(references.users + '/' + user.uid);
             var clubs = database.ref(references.clubs);

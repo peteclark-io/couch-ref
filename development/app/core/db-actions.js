@@ -135,54 +135,30 @@ const generateAgeBreakdown = (user, vote, breakdown) => {
    vote ? breakdown.age[group].yes++ : breakdown.age[group].no++;
 };
 
+export const saveUserData = (user) => {
+   var database = firebase.database();
+   database.ref(references.users + '/' + user.uid + '/full_name').set(user.displayName);
+   database.ref(references.users + '/' + user.uid + '/uid').set(user.uid);
+};
+
 export const saveClub = (user, club) => {
    var database = firebase.database();
-   var users = database.ref(references.users + '/' + user.remote.uid);
-
-   users.transaction((u) => {
-      if (!u){
-         u = {};
-      }
-      u.club = club.name;
-      return u;
-   });
+   database.ref(references.users + '/' + user.remote.uid + '/club').set(club.name);
 };
 
 export const saveDateOfBirth = (user, birthday) => {
    var database = firebase.database();
    var users = database.ref(references.users + '/' + user.remote.uid);
-
-   users.transaction((u) => {
-      if (!u){
-         u = {};
-      }
-      u.birthday = birthday.toISOString();
-      return u;
-   });
+   database.ref(references.users + '/' + user.remote.uid + '/birthday').set(birthday.toISOString());
 };
 
 export const saveSex = (user, sex) => {
    var database = firebase.database();
    var users = database.ref(references.users + '/' + user.remote.uid);
-
-   users.transaction((u) => {
-      if (!u){
-         u = {};
-      }
-      u.sex = sex;
-      return u;
-   });
+   database.ref(references.users + '/' + user.remote.uid + '/sex').set(sex);
 };
 
 export const saveLocation = (user, location) => {
    var database = firebase.database();
-   var users = database.ref(references.users + '/' + user.remote.uid);
-
-   users.transaction((u) => {
-      if (!u){
-         u = {};
-      }
-      u.location = location;
-      return u;
-   });
+   database.ref(references.users + '/' + user.remote.uid + '/location').set(location);
 };
