@@ -1,0 +1,78 @@
+@import "../../css/branding.css";
+
+.question-scores {
+	font-family: var(--font-questions);
+}
+
+.question-scores .header {
+	font-size: 2.6rem;
+}
+
+.question-scores h1, h2, h3, h4, h5, h6 {
+	margin-top: 0.6rem;
+	margin-bottom: 1rem;
+}
+
+.question {
+	padding-bottom: 8px;
+	border-bottom: 1px solid whitesmoke;
+}
+
+.question {
+	margin-top: 24px;
+}
+
+.question h1 {
+	font-size: 2.2rem;
+}
+
+.question h2 {
+	font-size: 2rem;
+}
+
+.question h3 {
+	font-size: 1.6rem;
+}
+
+.question h4 {
+	font-size: 1.6rem;
+}
+
+.answer h4 {
+   font-size: 1rem;
+}
+
+.answer span {
+   color: var(--brand-danger);
+   text-transform: uppercase;
+}
+
+.score {
+   text-align: center;
+   padding: 30% 0;
+   color: white;
+   border-radius: 4px;
+   margin: 6px 0px;
+}
+
+.green {
+   background-color: var(--brand-primary);
+}
+
+.red {
+   background-color: var(--brand-danger);
+}
+
+.link {
+	font-size: 1.2rem;
+}
+
+@media (max-width: 768px){
+	.question {
+		margin-top: 12px;
+	}
+
+	.question h1, h2, h3 {
+		margin: 6px 0px;
+	}
+}
