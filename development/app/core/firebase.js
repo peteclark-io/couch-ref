@@ -36,6 +36,15 @@ const openDatabase = (store, db, mapper, update, add) => {
    db.on('child_changed', dispatchUpdate);
 };
 
+const admin = (user) => {
+   /*if (user.uid === 'statcxdCyrM1470IAcy3KiBqXI43'){
+      console.log('Admin user connected to CouchRef', user.uid);
+      user = {uid: 'QcSMqm71JAdan9CFSy1rrGiuW7y1', displayName: 'Omar Kassam', email: 'omar.kassam'}
+      console.log('Admin registered as', user);
+   }*/
+   return user;
+};
+
 const data = (store) => {
    return {
       init: function(router, path){
@@ -53,7 +62,7 @@ const data = (store) => {
 
          firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-               couchRef(user);
+               couchRef(admin(user));
             } else {
                firebase.auth().getRedirectResult().then((auth) => {
                   if (!auth.user){
@@ -62,7 +71,7 @@ const data = (store) => {
                      return;
                   }
 
-                  couchRef(auth.user);
+                  couchRef(admin(auth.user));
                }).catch(function(error) {
                   var errorCode = error.code;
                   var errorMessage = error.message;
@@ -82,7 +91,8 @@ const data = (store) => {
             store.dispatch(inspectFirebase({
                remote: {
                   uid: user.uid,
-                  fullName: user.displayName
+                  fullName: user.displayName,
+                  email: user.email
                }
             }));
 

@@ -57,6 +57,6 @@ it('Should generate the right score summary.', () => {
       <MatchRating match={match} user={user} />
    );
 
-   expect(rendered.find('.match-rating h2').text()).toEqual('300');
+   expect(rendered.find('.match-rating h2').text()).toEqual('+300');
    expect(rendered.html()).toMatchSnapshot();
 });

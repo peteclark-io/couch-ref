@@ -42,7 +42,7 @@ export const MatchRating = React.createClass({
       return (
          <div className={styles['match-rating']}>
             <h3>Overall Match Rating</h3>
-            <h2>{overall.toFixed(0)}</h2>
+            <h2>{overall > 0 ? '+' : null}{overall.toFixed(0)}</h2>
          </div>
       );
    }

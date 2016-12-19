@@ -91,7 +91,10 @@ export const Question = React.createClass({
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
                   {
                      !this.props.votedOn && this.props.question.scored ?
-                     <h4 className={styles.closed}>Voting closed!</h4>
+                     <div>
+                        <h4 className={styles.closed}>Voting closed!</h4>
+                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
+                     </div>
                      : null
                   }
                   {

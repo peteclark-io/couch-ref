@@ -9,13 +9,13 @@ const getLiveMatch = (state = {matches: []}, id) => {
    return filtered.length === 0 ? undefined : filtered[0];
 };
 
-const getScoresReady = (match, state = {votes: {}}) => {
+const getScoresReady = (match, state = {user: {votes: {}}}) => {
    if (!match) {
       return false;
    }
-   
+
    var scores = match.questions.map((q) => {
-      if (!state.user.votes[q.id]){
+      if (!state.user.votes || !state.user.votes[q.id]){
          return undefined;
       }
 

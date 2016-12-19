@@ -30,22 +30,11 @@ const generateScore = (vote, verdict) => {
    });
 };
 
+const setToScored = (db, quuid) => {
+   db.ref(references.questions + '/' + quuid + '/scored').set(true);
+};
+
 const saveScore = (db, quuid, user) => {
-   db.ref(references.questions + '/' + quuid).transaction((q) => {
-      if (!q){
-         return q;
-      }
-
-      q.scored = true;
-      /*db.ref(references.archiveQuestions + '/' + quuid).transaction((archive) => {
-         if (!archive){
-            return Object.assign({}, q);
-         }
-         return Object.assign({}, archive, q);
-      });*/
-      return q;
-   });
-
    db.ref(references.answers + '/' + user.uid + '/' + quuid).transaction((u) => {
       if (!u) {
          return u;
@@ -86,6 +75,8 @@ exports.handler = (argv) => {
          var questionDb = db.ref(references.questions + '/' + questionUuids[i]);
          var question = yield getFromDb(questionDb);
 
+         setToScored(db, question.id);
+         
          if (!question || !question.decision || question.decision.trim() === '' || question.scored){
             console.error('Skipping ' + questionUuids[i], question);
             continue;
