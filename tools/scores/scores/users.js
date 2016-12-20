@@ -30,19 +30,13 @@ const generateScore = (vote, verdict) => {
    });
 };
 
-const setToScored = (db, quuid) => {
-   db.ref(references.questions + '/' + quuid + '/scored').set(true);
+const setToProcessed = (db, quuid) => {
+   db.ref(references.questions + '/' + quuid + '/voting_closed').set(true);
 };
 
 const saveScore = (db, quuid, user) => {
-   db.ref(references.answers + '/' + user.uid + '/' + quuid).transaction((u) => {
-      if (!u) {
-         return u;
-      }
-
-      u.score = user.score;
-      return u;
-   });
+   db.ref(references.questions + '/' + quuid + '/scored').set(true);
+   db.ref(references.answers + '/' + user.uid + '/' + quuid + '/score').set(user.score);
 };
 
 exports.command = 'users';
@@ -75,8 +69,8 @@ exports.handler = (argv) => {
          var questionDb = db.ref(references.questions + '/' + questionUuids[i]);
          var question = yield getFromDb(questionDb);
 
-         setToScored(db, question.id);
-         
+         setToProcessed(db, question.id);
+
          if (!question || !question.decision || question.decision.trim() === '' || question.scored){
             console.error('Skipping ' + questionUuids[i], question);
             continue;
@@ -108,8 +102,7 @@ exports.handler = (argv) => {
 
          users.map((user) => {
             if (!user) {
-               console.log(user);
-               return
+               return;
             }
             saveScore(db, questionUuids[i], user);
          });

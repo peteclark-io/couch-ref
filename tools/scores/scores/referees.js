@@ -31,14 +31,7 @@ const generateScore = (vote, verdict) => {
 };
 
 const saveScoreForQuestion = (db, question, score) => {
-   db.ref('/v0/live-questions/' + question).transaction((q) => {
-      if (!q) {
-         return q;
-      }
-
-      q.referee_score = score;
-      return q;
-   });
+   db.ref('/v0/live-questions/' + question + '/referee_score').set(score);
 };
 
 const saveRefereeScores = (db, scores) => {

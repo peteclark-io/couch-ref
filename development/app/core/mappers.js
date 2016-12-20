@@ -34,7 +34,8 @@ export const createQuestion = (value) => {
       controversial: value.controversial,
       match: value.match,
       scored: value.scored,
-      refereeScore: value.referee_score
+      refereeScore: value.referee_score,
+      votingClosed: value.voting_closed
    };
 }
 

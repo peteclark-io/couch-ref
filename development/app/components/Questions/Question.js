@@ -32,7 +32,8 @@ export const Question = React.createClass({
          time: React.PropTypes.string,
          description: React.PropTypes.string,
          decision: React.PropTypes.string,
-         scored: React.PropTypes.bool
+         scored: React.PropTypes.bool,
+         votingClosed: React.PropTypes.bool
       }),
       votedOn: React.PropTypes.bool,
       vote: React.PropTypes.func,
@@ -46,17 +47,6 @@ export const Question = React.createClass({
                <ThreeBounce />
             </div>
          );
-      }
-
-      var answer = undefined;
-      var decision = 'Too close to call!';
-
-      if (this.props.user && this.props.user.votes && this.props.user.votes[this.props.question.id]){
-         answer = this.props.user.votes[this.props.question.id];
-      }
-
-      if(this.props.votedOn && answer && answer.score !== 0){
-         decision = questionScore(answer.score);
       }
 
       return (
@@ -78,27 +68,19 @@ export const Question = React.createClass({
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-10'])}>
                   <h3>{this.props.question.question}</h3>
                   {
-                     this.props.question.decision && this.props.question.decision !== "" ?
+                     this.props.question.decision && this.props.question.decision !== '' ?
                      <h4>REFEREE&#39;S CALL: <span className={styles.decision}>{this.props.question.decision}</span></h4>
                      : null
                   }
                   {
-                     this.props.question.description && this.props.question.description !== "" ?
+                     this.props.question.description && this.props.question.description !== '' ?
                      <h4><small>{this.props.question.description}</small></h4>
                      : null
                   }
                </div>
                <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-offset-2'], bootstrap['col-sm-10'])}>
                   {
-                     !this.props.votedOn && this.props.question.scored ?
-                     <div>
-                        <h4 className={styles.closed}>Voting closed!</h4>
-                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
-                     </div>
-                     : null
-                  }
-                  {
-                     !this.props.votedOn && !this.props.question.scored ?
+                     !this.props.votedOn && !this.props.question.votingClosed ?
                      <div>
                         <div className={styles.spacer}></div>
                         <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}
@@ -106,24 +88,12 @@ export const Question = React.createClass({
                         <a onClick={() => {this.props.vote(this.props.user, this.props.question, false)}}
                            className={classNames(buttons['action-button'], buttons.no, buttons.animate, styles.button)}>No</a>
                      </div>
-                     : null
-                  }
-                  {
-                     this.props.votedOn && !this.props.question.scored ?
+                     :
                      <div>
                         <ResultsIndicator id={this.props.question.id} />
                         <div className={styles.spacer}></div>
                         <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
-                     </div> : null
-                  }
-                  {
-                     this.props.votedOn && this.props.question.scored ?
-                     <div>
-                        <ResultsIndicator id={this.props.question.id} />
-                        <div className={styles.spacer}></div>
-                        <h4><span className={styles['score-title']}>Your Score!</span><span className={styles['score-decision']}>{decision}</span></h4>
-                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
-                     </div> : null
+                     </div>
                   }
                </div>
             </div>
