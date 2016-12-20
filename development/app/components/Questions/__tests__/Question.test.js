@@ -13,41 +13,42 @@ it('Show loading screen when no question.', () => {
 });
 
 it('Displays vanilla question.', () => {
-   const question = {id: 'id', question: 'Is this a good test?', scored: false, time: 'Build Up'}
-   const rendered = mount(
+   const question = {id: 'id', question: 'Is this a good test?', time: 'Build Up'}
+   const rendered = renderer.create(
       <Question question={question} />
    );
-   expect(rendered.html()).toMatchSnapshot();
+   expect(rendered.toJSON()).toMatchSnapshot();
 });
 
 it('Displays controversial question.', () => {
-   const question = {id: 'id', question: 'Is this a good test?', controversial: true, scored: false, time: 'Build Up'}
-   const rendered = mount(
+   const question = {id: 'id', question: 'Is this a good test?', controversial: true, time: 'Build Up'}
+   const rendered = renderer.create(
       <Question question={question} />
    );
-   expect(rendered.html()).toMatchSnapshot();
+   expect(rendered.toJSON()).toMatchSnapshot();
 });
 
 it('Displays question with referee decision.', () => {
-   const question = {id: 'id', question: 'Is this a good test?', controversial: false, decision: 'Yes', scored: false, time: 'Build Up'}
-   const rendered = mount(
+   const question = {id: 'id', question: 'Is this a good test?', controversial: false, votingClosed: false, decision: 'Yes', time: 'Build Up'}
+   const rendered = renderer.create(
       <Question question={question} />
    );
-   expect(rendered.html()).toMatchSnapshot();
+   expect(rendered.toJSON()).toMatchSnapshot();
 });
 
 it('Displays question with description.', () => {
-   const question = {id: 'id', question: 'Is this a good test?', controversial: true, description: 'I\'m really not sure anymore.', scored: false, time: 'Build Up'}
-   const rendered = mount(
+   const question = {id: 'id', question: 'Is this a good test?', controversial: true, description: 'I\'m really not sure anymore.', votingClosed: false, scored: false, time: 'Build Up'}
+   const rendered = renderer.create(
       <Question question={question} />
    );
-   expect(rendered.html()).toMatchSnapshot();
+   expect(rendered.toJSON()).toMatchSnapshot();
 });
 
-it('Displays voting closed.', () => {
-   const question = {id: 'id', question: 'Is this a good test?', controversial: true, description: 'I\'m really not sure anymore.', scored: true, time: 'Build Up'}
+/*it('Should not show buttons, as voting is closed.', () => {
+   const question = {id: 'id', question: 'Is this a good test?', votingClosed: true, controversial: false, description: 'I\'m really not sure anymore.', scored: false, time: 'Build Up'}
    const rendered = mount(
-      <Question question={question} votedOn={false} />
+      <Question question={question} votedOn={false} />,
+      {context: {store: {}}}
    );
-   expect(rendered.html()).toMatchSnapshot();
-});
+   expect(rendered.toJSON()).toMatchSnapshot();
+});*/

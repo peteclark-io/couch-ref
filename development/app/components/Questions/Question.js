@@ -20,10 +20,6 @@ import buttons from './buttons.css';
 
 export const Question = React.createClass({
 
-   contextTypes: {
-      user: React.PropTypes.object
-   },
-
    propTypes: {
       question: React.PropTypes.shape({
          id: React.PropTypes.string,
