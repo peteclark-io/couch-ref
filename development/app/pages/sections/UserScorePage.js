@@ -47,6 +47,10 @@ const getRecentMatches = (state = {user: {}, questions: {}, matches: []}) => {
       return matchState[q.match] ? matchState[q.match] : undefined;
    }).filter(m => m);
 
+   if(matches.length === 0){
+      return undefined;
+   }
+
    return _.keyBy(_.uniqBy(matches, 'id'), 'id');
 };
 
