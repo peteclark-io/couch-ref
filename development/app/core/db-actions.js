@@ -139,6 +139,7 @@ export const saveUserData = (user) => {
    var database = firebase.database();
    database.ref(references.users + '/' + user.uid + '/full_name').set(user.displayName);
    database.ref(references.users + '/' + user.uid + '/uid').set(user.uid);
+   database.ref(references.users + '/' + user.uid + '/email').set(user.email);
 };
 
 export const saveClub = (user, club) => {
