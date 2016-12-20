@@ -39,7 +39,7 @@ exports.handler = (argv) => {
       }
 
       matches = _.values(usersDb).map(user => {
-         return regex.test(user.club) ? user : undefined;
+         return regex.test(user.email) ? user : undefined;
       }).filter(user => user).map(user => {
          return {uid: user.uid, email: user.email, displayName: user.full_name};
       });
