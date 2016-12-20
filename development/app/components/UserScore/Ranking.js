@@ -1,12 +1,11 @@
 'use strict'
 
 import React from 'react';
-import {connect} from 'react-redux'
 import classNames from 'classnames';
 
 import styles from './styles.css';
 
-export const Ranking = React.createClass({
+const Ranking = React.createClass({
 
    propTypes: {
       rank: React.PropTypes.number,
@@ -15,31 +14,12 @@ export const Ranking = React.createClass({
 
    render: function() {
       return (
-         <div className={classNames(styles.container, styles.centred)}>
+         <div className={classNames(styles['overall-ranking'], styles.centred)}>
             <h1 className={styles.heading}>Your Ranking!</h1>
-            <h2 className={styles.score}>#{this.props.rank ? this.props.rank : 'Unranked!'}</h2>
+            <h2 className={styles.rank}>#{this.props.rank ? this.props.rank : 'Unranked'}!</h2>
          </div>
       );
    }
 });
 
-const getRank = (state = {user: {}}) => {
-   return state.user.rank;
-};
-
-const getMovement = (state = {user: {}}) => {
-   return state.user.movement;
-};
-
-const mapStateToProps = (state) => {
-   return {
-      rank: getRank(state),
-      movement: getMovement(state)
-   }
-};
-
-const LiveRanking = connect(
-   mapStateToProps
-)(Ranking);
-
-export default LiveRanking;
+export default Ranking;

@@ -1,6 +1,6 @@
 @import "../../css/branding.css";
 
-.container {
+.overall-ranking {
 	font-family: var(--font-questions);
 }
 
@@ -8,14 +8,20 @@
    text-align: center;
 }
 
-.heading {
+.overall-ranking .heading {
    .margin-top: 20px;
    font-size: 2.6rem;
 }
 
-.score {
+.overall-ranking .rank {
    font-size: 8rem;
    color: var(--brand-no);
+}
+
+.answered {
+   font-family: var(--font-questions);
+   border-bottom: 1px solid whitesmoke;
+   padding-bottom: 10px;
 }
 
 .answered .heading {
@@ -38,4 +44,50 @@
    font-size: 4rem;
    text-align: center;
    margin-bottom: 30px;
+}
+
+.recent-matches {
+   font-family: var(--font-secondary);
+}
+
+.recent-matches .heading {
+   font-size: 3rem;
+}
+
+.recent-match {
+   border-bottom: 1px solid whitesmoke;
+   padding-bottom: 10px;
+   margin-top: 18px;
+}
+
+.recent-match h2 {
+   font-size: 2.2rem;
+}
+
+.recent-match h3 {
+   font-size: 1.8rem;
+}
+
+.recent-match p {
+   font-size: 1.4rem;
+}
+
+.score {
+   text-align: center;
+   padding: 30% 0;
+   color: white;
+   border-radius: 4px;
+   margin: 6px 0px;
+}
+
+.link {
+   font-size: 1.4rem;
+}
+
+.green {
+   background-color: var(--brand-primary);
+}
+
+.red {
+   background-color: var(--brand-danger);
 }
