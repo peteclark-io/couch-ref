@@ -20,7 +20,7 @@ const QuestionsAnswered = React.createClass({
                <h2 className={styles.value}>{this.props.answered.toFixed(0)}</h2>
             </div>
             <div className={classNames(styles.container, styles.answered)}>
-               <h1 className={styles.heading}>Total Score</h1>
+               <h1 className={styles.heading}>CouchRef Score</h1>
                <h2 className={styles.value}>{this.props.score.toFixed(0)}</h2>
             </div>
          </div>
