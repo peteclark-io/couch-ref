@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Ranking} from '../Ranking';
+import Ranking from '../Ranking';
 import renderer from 'react-test-renderer';
 import {mount, shallow} from 'enzyme';
 
