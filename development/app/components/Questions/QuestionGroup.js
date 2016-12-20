@@ -34,7 +34,7 @@ const QuestionGroup = React.createClass({
                <div className={bootstrap.row}>
                   {this.props.questions.map(question => {
                      return <div className={bootstrap['col-xs-12']} key={question.id}>
-                        <Question id={question.id} />
+                        <Question question={question} />
                      </div>;
                   })}
                </div>

@@ -9,7 +9,10 @@ const config = {
    users: v + '/users',
    clubs: v + '/clubs',
    answers: v + '/user-answers',
-   referees: v + '/referees'
+   referees: v + '/referees',
+   archiveMatches: v + '/archive-matches',
+   archiveQuestions: v + '/archive-questions',
+   archiveStatistics: v + '/archive-statistics'
 };
 
 export default config;

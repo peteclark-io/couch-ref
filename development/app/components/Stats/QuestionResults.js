@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import {connect} from 'react-redux';
 
 import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -91,51 +90,4 @@ const QuestionResults = React.createClass({
    }
 });
 
-const getQuestion = (state = {questions: {}}, id) => {
-   return state.questions[id] ? state.questions[id] : {};
-};
-
-const getClubs = (state = {clubs: []}) => {
-  return state.clubs.map((c) => c.shortName);
-};
-
-const getQuestionResults = (state = {statistics: {}}, id) => {
-   return state.statistics[id] ? state.statistics[id] : {id: id, breakdown: {club: {}}, simple: {yes: 0, no: 0}};
-};
-
-const getMatch = (state = {questions: {}, matches: []}, id) => {
-   if (!state.questions || !state.questions[id]){
-      return undefined;
-   }
-
-   var question = state.questions[id];
-   if (!question.match){
-      return undefined;
-   }
-
-   var filtered = state.matches.filter((i) => {
-      return i.id === question.match;
-   });
-
-   if (filtered.length !== 1){
-      return undefined;
-   }
-
-   var match = filtered[0];
-   return {home: match.home, away: match.away}
-};
-
-const mapStateToProps = (state, ownProps) => {
-   return {
-      results: getQuestionResults(state, ownProps.id),
-      match: getMatch(state, ownProps.id),
-      question: getQuestion(state, ownProps.id),
-      clubs: getClubs(state)
-   };
-};
-
-const LiveQuestionResults = connect(
-   mapStateToProps
-)(QuestionResults);
-
-export default LiveQuestionResults;
+export default QuestionResults;

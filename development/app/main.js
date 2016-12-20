@@ -22,7 +22,7 @@ history.push('/splash'); // move to splash screen - firebase will move to main s
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router onUpdate={() => window.scrollTo(0, 0)} history={history} routes={routes} />
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={history} routes={routes(store)} />
   </Provider>,
   container
 );

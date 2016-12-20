@@ -1,15 +1,20 @@
 'use strict';
 
 import { connect } from 'react-redux';
-import Match from './Match';
 import _ from 'lodash';
+
+import {vote} from '../../ducks/user';
+import {saveVote} from '../../core/db-actions';
+import {saveVoteAsCookie} from '../../core/cookies';
+
+import Match from './Match';
 
 const getLiveMatch = (state = {matches: []}, id) => {
    var filtered = _.filter(state.matches, {id: id});
    return filtered.length === 0 ? undefined : filtered[0];
 };
 
-const getScoresReady = (match, state = {user: {votes: {}}}) => {
+const getScoresReady = (state = {user: {votes: {}}}, match) => {
    if (!match) {
       return false;
    }
@@ -26,16 +31,69 @@ const getScoresReady = (match, state = {user: {votes: {}}}) => {
    return scores.length !== 0;
 };
 
+const getQuestions = (state = {questions: {}}, match) => {
+   if (!state.questions || !match){
+      return undefined;
+   }
+
+   var reduced = match.questions.map(q => {
+      return state.questions[q.id] ? state.questions[q.id] : undefined;
+   }).filter(q => q);
+
+   return _.keyBy(reduced, 'id');
+};
+
+const getUser = (state = {user: {}}) => {
+   return state.user;
+};
+
+const getStatistics = (state = {statistics: {}}, match) => {
+   if (!state.statistics || !match){
+      return undefined;
+   }
+
+   var reduced = match.questions.map(q => {
+      return state.statistics[q.id] ? state.statistics[q.id] : undefined;
+   }).filter(q => q);
+
+   return _.keyBy(reduced, 'id');
+};
+
+const getReferee = (state = {referees: {}}, match) => {
+   if (!match){
+      return undefined;
+   }
+   
+   var ref = state.referees[match.referee];
+   return ref ? ref : undefined;
+};
+
 const mapStateToProps = (state, ownProps) => {
    var match = getLiveMatch(state, ownProps.id);
    return {
+      archive: false,
       match: match,
-      scoresReady: getScoresReady(match, state)
+      questions: getQuestions(state, match),
+      statistics: getStatistics(state, match),
+      referee: getReferee(state, match),
+      scoresReady: getScoresReady(state, match),
+      user: getUser(state)
    };
 };
 
+const mapDispatchToProps = (dispatch) => {
+   return {
+      vote: (result, question, user) => {
+         saveVote(user, question, result);
+         saveVoteAsCookie(user, question, result);
+         dispatch(vote(question, result));
+      }
+   }
+};
+
 const LiveMatch = connect(
-   mapStateToProps
+   mapStateToProps,
+   mapDispatchToProps
 )(Match);
 
 export default LiveMatch;

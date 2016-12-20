@@ -1,59 +1,71 @@
 'use strict'
 
 import React from 'react';
-import classNames from 'classnames';
 import _ from 'lodash';
+
+import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
-import styles from './styles.css';
 import Question from './Question';
-import QuestionGroup from './QuestionGroup';
+import styles from './styles.css';
 
 const QuestionList = React.createClass({
 
    propTypes: {
-      questions: React.PropTypes.arrayOf(
+      archive: React.PropTypes.bool,
+      list: React.PropTypes.arrayOf(
          React.PropTypes.shape({
             id: React.PropTypes.string,
             gid: React.PropTypes.string,
             group: React.PropTypes.string,
             asked: React.PropTypes.string,
             time: React.PropTypes.string
-         }))
-      },
+         }
+      )),
+      questions: React.PropTypes.object,
+      statistics: React.PropTypes.object,
+      user: React.PropTypes.object,
+      vote: React.PropTypes.func
+   },
 
-      render: function() {
-         var questions = _.reverse(_.sortBy(this.props.questions, ['asked']));
+   render: function() {
+      var sortedList = _.reverse(_.sortBy(this.props.list, ['asked']));
 
-         return (
-            <div className={styles['questions-list']}>
-               <h1 className={styles.header}>Live Questions</h1>
-               <div className={bootstrap.row}>
-                  {
-                     questions.length === 0 ?
-                     <div className={bootstrap['col-xs-12']}>
-                        <h4 className={styles.spacer}>No questions have been asked yet</h4>
-                     </div>
-                     : null
+      return (
+         <div className={styles['questions-list']}>
+            <h1 className={styles.header}>Live Questions</h1>
+            <div className={bootstrap.row}>
+               {
+                  sortedList.length === 0 ?
+                  <div className={bootstrap['col-xs-12']}>
+                     <h4 className={styles.spacer}>No questions have been asked yet</h4>
+                  </div>
+                  : null
+               }
+
+               {sortedList.map(question => {
+                  var full = this.props.questions[question.id];
+                  var stats = this.props.statistics[question.id];
+
+                  var votedOn = this.props.user.votes && this.props.user.votes[question.id] ? true : false;
+
+                  if (!full){
+                     return null;
                   }
 
-                  {questions.map(question => {
-                     if (question.gid){
-                        return <div className={bootstrap['col-xs-12']} key={question.gid}>
-                           <QuestionGroup
-                              gid={question.gid}
-                              time={question.time}
-                              asked={question.asked}
-                              group={question.group}
-                              questions={question.questions}
-                              />
-                        </div>;
-                     }
-                     return <div className={classNames(bootstrap['col-xs-12'], styles.question)} key={question.id}>
-                        <Question id={question.id} />
-                     </div>;
+                  return (
+                     <div className={classNames(bootstrap['col-xs-12'], styles.question)} key={full.id}>
+                        <Question
+                           archive={this.props.archive}
+                           question={full}
+                           statistic={stats}
+                           votedOn={votedOn}
+                           vote={(vote) => {
+                              this.props.vote(vote, full);
+                           }} />
+                     </div>
+                     );
                   })}
-
                </div>
             </div>
          );

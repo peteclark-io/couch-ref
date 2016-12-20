@@ -12,6 +12,7 @@ import authenticated from './authenticated';
 import clubs from './clubs';
 import referees from './referees';
 import errors from './errors';
+import archive from './archive';
 
 const rootReducer = combineReducers({
     matches: matches,
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
     user: user,
     clubs: clubs,
     referees: referees,
-    errors: errors
+    errors: errors,
+    archive: archive
 });
 
 export default rootReducer;

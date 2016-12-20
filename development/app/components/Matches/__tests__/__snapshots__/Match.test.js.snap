@@ -1,0 +1,37 @@
+exports[`test Displays match score, with no questions. 1`] = `
+<div>
+  <div
+    className="row">
+    <div
+      className="col-xs-12 col-sm-8">
+      <h2
+        className="match-header">
+        Arsenal
+         
+        1
+          -  
+        0
+         
+        West Ham
+      </h2>
+    </div>
+  </div>
+  <div
+    className="questions-list">
+    <h1
+      className="header">
+      Live Questions
+    </h1>
+    <div
+      className="row">
+      <div
+        className="col-xs-12">
+        <h4
+          className="spacer">
+          No questions have been asked yet
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+`;

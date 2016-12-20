@@ -8,19 +8,16 @@ import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import {ThreeBounce} from 'better-react-spinkit';
-import {saveVote} from '../../core/db-actions';
-import {saveVoteAsCookie} from '../../core/cookies';
-import {questionScore} from '../../core/scores';
-
-import {vote} from '../../ducks/user';
 
 import ResultsIndicator from './ResultsIndicator';
 import styles from './styles.css';
 import buttons from './buttons.css';
 
-export const Question = React.createClass({
+const Question = React.createClass({
 
    propTypes: {
+      archive: React.PropTypes.bool,
+      statistic: React.PropTypes.object,
       question: React.PropTypes.shape({
          id: React.PropTypes.string,
          question: React.PropTypes.string,
@@ -32,8 +29,7 @@ export const Question = React.createClass({
          votingClosed: React.PropTypes.bool
       }),
       votedOn: React.PropTypes.bool,
-      vote: React.PropTypes.func,
-      user: React.PropTypes.object
+      vote: React.PropTypes.func
    },
 
    render: function() {
@@ -79,16 +75,20 @@ export const Question = React.createClass({
                      !this.props.votedOn && !this.props.question.votingClosed ?
                      <div>
                         <div className={styles.spacer}></div>
-                        <a onClick={() => {this.props.vote(this.props.user, this.props.question, true)}}
-                           className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Yes</a>
-                        <a onClick={() => {this.props.vote(this.props.user, this.props.question, false)}}
-                           className={classNames(buttons['action-button'], buttons.no, buttons.animate, styles.button)}>No</a>
+                        <a className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}
+                           onClick={() => {
+                              this.props.vote(true)
+                           }}>Yes</a>
+                        <a className={classNames(buttons['action-button'], buttons.no, buttons.animate, styles.button)}
+                           onClick={() => {
+                              this.props.vote(false)
+                           }}>No</a>
                      </div>
                      :
                      <div>
-                        <ResultsIndicator id={this.props.question.id} />
+                        <ResultsIndicator statistic={this.props.statistic} />
                         <div className={styles.spacer}></div>
-                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
+                        <Link className={styles.link} to={`${this.props.archive ? '/archive' : ''}/question/${this.props.question.id}`}>Show Detailed Results</Link>
                      </div>
                   }
                </div>
@@ -98,39 +98,4 @@ export const Question = React.createClass({
    }
 });
 
-const getQuestion = (state = {questions: {}}, id) => {
-   return state.questions[id] ? state.questions[id] : {};
-};
-
-const getVotes = (state = { user: {votes: {} } }, id) => {
-   return state.user.votes && state.user.votes[id] ? true : false;
-};
-
-const getUser = (state = { user: {} }) => {
-   return state.user;
-};
-
-const mapStateToProps = (state, ownProps) => {
-   return {
-      question: getQuestion(state, ownProps.id),
-      votedOn: getVotes(state, ownProps.id),
-      user: getUser(state)
-   };
-};
-
-const mapDispatchToProps = (dispatch) => {
-   return {
-      vote: (user, question, result) => {
-         saveVote(user, question, result);
-         saveVoteAsCookie(user, question, result);
-         dispatch(vote(question, result));
-      }
-   }
-};
-
-const LiveQuestion = connect(
-   mapStateToProps,
-   mapDispatchToProps
-)(Question);
-
-export default LiveQuestion;
+export default Question;

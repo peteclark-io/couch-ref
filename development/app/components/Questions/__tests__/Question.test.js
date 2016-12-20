@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Question} from '../Question';
+import Question from '../Question';
 import {mount} from 'enzyme';
 import renderer from 'react-test-renderer';
 

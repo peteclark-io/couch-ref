@@ -6,40 +6,30 @@ import {connect} from 'react-redux';
 import SimpleLine from '../Charts/SimpleLine';
 import styles from './styles.css';
 
-export const ResultsIndicator = React.createClass({
+const ResultsIndicator = React.createClass({
 
    propTypes: {
-      data: React.PropTypes.arrayOf(React.PropTypes.object)
+      statistic: React.PropTypes.shape({
+         simple: React.PropTypes.shape({
+            yes: React.PropTypes.number,
+            no: React.PropTypes.number,
+         })
+      })
    },
 
    render: function() {
-      if (!this.props.data){
+      if (!this.props.statistic){
          return null;
       }
 
+      var data = [{title: 'Yes', value: this.props.statistic.simple.yes}, {title: 'No', value: this.props.statistic.simple.no}];
+
       return (
          <div className={styles['results-indicator']}>
-            <SimpleLine data={this.props.data} />
+            <SimpleLine data={data} />
          </div>
       );
    }
 });
 
-const getQuestionResults = (state = {statistics: {}}, id) => {
-   if (state.statistics[id]){
-      return [{title: 'Yes', value: state.statistics[id].simple.yes}, {title: 'No', value: state.statistics[id].simple.no}];
-   }
-   return undefined;
-};
-
-const mapStateToProps = (state, ownProps) => {
-   return {
-      data: getQuestionResults(state, ownProps.id)
-   };
-};
-
-const LiveResultsIndicator = connect(
-   mapStateToProps
-)(ResultsIndicator);
-
-export default LiveResultsIndicator;
+export default ResultsIndicator;

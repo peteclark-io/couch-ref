@@ -6,8 +6,6 @@ import {ThreeBounce} from 'better-react-spinkit';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import classNames from 'classnames';
 
-import Referee from './Referee';
-
 import styles from './styles.css';
 
 const MatchHeader = React.createClass({
@@ -35,7 +33,6 @@ const MatchHeader = React.createClass({
          <div className={bootstrap.row}>
             <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'])}>
                <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
-               <Referee id={this.props.match.id} />
             </div>
          </div>
       );

@@ -2,13 +2,13 @@
 
 import React from 'react';
 
-import QuestionResults from '../../components/Stats/QuestionResults';
+import LiveQuestionResults from '../../components/Stats/LiveQuestionResults';
 
 const StatsPage = React.createClass({
 
    render: function() {
       return (
-         <QuestionResults id={this.props.params.questionId} />
+         <LiveQuestionResults id={this.props.params.questionId} />
       );
    }
 });
