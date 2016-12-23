@@ -64,10 +64,7 @@ const rootRoute = (store) => {
                },
                {
                   path: '/score',
-                  component: require('../pages/sections/UserScorePage').default,
-                  onEnter: ({params}) => {
-                     
-                  }
+                  component: require('../pages/sections/UserScorePage').default
                },
                require('./TeamsRoute').default
             ]

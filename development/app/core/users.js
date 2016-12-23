@@ -2,7 +2,7 @@
 
 import moment from 'moment';
 
-import {createUser} from './mappers';
+import {createUser, createVotes} from './mappers';
 import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation, setVotes, addRemoteFields} from '../ducks/user';
 
 import {ready} from '../ducks/ready';
@@ -81,18 +81,7 @@ export default function Users(path, store, router){
       },
       loadVotes: (data) => {
          console.log('Loaded user votes.', data);
-         var votes = {};
-         Object.keys(data).map((uuid) => {
-            Object.assign(votes, {
-               [uuid]: {
-                  result: data[uuid].answer === 'Yes' ? true : false,
-                  answer: data[uuid].answer,
-                  score: data[uuid].score
-               }
-            })
-         });
-
-         store.dispatch(setVotes(votes));
+         store.dispatch(setVotes(createVotes(data)));
       }
    }
 };

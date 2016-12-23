@@ -34,8 +34,21 @@ const setToProcessed = (db, quuid) => {
    db.ref(references.questions + '/' + quuid + '/voting_closed').set(true);
 };
 
-const saveScore = (db, quuid, user) => {
+const saveScore = (db, match, quuid, user) => {
    db.ref(references.questions + '/' + quuid + '/scored').set(true);
+   db.ref(references.users + '/' + user.uid + '/recent_matches').once('value').then(snap => {
+      var recents = snap.val();
+      if (!snap.exists()){
+         recents = [];
+      }
+
+      recents.unshift(match);
+      if (recents.length > 5){
+         recents.pop();
+      }
+
+      db.ref(references.users + '/' + user.uid + '/recent_matches').set(recents);
+   })
    db.ref(references.answers + '/' + user.uid + '/' + quuid + '/score').set(user.score);
 };
 
@@ -104,7 +117,7 @@ exports.handler = (argv) => {
             if (!user) {
                return;
             }
-            saveScore(db, questionUuids[i], user);
+            saveScore(db, question.match, questionUuids[i], user);
          });
       }
    }).catch((err) => {

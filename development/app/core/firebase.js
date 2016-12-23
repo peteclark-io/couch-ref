@@ -120,13 +120,7 @@ const data = (store) => {
             clubs.once('value').then((snapshot) => {
                store.dispatch(addClubs(snapshot.val()));
                var sesh = Users(path, store, router);
-
-               userVotes.once('value').then((votesSnap) => {
-                  if (votesSnap.val()){
-                     sesh.loadVotes(votesSnap.val());
-                  }
-               });
-
+               
                userUid.once('value').then((userSnap) => {
                   sesh.loadUser(userSnap.val());
                });

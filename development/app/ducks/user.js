@@ -3,6 +3,9 @@
 import firebase from 'firebase';
 import references from '../core/references';
 
+import {loadArchivedMatch} from './matches';
+import {createVotes} from '../core/mappers';
+
 const VOTE = 'couch-ref/user/VOTE';
 const SET_VOTES = 'couch-ref/user/SET_VOTES';
 
@@ -77,7 +80,12 @@ export default function reducer(state = {}, action){
 };
 
 export function addRemoteFields(user) {
-   return {type: ADD_REMOTE_FIELDS, user: user};
+   return (dispatch) => {
+      dispatch({type: ADD_REMOTE_FIELDS, user: user});
+      user.recentMatches.map(id => {
+         dispatch(loadArchivedMatch(id));
+      });
+   };
 }
 
 export function selectClub(club) {
@@ -98,6 +106,25 @@ export function setLocation(location) {
 
 export function vote(question, vote) {
    return {type: VOTE, question: question, vote: vote};
+}
+
+export function loadVote(vote) {
+   return (dispatch, getState) => {
+      var uid = getState().user.remote.uid;
+      if (!uid){
+         console.error('Cannot load vote yet, no uid...');
+         return;
+      }
+
+      var db = firebase.database();
+      db.ref(references.answers + '/' + uid + '/' + vote).once('value').then(snap => {
+         if (!snap.exists()){
+            return;
+         }
+
+         dispatch(setVotes(createVotes({[vote]: snap.val()})));
+      });
+   };
 }
 
 export function setVotes(votes) {

@@ -7,6 +7,7 @@ import references from '../core/references';
 import {createMatch} from '../core/mappers';
 import {loadArchivedQuestion} from './questions';
 import {loadArchivedStatistic} from './statistics';
+import {loadVote} from './user';
 
 const MATCH_UPDATE = 'couch-ref/matches/MATCH_UPDATE'
 const ADD_MATCH = 'couch-ref/matches/ADD_MATCH'
@@ -59,5 +60,10 @@ export function updateMatch(match) {
 }
 
 export function addMatch(match) {
-   return {type: ADD_MATCH, match: match};
+   return (dispatch) => {
+      dispatch({type: ADD_MATCH, match: match});
+      match.questions.map(q => {
+         dispatch(loadVote(q.id));
+      });
+   }
 }

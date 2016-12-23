@@ -56,9 +56,24 @@ export const createUser = (value) => {
       score: value.score ? value.score : 2000,
       answered: value.answered ? value.answered : 0,
       rank: value.rank ? value.rank : undefined,
-      movement: value.movement ? value.movement : 0
+      movement: value.movement ? value.movement : 0,
+      recentMatches: value.recent_matches ? value.recent_matches : []
    };
 }
+
+export const createVotes = (value) => {
+   var votes = {};
+   Object.keys(value).map((uuid) => {
+      Object.assign(votes, {
+         [uuid]: {
+            result: value[uuid].answer === 'Yes' ? true : false,
+            answer: value[uuid].answer,
+            score: value[uuid].score
+         }
+      })
+   });
+   return votes;
+};
 
 const refereeAppearances = (value) => {
    if (!value.scores){
