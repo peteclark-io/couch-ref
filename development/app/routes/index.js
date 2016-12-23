@@ -1,7 +1,24 @@
 'use strict';
 
 import Splash from '../pages/banners/Splash';
-import {loadMatch, loadQuestionStatistics} from '../ducks/archive';
+import {browserHistory} from 'react-router';
+
+import {loadArchivedMatch} from '../ducks/matches';
+import {loadArchivedQuestion} from '../ducks/questions';
+import {loadArchivedStatistic} from '../ducks/statistics';
+
+const getMatch = (store) => {
+   return ({params}) => {
+      if (!store.getState().matches[params.matchId]){
+         store.dispatch(
+            loadArchivedMatch(
+               params.matchId,
+               () => {browserHistory.push('/missing');}
+            )
+         );
+      }
+   };
+};
 
 const rootRoute = (store) => {
    return {
@@ -12,15 +29,34 @@ const rootRoute = (store) => {
             childRoutes: [
                {
                   path: '/match/:matchId',
-                  component: require('../pages/sections/MatchPage').default
+                  component: require('../pages/sections/MatchPage').default,
+                  onEnter: getMatch(store)
                },
                {
                   path: '/ratings/:matchId',
-                  component: require('../pages/sections/MatchRatingPage').default
+                  component: require('../pages/sections/MatchRatingPage').default,
+                  onEnter: getMatch(store)
                },
                {
                   path: '/question/:questionId',
-                  component: require('../pages/sections/StatsPage').default
+                  component: require('../pages/sections/StatsPage').default,
+                  onEnter: ({params}) => {
+                     if (!store.getState().statistics[params.questionId]){
+                        store.dispatch(
+                           loadArchivedQuestion(
+                              params.questionId,
+                              () => {browserHistory.push('/missing');}
+                           )
+                        );
+
+                        store.dispatch(
+                           loadArchivedStatistic(
+                              params.questionId,
+                              () => {browserHistory.push('/missing');}
+                           )
+                        );
+                     }
+                  }
                },
                {
                   path: '/referees',
@@ -28,20 +64,9 @@ const rootRoute = (store) => {
                },
                {
                   path: '/score',
-                  component: require('../pages/sections/UserScorePage').default
-               },
-               {
-                  path: '/archive/match/:matchId',
-                  component: require('../pages/sections/ArchivedMatchPage').default,
-                  onEnter: (next) => {
-                     store.dispatch(loadMatch(next.params.matchId));
-                  }
-               },
-               {
-                  path: '/archive/question/:questionId',
-                  component: require('../pages/sections/ArchivedStatsPage').default,
-                  onEnter: (next) => {
-                     store.dispatch(loadQuestionStatistics(next.params.questionId));
+                  component: require('../pages/sections/UserScorePage').default,
+                  onEnter: ({params}) => {
+                     
                   }
                },
                require('./TeamsRoute').default
@@ -50,6 +75,10 @@ const rootRoute = (store) => {
          {
             path: '/splash',
             component: Splash,
+         },
+         {
+            path: '/missing',
+            component: require('../pages/banners/MissingPage').default
          },
          require('./LoginRoute').default,
          require('./ErrorsRoute').default,

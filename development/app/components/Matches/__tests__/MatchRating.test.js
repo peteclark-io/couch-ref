@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {MatchRating} from '../MatchRating';
+import MatchRating from '../MatchRating';
 import {mount} from 'enzyme';
 import renderer from 'react-test-renderer';
 

@@ -1,5 +1,8 @@
 'use strict';
 
+import firebase from 'firebase';
+import references from '../core/references';
+
 const VOTE = 'couch-ref/user/VOTE';
 const SET_VOTES = 'couch-ref/user/SET_VOTES';
 

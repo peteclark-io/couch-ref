@@ -5,6 +5,9 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import _ from 'lodash';
 
+import classNames from 'classnames';
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
+
 import Ranking from '../../components/UserScore/Ranking';
 import RecentMatches from '../../components/UserScore/RecentMatches';
 import QuestionsAnswered from '../../components/UserScore/QuestionsAnswered';
@@ -27,8 +30,14 @@ const UserScorePage = React.createClass({
          <div>
             <Ranking rank={this.props.rank} movement={this.props.movement} />
             <Link className={styles.link} to={`/`}>See Upcoming Fixtures.</Link>
-            <RecentMatches matches={this.props.recentMatches} scores={this.props.recentMatchScores} />
-            <QuestionsAnswered score={this.props.score} answered={this.props.answered} />
+            <div className={bootstrap.row}>
+               <div className={classNames(bootstrap['col-xs-12'])}>
+                  <RecentMatches matches={this.props.recentMatches} scores={this.props.recentMatchScores} />
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'])}>
+                  <QuestionsAnswered score={this.props.score} answered={this.props.answered} />
+               </div>
+            </div>
          </div>
       );
    }
@@ -55,7 +64,7 @@ const getRecentMatches = (state = {user: {}, questions: {}, matches: []}) => {
 };
 
 const getMatchScores = (state = {user: {}}, recentMatches) => {
-   if (!state.user.votes) {
+   if (!state.user.votes || !recentMatches) {
       return undefined;
    }
 

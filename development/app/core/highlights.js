@@ -72,7 +72,7 @@ const createBlurb = (highlight) => {
 
 const clubHighlights = (clubs, clubD) => {
    var perc = clubs.map((club) => {
-      if (!clubD[club]){
+      if (!clubD || !clubD[club]){
          return undefined;
       }
 
@@ -94,7 +94,7 @@ const clubHighlights = (clubs, clubD) => {
 
 const countryHighlights = (location) => {
    var perc = countries.map((country) => {
-      if (!location[country]){
+      if (!location || !location[country]){
          return undefined;
       }
 
@@ -116,7 +116,7 @@ const countryHighlights = (location) => {
 
 const sexHighlights = (sex) => {
    var perc = genders.map((gender) => {
-      if (!sex[gender]){
+      if (!sex || !sex[gender]){
          return undefined;
       }
 
@@ -138,7 +138,7 @@ const sexHighlights = (sex) => {
 
 const ageHighlights = (age) => {
    var perc = ageGroups.map((group) => {
-      if (!age[group]){
+      if (!age || !age[group]){
          return undefined;
       }
 

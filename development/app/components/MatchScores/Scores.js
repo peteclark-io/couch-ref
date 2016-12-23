@@ -51,6 +51,8 @@ const Scores = React.createClass({
             });
          }
 
+         fixtures = _.sortBy(fixtures, ['fullTime', 'kickOff']);
+
          if(fixtures.length === 0){
             return (
                <div>

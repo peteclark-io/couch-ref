@@ -15,7 +15,7 @@ const getQuestionResults = (state = {statistics: {}}, id) => {
    return state.statistics[id] ? state.statistics[id] : {id: id, breakdown: {club: {}}, simple: {yes: 0, no: 0}};
 };
 
-const getMatch = (state = {questions: {}, matches: []}, id) => {
+const getMatch = (state = {questions: {}, matches: {}}, id) => {
    if (!state.questions || !state.questions[id]){
       return undefined;
    }
@@ -25,15 +25,11 @@ const getMatch = (state = {questions: {}, matches: []}, id) => {
       return undefined;
    }
 
-   var filtered = state.matches.filter((i) => {
-      return i.id === question.match;
-   });
-
-   if (filtered.length !== 1){
+   if (!state.matches || !state.matches[question.match]){
       return undefined;
    }
 
-   var match = filtered[0];
+   var match = state.matches[question.match];
    return {home: match.home, away: match.away}
 };
 

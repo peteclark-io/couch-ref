@@ -37,10 +37,15 @@ export default function reducer(state = {}, action){
    }
 };
 
-export function loadMatch(match) {
+export function loadMatch(match, redirect) {
    return (dispatch) => {
       var db = firebase.database();
       db.ref(references.archiveMatches + '/' + match).once('value').then((snap) => {
+         if (!snap.exists()){
+            redirect ? redirect() : null;
+            return;
+         }
+
          var archived = snap.val();
 
          dispatch({type: LOAD_MATCH, match: createMatch(archived)});
@@ -52,7 +57,6 @@ export function loadMatch(match) {
          archived.questions.map(q => {
             db.ref(references.archiveQuestions + '/' + q.id).once('value').then(snap => {
                var archivedQ = snap.val();
-               console.log('Archived Question', archivedQ);
                dispatch({type: LOAD_QUESTION, question: createQuestion(archivedQ)});
             });
          });
@@ -60,13 +64,37 @@ export function loadMatch(match) {
    };
 }
 
-export function loadQuestionStatistics(question) {
+export function loadQuestion(question, redirect) {
+   return (dispatch) => {
+      var db = firebase.database();
+      db.ref(references.archiveQuestions + '/' + question).once('value').then((snap) => {
+         if (!snap.exists()){
+            redirect ? redirect() : null;
+            return;
+         }
+
+         var archived = snap.val();
+         dispatch({type: LOAD_QUESTION, question: createQuestion(archived)});
+      });
+   };
+}
+
+export function loadQuestionStatistics(question, redirect) {
    return (dispatch) => {
       var db = firebase.database();
       db.ref(references.archiveStatistics + '/' + question).once('value').then((snap) => {
+         if (!snap.exists()){
+            redirect ? redirect() : null;
+            return;
+         }
+
          var archived = snap.val();
-         console.log('Archived stat', archived);
          dispatch({type: LOAD_STATISTICS, statistic: createStatistic(archived)});
+
+         db.ref(references.archiveQuestions + '/' + archived.id).once('value').then(snap => {
+            var archivedQ = snap.val();
+            loadMatch(archivedQ.match)(dispatch);
+         });
       });
    };
 }

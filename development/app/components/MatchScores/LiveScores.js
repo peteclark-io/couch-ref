@@ -1,12 +1,11 @@
 'use strict'
 
+import _ from 'lodash';
 import { connect } from 'react-redux'
 import Scores from './Scores'
 
-var matches = [];
-
-const getLiveMatches = (state = {matches: []}) => {
-  return state.matches;
+const getLiveMatches = (state = {matches: {}}) => {
+  return _.values(state.matches);
 }
 
 const mapStateToProps = (state) => {

@@ -23,7 +23,7 @@ export const MatchRatingPage = React.createClass({
       return (
          <div>
             <MatchHeader match={this.props.match} />
-            <MatchRating id={this.props.match.id} />
+            <MatchRating match={this.props.match} user={this.props.user} />
             <Link className={styles.link} to={`/match/${this.props.match.id}`}>Explore Questions and Results.</Link>
             <MatchQuestionRatings questions={this.props.questions} user={this.props.user} />
          </div>

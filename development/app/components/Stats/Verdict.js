@@ -36,8 +36,6 @@ const Verdict = React.createClass({
       }
 
       var v = verdict(this.props.match, this.props.results);
-      console.log('Verdict', v);
-
       return (
          <div className={bootstrap.row}>
             <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-12'])}>

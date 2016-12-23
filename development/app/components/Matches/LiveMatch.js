@@ -9,9 +9,8 @@ import {saveVoteAsCookie} from '../../core/cookies';
 
 import Match from './Match';
 
-const getLiveMatch = (state = {matches: []}, id) => {
-   var filtered = _.filter(state.matches, {id: id});
-   return filtered.length === 0 ? undefined : filtered[0];
+const getLiveMatch = (state = {matches: {}}, id) => {
+   return !state.matches || !state.matches[id] ? undefined : state.matches[id];
 };
 
 const getScoresReady = (state = {user: {votes: {}}}, match) => {
@@ -63,7 +62,7 @@ const getReferee = (state = {referees: {}}, match) => {
    if (!match){
       return undefined;
    }
-   
+
    var ref = state.referees[match.referee];
    return ref ? ref : undefined;
 };

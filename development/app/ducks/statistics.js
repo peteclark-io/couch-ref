@@ -1,5 +1,10 @@
 'use strict';
 
+import firebase from 'firebase';
+
+import references from '../core/references';
+import {createStatistic} from '../core/mappers';
+
 const STATISTICS_UPDATE = 'couch-ref/statistics/STATISTICS_UPDATE'
 const ADD_STATISTIC = 'couch-ref/statistics/ADD_STATISTIC'
 
@@ -26,4 +31,19 @@ export function updateStatistic(results) {
 
 export function addStatistic(results) {
   return {type: ADD_STATISTIC, results: results};
+}
+
+export function loadArchivedStatistic(statistic, redirect) {
+   return (dispatch) => {
+      var db = firebase.database();
+      db.ref(references.archiveStatistics + '/' + statistic).once('value').then((snap) => {
+         if (!snap.exists()){
+            redirect ? redirect() : null;
+            return;
+         }
+
+         var archived = snap.val();
+         dispatch(addStatistic(createStatistic(archived)));
+      });
+   };
 }
