@@ -14,6 +14,10 @@ body {
   z-index: 1000;
 }
 
+.logo {
+   height: 40px;
+}
+
 .brand-header h1 {
   color: white;
   margin: 0px;
