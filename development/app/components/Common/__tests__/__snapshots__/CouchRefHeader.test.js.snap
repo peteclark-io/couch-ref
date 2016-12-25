@@ -10,9 +10,10 @@ exports[`test Renders ok. 1`] = `
         <a
           onClick={[Function]}
           style={Object {}}>
-          <h1>
-            CouchRef
-          </h1>
+          <img
+            alt="logo"
+            className="logo"
+            src="/images/logo.svg" />
         </a>
       </div>
       <div
