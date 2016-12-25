@@ -1,11 +1,12 @@
 exports[`test Renders ok. 1`] = `
-<div>
+<div
+  className="fixture">
   <span
     className="kick-off">
     Tue 4th Jan 20:00
   </span>
   <div
-    className="score">
+    className="home">
     <span
       className="teams">
       home
@@ -16,7 +17,7 @@ exports[`test Renders ok. 1`] = `
     </span>
   </div>
   <div
-    className="score">
+    className="away">
     <span
       className="teams">
       away

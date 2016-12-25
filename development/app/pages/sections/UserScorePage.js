@@ -17,6 +17,7 @@ import styles from './styles.css';
 const UserScorePage = React.createClass({
 
    propTypes: {
+      hideFixturesLink: React.PropTypes.bool,
       score: React.PropTypes.number,
       answered: React.PropTypes.number,
       rank: React.PropTypes.number,
@@ -29,7 +30,7 @@ const UserScorePage = React.createClass({
       return (
          <div>
             <Ranking rank={this.props.rank} movement={this.props.movement} />
-            <Link className={styles.link} to={`/`}>See Upcoming Fixtures.</Link>
+            {this.props.hideFixturesLink ? null : <Link className={styles.link} to={`/`}>See Upcoming Fixtures.</Link>}
             <div className={bootstrap.row}>
                <div className={classNames(bootstrap['col-xs-12'])}>
                   <RecentMatches matches={this.props.recentMatches} scores={this.props.recentMatchScores} />
@@ -104,9 +105,10 @@ const getMovement = (state = {user: {}}) => {
    return state.user.movement;
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
    var recentMatches = getRecentMatches(state);
    return {
+      hideFixturesLink: ownProps.hideFixturesLink,
       recentMatches: recentMatches,
       recentMatchScores: getMatchScores(state, recentMatches),
       answered: getAnswered(state),

@@ -12,7 +12,7 @@
 }
 
 .fixture-list-header {
-  font-family: var(--font-primary);
+  font-family: var(--font-secondary);
   margin-top: 20px;
 }
 
@@ -23,9 +23,18 @@
   float: right;
 }
 
+.fixture {
+   border-bottom: 1px solid whitesmoke;
+   padding-bottom: 6px;
+}
+
+.fixture .away {
+   margin-bottom: 6px;
+}
+
 .link {
-  color: inherit;
-  cursor: pointer;
+   font-family: var(--font-secondary);
+   font-size: 1.4rem;
 }
 
 .link:hover {

@@ -1,11 +1,13 @@
 'use strict'
 
 import React from 'react';
-import styles from './styles.css';
+import {Link} from 'react-router';
 
 import GoalCount from './GoalCount';
 import Team from './Team';
 import KickOff from './KickOff';
+
+import styles from './styles.css';
 
 const Score = React.createClass({
 
@@ -22,16 +24,17 @@ const Score = React.createClass({
 
    render: function() {
       return (
-         <div ref={node => (this.root = node)}>
+         <div className={styles.fixture}>
             <KickOff kickOff={this.props.match.kickOff} />
-            <div className={styles.score}>
+            <div className={styles.home}>
                <Team name={this.props.match.home} />
                <GoalCount goals={this.props.match.goalsHome} />
             </div>
-            <div className={styles.score}>
+            <div className={styles.away}>
                <Team name={this.props.match.away} />
                <GoalCount goals={this.props.match.goalsAway} />
             </div>
+            {this.props.match.live ? <Link className={styles.link} to={`/match/${this.props.match.id}`}>Follow Match Live!</Link> : null}
          </div>
       );
    }
