@@ -16,7 +16,7 @@ const MobileApp = React.createClass({
          <CouchRefHeader />
          <div className={classNames(bootstrap.container, styles['header-height'])}>
             <div className={bootstrap.row}>
-               <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-md-6'], bootstrap['col-lg-8'])}>
+               <div className={classNames(bootstrap['col-xs-12'])}>
                   {(!this.props.children || this.props.children.length === 0) ? <MatchList /> : this.props.children}
                </div>
             </div>

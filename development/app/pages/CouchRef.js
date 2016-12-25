@@ -11,10 +11,10 @@ const CouchRef = React.createClass({
   render: function() {
     return (
       <div>
-         <MediaQuery maxWidth={768}>
+         <MediaQuery maxWidth={767}>
             <MobileApp children={this.props.children} />
          </MediaQuery>
-         <MediaQuery minWidth={769}>
+         <MediaQuery minWidth={768}>
             <DesktopApp children={this.props.children} />
          </MediaQuery>
       </div>
