@@ -36,7 +36,8 @@ export const EditProfile = React.createClass({
                      <Link to={'/users/location'}>Edit</Link>
                   </div>
                   <div className={classNames(styles['edit-section'], bootstrap['cols-xs-12'], bootstrap['col-sm-12'])}>
-                     <h3><img className={styles['edit-club']} src={this.props.user.club.crestUrl}></img></h3>
+                     {this.props.user.club.crestUrl ? <h3><img className={styles['edit-club']} src={this.props.user.club.crestUrl}></img></h3> : null}
+                     {!this.props.user.club.crestUrl ? <h3>{this.props.user.club.name}</h3> : null}
                      <Link to={'/users/club'}>Edit</Link>
                   </div>
                </div>

@@ -1,10 +1,12 @@
 'use strict';
 
 import moment from 'moment';
+import _ from 'lodash';
 
 import {createUser, createVotes} from './mappers';
 import {inspectFirebase, selectClub, setDateOfBirth, setSex, setLocation, setVotes, addRemoteFields} from '../ducks/user';
 
+import leagues from './leagues';
 import {ready} from '../ducks/ready';
 
 export default function Users(path, store, router){
@@ -20,11 +22,9 @@ export default function Users(path, store, router){
 
          store.dispatch(addRemoteFields(createUser(data)));
 
-         var results = store.getState().clubs.filter((c) => {
-            return c.name === data.club;
-         });
+         var userClub = _.find(store.getState().clubs, ['name', data.club]);
+         userClub = !userClub ? _.find(leagues, ['name', data.club]) : userClub;
 
-         var userClub = results.length === 1 ? results[0] : undefined;
          if (userClub){
             store.dispatch(inspectFirebase({
                club: userClub,

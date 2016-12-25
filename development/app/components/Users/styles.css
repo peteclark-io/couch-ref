@@ -8,40 +8,53 @@
 }
 
 .question {
-  font-family: var(--font-primary);
-  font-size: 3em;
-  margin: 50px 0px;
-  flex: 0 1 auto;
+   font-family: var(--font-primary);
+   font-size: 3em;
+   margin: 50px 0px;
+   flex: 0 1 auto;
 }
 
 .disclaimer {
-  font-family: var(--font-secondary);
-  font-size: 1.2em;
-  color: black;
-  margin: 0px;
-  margin-top: 60px;
-  padding-bottom: 30px;
+   font-size: 1.2em;
+   color: black;
+   margin: 0px;
+   margin-top: 30px;
+   padding: 5px 30px;
+   /*padding-bottom: 30px;
+   margin-top: 60px;*/
 }
 
 .clubs-container {
-  background-color: white;
-  width: 100%;
-  padding-top: 20px;
-  flex: 1 1 auto;
+   font-family: var(--font-secondary);
+   color: black;
+   background-color: white;
+   width: 100%;
+   padding-top: 20px;
+   flex: 1 1 auto;
+}
+
+.clubs-container h3 {
+   font-size: 1.8em;
+   margin-top: 40px;
 }
 
 .clubs {
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
+   text-align: center;
+   padding: 0px;
+   margin: 0px;
 }
 
 .clubs li {
-  text-decoration: none;
-  display: inline-block;
-  width: 100px;
-  padding: 8px;
-  box-sizing: content-box;
+   text-decoration: none;
+   display: inline-block;
+   width: 100px;
+   padding: 8px;
+   box-sizing: content-box;
+}
+
+.clubs .other-users {
+   font-family: var(--font-secondary);
+   cursor: pointer;
 }
 
 .clubs li:hover {
@@ -49,35 +62,35 @@
 }
 
 .clubs img {
-  height: 100px;
-  width: 100px;
-  cursor: pointer;
+   height: 100px;
+   width: 100px;
+   cursor: pointer;
 }
 
 .loading {
-  margin-top: 100px;
-  font-size: 7rem;
-  text-align: center;
-  color: var(--brand-secondary);
+   margin-top: 100px;
+   font-size: 7rem;
+   text-align: center;
+   color: var(--brand-secondary);
 }
 
 .asl-container {
-  font-family: var(--font-secondary);
-  color: black;
-  background-color: white;
-  width: 100%;
-  padding-top: 20px;
-  flex: 1 1 auto;
+   font-family: var(--font-secondary);
+   color: black;
+   background-color: white;
+   width: 100%;
+   padding-top: 20px;
+   flex: 1 1 auto;
 }
 
 .sex-select {
-  width: 160px;
+   width: 160px;
 }
 
 .button {
-  font-size: 1.2em;
-  margin-left: 1em;
-  float: left;
+   font-size: 1.2em;
+   margin-left: 1em;
+   float: left;
 }
 
 .edit-section {
@@ -90,25 +103,29 @@
 }
 
 section {
-  margin-top: 20px;
+   margin-top: 20px;
 }
 
 select {
-  font-size: 1.6em;
-  color: black;
+   font-size: 1.6em;
+   color: black;
 
-  height: 2.4em;
-  padding: 6px;
-  margin-right: 10px;
+   height: 2.4em;
+   padding: 6px;
+   margin-right: 10px;
 
-  background-color: white;
-  border-color: whitesmoke;
+   background-color: white;
+   border-color: whitesmoke;
+}
+
+.spacer {
+   padding-bottom: 40px;
 }
 
 @media (max-width: 768px){
-	select {
-     appearance: none;
-     font-size: 1.2em;
+   select {
+      appearance: none;
+      font-size: 1.2em;
    }
 
    .brand {
@@ -117,8 +134,8 @@ select {
    }
 
    .question {
-     font-family: var(--font-primary);
-     font-size: 2em;
+      font-family: var(--font-primary);
+      font-size: 2em;
    }
 
    .edit-section {
