@@ -57,7 +57,9 @@ export const createUser = (value) => {
       answered: value.answered ? value.answered : 0,
       rank: value.rank ? value.rank : undefined,
       movement: value.movement ? value.movement : 0,
-      recentMatches: value.recent_matches ? value.recent_matches : []
+      recentMatches: value.recent_matches ? value.recent_matches : [],
+      best: value.best,
+      worst: value.worst
    };
 }
 

@@ -12,7 +12,6 @@ import styles from './styles.css';
 const QuestionList = React.createClass({
 
    propTypes: {
-      archive: React.PropTypes.bool,
       list: React.PropTypes.arrayOf(
          React.PropTypes.shape({
             id: React.PropTypes.string,
@@ -56,7 +55,6 @@ const QuestionList = React.createClass({
                   return (
                      <div className={classNames(bootstrap['col-xs-12'], styles.question)} key={full.id}>
                         <Question
-                           archive={this.props.archive}
                            question={full}
                            statistic={stats}
                            votedOn={votedOn}

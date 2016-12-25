@@ -12,7 +12,6 @@ import styles from './ratings.css';
 const MatchQuestionRatings = React.createClass({
 
    propTypes: {
-      archived: React.PropTypes.bool,
       questions: React.PropTypes.array,
       user: React.PropTypes.object
    },
@@ -55,7 +54,7 @@ const MatchQuestionRatings = React.createClass({
                         <h3>{q.question}</h3>
                         <h3><small>{q.description}</small></h3>
                         <h4 className={styles.answer}>Your Answer: <span>{q.answer}</span></h4>
-                        <Link className={styles.link} to={`${this.props.archived ? '/archive' : ''}/question/${q.id}`}>Show Detailed Results</Link>
+                        <Link className={styles.link} to={`/question/${q.id}`}>Show Detailed Results</Link>
                      </div>
                   </div>
                );

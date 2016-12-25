@@ -1,7 +1,10 @@
 'use strict'
 
 import React from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {Link} from 'react-router';
+
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import classNames from 'classnames';
 
 import styles from './styles.css';
@@ -9,61 +12,61 @@ import styles from './styles.css';
 export const TopAnswer = React.createClass({
 
    propTypes: {
-      max: React.PropTypes.object,
-      min: React.PropTypes.object
+      user: React.PropTypes.object,
+      best: React.PropTypes.object,
+      worst: React.PropTypes.object
+   },
+
+   sign: (val) => {
+      return val > 0 ? '+' : null;
+   },
+
+   bground: (val) => {
+      return val >= 0 ? styles.green : styles.red;
    },
 
    render: function() {
+      if (!this.props.user || !this.props.best || !this.props.worst){
+         return null;
+      }
+
+      var bestScore = this.props.user.best.score;
+      var worstScore = this.props.user.worst.score;
+
       return (
          <div>
-            <div className={classNames(styles.container, styles.answered)}>
-               <h1 className={styles.heading}>Best Answer</h1>
-               <h2 className={styles.value}>{this.props.max.score.toFixed(0)}</h2>
+            <div className={classNames(bootstrap.row, styles['top-answer'])}>
+               <div className={bootstrap['col-xs-12']}>
+                  <h1 className={styles.heading}>Best Answer</h1>
+               </div>
+
+               <div className={classNames(bootstrap['col-xs-2'], bootstrap['col-sm-2'], bootstrap['col-md-2'], bootstrap['col-lg-1'])}>
+                  <p className={classNames(styles.score, this.bground(bestScore))}>{this.sign(bestScore)}{(bestScore * 10).toFixed(0)}</p>
+               </div>
+               <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-sm-10'], bootstrap['col-md-10'], bootstrap['col-lg-11'])}>
+                  <h3>{this.props.best.question}</h3>
+                  <h3><small>{this.props.best.description}</small></h3>
+                  <Link className={styles.link} to={`/question/${this.props.best.id}`}>Show Detailed Results</Link>
+               </div>
             </div>
-            <div className={classNames(styles.container, styles.answered)}>
-               <h1 className={styles.heading}>Worst Answer</h1>
-               <h2 className={styles.value}>{this.props.min.score.toFixed(0)}</h2>
+
+            <div className={classNames(bootstrap.row, styles['top-answer'])}>
+               <div className={bootstrap['col-xs-12']}>
+                  <h1 className={styles.heading}>Worst Answer</h1>
+               </div>
+
+               <div className={classNames(bootstrap['col-xs-2'], bootstrap['col-sm-2'], bootstrap['col-md-2'], bootstrap['col-lg-1'])}>
+                  <p className={classNames(styles.score, this.bground(worstScore))}>{this.sign(worstScore)}{(worstScore * 10).toFixed(0)}</p>
+               </div>
+               <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-sm-10'], bootstrap['col-md-10'], bootstrap['col-lg-11'])}>
+                  <h3>{this.props.worst.question}</h3>
+                  <h3><small>{this.props.worst.description}</small></h3>
+                  <Link className={styles.link} to={`/question/${this.props.worst.id}`}>Show Detailed Results</Link>
+               </div>
             </div>
          </div>
       );
    }
 });
 
-const getTopScores = (state = {user: {}}) => {
-   var max = {score: -1000};
-   var min = {score: 1000};
-
-   if (state.user.votes){
-      var uuids = Object.keys(state.user.votes)
-      uuids.map(uuid => {
-         if (state.user.votes[uuid].score > max.score){
-            max = Object.assign({}, state.user.votes[uuid]);
-            max.question = uuid;
-         }
-
-         if (state.user.votes[uuid].score < min.score){
-            min = Object.assign({}, state.user.votes[uuid]);
-            min.question = uuid;
-         }
-      });
-   }
-   return {max: max, min: min};
-};
-
-const getTopQuestions = (state = {questions: {}}) => {
-
-};
-
-const mapStateToProps = (state) => {
-   var results = getTopScores(state);
-   return {
-      max: results.max,
-      min: results.min
-   }
-};
-
-const LiveTopAnswer = connect(
-   mapStateToProps
-)(TopAnswer);
-
-export default LiveTopAnswer;
+export default TopAnswer;

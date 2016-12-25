@@ -16,7 +16,6 @@ import buttons from './buttons.css';
 const Question = React.createClass({
 
    propTypes: {
-      archive: React.PropTypes.bool,
       statistic: React.PropTypes.object,
       question: React.PropTypes.shape({
          id: React.PropTypes.string,
@@ -88,7 +87,7 @@ const Question = React.createClass({
                      <div>
                         <ResultsIndicator statistic={this.props.statistic} />
                         <div className={styles.spacer}></div>
-                        <Link className={styles.link} to={`${this.props.archive ? '/archive' : ''}/question/${this.props.question.id}`}>Show Detailed Results</Link>
+                        <Link className={styles.link} to={`/question/${this.props.question.id}`}>Show Detailed Results</Link>
                      </div>
                   }
                </div>

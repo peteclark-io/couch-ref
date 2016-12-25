@@ -64,7 +64,21 @@ const rootRoute = (store) => {
                },
                {
                   path: '/score',
-                  component: require('../pages/sections/UserScorePage').default
+                  component: require('../pages/sections/UserScorePage').default,
+                  onEnter: () => {
+                     var best = store.getState().user.best;
+                     var worst = store.getState().user.worst;
+
+                     if (best && !store.getState().questions[best.question]){
+                        store.dispatch(loadArchivedQuestion(best.question))
+                        store.dispatch(loadArchivedStatistic(best.question))
+                     }
+
+                     if (worst && !store.getState().questions[worst.question]){
+                        store.dispatch(loadArchivedQuestion(worst.question))
+                        store.dispatch(loadArchivedStatistic(worst.question))
+                     }
+                  }
                },
                require('./TeamsRoute').default
             ]

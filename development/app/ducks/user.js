@@ -35,7 +35,10 @@ export default function reducer(state = {}, action){
          answered: action.user.answered,
          score: action.user.score,
          rank: action.user.rank,
-         movement: action.user.movement
+         movement: action.user.movement,
+         recentMatches: action.user.recentMatches,
+         best: action.user.best,
+         worst: action.user.worst
       })
 
       case SELECT_CLUB:

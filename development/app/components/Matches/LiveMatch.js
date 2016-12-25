@@ -70,7 +70,6 @@ const getReferee = (state = {referees: {}}, match) => {
 const mapStateToProps = (state, ownProps) => {
    var match = getLiveMatch(state, ownProps.id);
    return {
-      archive: false,
       match: match,
       questions: getQuestions(state, match),
       statistics: getStatistics(state, match),

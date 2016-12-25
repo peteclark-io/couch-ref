@@ -16,7 +16,6 @@ import MatchHeader from './MatchHeader';
 const Match = React.createClass({
 
    propTypes: {
-      archive: React.PropTypes.bool,
       match: React.PropTypes.object,
       questions: React.PropTypes.object,
       statistics: React.PropTypes.object,
@@ -41,7 +40,6 @@ const Match = React.createClass({
             <Referee referee={this.props.referee} />
             <ScoresReady match={this.props.match} ready={this.props.scoresReady} />
             <QuestionList
-               archive={this.props.archive}
                user={this.props.user}
                vote={(vote, question) => {
                   this.props.vote(vote, question, this.props.user);

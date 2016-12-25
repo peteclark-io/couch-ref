@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 import Ranking from '../../components/UserScore/Ranking';
+import TopAnswer from '../../components/UserScore/TopAnswer';
 import RecentMatches from '../../components/UserScore/RecentMatches';
 import QuestionsAnswered from '../../components/UserScore/QuestionsAnswered';
 
@@ -17,6 +18,9 @@ import styles from './styles.css';
 const UserScorePage = React.createClass({
 
    propTypes: {
+      user: React.PropTypes.object,
+      best: React.PropTypes.object,
+      worst: React.PropTypes.object,
       hideFixturesLink: React.PropTypes.bool,
       score: React.PropTypes.number,
       answered: React.PropTypes.number,
@@ -37,6 +41,9 @@ const UserScorePage = React.createClass({
                </div>
                <div className={classNames(bootstrap['col-xs-12'])}>
                   <QuestionsAnswered score={this.props.score} answered={this.props.answered} />
+               </div>
+               <div className={classNames(bootstrap['col-xs-12'])}>
+                  <TopAnswer user={this.props.user} best={this.props.best} worst={this.props.worst} />
                </div>
             </div>
          </div>
@@ -105,9 +112,22 @@ const getMovement = (state = {user: {}}) => {
    return state.user.movement;
 };
 
+const getBest = (state = {user: {}, questions: {}}) => {
+   return state.user.best && state.user.best.question && state.questions[state.user.best.question]
+      ?  state.questions[state.user.best.question] : undefined;
+};
+
+const getWorst = (state = {user: {}, questions: {}}) => {
+   return state.user.worst && state.user.worst.question && state.questions[state.user.worst.question]
+      ?  state.questions[state.user.worst.question] : undefined;
+};
+
 const mapStateToProps = (state, ownProps) => {
    var recentMatches = getRecentMatches(state);
    return {
+      user: state.user,
+      best: getBest(state),
+      worst: getWorst(state),
       hideFixturesLink: ownProps.hideFixturesLink,
       recentMatches: recentMatches,
       recentMatchScores: getMatchScores(state, recentMatches),
