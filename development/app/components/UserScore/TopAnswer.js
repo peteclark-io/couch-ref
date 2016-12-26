@@ -7,6 +7,7 @@ import {Link} from 'react-router';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import classNames from 'classnames';
 
+import {inflation} from '../../core/magic';
 import styles from './styles.css';
 
 export const TopAnswer = React.createClass({
@@ -41,7 +42,7 @@ export const TopAnswer = React.createClass({
                </div>
 
                <div className={classNames(bootstrap['col-xs-2'], bootstrap['col-sm-2'], bootstrap['col-md-2'], bootstrap['col-lg-1'])}>
-                  <p className={classNames(styles.score, this.bground(bestScore))}>{this.sign(bestScore)}{(bestScore * 10).toFixed(0)}</p>
+                  <p className={classNames(styles.score, this.bground(bestScore))}>{this.sign(bestScore)}{(bestScore * inflation).toFixed(0)}</p>
                </div>
                <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-sm-10'], bootstrap['col-md-10'], bootstrap['col-lg-11'])}>
                   <h3>{this.props.best.question}</h3>
@@ -56,7 +57,7 @@ export const TopAnswer = React.createClass({
                </div>
 
                <div className={classNames(bootstrap['col-xs-2'], bootstrap['col-sm-2'], bootstrap['col-md-2'], bootstrap['col-lg-1'])}>
-                  <p className={classNames(styles.score, this.bground(worstScore))}>{this.sign(worstScore)}{(worstScore * 10).toFixed(0)}</p>
+                  <p className={classNames(styles.score, this.bground(worstScore))}>{this.sign(worstScore)}{(worstScore * inflation).toFixed(0)}</p>
                </div>
                <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-sm-10'], bootstrap['col-md-10'], bootstrap['col-lg-11'])}>
                   <h3>{this.props.worst.question}</h3>

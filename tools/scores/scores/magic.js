@@ -2,7 +2,7 @@
 
 const BASIC = 'core/magic/BASIC';
 const COMPLEX = 'core/magic/COMPLEX';
-const populationRequirement = 100;
+const populationRequirement = 5;
 
 const basicVerdict = (match, results) => {
   if (!results.simple){

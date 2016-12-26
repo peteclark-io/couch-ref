@@ -7,6 +7,7 @@ import _ from 'lodash';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import classNames from 'classnames';
 
+import {inflation} from '../../core/magic';
 import {matchScore} from '../../core/scores';
 import styles from './styles.css';
 
@@ -35,7 +36,7 @@ const MatchRating = React.createClass({
          return null;
       }
 
-      var overall = _.sum(scores) * 100;
+      var overall = _.sum(scores) * inflation;
       console.log('Score for the match', overall, scores);
       var title = matchScore(overall);
 
