@@ -63,7 +63,7 @@ export default function reducer(state = {}, action){
 
       case SET_VOTES:
       return Object.assign({}, state, {
-         votes: action.votes
+         votes: Object.assign({}, state.votes, action.votes)
       });
 
       case INSPECT_COOKIES:

@@ -56,7 +56,12 @@ export function loadArchivedMatch(match, redirect) {
 }
 
 export function updateMatch(match) {
-   return {type: MATCH_UPDATE, match: match};
+   return (dispatch) => {
+      dispatch({type: MATCH_UPDATE, match: match});
+      match.questions.map(q => {
+         dispatch(loadVote(q.id));
+      });
+   };
 }
 
 export function addMatch(match) {
@@ -65,5 +70,5 @@ export function addMatch(match) {
       match.questions.map(q => {
          dispatch(loadVote(q.id));
       });
-   }
+   };
 }
