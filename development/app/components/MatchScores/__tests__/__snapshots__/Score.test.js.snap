@@ -1,34 +1,31 @@
 exports[`test Renders ok. 1`] = `
 <div
   className="fixture">
+  <span
+    className="kick-off">
+    Tue 4th Jan 20:00
+  </span>
   <div
-    className="">
+    className="home">
     <span
-      className="kick-off">
-      Tue 4th Jan 20:00
+      className="teams">
+      home
     </span>
-    <div
-      className="home">
-      <span
-        className="teams">
-        home
-      </span>
-      <span
-        className="goals">
-        0
-      </span>
-    </div>
-    <div
-      className="away">
-      <span
-        className="teams">
-        away
-      </span>
-      <span
-        className="goals">
-        4
-      </span>
-    </div>
+    <span
+      className="goals">
+      0
+    </span>
+  </div>
+  <div
+    className="away">
+    <span
+      className="teams">
+      away
+    </span>
+    <span
+      className="goals">
+      4
+    </span>
   </div>
 </div>
 `;

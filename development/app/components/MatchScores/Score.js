@@ -26,16 +26,14 @@ const Score = React.createClass({
    render: function() {
       return (
          <div className={styles.fixture}>
-            <div className={this.props.match.fullTime ? styles['full-time'] : ''}>
-               <KickOff kickOff={this.props.match.kickOff} />
-               <div className={styles.home}>
-                  <Team name={this.props.match.home} />
-                  <GoalCount goals={this.props.match.goalsHome} />
-               </div>
-               <div className={styles.away}>
-                  <Team name={this.props.match.away} />
-                  <GoalCount goals={this.props.match.goalsAway} />
-               </div>
+            <KickOff kickOff={this.props.match.kickOff} />
+            <div className={styles.home}>
+               <Team name={this.props.match.home} />
+               <GoalCount goals={this.props.match.goalsHome} />
+            </div>
+            <div className={styles.away}>
+               <Team name={this.props.match.away} />
+               <GoalCount goals={this.props.match.goalsAway} />
             </div>
             {this.props.match.live ?
                <Link className={styles.link} to={`/match/${this.props.match.id}`}>{this.props.match.fullTime ? 'Explore match!' : 'Follow Match Live!'}</Link>
