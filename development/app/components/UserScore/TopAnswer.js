@@ -27,6 +27,7 @@ export const TopAnswer = React.createClass({
    },
 
    render: function() {
+      console.log(this.props.user, this.props.best, this.props.worst);
       if (!this.props.user || !this.props.best || !this.props.worst){
          return null;
       }

@@ -8,67 +8,71 @@ exports[`test Disables links if the match is not live. 1`] = `
     className="spacer" />
   <ul
     className="match-list">
-    <li
-      className="">
+    <li>
       <div
         className="fixture">
-        <span
-          className="kick-off">
-          Sat 4th Jan 20:00
-        </span>
         <div
-          className="home">
+          className="">
           <span
-            className="teams">
-            home
+            className="kick-off">
+            Sat 4th Jan 20:00
           </span>
-          <span
-            className="goals">
-            0
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away
-          </span>
-          <span
-            className="goals">
-            4
-          </span>
+          <div
+            className="home">
+            <span
+              className="teams">
+              home
+            </span>
+            <span
+              className="goals">
+              0
+            </span>
+          </div>
+          <div
+            className="away">
+            <span
+              className="teams">
+              away
+            </span>
+            <span
+              className="goals">
+              4
+            </span>
+          </div>
         </div>
       </div>
     </li>
-    <li
-      className="">
+    <li>
       <div
         className="fixture">
-        <span
-          className="kick-off">
-          Mon 4th Jan 20:00
-        </span>
         <div
-          className="home">
+          className="">
           <span
-            className="teams">
-            home2
+            className="kick-off">
+            Mon 4th Jan 20:00
           </span>
-          <span
-            className="goals">
-            1
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away2
-          </span>
-          <span
-            className="goals">
-            3
-          </span>
+          <div
+            className="home">
+            <span
+              className="teams">
+              home2
+            </span>
+            <span
+              className="goals">
+              1
+            </span>
+          </div>
+          <div
+            className="away">
+            <span
+              className="teams">
+              away2
+            </span>
+            <span
+              className="goals">
+              3
+            </span>
+          </div>
         </div>
         <a
           className="link"
@@ -107,35 +111,37 @@ exports[`test Renders one upcoming fixture, removes other. 1`] = `
     className="spacer" />
   <ul
     className="match-list">
-    <li
-      className="">
+    <li>
       <div
         className="fixture">
-        <span
-          className="kick-off">
-          Mon 4th Jan 20:00
-        </span>
         <div
-          className="home">
+          className="">
           <span
-            className="teams">
-            home2
+            className="kick-off">
+            Mon 4th Jan 20:00
           </span>
-          <span
-            className="goals">
-            1
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away2
-          </span>
-          <span
-            className="goals">
-            3
-          </span>
+          <div
+            className="home">
+            <span
+              className="teams">
+              home2
+            </span>
+            <span
+              className="goals">
+              1
+            </span>
+          </div>
+          <div
+            className="away">
+            <span
+              className="teams">
+              away2
+            </span>
+            <span
+              className="goals">
+              3
+            </span>
+          </div>
         </div>
         <a
           className="link"
@@ -159,35 +165,37 @@ exports[`test Renders only televised fixtures. 1`] = `
     className="spacer" />
   <ul
     className="match-list">
-    <li
-      className="">
+    <li>
       <div
         className="fixture">
-        <span
-          className="kick-off">
-          Sat 4th Jan 20:00
-        </span>
         <div
-          className="home">
+          className="">
           <span
-            className="teams">
-            home
+            className="kick-off">
+            Sat 4th Jan 20:00
           </span>
-          <span
-            className="goals">
-            0
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away
-          </span>
-          <span
-            className="goals">
-            4
-          </span>
+          <div
+            className="home">
+            <span
+              className="teams">
+              home
+            </span>
+            <span
+              className="goals">
+              0
+            </span>
+          </div>
+          <div
+            className="away">
+            <span
+              className="teams">
+              away
+            </span>
+            <span
+              className="goals">
+              4
+            </span>
+          </div>
         </div>
         <a
           className="link"
@@ -211,35 +219,37 @@ exports[`test Renders two upcoming fixtures. 1`] = `
     className="spacer" />
   <ul
     className="match-list">
-    <li
-      className="">
+    <li>
       <div
         className="fixture">
-        <span
-          className="kick-off">
-          Sat 4th Jan 20:00
-        </span>
         <div
-          className="home">
+          className="">
           <span
-            className="teams">
-            home
+            className="kick-off">
+            Sat 4th Jan 20:00
           </span>
-          <span
-            className="goals">
-            0
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away
-          </span>
-          <span
-            className="goals">
-            4
-          </span>
+          <div
+            className="home">
+            <span
+              className="teams">
+              home
+            </span>
+            <span
+              className="goals">
+              0
+            </span>
+          </div>
+          <div
+            className="away">
+            <span
+              className="teams">
+              away
+            </span>
+            <span
+              className="goals">
+              4
+            </span>
+          </div>
         </div>
         <a
           className="link"
@@ -249,35 +259,37 @@ exports[`test Renders two upcoming fixtures. 1`] = `
         </a>
       </div>
     </li>
-    <li
-      className="">
+    <li>
       <div
         className="fixture">
-        <span
-          className="kick-off">
-          Mon 4th Jan 20:00
-        </span>
         <div
-          className="home">
+          className="">
           <span
-            className="teams">
-            home2
+            className="kick-off">
+            Mon 4th Jan 20:00
           </span>
-          <span
-            className="goals">
-            1
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away2
-          </span>
-          <span
-            className="goals">
-            3
-          </span>
+          <div
+            className="home">
+            <span
+              className="teams">
+              home2
+            </span>
+            <span
+              className="goals">
+              1
+            </span>
+          </div>
+          <div
+            className="away">
+            <span
+              className="teams">
+              away2
+            </span>
+            <span
+              className="goals">
+              3
+            </span>
+          </div>
         </div>
         <a
           className="link"

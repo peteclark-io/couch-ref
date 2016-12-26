@@ -1,11 +1,10 @@
 exports[`test Displays match score, with no questions. 1`] = `
 <div>
   <div
-    className="row">
+    className="match-header row">
     <div
       className="col-xs-12 col-sm-8">
-      <h2
-        className="match-header">
+      <h2>
         Arsenal
          
         1

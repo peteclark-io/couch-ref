@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {Link} from 'react-router';
+import classNames from 'classnames';
 
 import GoalCount from './GoalCount';
 import Team from './Team';
@@ -25,16 +26,21 @@ const Score = React.createClass({
    render: function() {
       return (
          <div className={styles.fixture}>
-            <KickOff kickOff={this.props.match.kickOff} />
-            <div className={styles.home}>
-               <Team name={this.props.match.home} />
-               <GoalCount goals={this.props.match.goalsHome} />
+            <div className={this.props.match.fullTime ? styles['full-time'] : ''}>
+               <KickOff kickOff={this.props.match.kickOff} />
+               <div className={styles.home}>
+                  <Team name={this.props.match.home} />
+                  <GoalCount goals={this.props.match.goalsHome} />
+               </div>
+               <div className={styles.away}>
+                  <Team name={this.props.match.away} />
+                  <GoalCount goals={this.props.match.goalsAway} />
+               </div>
             </div>
-            <div className={styles.away}>
-               <Team name={this.props.match.away} />
-               <GoalCount goals={this.props.match.goalsAway} />
-            </div>
-            {this.props.match.live ? <Link className={styles.link} to={`/match/${this.props.match.id}`}>Follow Match Live!</Link> : null}
+            {this.props.match.live ?
+               <Link className={styles.link} to={`/match/${this.props.match.id}`}>{this.props.match.fullTime ? 'Explore match!' : 'Follow Match Live!'}</Link>
+               : null
+            }
          </div>
       );
    }

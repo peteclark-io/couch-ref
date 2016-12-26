@@ -30,9 +30,9 @@ const MatchHeader = React.createClass({
       }
 
       return (
-         <div className={bootstrap.row}>
+         <div className={classNames(styles['match-header'], bootstrap.row)}>
             <div className={classNames(bootstrap['col-xs-12'], bootstrap['col-sm-8'])}>
-               <h2 className={styles['match-header']}>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
+               <h2>{this.props.match.home} {this.props.match.goalsHome}  -  {this.props.match.goalsAway} {this.props.match.away}</h2>
             </div>
          </div>
       );
