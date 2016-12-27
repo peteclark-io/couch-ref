@@ -25,21 +25,21 @@ export const EditProfile = React.createClass({
                <div className={bootstrap.row}>
                   <div className={classNames(styles['edit-section'], bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
                      <h3>{this.props.user.birthday.format('DD/MM/YY')}</h3>
-                     <Link to={'/users/birthday'}>Edit</Link>
+                     <Link to={'/users/birthday?edited=true'}>Edit</Link>
                   </div>
                   <div className={classNames(styles['edit-section'], bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
                      <h3>{this.props.user.sex}</h3>
-                     <Link to={'/users/sex'}>Edit</Link>
+                     <Link to={'/users/sex?edited=true'}>Edit</Link>
                   </div>
                   <div className={classNames(styles['edit-section'], bootstrap['cols-xs-6'], bootstrap['col-sm-4'])}>
                      <h3>{this.props.user.location}</h3>
-                     <Link to={'/users/location'}>Edit</Link>
+                     <Link to={'/users/location?edited=true'}>Edit</Link>
                   </div>
                   <div className={classNames(styles['edit-section'], bootstrap['cols-xs-12'], bootstrap['col-sm-12'])}>
                      {this.props.user.club.crestUrl ? <h3><img className={styles['edit-club']} src={this.props.user.club.crestUrl}></img></h3> : null}
                      {!this.props.user.club.crestUrl ? <h3>{this.props.user.club.name}</h3> : null}
-                     <Link to={'/users/club'}>Edit</Link>
-                  </div> 
+                     <Link to={'/users/club?edited=true'}>Edit</Link>
+                  </div>
                </div>
             </div>
          </div>

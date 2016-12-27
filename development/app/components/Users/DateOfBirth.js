@@ -19,7 +19,8 @@ export const DateOfBirth = React.createClass({
 
    propTypes: {
       onChange: React.PropTypes.func,
-      user: React.PropTypes.object
+      user: React.PropTypes.object,
+      edited: React.PropTypes.bool
    },
 
    contextTypes: {
@@ -101,7 +102,11 @@ export const DateOfBirth = React.createClass({
                               onClick={() =>
                                  {
                                     this.props.onChange(this.state, this.props.user);
-                                    this.context.router.push('/users/sex');
+                                    if (this.props.location.query.edited){
+                                       this.context.router.push('/users/edit');
+                                    } else {
+                                       this.context.router.push('/users/sex');
+                                    }
                                  }}
                                  >Save</a>
                            </div>

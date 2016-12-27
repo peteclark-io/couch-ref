@@ -18,7 +18,8 @@ export const ClubCrests = React.createClass({
    propTypes: {
       clubs: React.PropTypes.array,
       selectClub: React.PropTypes.func,
-      user: React.PropTypes.object
+      user: React.PropTypes.object,
+      edited: React.PropTypes.bool
    },
 
    contextTypes: {
@@ -44,7 +45,11 @@ export const ClubCrests = React.createClass({
                         <li key={c.name}>
                            <img src={c.crestUrl} alt={c.name} onClick={() => {
                                  this.props.selectClub(this.props.user, c);
-                                 this.context.router.push('/users/birthday');
+                                 if (this.props.location.query.edited){
+                                    this.context.router.push('/users/edit');
+                                 } else {
+                                    this.context.router.push('/users/birthday');
+                                 }
                               }}></img>
                            </li>
                         );
@@ -58,7 +63,11 @@ export const ClubCrests = React.createClass({
                         <li key={l.name}>
                            <a className={styles['other-users']} onClick={() => {
                                  this.props.selectClub(this.props.user, l);
-                                 this.context.router.push('/users/birthday');
+                                 if (this.props.location.query.edited){
+                                    this.context.router.push('/users/edit');
+                                 } else {
+                                    this.context.router.push('/users/birthday');
+                                 }
                               }}>{l.shortName}</a>
                            </li>
                         )

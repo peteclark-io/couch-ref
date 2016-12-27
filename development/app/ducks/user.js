@@ -43,7 +43,7 @@ export default function reducer(state = {}, action){
 
       case SELECT_CLUB:
       return Object.assign({}, state, {
-         club: Object.assign({}, state.club, action.club)
+         club: Object.assign({}, action.club)
       });
 
       case SET_DOB:

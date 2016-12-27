@@ -17,7 +17,8 @@ export const Gender = React.createClass({
 
    propTypes: {
       save: React.PropTypes.func,
-      user: React.PropTypes.object
+      user: React.PropTypes.object,
+      edited: React.PropTypes.bool
    },
 
    contextTypes: {
@@ -57,7 +58,11 @@ export const Gender = React.createClass({
                         <div className={bootstrap['form-group']}>
                            <a onClick={() => {
                                  this.props.save(this.props.user, this.state);
-                                 this.context.router.push('/users/location');
+                                 if (this.props.location.query.edited){
+                                    this.context.router.push('/users/edit');
+                                 } else {
+                                    this.context.router.push('/users/location');
+                                 }
                               }}
                               className={classNames(buttons['action-button'], buttons.yes, buttons.animate, styles.button)}>Save</a>
                         </div>
