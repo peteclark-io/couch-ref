@@ -9,7 +9,7 @@ import styles from './styles.css';
 
 import MatchHeader from '../../components/Matches/MatchHeader';
 import Referee from '../../components/Matches/Referee';
-import MatchRating from '../../components/Matches/MatchRating';
+import RefereeRating from '../../components/Matches/RefereeRating';
 import MatchQuestionRatings from '../../components/Referees/MatchQuestionRatings';
 
 export const RefereeMatchRatingPage = React.createClass({
@@ -24,10 +24,10 @@ export const RefereeMatchRatingPage = React.createClass({
       var score = this.props.referee.scores[this.props.match.id];
 
       return (
-         <div>
+         <div className={styles['referee-match']}>
             <MatchHeader match={this.props.match} />
             <Referee referee={this.props.referee} />
-            <MatchRating score={score} />
+            <RefereeRating score={score} />
             <Link className={styles.link} to={`/match/${this.props.match.id}`}>Explore Questions and Results.</Link>
             <MatchQuestionRatings questions={this.props.questions} />
          </div>

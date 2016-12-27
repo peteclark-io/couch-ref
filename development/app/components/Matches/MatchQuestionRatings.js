@@ -35,20 +35,15 @@ const MatchQuestionRatings = React.createClass({
       }
 
       var mapped = this.props.questions.map(q => {
-         if (!q.scored || !this.props.user.votes[q.id]){
-            return undefined;
-         }
-
-         var answer = this.props.user.votes[q.id];
-         return Object.assign({}, answer, q);
+         return !q.scored || !this.props.user.votes[q.id] ? undefined : q;
       }).filter(q => q);
 
       return (
          <div className={styles['question-scores']}>
-            <h1 className={styles.header}>Scores</h1>
+            <h1 className={styles.header}>Your Scores</h1>
             {mapped.map(q => {
                return (
-                  <RatedQuestion key={q.id} question={q} />
+                  <RatedQuestion key={q.id} question={q} score={this.props.user.votes[q.id].score} answer={this.props.user.votes[q.id].answer} />
                );
             })}
          </div>

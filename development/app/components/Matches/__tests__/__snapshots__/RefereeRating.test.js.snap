@@ -1,1 +1,1 @@
-exports[`test Shows the Ref rating when one is available 1`] = `"<div class=\"ref-rating\"><h3>Referee Rating</h3><h2>Superb!</h2></div>"`;
+exports[`test Shows the Ref rating when one is available 1`] = `"<div class=\"match-rating\"><h3>Referee Performance</h3><h2><!-- react-text: 4 -->+<!-- /react-text --><!-- react-text: 5 -->50<!-- /react-text --></h2></div>"`;

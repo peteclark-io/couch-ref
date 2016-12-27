@@ -34,19 +34,15 @@ const MatchQuestionRatings = React.createClass({
       }
 
       var mapped = this.props.questions.map(q => {
-         if (!q.refereeScore){
-            return undefined;
-         }
-
-         return Object.assign({}, {score: q.refereeScore, answer: q.decision}, q);
+         return !q.refereeScore ? undefined : q;
       }).filter(q => q);
 
       return (
          <div className={styles['question-scores']}>
-            <h1 className={styles.header}>Scores</h1>
+            <h1 className={styles.heading}>Referee's Scores</h1>
             {mapped.map(q => {
                return (
-                  <RatedQuestion prefix={`Ref's`} key={q.id} question={q} />
+                  <RatedQuestion prefix={`Ref's`} key={q.id} question={q} score={q.refereeScore} answer={q.decision} />
                );
             })}
          </div>

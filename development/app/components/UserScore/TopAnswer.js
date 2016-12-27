@@ -33,22 +33,22 @@ export const TopAnswer = React.createClass({
          return null;
       }
 
-      var best = Object.assign({}, this.props.best, {score: this.props.user.best.score});
-      var worst = Object.assign({}, this.props.worst, {score: this.props.user.worst.score});
+      var best = this.props.best;
+      var worst = this.props.worst;
 
       return (
          <div>
             <div className={classNames(bootstrap.row, styles['top-answer'])}>
                <div className={bootstrap['col-xs-12']}>
                   <h1 className={styles.heading}>Best Answer</h1>
-                  <RatedQuestion question={best} />
+                  <RatedQuestion question={best} score={this.props.user.best.score} />
                </div>
             </div>
 
             <div className={classNames(bootstrap.row, styles['top-answer'])}>
                <div className={bootstrap['col-xs-12']}>
                   <h1 className={styles.heading}>Worst Answer</h1>
-                  <RatedQuestion question={worst} />
+                  <RatedQuestion question={worst} score={this.props.user.worst.score} />
                </div>
             </div>
          </div>
