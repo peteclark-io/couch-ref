@@ -15,6 +15,8 @@ const Ranking = React.createClass({
    suffix: (rank) => {
       if (rank % 10 === 1) {
          return 'st';
+      } else if (rank === 12) {
+         return 'th';
       } else if (rank % 10 === 2) {
          return 'nd';
       } else if (rank % 10 === 3) {
