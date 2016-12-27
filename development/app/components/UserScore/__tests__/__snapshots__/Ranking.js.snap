@@ -3,7 +3,7 @@ exports[`test Renders score ok. 1`] = `
   className="overall-ranking centred">
   <h1
     className="heading">
-    Your Ranking!
+    Your Ranking
   </h1>
   <h2
     className="rank">
@@ -18,7 +18,7 @@ exports[`test Renders unrated if no ranking. 1`] = `
   className="overall-ranking centred">
   <h1
     className="heading">
-    Your Ranking!
+    Your Ranking
   </h1>
   <h2
     className="rank">

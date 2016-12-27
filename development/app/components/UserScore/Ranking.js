@@ -26,7 +26,7 @@ const Ranking = React.createClass({
    render: function() {
       return (
          <div className={classNames(styles['overall-ranking'], styles.centred)}>
-            <h1 className={styles.heading}>Your Ranking!</h1>
+            <h1 className={styles.heading}>Your Ranking</h1>
             <h2 className={styles.rank}>{this.props.rank ? this.props.rank + this.suffix(this.props.rank) : 'Unranked'}!</h2>
          </div>
       );
