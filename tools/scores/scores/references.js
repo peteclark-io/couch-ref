@@ -8,6 +8,7 @@ const config = {
    matches: v + '/live-matches',
    users: v + '/users',
    clubs: v + '/clubs',
+   referees: v + '/referees',
    answers: v + '/user-answers',
    archiveQuestions: v + '/archive-questions'
 };

@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import {ThreeBounce} from 'better-react-spinkit';
 
-import styles from './styles.css';
+import styles from './table.css';
 
 const movement = (movement) => {
    if (movement > 0){

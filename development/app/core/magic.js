@@ -17,7 +17,6 @@ const basicVerdict = (match, results) => {
 };
 
 export function verdict(match, results){
-  console.log('Generating verdict.', match);
   if (!results.breakdown){
     return basicVerdict(match, results);
   }

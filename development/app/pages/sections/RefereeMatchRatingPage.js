@@ -10,40 +10,18 @@ import styles from './styles.css';
 import MatchHeader from '../../components/Matches/MatchHeader';
 import Referee from '../../components/Matches/Referee';
 import MatchRating from '../../components/Matches/MatchRating';
-import MatchQuestionRatings from '../../components/Matches/MatchQuestionRatings';
+import MatchQuestionRatings from '../../components/Referees/MatchQuestionRatings';
 
-export const MatchRatingPage = React.createClass({
+export const RefereeMatchRatingPage = React.createClass({
 
    propTypes: {
       match: React.PropTypes.object,
       referee: React.PropTypes.object,
-      questions: React.PropTypes.array,
-      user: React.PropTypes.object
-   },
-
-   computeScore: (match, user) => {
-      if (!match || !user || !user.votes){
-         return null;
-      }
-
-      var scores = match.questions.map((q) => {
-         if (!user.votes[q.id]){
-            return undefined;
-         }
-
-         var answer = user.votes[q.id];
-         return answer ? answer.score : undefined;
-      }).filter((s) => {return s;});
-
-      if(scores.length === 0){
-         return null;
-      }
-
-      return _.sum(scores);
+      questions: React.PropTypes.array
    },
 
    render: function() {
-      var score = this.computeScore(this.props.match, this.props.user);
+      var score = this.props.referee.scores[this.props.match.id];
 
       return (
          <div>
@@ -51,7 +29,7 @@ export const MatchRatingPage = React.createClass({
             <Referee referee={this.props.referee} />
             <MatchRating score={score} />
             <Link className={styles.link} to={`/match/${this.props.match.id}`}>Explore Questions and Results.</Link>
-            <MatchQuestionRatings questions={this.props.questions} user={this.props.user} />
+            <MatchQuestionRatings questions={this.props.questions} />
          </div>
       );
    }
@@ -66,9 +44,8 @@ const getReferee = (state = {referees: {}}, match) => {
    return ref ? ref : undefined;
 };
 
-const getLiveMatch = (state = {matches: []}, id) => {
-   var filtered = _.filter(state.matches, {id: id});
-   return filtered.length === 0 ? undefined : filtered[0];
+const getLiveMatch = (state = {matches: {}}, id) => {
+   return state.matches[id];
 };
 
 const getMatchQuestions = (match, state = {questions: {}}) => {
@@ -90,13 +67,12 @@ const mapStateToProps = (state, ownProps) => {
    return {
       match: match,
       referee: getReferee(state, match),
-      questions: getMatchQuestions(match, state),
-      user: getUser(state)
+      questions: getMatchQuestions(match, state)
    };
 };
 
-const LiveMatchRatingPage = connect(
+const LiveRefereeMatchRatingPage = connect(
    mapStateToProps
-)(MatchRatingPage);
+)(RefereeMatchRatingPage);
 
-export default LiveMatchRatingPage;
+export default LiveRefereeMatchRatingPage;

@@ -39,7 +39,7 @@ const openDatabase = (store, db, mapper, update, add) => {
 const admin = (user) => {
    /*if (user.uid === 'statcxdCyrM1470IAcy3KiBqXI43'){
       console.log('Admin user connected to CouchRef', user.uid);
-      user = {uid:'QcSMqm71JAdan9CFSy1rrGiuW7y1',displayName:'Omar Kassam', email: 'omar.kassam'}
+      user = {uid:'BlIXDmlkq3XlsmMmnE2hwoYm1LT2',displayName:'Becky Allen', email: 'becky.allen'}
       console.log('Admin registered as', user);
    }*/
    return user;
@@ -120,7 +120,7 @@ const data = (store) => {
             clubs.once('value').then((snapshot) => {
                store.dispatch(addClubs(snapshot.val()));
                var sesh = Users(path, store, router);
-               
+
                userUid.once('value').then((userSnap) => {
                   sesh.loadUser(userSnap.val());
                });

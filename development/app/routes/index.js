@@ -59,8 +59,46 @@ const rootRoute = (store) => {
                   }
                },
                {
-                  path: '/referees',
-                  component: require('../pages/sections/RefereePage').default
+                  path: '/referee/:refId',
+                  component: require('../pages/sections/RefereePage').default,
+                  onEnter: ({params}) => {
+                     var ref = store.getState().referees[params.refId];
+                     if (!ref){
+                        browserHistory.push('/missing');
+                        return;
+                     }
+
+                     if (!ref.recentMatches){
+                        return;
+                     }
+
+                     ref.recentMatches.map(match => {
+                        if (!store.getState().matches[match]){
+                           store.dispatch(loadArchivedMatch(match));
+                        }
+                     });
+                  }
+               },
+               {
+                  path: '/referee/:refId/ratings/:matchId',
+                  component: require('../pages/sections/RefereeMatchRatingPage').default,
+                  onEnter: ({params}) => {
+                     var ref = store.getState().referees[params.refId];
+                     if (!ref){
+                        browserHistory.push('/missing');
+                        return;
+                     }
+
+                     if (!ref.recentMatches){
+                        return;
+                     }
+
+                     ref.recentMatches.map(match => {
+                        if (!store.getState().matches[match]){
+                           store.dispatch(loadArchivedMatch(match));
+                        }
+                     });
+                  }
                },
                {
                   path: '/score',

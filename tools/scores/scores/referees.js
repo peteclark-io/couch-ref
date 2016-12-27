@@ -5,6 +5,7 @@ const co = require('co');
 const _ = require('lodash');
 const magic = require('./magic');
 const exec = require('child_process').exec;
+const references = require('./references');
 
 const getFromDb = (db) => {
    return new Promise((resolve, reject) => {
@@ -23,7 +24,6 @@ const generateScore = (vote, verdict) => {
       var res = vote ? '' : '=false';
       var cmd = 'scores --confidence "' + verdict.confidence + '" --result "' + verdict.percentage + '" --vote' + res
       exec(cmd, function(error, stdout, stderr) {
-         //console.log(cmd);
          var score = JSON.parse(stdout).score;
          resolve(score);
       });
@@ -31,7 +31,7 @@ const generateScore = (vote, verdict) => {
 };
 
 const saveScoreForQuestion = (db, question, score) => {
-   db.ref('/v0/live-questions/' + question + '/referee_score').set(score);
+   db.ref(references.questions + '/' + question + '/referee_score').set(score);
 };
 
 const saveRefereeScores = (db, scores) => {
@@ -39,20 +39,35 @@ const saveRefereeScores = (db, scores) => {
    referees.map((ref) => {
       var matches = Object.keys(scores[ref]);
       matches.map((match) => {
-         db.ref('/v0/referees/' + ref).transaction((r) => {
-            if (!r) {
-               return r;
+         db.ref(references.referees + '/' + ref + '/recent_matches').once('value').then(snap => {
+            var recents = snap.val();
+            if (!snap.exists()){
+               recents = [];
             }
 
-            if (!r.scores) {
-               r.scores = {};
+            recents.unshift(match);
+            recents = _.uniq(recents);
+
+            if (recents.length > 5){
+               recents.pop();
             }
 
-            r.scores[match] = scores[ref][match].score;
-            return r;
+            db.ref(references.referees + '/' + ref + '/recent_matches').set(recents);
          });
+
+         db.ref(references.referees + '/' + ref + '/scores/' + match).set(scores[ref][match].score);
       });
-   })
+   });
+};
+
+const saveRefereeTotals = (db) => {
+   getFromDb(db.ref(references.referees)).then(val => {
+      _.values(val).map(ref => {
+         var total = _.sum(_.values(ref.scores));
+         var score = 2000 + total;
+         db.ref(references.referees + '/' + ref.id + '/total_score').set(score);
+      });
+   });
 };
 
 exports.command = 'referees';
@@ -109,6 +124,7 @@ exports.handler = (argv) => {
       }
 
       saveRefereeScores(db, matchScores);
+      saveRefereeTotals(db);
    }).catch((err) => {
       console.log(err);
    }).then(() => {

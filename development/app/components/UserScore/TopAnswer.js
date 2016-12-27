@@ -7,6 +7,8 @@ import {Link} from 'react-router';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import classNames from 'classnames';
 
+import RatedQuestion from '../Common/RatedQuestion';
+
 import {inflation} from '../../core/magic';
 import styles from './styles.css';
 
@@ -27,43 +29,26 @@ export const TopAnswer = React.createClass({
    },
 
    render: function() {
-      console.log(this.props.user, this.props.best, this.props.worst);
       if (!this.props.user || !this.props.best || !this.props.worst){
          return null;
       }
 
-      var bestScore = this.props.user.best.score;
-      var worstScore = this.props.user.worst.score;
+      var best = Object.assign({}, this.props.best, {score: this.props.user.best.score});
+      var worst = Object.assign({}, this.props.worst, {score: this.props.user.worst.score});
 
       return (
          <div>
             <div className={classNames(bootstrap.row, styles['top-answer'])}>
                <div className={bootstrap['col-xs-12']}>
                   <h1 className={styles.heading}>Best Answer</h1>
-               </div>
-
-               <div className={classNames(bootstrap['col-xs-2'], bootstrap['col-sm-2'], bootstrap['col-md-2'], bootstrap['col-lg-1'])}>
-                  <p className={classNames(styles.score, this.bground(bestScore))}>{this.sign(bestScore)}{(bestScore * inflation).toFixed(0)}</p>
-               </div>
-               <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-sm-10'], bootstrap['col-md-10'], bootstrap['col-lg-11'])}>
-                  <h3>{this.props.best.question}</h3>
-                  <h3><small>{this.props.best.description}</small></h3>
-                  <Link className={styles.link} to={`/question/${this.props.best.id}`}>Show Detailed Results</Link>
+                  <RatedQuestion question={best} />
                </div>
             </div>
 
             <div className={classNames(bootstrap.row, styles['top-answer'])}>
                <div className={bootstrap['col-xs-12']}>
                   <h1 className={styles.heading}>Worst Answer</h1>
-               </div>
-
-               <div className={classNames(bootstrap['col-xs-2'], bootstrap['col-sm-2'], bootstrap['col-md-2'], bootstrap['col-lg-1'])}>
-                  <p className={classNames(styles.score, this.bground(worstScore))}>{this.sign(worstScore)}{(worstScore * inflation).toFixed(0)}</p>
-               </div>
-               <div className={classNames(bootstrap['col-xs-10'], bootstrap['col-sm-10'], bootstrap['col-md-10'], bootstrap['col-lg-11'])}>
-                  <h3>{this.props.worst.question}</h3>
-                  <h3><small>{this.props.worst.description}</small></h3>
-                  <Link className={styles.link} to={`/question/${this.props.worst.id}`}>Show Detailed Results</Link>
+                  <RatedQuestion question={worst} />
                </div>
             </div>
          </div>

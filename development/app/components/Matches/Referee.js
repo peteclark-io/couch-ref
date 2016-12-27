@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router';
 
 import _ from 'lodash';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -21,7 +22,7 @@ export const Referee = React.createClass({
       }
 
       return (
-         <h4 className={styles.referee}>Referee: {this.props.referee.name.display}</h4>
+         <h4 className={styles.referee}>Referee: <Link to={`/referee/${this.props.referee.id}`}>{this.props.referee.name.display}</Link></h4>
       );
    }
 });

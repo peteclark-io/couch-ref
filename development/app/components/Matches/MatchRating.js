@@ -14,36 +14,19 @@ import styles from './styles.css';
 const MatchRating = React.createClass({
 
    propTypes: {
-      user: React.PropTypes.object,
-      match: React.PropTypes.object
+      score: React.PropTypes.number
    },
 
    render: function() {
-      if (!this.props.match || !this.props.user || !this.props.user.votes){
+      if(!this.props.score){
          return null;
       }
 
-      var scores = this.props.match.questions.map((q) => {
-         if (!this.props.user.votes[q.id]){
-            return undefined;
-         }
-
-         var answer = this.props.user.votes[q.id];
-         return answer ? answer.score : undefined;
-      }).filter((s) => {return s;});
-
-      if(scores.length === 0){
-         return null;
-      }
-
-      var overall = _.sum(scores) * inflation;
-      console.log('Score for the match', overall, scores);
-      var title = matchScore(overall);
-
+      var score = this.props.score * inflation;
       return (
          <div className={styles['match-rating']}>
             <h3>Overall Match Rating</h3>
-            <h2>{overall > 0 ? '+' : null}{overall.toFixed(0)}</h2>
+            <h2>{this.props.score > 0 ? '+' : null}{score.toFixed(0)}</h2>
          </div>
       );
    }

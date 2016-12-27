@@ -16,6 +16,7 @@ import styles from './styles.css';
 const RecentMatches = React.createClass({
 
    propTypes: {
+      referee: React.PropTypes.object,
       matches: React.PropTypes.object,
       scores: React.PropTypes.object
    },
@@ -40,11 +41,10 @@ const RecentMatches = React.createClass({
 
       return (
          <div className={styles['recent-matches']}>
-            <h1 className={styles.heading}>Your Recent Matches</h1>
+            <h1 className={styles.heading}>Recent Matches</h1>
             {recent.map(match => {
-               var score = _.sumBy(this.props.scores[match.id], 'score');
                return (
-                  <RatedMatch key={match.id} match={match} score={score} />
+                  <RatedMatch key={match.id} match={match} score={this.props.scores[match.id]} link={`/referee/${this.props.referee.id}/ratings/${match.id}`} />
                )
             })}
          </div>

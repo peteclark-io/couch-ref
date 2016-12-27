@@ -47,7 +47,8 @@ export const createReferee = (value) => {
       movement: value.movement ? value.movement : 0,
       appearances: refereeAppearances(value),
       scores: value.scores,
-      totalScore: refereeTotal(value)
+      totalScore: value.total_score,
+      recentMatches: value.recent_matches
    };
 }
 

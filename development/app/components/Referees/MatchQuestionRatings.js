@@ -9,13 +9,12 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import RatedQuestion from '../Common/RatedQuestion';
 
 import {inflation} from '../../core/magic';
-import styles from './ratings.css';
+import styles from './styles.css';
 
 const MatchQuestionRatings = React.createClass({
 
    propTypes: {
-      questions: React.PropTypes.array,
-      user: React.PropTypes.object
+      questions: React.PropTypes.array
    },
 
    sign: (val) => {
@@ -30,17 +29,16 @@ const MatchQuestionRatings = React.createClass({
    },
 
    render: function() {
-      if (!this.props.user || !this.props.user.votes || !this.props.questions){
+      if (!this.props.questions){
          return null;
       }
 
       var mapped = this.props.questions.map(q => {
-         if (!q.scored || !this.props.user.votes[q.id]){
+         if (!q.refereeScore){
             return undefined;
          }
 
-         var answer = this.props.user.votes[q.id];
-         return Object.assign({}, answer, q);
+         return Object.assign({}, {score: q.refereeScore, answer: q.decision}, q);
       }).filter(q => q);
 
       return (
@@ -48,7 +46,7 @@ const MatchQuestionRatings = React.createClass({
             <h1 className={styles.header}>Scores</h1>
             {mapped.map(q => {
                return (
-                  <RatedQuestion key={q.id} question={q} />
+                  <RatedQuestion prefix={`Ref's`} key={q.id} question={q} />
                );
             })}
          </div>
