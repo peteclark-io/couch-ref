@@ -19,7 +19,7 @@ const ScoresReady = React.createClass({
 
       return (
          <div className={styles['scores-ready']}>
-            <Link to={`/ratings/` + this.props.match.id}><h2>Scores are Ready!</h2></Link>
+            <Link to={`/ratings/` + this.props.match.id}><h2>View Your Scores!</h2></Link>
          </div>
       );
    }

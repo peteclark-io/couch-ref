@@ -36,6 +36,10 @@ const Scores = React.createClass({
          var today = moment(24, 'HH'); // midnight tonight
          var yesterday = moment(24, 'HH').subtract(1, 'days'); // midnight last night
 
+         var recentFixtures = _.filter(this.props.matches, i => {
+            return i.kickOff.isBefore(yesterday) && i.televised && i.live;
+         });
+
          var todaysFixtures = _.filter(this.props.matches, (i) => {
             return i.kickOff.isBefore(today) && i.kickOff.isAfter(yesterday) && i.televised;
          });
@@ -64,12 +68,22 @@ const Scores = React.createClass({
          }
 
          return (
-            <div>
-               <h2 className={styles['fixture-list-header']}>{title}</h2>
-               <div className={styles.spacer}></div>
+            <div className={styles['fixture-list']}>
+               <h2 className={styles.header}>{title}</h2>
 
                <ul className={styles['match-list']}>
                   {fixtures.map(function(match) {
+                     return (
+                        <li key={match.id}>
+                           <Score match={match} />
+                        </li>
+                     );
+                  })}
+               </ul>
+
+               <h2 className={styles.header}>Recent Fixtures</h2>
+               <ul className={styles['match-list']}>
+                  {recentFixtures.map(function(match) {
                      return (
                         <li key={match.id}>
                            <Score match={match} />
