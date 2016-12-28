@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {Link} from 'react-router'
+import {ThreeBounce} from 'better-react-spinkit';
 
 import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -35,12 +36,18 @@ const MatchQuestionRatings = React.createClass({
       }
 
       var mapped = this.props.questions.map(q => {
-         return !q.scored || !this.props.user.votes[q.id] ? undefined : q;
+         return !q || !q.scored || !this.props.user.votes[q.id] ? undefined : q;
       }).filter(q => q);
 
       return (
          <div className={styles['question-scores']}>
             <h1 className={styles.header}>Your Scores</h1>
+            {!mapped || mapped.length === 0 ?
+               <div className={styles.loading}>
+                  <ThreeBounce />
+               </div>
+               : null
+            }
             {mapped.map(q => {
                return (
                   <RatedQuestion key={q.id} question={q} score={this.props.user.votes[q.id].score} answer={this.props.user.votes[q.id].answer} />
