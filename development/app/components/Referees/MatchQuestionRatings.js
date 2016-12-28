@@ -34,7 +34,7 @@ const MatchQuestionRatings = React.createClass({
       }
 
       var mapped = this.props.questions.map(q => {
-         return !q.refereeScore ? undefined : q;
+         return !q || !q.refereeScore ? undefined : q;
       }).filter(q => q);
 
       return (

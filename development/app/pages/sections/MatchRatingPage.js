@@ -7,6 +7,8 @@ import _ from 'lodash';
 
 import styles from './styles.css';
 
+import {inflation} from '../../core/magic';
+
 import MatchHeader from '../../components/Matches/MatchHeader';
 import Referee from '../../components/Matches/Referee';
 import MatchRating from '../../components/Matches/MatchRating';
@@ -32,14 +34,14 @@ export const MatchRatingPage = React.createClass({
          }
 
          var answer = user.votes[q.id];
-         return answer ? answer.score : undefined;
+         return answer ? Math.round(answer.score * inflation) : undefined;
       }).filter((s) => {return s;});
 
       if(scores.length === 0){
          return null;
       }
 
-      return _.sum(scores);
+      return _.sum(scores) / inflation;
    },
 
    render: function() {

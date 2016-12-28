@@ -7,6 +7,8 @@ import _ from 'lodash';
 
 import styles from './styles.css';
 
+import {inflation} from '../../core/magic';
+
 import MatchHeader from '../../components/Matches/MatchHeader';
 import Referee from '../../components/Matches/Referee';
 import RefereeRating from '../../components/Matches/RefereeRating';
@@ -21,7 +23,13 @@ export const RefereeMatchRatingPage = React.createClass({
    },
 
    render: function() {
-      var score = this.props.referee.scores[this.props.match.id];
+      var score = _.sum(this.props.questions.map(q => {
+         return q && q.refereeScore ? Math.round(q.refereeScore * inflation) : undefined;
+      }).filter(q => q));
+
+      if (score){
+         score = score / inflation;
+      }
 
       return (
          <div className={styles['referee-match']}>

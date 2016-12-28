@@ -77,6 +77,7 @@ export default function Users(path, store, router){
             return;
          }
 
+         console.timeEnd('load-data');
          router.push(path);
       },
       loadVotes: (data) => {

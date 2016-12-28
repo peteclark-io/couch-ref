@@ -2,6 +2,7 @@
 
 import firebase from 'firebase';
 import moment from 'moment';
+import _ from 'lodash';
 
 import {updateMatch, addMatch} from '../ducks/matches';
 import {updateQuestion, addQuestion} from '../ducks/questions';
@@ -48,6 +49,7 @@ const admin = (user) => {
 const data = (store) => {
    return {
       init: function(router, path){
+         console.time('init');
          var config = {
             apiKey: "AIzaSyAoRaeRoKYx6Q_tuOVeK753OWmtuJEyQX8",
             authDomain: "couchref-9962e.firebaseapp.com",
@@ -59,7 +61,6 @@ const data = (store) => {
          var provider = new firebase.auth.GoogleAuthProvider();
 
          firebase.initializeApp(config);
-
          firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                couchRef(admin(user));
@@ -112,17 +113,23 @@ const data = (store) => {
             var liveStatistics = database.ref(references.statistics);
 
             openDatabase(store, liveMatches, createMatch, updateMatch, addMatch);
-            openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
-            openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
 
-            openDatabase(store, referees, createReferee, addReferee, addReferee);
+            referees.once('value').then(snap => {
+               var refs = snap.val();
+               _.values(refs).map(createReferee).map(ref => {
+                  store.dispatch(addReferee(ref));
+               });
+            });
 
+            console.time('load-data');
             clubs.once('value').then((snapshot) => {
                store.dispatch(addClubs(snapshot.val()));
                var sesh = Users(path, store, router);
 
                userUid.once('value').then((userSnap) => {
                   sesh.loadUser(userSnap.val());
+                  openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
+                  openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
                });
             });
          }
