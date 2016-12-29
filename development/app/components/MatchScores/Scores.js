@@ -36,9 +36,9 @@ const Scores = React.createClass({
          var today = moment(24, 'HH'); // midnight tonight
          var yesterday = moment(24, 'HH').subtract(1, 'days'); // midnight last night
 
-         var recentFixtures = _.filter(this.props.matches, i => {
+         var recentFixtures = _.reverse(_.sortBy(_.filter(this.props.matches, i => {
             return i.kickOff.isBefore(yesterday) && i.televised && i.live;
-         });
+         }), ['kickOff']));
 
          var todaysFixtures = _.filter(this.props.matches, (i) => {
             return i.kickOff.isBefore(today) && i.kickOff.isAfter(yesterday) && i.televised;

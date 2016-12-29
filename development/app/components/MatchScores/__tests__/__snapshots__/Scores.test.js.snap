@@ -107,43 +107,6 @@ exports[`test Renders no fixtures if they're old. 1`] = `
         className="fixture">
         <span
           className="kick-off">
-          Sat 4th Jan 20:00
-        </span>
-        <div
-          className="home">
-          <span
-            className="teams">
-            home
-          </span>
-          <span
-            className="goals">
-            0
-          </span>
-        </div>
-        <div
-          className="away">
-          <span
-            className="teams">
-            away
-          </span>
-          <span
-            className="goals">
-            4
-          </span>
-        </div>
-        <a
-          className="link"
-          onClick={[Function]}
-          style={Object {}}>
-          Follow Match Live!
-        </a>
-      </div>
-    </li>
-    <li>
-      <div
-        className="fixture">
-        <span
-          className="kick-off">
           Tue 4th Feb 20:00
         </span>
         <div
@@ -166,6 +129,43 @@ exports[`test Renders no fixtures if they're old. 1`] = `
           <span
             className="goals">
             3
+          </span>
+        </div>
+        <a
+          className="link"
+          onClick={[Function]}
+          style={Object {}}>
+          Follow Match Live!
+        </a>
+      </div>
+    </li>
+    <li>
+      <div
+        className="fixture">
+        <span
+          className="kick-off">
+          Sat 4th Jan 20:00
+        </span>
+        <div
+          className="home">
+          <span
+            className="teams">
+            home
+          </span>
+          <span
+            className="goals">
+            0
+          </span>
+        </div>
+        <div
+          className="away">
+          <span
+            className="teams">
+            away
+          </span>
+          <span
+            className="goals">
+            4
           </span>
         </div>
         <a
