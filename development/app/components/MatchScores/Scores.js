@@ -59,10 +59,20 @@ const Scores = React.createClass({
 
          if(fixtures.length === 0){
             return (
-               <div>
-                  <h2 className={styles['fixture-list-header']}>{title}</h2>
-                  <div className={styles.spacer}></div>
+               <div className={styles['fixture-list']}>
+                  <h2 className={styles.header}>{title}</h2>
                   <h4 className={styles['no-fixtures']}>No Fixtures right now! Check back later for new fixtures.</h4>
+
+                  <h2 className={styles.header}>Recent Fixtures</h2>
+                  <ul className={styles['match-list']}>
+                     {recentFixtures.map(function(match) {
+                        return (
+                           <li key={match.id}>
+                              <Score match={match} />
+                           </li>
+                        );
+                     })}
+                  </ul>
                </div>
             )
          }
