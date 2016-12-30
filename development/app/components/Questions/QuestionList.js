@@ -28,8 +28,15 @@ const QuestionList = React.createClass({
       vote: React.PropTypes.func
    },
 
+   checkReady: (list, questions, statistics) => {
+      var test = list.filter((q) => {
+         return !questions[q.id] || !statistics[q.id];
+      });
+      return test.length === 0;
+   },
+
    render: function() {
-      if (!this.props.questions || !this.props.statistics){
+      if (!this.props.questions || !this.props.statistics || !this.checkReady(this.props.list, this.props.questions, this.props.statistics)){
          return (
             <div className={styles.loading}>
                <ThreeBounce />
