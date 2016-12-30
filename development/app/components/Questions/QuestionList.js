@@ -2,6 +2,7 @@
 
 import React from 'react';
 import _ from 'lodash';
+import {ThreeBounce} from 'better-react-spinkit';
 
 import classNames from 'classnames';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
@@ -28,6 +29,14 @@ const QuestionList = React.createClass({
    },
 
    render: function() {
+      if (!this.props.questions || !this.props.statistics){
+         return (
+            <div className={styles.loading}>
+               <ThreeBounce />
+            </div>
+         );
+      }
+
       var sortedList = _.reverse(_.sortBy(this.props.list, ['asked']));
 
       return (

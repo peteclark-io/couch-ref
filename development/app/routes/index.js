@@ -3,19 +3,22 @@
 import Splash from '../pages/banners/Splash';
 import {browserHistory} from 'react-router';
 
-import {loadArchivedMatch} from '../ducks/matches';
+import {loadArchivedMatch, fullyLoadArchivedMatch} from '../ducks/matches';
 import {loadArchivedQuestion} from '../ducks/questions';
 import {loadArchivedStatistic} from '../ducks/statistics';
 
 const getMatch = (store) => {
    return ({params}) => {
       if (!store.getState().matches[params.matchId]){
-         store.dispatch(
-            loadArchivedMatch(
-               params.matchId,
-               () => {browserHistory.push('/missing');}
-            )
-         );
+         store.dispatch(fullyLoadArchivedMatch(params.matchId, () => {browserHistory.push('/missing')}));
+      } else {
+         var match = store.getState().matches[params.matchId];
+         match.questions.map(q => {
+            if (!store.getState().questions[q.id]){
+               store.dispatch(loadArchivedQuestion(q.id));
+               store.dispatch(loadArchivedStatistic(q.id));
+            }
+         });
       }
    };
 };

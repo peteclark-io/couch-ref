@@ -1,6 +1,7 @@
 'use strict';
 
 import firebase from 'firebase';
+import _ from 'lodash';
 import references from '../core/references';
 
 import {loadArchivedMatch} from './matches';

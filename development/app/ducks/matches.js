@@ -5,9 +5,8 @@ import firebase from 'firebase';
 
 import references from '../core/references';
 import {createMatch} from '../core/mappers';
-import {loadArchivedQuestion} from './questions';
-import {loadArchivedStatistic} from './statistics';
-import {loadVote} from './user';
+import {loadArchivedQuestion} from '../ducks/questions';
+import {loadArchivedStatistic} from '../ducks/statistics';
 
 const MATCH_UPDATE = 'couch-ref/matches/MATCH_UPDATE'
 const ADD_MATCH = 'couch-ref/matches/ADD_MATCH'
@@ -42,6 +41,21 @@ export function loadArchivedMatch(match, redirect) {
 
          var archived = snap.val();
          dispatch(addMatch(createMatch(archived)));
+      });
+   };
+}
+
+export function fullyLoadArchivedMatch(match, redirect) {
+   return (dispatch) => {
+      var db = firebase.database();
+      db.ref(references.archiveMatches + '/' + match).once('value').then((snap) => {
+         if (!snap.exists()){
+            redirect ? redirect() : null;
+            return;
+         }
+
+         var archived = snap.val();
+         dispatch(addMatch(createMatch(archived)));
 
          if (!archived.questions){
             return;
@@ -50,25 +64,15 @@ export function loadArchivedMatch(match, redirect) {
          archived.questions.map(q => {
             dispatch(loadArchivedQuestion(q.id));
             dispatch(loadArchivedStatistic(q.id));
-         });
+         })
       });
    };
 }
 
 export function updateMatch(match) {
-   return (dispatch) => {
-      dispatch({type: MATCH_UPDATE, match: match});
-      match.questions.map(q => {
-         dispatch(loadVote(q.id));
-      });
-   };
+   return {type: MATCH_UPDATE, match: match};
 }
 
 export function addMatch(match) {
-   return (dispatch) => {
-      dispatch({type: ADD_MATCH, match: match});
-      match.questions.map(q => {
-         dispatch(loadVote(q.id));
-      });
-   };
+   return {type: ADD_MATCH, match: match};
 }

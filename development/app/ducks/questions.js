@@ -4,6 +4,7 @@ import firebase from 'firebase';
 
 import references from '../core/references';
 import {createQuestion} from '../core/mappers';
+import {loadVote} from './user';
 
 const QUESTION_UPDATE = 'couch-ref/questions/MATCH_UPDATE'
 const ADD_QUESTION = 'couch-ref/questions/ADD_MATCH'
@@ -36,6 +37,7 @@ export function loadArchivedQuestion(question, redirect) {
 
          var archived = snap.val();
          dispatch(addQuestion(createQuestion(archived)));
+         dispatch(loadVote(archived.id));
       });
    };
 }

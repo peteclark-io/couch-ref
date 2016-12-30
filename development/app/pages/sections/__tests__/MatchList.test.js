@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import MatchList from '../MatchList';
+import {MatchList} from '../MatchList';
 import {shallow} from 'enzyme';
 
 import {Provider} from 'react-redux';

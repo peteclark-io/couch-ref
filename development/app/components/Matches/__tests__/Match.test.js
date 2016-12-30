@@ -21,7 +21,7 @@ it('Displays loader when there is no data.', () => {
 it('Displays match score, with no questions.', () => {
    var match = {id: '1001', home: 'Arsenal', away: 'West Ham', goalsHome: 1, goalsAway: 0, questions: []};
    const rendered = renderer.create(
-      <Match match={match} />
+      <Match match={match} questions={{}} statistics={{}} />
    );
 
    expect(rendered.toJSON()).toMatchSnapshot();

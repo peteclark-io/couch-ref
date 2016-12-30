@@ -39,6 +39,10 @@ const getQuestions = (state = {questions: {}}, match) => {
       return state.questions[q.id] ? state.questions[q.id] : undefined;
    }).filter(q => q);
 
+   if (reduced.length === 0){
+      return undefined;
+   }
+
    return _.keyBy(reduced, 'id');
 };
 
@@ -54,6 +58,10 @@ const getStatistics = (state = {statistics: {}}, match) => {
    var reduced = match.questions.map(q => {
       return state.statistics[q.id] ? state.statistics[q.id] : undefined;
    }).filter(q => q);
+
+   if (reduced.length === 0){
+      return undefined;
+   }
 
    return _.keyBy(reduced, 'id');
 };
