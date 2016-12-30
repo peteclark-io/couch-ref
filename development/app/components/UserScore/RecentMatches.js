@@ -45,7 +45,7 @@ const RecentMatches = React.createClass({
                var score = _.sumBy(this.props.scores[match.id], 'score');
                return (
                   <RatedMatch key={match.id} match={match} score={score} />
-               )
+               );
             })}
          </div>
       );

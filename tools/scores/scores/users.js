@@ -45,7 +45,7 @@ const saveScore = (db, match, quuid, user) => {
       recents.unshift(match);
       recents = _.uniq(recents);
 
-      if (recents.length > 5){
+      while (recents.length > 3){
          recents.pop();
       }
 

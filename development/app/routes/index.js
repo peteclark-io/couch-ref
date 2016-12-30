@@ -13,12 +13,14 @@ const getMatch = (store) => {
          store.dispatch(fullyLoadArchivedMatch(params.matchId, () => {browserHistory.push('/missing')}));
       } else {
          var match = store.getState().matches[params.matchId];
-         match.questions.map(q => {
-            if (!store.getState().questions[q.id]){
-               store.dispatch(loadArchivedQuestion(q.id));
-               store.dispatch(loadArchivedStatistic(q.id));
-            }
-         });
+         setTimeout(() => {
+            match.questions.map(q => {
+               if (!store.getState().questions[q.id]){
+                  store.dispatch(loadArchivedQuestion(q.id));
+                  store.dispatch(loadArchivedStatistic(q.id));
+               }
+            });
+         }, 5);
       }
    };
 };
@@ -29,6 +31,22 @@ const rootRoute = (store) => {
          {
             path: '/',
             component: require('../pages/CouchRef').default,
+            onEnter: () => {
+               setTimeout(() => {
+                  var best = store.getState().user.best;
+                  var worst = store.getState().user.worst;
+
+                  if (best && !store.getState().questions[best.question]){
+                     store.dispatch(loadArchivedQuestion(best.question))
+                     store.dispatch(loadArchivedStatistic(best.question))
+                  }
+
+                  if (worst && !store.getState().questions[worst.question]){
+                     store.dispatch(loadArchivedQuestion(worst.question))
+                     store.dispatch(loadArchivedStatistic(worst.question))
+                  }
+               }, 5);
+            },
             childRoutes: [
                {
                   path: '/match/:matchId',
@@ -105,21 +123,7 @@ const rootRoute = (store) => {
                },
                {
                   path: '/score',
-                  component: require('../pages/sections/UserScorePage').default,
-                  onEnter: () => {
-                     var best = store.getState().user.best;
-                     var worst = store.getState().user.worst;
-
-                     if (best && !store.getState().questions[best.question]){
-                        store.dispatch(loadArchivedQuestion(best.question))
-                        store.dispatch(loadArchivedStatistic(best.question))
-                     }
-
-                     if (worst && !store.getState().questions[worst.question]){
-                        store.dispatch(loadArchivedQuestion(worst.question))
-                        store.dispatch(loadArchivedStatistic(worst.question))
-                     }
-                  }
+                  component: require('../pages/sections/UserScorePage').default
                },
                require('./TeamsRoute').default
             ]
