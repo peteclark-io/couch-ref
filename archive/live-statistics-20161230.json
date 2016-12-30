@@ -1,0 +1,1619 @@
+{
+  "04fca29f-9a1f-466c-8128-8430331766d0": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "04fca29f-9a1f-466c-8128-8430331766d0",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "1516d60c-75e7-4007-9b12-7b4b843e9426": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "1516d60c-75e7-4007-9b12-7b4b843e9426",
+    "simple": {
+      "no": 1,
+      "yes": 1
+    }
+  },
+  "16cfaf74-4bad-4c98-9562-d33c48239241": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "16cfaf74-4bad-4c98-9562-d33c48239241",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "171d007a-c04b-4adb-8599-938576ad12af": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "171d007a-c04b-4adb-8599-938576ad12af",
+    "simple": {
+      "no": 1,
+      "yes": 1
+    }
+  },
+  "2cd85312-da8d-49c2-be31-0d6333fd4601": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 3,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 2,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 3,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 1,
+          "yes": 0
+        },
+        "Male": {
+          "no": 2,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "2cd85312-da8d-49c2-be31-0d6333fd4601",
+    "simple": {
+      "no": 3,
+      "yes": 0
+    }
+  },
+  "31b89385-ad43-4a2f-afa8-147ee7b8c515": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "31b89385-ad43-4a2f-afa8-147ee7b8c515",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "32a58a00-4ee6-4f43-b8f0-070702f958eb": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "32a58a00-4ee6-4f43-b8f0-070702f958eb",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "398b453d-fa99-4b2b-99e7-8502d2a69ff9": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "398b453d-fa99-4b2b-99e7-8502d2a69ff9",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "3f865bff-f675-45ae-9a17-7bc1e8415b04": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 2
+        },
+        "31 - 40": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        },
+        "National League": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 1,
+          "yes": 1
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "3f865bff-f675-45ae-9a17-7bc1e8415b04",
+    "simple": {
+      "no": 1,
+      "yes": 2
+    }
+  },
+  "3fb2cfff-16e2-408d-a4db-efb61cd57f24": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "3fb2cfff-16e2-408d-a4db-efb61cd57f24",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "4ec2d6f6-a65d-427a-a36f-697c5abce66c": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 2,
+          "yes": 0
+        },
+        "< 20": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 2,
+          "yes": 0
+        },
+        "Liverpool": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 2,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 2,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "4ec2d6f6-a65d-427a-a36f-697c5abce66c",
+    "simple": {
+      "no": 2,
+      "yes": 1
+    }
+  },
+  "510d5707-0569-45fb-9ac0-a4cf90e1347c": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "510d5707-0569-45fb-9ac0-a4cf90e1347c",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "58f5e580-b814-42b1-840d-4bcab05e61fe": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "58f5e580-b814-42b1-840d-4bcab05e61fe",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "64cd2ed3-e47a-44d1-9d34-a859c2f3b36e": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "64cd2ed3-e47a-44d1-9d34-a859c2f3b36e",
+    "simple": {
+      "no": 0,
+      "yes": 2
+    }
+  },
+  "650ea693-d5bc-4cbf-a9d5-dabcb4225e71": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 2
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "650ea693-d5bc-4cbf-a9d5-dabcb4225e71",
+    "simple": {
+      "no": 0,
+      "yes": 2
+    }
+  },
+  "6adeae96-ca6b-4a91-a202-580cf9de5fc0": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 2,
+          "yes": 0
+        },
+        "31 - 40": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 1,
+          "yes": 0
+        },
+        "National League": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 3,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 1,
+          "yes": 0
+        },
+        "Male": {
+          "no": 2,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "6adeae96-ca6b-4a91-a202-580cf9de5fc0",
+    "simple": {
+      "no": 3,
+      "yes": 0
+    }
+  },
+  "6c8c00a0-0b07-4a42-ad1f-7a00f40d28f1": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "6c8c00a0-0b07-4a42-ad1f-7a00f40d28f1",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "72b85fc1-24d9-4982-b542-2852d119aa39": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 2,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 2,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 1,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "72b85fc1-24d9-4982-b542-2852d119aa39",
+    "simple": {
+      "no": 2,
+      "yes": 1
+    }
+  },
+  "765bc058-633d-4fcb-824c-213397aa23f0": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "765bc058-633d-4fcb-824c-213397aa23f0",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "77e221e2-2dc3-42d5-9754-0f6137174e8c": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 2
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 1,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "77e221e2-2dc3-42d5-9754-0f6137174e8c",
+    "simple": {
+      "no": 1,
+      "yes": 2
+    }
+  },
+  "8338a18c-1f21-4d83-9941-c8761f364058": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "8338a18c-1f21-4d83-9941-c8761f364058",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "9d560cc6-25f3-451d-8708-cf10ee3df50e": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "9d560cc6-25f3-451d-8708-cf10ee3df50e",
+    "simple": {
+      "no": 0,
+      "yes": 2
+    }
+  },
+  "a0d14ff0-e539-41cc-9a44-2887c04ec206": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 2
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 1,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "a0d14ff0-e539-41cc-9a44-2887c04ec206",
+    "simple": {
+      "no": 1,
+      "yes": 2
+    }
+  },
+  "a8b68695-fcf1-4f06-abb1-9e48a5873687": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "a8b68695-fcf1-4f06-abb1-9e48a5873687",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "a8f7ff69-d6bf-42aa-bad9-0c4d1e7de70a": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 1
+        },
+        "31 - 40": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        },
+        "Leicester": {
+          "no": 1,
+          "yes": 0
+        },
+        "National League": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 2,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 2,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "a8f7ff69-d6bf-42aa-bad9-0c4d1e7de70a",
+    "simple": {
+      "no": 2,
+      "yes": 1
+    }
+  },
+  "b454d8ce-9ebb-4afd-a6b1-794210973bbd": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "b454d8ce-9ebb-4afd-a6b1-794210973bbd",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "b74f6462-c92a-4532-8bb0-6cef22ebf337": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "b74f6462-c92a-4532-8bb0-6cef22ebf337",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "bd3e8407-2ece-489e-ba04-ffc4e6d1cebd": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "bd3e8407-2ece-489e-ba04-ffc4e6d1cebd",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "c122c0ee-ce8b-4e76-a1f2-feee89621fb7": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "c122c0ee-ce8b-4e76-a1f2-feee89621fb7",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "cba4c7aa-5e19-41a3-92ea-cd730269bad9": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "cba4c7aa-5e19-41a3-92ea-cd730269bad9",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "d3bf713d-83c5-4eb8-9e1a-a8d69f2fa415": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 2,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 2,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 2,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 2,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "d3bf713d-83c5-4eb8-9e1a-a8d69f2fa415",
+    "simple": {
+      "no": 2,
+      "yes": 1
+    }
+  },
+  "d3fd06f3-a46e-4a31-a7e0-f15c5305d520": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 0,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "d3fd06f3-a46e-4a31-a7e0-f15c5305d520",
+    "simple": {
+      "no": 0,
+      "yes": 1
+    }
+  },
+  "e6c1db4d-8f10-4932-9233-ac353e31415b": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 2,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 2,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 2,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 2,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "e6c1db4d-8f10-4932-9233-ac353e31415b",
+    "simple": {
+      "no": 2,
+      "yes": 0
+    }
+  },
+  "ea596a5d-4fb4-4757-92d3-50ce968d866d": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "ea596a5d-4fb4-4757-92d3-50ce968d866d",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "ec48af06-aa2e-4263-bea1-3c17df841821": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 2,
+          "yes": 0
+        },
+        "31 - 40": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 1,
+          "yes": 0
+        },
+        "National League": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 3,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 2,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "ec48af06-aa2e-4263-bea1-3c17df841821",
+    "simple": {
+      "no": 3,
+      "yes": 0
+    }
+  },
+  "eff66d20-3e67-498c-81ef-07260ac96561": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 0
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 0
+        },
+        "Male": {
+          "no": 1,
+          "yes": 0
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "eff66d20-3e67-498c-81ef-07260ac96561",
+    "simple": {
+      "no": 1,
+      "yes": 0
+    }
+  },
+  "fa339c68-05b5-4b85-8090-0ffa5b3b832d": {
+    "breakdown": {
+      "age": {
+        "21 - 30": {
+          "no": 1,
+          "yes": 1
+        },
+        "31 - 40": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "club": {
+        "Arsenal": {
+          "no": 1,
+          "yes": 0
+        },
+        "Leicester": {
+          "no": 0,
+          "yes": 1
+        },
+        "National League": {
+          "no": 0,
+          "yes": 1
+        }
+      },
+      "location": {
+        "United Kingdom": {
+          "no": 1,
+          "yes": 2
+        }
+      },
+      "sex": {
+        "Female": {
+          "no": 0,
+          "yes": 1
+        },
+        "Male": {
+          "no": 1,
+          "yes": 1
+        },
+        "Other": {
+          "no": 0,
+          "yes": 0
+        }
+      }
+    },
+    "id": "fa339c68-05b5-4b85-8090-0ffa5b3b832d",
+    "simple": {
+      "no": 1,
+      "yes": 2
+    }
+  }
+}
