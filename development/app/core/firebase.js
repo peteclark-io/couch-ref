@@ -113,6 +113,8 @@ const data = (store) => {
             var liveStatistics = database.ref(references.statistics);
 
             openDatabase(store, liveMatches, createMatch, updateMatch, addMatch);
+            openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
+            openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
 
             referees.once('value').then(snap => {
                var refs = snap.val();
@@ -128,8 +130,6 @@ const data = (store) => {
 
                userUid.once('value').then((userSnap) => {
                   sesh.loadUser(userSnap.val());
-                  openDatabase(store, liveQuestions, createQuestion, updateQuestion, addQuestion);
-                  openDatabase(store, liveStatistics, createStatistic, updateStatistic, addStatistic);
                });
             });
          }
