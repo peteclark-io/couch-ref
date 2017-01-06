@@ -15,6 +15,18 @@ const Fixtures = React.createClass({
       fixtures: React.PropTypes.array
    },
 
+   shouldComponentUpdate: function(nextProps, nextState){
+      if (!nextProps.fixtures){
+         return false;
+      }
+
+      if (this.props.fixtures.length === 0 && nextProps.fixtures.length === 0){
+         return false;
+      }
+
+      return true;
+   },
+
    render: function() {
       if (!this.props.fixtures){
          return (
