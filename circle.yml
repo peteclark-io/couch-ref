@@ -13,7 +13,6 @@ deployment:
       - npm run deploy
   master:
     branch: master
-    owner: circleci
     commands:
       - echo "{\"version\":\"$CIRCLE_TAG\"}" > ./version.json
       - npm run canary
