@@ -16,7 +16,7 @@ const Fixtures = React.createClass({
    },
 
    render: function() {
-      if (!this.props.fixtures || this.props.fixtures.length === 0){
+      if (!this.props.fixtures){
          return (
             <div className={styles.loading}>
                <ThreeBounce />
