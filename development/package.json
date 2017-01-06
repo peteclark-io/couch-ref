@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:a11y": "pa11y http://localhost:9000",
-    "deploy": "webpack -p --config webpack.config.prod.js --progress --colors && cd ../public && cp index.html 200.html && surge -p ."
+    "deploy": "webpack -p --config webpack.config.prod.js --progress --colors && cd ../public && cp index.html 200.html && surge -p .",
+    "canary": "webpack -p --config webpack.config.prod.js --progress --colors && cd ../public && cp index.html 200.html && surge -p . -d canary.couch-ref.com"
   },
   "author": "",
   "license": "",
