@@ -6,6 +6,7 @@ import {browserHistory} from 'react-router';
 import {loadArchivedMatch, fullyLoadArchivedMatch} from '../ducks/matches';
 import {loadArchivedQuestion} from '../ducks/questions';
 import {loadArchivedStatistic} from '../ducks/statistics';
+import {loadVote} from '../ducks/user';
 
 const getMatch = (store) => {
    return ({params}) => {
@@ -13,6 +14,10 @@ const getMatch = (store) => {
          store.dispatch(fullyLoadArchivedMatch(params.matchId, () => {browserHistory.push('/missing')}));
       } else {
          var match = store.getState().matches[params.matchId];
+         match.questions.map(q => {
+            store.dispatch(loadVote(q.id));
+         });
+
          setTimeout(() => {
             match.questions.map(q => {
                if (!store.getState().questions[q.id]){

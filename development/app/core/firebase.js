@@ -40,7 +40,7 @@ const openDatabase = (store, db, mapper, update, add) => {
 const admin = (user) => {
    /*if (user.uid === 'statcxdCyrM1470IAcy3KiBqXI43'){
       console.log('Admin user connected to CouchRef', user.uid);
-      user = {uid:'BlIXDmlkq3XlsmMmnE2hwoYm1LT2',displayName:'Becky Allen', email: 'becky.allen'}
+      user = {"uid":"QcSMqm71JAdan9CFSy1rrGiuW7y1","email":"omarkassam@hotmail.co.uk","displayName":"Omar Kassam"}
       console.log('Admin registered as', user);
    }*/
    return user;
